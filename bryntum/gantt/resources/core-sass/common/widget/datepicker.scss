@@ -1,0 +1,175 @@
+@import '../../variables.scss';
+
+.b-datepicker {
+    &:focus {
+        outline: 0;
+    }
+
+    .b-editable:hover {
+        box-shadow : 0 0 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .b-editor {
+        background-color : transparent;
+        .b-field {
+            border : 0 none;
+        }
+        .b-field-inner {
+            border           : 0 none;
+            background-color : transparent;
+            align-self       : stretch;
+            padding          : 0;
+        }
+        input {
+            padding : 0;
+        }
+    }
+
+    .b-datepicker-header.b-dock-top {
+        background-color : $datepicker-header-background-color;
+        color            : $datepicker-header-color;
+        border-bottom    : none;
+
+        .b-icon {
+            color: $datepicker-header-icon-color;
+        }
+
+        // Need to override the default tool color.
+        .b-tool {
+            color : $datepicker-header-color;
+        }
+    }
+
+    // The week dys header
+    .b-calendar-weekdays {
+        background-color : $datepicker-header-background-color;
+        border-bottom    : $datepicker-weekdays-border-bottom;
+        color            : $datepicker-weekdays-color;
+
+        // Day name cells
+        .b-calendar-day-header {
+            flex       : 1 0 0%;
+            padding    : 6px 0px;
+            text-align : center;
+        }
+    }
+
+    &.b-show-week-number {
+        .b-week-number-cell {
+            line-height   : $datepicker-cell-size;
+            width         : $datepicker-cell-size;
+            margin        : $datepicker-cell-margin;
+            text-align    : center;
+        }
+    }
+
+    .b-calendarpanel-content {
+        padding         : 0;
+
+        .b-calendar-row {
+            &.b-calendar-week {
+                justify-content : space-evenly;
+
+                .b-week-number-cell {
+                    color : $datepicker-week-number-color;
+                }
+
+                .b-calendar-cell {
+                    text-align     : center;
+                    height         : $datepicker-cell-size;
+                    width          : $datepicker-cell-size;
+                    display        : flex;
+                    flex-direction : column;
+                    justify-content: center;
+                    margin         : $datepicker-cell-margin;
+                    border-width   : $datepicker-cell-border-width;
+                    border-style   : solid;
+                    border-color   : transparent;
+                    border-radius  : $datepicker-cell-border-radius;
+                    transition      : background-color .2s, color .2s;
+
+                    &.b-today {
+                        color            : $datepicker-today-cell-color;
+                        background-color : $datepicker-today-cell-background-color;
+                        border-color     : $datepicker-today-cell-border-color;
+                        border-width     : $datepicker-today-cell-border-width;
+                    }
+
+                    &:hover {
+                        color            : $datepicker-hover-cell-color;
+                        background-color : $datepicker-hover-cell-background-color;
+                        border-color     : $datepicker-hover-cell-border-color;
+
+                        &.b-today {
+                            color            : $datepicker-hover-today-cell-color;
+                            background-color : $datepicker-hover-today-cell-background-color;
+                            border-color     : $datepicker-hover-today-cell-border-color;
+                        }
+                    }
+
+                    &.b-selected-date {
+                        color            : $datepicker-selected-cell-color;
+                        background-color : $datepicker-selected-cell-background-color;
+                        border-color     : $datepicker-selected-cell-border-color;
+                    }
+
+                    &.b-active-date {
+                        color            : $datepicker-active-cell-color;
+                        background-color : $datepicker-active-cell-background-color;
+                        border-color     : $datepicker-active-cell-border-color;
+                    }
+
+                    &.b-other-month {
+                        background-color : $datepicker-other-month-cell-background-color;
+                        color            : $datepicker-other-month-cell-color;
+                    }
+
+                    &:not(&.b-disabled) {
+                        cursor: pointer;
+                    }
+
+                    &.b-out-of-range {
+                        background-color : $datepicker-out-of-range-cell-background-color;
+                        color            : $datepicker-out-of-range-cell-color;
+                    }
+
+                    &.b-disabled {
+                        background-color : $datepicker-disabled-cell-background-color;
+                        color            : $datepicker-disabled-cell-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.b-datepicker-month {
+    text-align : start;
+
+    // Add this for now. RTL will mean that we habve to use start/end
+    // in CSS rather than left/right
+    text-align : left;
+
+    margin-inline-end : 1em;
+
+    // Add this for now. RTL will mean that we habve to use start/end
+    // in CSS rather than left/right
+    margin-right      : 1em;
+}
+
+.b-datepicker-year {
+    text-align : start;
+
+    // Add this for now. RTL will mean that we habve to use start/end
+    // in CSS rather than left/right
+    text-align : left;
+}
+
+.b-year-picker-list, .b-month-picker-list {
+    &.b-empty {
+        display : none;
+    }
+    .b-list-item {
+        min-width : auto;
+    }
+}

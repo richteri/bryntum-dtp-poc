@@ -1,0 +1,17 @@
+{
+    ".b-constraint-date": {
+        "title": "Constraint indicator",
+        "content": "Shows different icons per constraint, positioned at the tasks constraint date",
+        "align": "l-r"
+    },
+    ".b-deadline-date": {
+        "title": "Deadline indicator",
+        "content": "A red flag to signal a deadline date",
+        "align": "t-b"
+    },
+    "[data-task-id=\"21-indicator-1\"]": {
+        "title": "Custom indicator",
+        "content": "Add your own to suite your needs",
+        "align": "l-r"
+    }
+}

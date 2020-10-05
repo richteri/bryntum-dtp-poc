@@ -1,0 +1,150 @@
+@import '../variables.scss';
+@import '../../scheduler-sass/view/eventrendering.scss';
+
+.b-timeline {
+    flex       : 1;
+    padding    : 3em 10em 5em 10em;
+    background : $gantt-timeline-background-color;
+    overflow   : visible;
+
+    .b-sch-header-row:not(:first-child) {
+        display : none;
+    }
+
+    .b-grid-row {
+        background : transparent;
+        border-bottom : 1px solid transparent;
+    }
+
+    .b-grid-cell {
+        border : 1px solid $gantt-timeline-border-color;
+    }
+
+    .b-sch-event-wrap .b-sch-event {
+        opacity          : 1;
+        border-color     : darken($event-bar-background-color, 30);
+        border-radius    : $gantt-task-border-radius;
+        background-color : $gantt-task-background-color;
+        font-weight      : 400;
+        font-size        : 12px;
+    }
+
+    // Special milestone styling
+    .b-milestone-wrap.b-sch-event-wrap {
+        z-index : $event-zindex + 5;
+
+        .b-sch-event.b-milestone {
+            transform : translateY(50%);
+            font-size : 50%;
+
+            label {
+                margin-top  : 2em;
+                // -1em is required to compensate milestone width, see Scheduler/resources/sass/view/eventrendering.scss
+                transform   : translateX(-50%) translateX(-1em);
+                padding     : 0;
+                color       : $gantt-timeline-label-color;
+                font-weight : $gantt-timeline-label-font-weight;
+
+                &:before {
+                    content     : ' ';
+                    position    : absolute;
+                    top         : -2em;
+                    left        : 50%;
+                    height      : 2em;
+                    border-left : 1px solid $gantt-timeline-border-color;
+                    transform   : translateX(-50%);
+                }
+            }
+
+            &.b-sch-event:before {
+                opacity          : 1;
+                z-index          : 2;
+
+                background-color : $gantt-milestone-background-color;
+                border           : 2px solid $gantt-timeline-background-color;
+            }
+        }
+    }
+
+    // EOF Special milestone styling
+
+    .b-sch-header-timeaxis-cell {
+        justify-content : start;
+        color           : $gantt-timeline-label-color;
+        padding         : 0 0 0.5em 0.5em;
+        font-weight     : $gantt-timeline-label-font-weight;
+
+        &:before {
+            content     : ' ';
+            position    : absolute;
+            left        : 0;
+            bottom      : 0;
+            height      : 0.7em;
+            border-left : 1px solid $gantt-timeline-border-color;
+        }
+    }
+
+    // Make sure milestones + their label are visible
+    .b-scheduler,
+    .b-grid-body-container,
+    .b-grid-vertical-scroller,
+    .b-grid-subgrid,
+    .b-sch-foreground-canvas {
+        overflow : visible !important;
+        contain  : none !important;
+    }
+
+    // override Firefox exception in Grid/resources/sass/grid/view/subgrid.scss
+    //.b-gridbase.b-firefox:not(.b-overlay-scrollbar) .b-grid-subgrid.b-grid-horizontal-scroller
+    &.b-gridbase.b-firefox {
+        .b-grid-subgrid {
+            &.b-grid-horizontal-scroller {
+                overflow : visible !important;
+            }
+        }
+    }
+
+    .b-grid-header-container,
+    .b-grid-header-container.b-grid-vertical-overflow,
+    .b-sch-header-timeaxis-cell,
+    .b-grid-header-container .b-sch-timeaxiscolumn,
+    .b-grid-header-container .b-sch-timeaxiscolumn:hover {
+        background : transparent !important;
+        box-shadow : none;
+        border     : none;
+    }
+
+    .b-grid-header {
+        min-height: 1.5em;
+    }
+
+    .b-grid-vertical-overflow .b-grid-header-scroller:last-child {
+        border-right: none;
+    }
+
+    // Labels
+    .b-timeline-startdate {
+        left      : -1em;
+        transform : translateX(-100%);
+    }
+
+    .b-timeline-enddate {
+        right     : -1em;
+        transform : translateX(100%);
+    }
+
+    .b-timeline-startdate,
+    .b-timeline-enddate {
+        position        : absolute;
+        top             : 0;
+
+        display         : flex;
+        align-items     : center;
+        justify-content : center;
+        color           : $gantt-timeline-label-color;
+        min-width       : 6em;
+        font-size       : $grid-header-font-size;
+        font-weight     : $gantt-timeline-label-font-weight;
+    }
+
+}

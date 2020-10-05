@@ -1,0 +1,99 @@
+.simulated-mouse {
+    position       : absolute;
+    z-index        : 100;
+    top            : 10px;
+    left           : 10px;
+    transition     : top .5s, left .5s;
+    pointer-events : none;
+    font-size      : 16px; // trying fixed size to see if it helps with align online
+
+    &.quick {
+        transition : top .05s, left .05s;
+    }
+
+    &:after {
+        position    : absolute;
+        content     : '\f245';
+        font-family : "Font Awesome 5 Free";
+        font-weight : 900;
+        z-index     : 102
+    }
+
+    &.drag:before,
+    &.mousedown:before,
+    &.dblclick:before,
+    &.click:before {
+        position           : absolute;
+        content            : '';
+        border             : 2px solid transparent;
+        border-radius      : 50%;
+        animation-name     : click;
+        animation-duration : .2s;
+        top                : 0;
+        left               : 0;
+        transform          : translate(-50%, -50%);
+        z-index            : 101;
+        opacity            : 0.7;
+    }
+
+    &.drag:after {
+        content : '\f25a';
+        left : -3px;
+    }
+
+    &.dblclick:before {
+        animation-name     : dblclick;
+        animation-duration : .3s;
+    }
+
+    &.mousedown:before,
+    &.drag:before {
+        animation-name : none;
+        width          : 1.5em;
+        height         : 1.5em;
+        border-color   : red;
+    }
+}
+
+@keyframes click {
+    0% {
+        width  : 0;
+        height : 0;
+    }
+    90% {
+        width        : 1.5em;
+        height       : 1.5em;
+        border-color : red;
+    }
+    100% {
+        width        : 0;
+        height       : 0;
+        border-color : transparent;
+    }
+}
+
+@keyframes dblclick {
+    0% {
+        width  : 0;
+        height : 0;
+    }
+    40% {
+        width        : 1.5em;
+        height       : 1.5em;
+        border-color : red;
+    }
+    50% {
+        width  : 0;
+        height : 0;
+    }
+    90% {
+        width        : 1.5em;
+        height       : 1.5em;
+        border-color : red;
+    }
+    100% {
+        width        : 0;
+        height       : 0;
+        border-color : transparent;
+    }
+}

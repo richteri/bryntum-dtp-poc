@@ -1,0 +1,47 @@
+@import '../variables.scss';
+
+.b-eventeditor.b-popup {
+    width : 29em;
+
+    .b-eventeditor-content.b-popup-content {
+        padding : 1em 1em 0 1em;
+
+        .b-textfield {
+            label {
+                flex : 1 0 $eventedit-label-width;
+            }
+        }
+    }
+
+    .b-bottom-toolbar {
+        padding         : 1em 1em 0.4em 1em;
+        //justify-content : space-between;
+
+        .b-label-filler {
+            @if $eventedit-label-filler-width == null {
+                display : none;
+            }
+            width : $eventedit-label-filler-width;
+        }
+
+        > button {
+            flex : 1;
+            margin-right : .5em;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+//.b-eventeditor-editing {
+//    .b-sch-event {
+//        filter     : grayscale(60%);
+//        transition : all 0.2s;
+//
+//        &.b-editing {
+//            filter : none;
+//        }
+//    }
+//}

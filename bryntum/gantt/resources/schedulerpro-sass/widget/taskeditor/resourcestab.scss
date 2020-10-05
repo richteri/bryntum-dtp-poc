@@ -1,0 +1,14 @@
+@import '../../variables.scss';
+
+.b-resourcestab {
+    .b-button {
+        width           : auto;
+        margin-left     : 0;
+        margin-right    : .5em;
+        justify-content : center;
+    }
+
+    .b-grid {
+        margin-top       : .5em;
+    }
+}

@@ -1,0 +1,70 @@
+@import '../scheduler-sass/variables.scss';
+
+$gantt-task-background-color : scale_color($green, $lightness : 50%) !default;
+$gantt-task-hover-background-color : scale_color($green, $lightness : -15%) !default;
+
+$gantt-parent-background-color : scale_color($blue, $lightness : 40%) !default;
+$gantt-task-parent-hover-background-color : scale_color($blue, $lightness : -25%) !default;
+
+$gantt-milestone-background-color : $gantt-parent-background-color !default;
+
+$gantt-task-border-radius : null !default;
+
+$gantt-task-percent-background-color : rgba(0,0,0,0.4) !default;
+$gantt-task-percent-mix-blend-mode : overlay !default;
+
+$gantt-timeline-background-color : $panel-background-color !default;
+$gantt-timeline-border-color : $grid-header-border-color !default;
+$gantt-timeline-label-color : darken($grid-header-border-color, 10%) !default;
+$gantt-timeline-label-font-weight : null !default;
+
+/* critical paths styling */
+
+/* The color that is mixed into critical tasks/dependency colors */
+$gantt-critical-paths-base-color : red !default;
+/* The percentage used to mix $gantt-critical-paths-base-color into critical tasks/dependency colors */
+$gantt-critical-paths-base-color-mix-percentage : 60% !default;
+
+/* The color that is mixed into critical summary tasks background color */
+$gantt-critical-parent-background-base-color : $gantt-critical-paths-base-color !default;
+/* The color that is mixed into critical tasks background color */
+$gantt-critical-task-background-base-color : $gantt-critical-paths-base-color !default;
+/* The color that is mixed into critical dependencies stroke color */
+$gantt-critical-dependency-stroke-base-color : $gantt-critical-paths-base-color !default;
+
+$gantt-critical-parent-background-base-color-mix-percentage : $gantt-critical-paths-base-color-mix-percentage !default;
+$gantt-critical-task-background-base-color-mix-percentage : $gantt-critical-paths-base-color-mix-percentage !default;
+$gantt-critical-dependency-stroke-base-color-mix-percentage : $gantt-critical-paths-base-color-mix-percentage !default;
+
+$gantt-critical-parent-background-color : mix($gantt-critical-parent-background-base-color, $gantt-parent-background-color, $gantt-critical-parent-background-base-color-mix-percentage) !default;
+
+$gantt-critical-task-background-color : mix($gantt-critical-task-background-base-color, $gantt-task-background-color, $gantt-critical-task-background-base-color-mix-percentage) !default;
+
+$gantt-critical-dependency-stroke : mix($gantt-critical-dependency-stroke-base-color, $dependency-color, $gantt-critical-dependency-stroke-base-color-mix-percentage);
+
+/* baseline styling */
+
+$gantt-baseline-flex                   : 0.5 !default;
+$gantt-baseline-background-color       : #ddd !default;
+$gantt-baseline-border-width           : 0 !default;
+$gantt-baseline-milestone-border-color : $grid-background-color !default;
+$gantt-baseline-border-color           : orange !default;
+$gantt-baseline-animate-duration       : 0.3s !default;
+$gantt-baseline-margin-top             : 1px !default;
+
+$gantt-rollup-color                      : $event-bar-background-color;
+$gantt-rollup-milestone-size             : 0.275em !default;
+$gantt-rollup-milestone-background-color : $gantt-parent-background-color !default;
+
+$percentcircle-thickness : calc(100% - 6px) !default;
+$percentcircle-done-color : $blue !default;
+$percentcircle-background-color : $grid-cell-border-color !default;
+$percentcircle-label-background : $grid-background-color !default;
+$percentcircle-label-font-size : .8em !default;
+$percentcircle-label-color : $grid-cell-color !default;
+
+$indicator-dates-color : #ccc !default;
+$indicator-dates-hover-color : #999 !default;
+$indicator-at-bottom-size : 6px !default;
+$indicator-arrow-size : 4px !default;
+$indicator-at-bottom-top : calc(1em + 4px) !default;

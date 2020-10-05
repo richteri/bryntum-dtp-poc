@@ -1,0 +1,74 @@
+@import '../variables.scss';
+
+.b-sch-vertical .b-sch-timeaxiscolumn {
+    flex-direction : row;
+}
+
+.b-resourceheader {
+    flex     : 1;
+    position : relative;
+    contain  : strict;
+
+    &.b-has-images {
+        height : 3em; // Will not shrinkwrap since resource header cells are absolutely positioned
+    }
+
+    &.b-animating .b-resourceheader-cell {
+        transition : width .2s, left .2s;
+    }
+}
+
+.b-resourceheader-cell {
+    position        : absolute;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    color           : $grid-header-text-color;
+    border-right    : 1px solid $grid-header-border-color;
+    overflow        : hidden;
+    transition      : background-color 0.2s;
+    font-size       : $grid-header-font-size;
+    font-weight     : $grid-header-font-weight;
+    padding         : top($timeaxis-cell-header-padding);
+    white-space     : nowrap;
+    contain         : strict;
+    height          : 100%;
+    @include user-select-none();
+
+    &:hover {
+        cursor           : pointer;
+        background-color : $grid-header-hover-background-color;
+    }
+
+    &.b-align-start,
+    &.b-align-end {
+        padding-left  : 0.3em;
+        padding-right : 0.3em;
+    }
+
+    &.b-align-start {
+        justify-content : flex-start;
+    }
+
+    &.b-align-end {
+        justify-content : flex-end;
+    }
+
+    i {
+        margin-right : .5em;
+    }
+
+    .b-resource-name {
+        overflow : hidden;
+    }
+
+    .b-resource-image {
+        position      : relative;
+        min-width     : 2em;
+        min-height    : 2em;
+        width         : 2em;
+        height        : 2em;
+        margin-right  : 1em;
+        border-radius : 100%;
+    }
+}

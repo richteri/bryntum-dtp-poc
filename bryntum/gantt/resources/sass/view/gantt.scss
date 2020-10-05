@@ -1,0 +1,110 @@
+@import '../variables.scss';
+@import '../../scheduler-sass/view/eventrendering.scss';
+
+// base styles are defined in scheduler
+
+// Cannot use background-image approach for gantt, because of parent task "ears"
+$ignore-drag-resize : 'b-never'; //'b-gantt:not(.b-gantt-resizing-task-percent):not(.b-resizing-event):not(.b-dragging-event)';
+
+
+@include eventrendering(
+    $widget-name                                : 'gantt',
+    $entity-name                                : 'task',
+    $entity-zindex                              : $event-zindex,
+    $entity-font-weight                         : $event-font-weight,
+    $entity-font-size                           : $event-font-size,
+    $entity-default-transition                  : $event-default-transition,
+    $interacting-entity-zindex                  : $interacting-event-zindex,
+
+    $entity-bar-background-color                : $gantt-task-background-color,
+    $entity-bar-color                           : $event-bar-color,
+    $entity-bar-padding-left                    : 0,
+
+    $entity-bar-hover-background-color          : $event-bar-hover-background-color,
+    $entity-bar-hover-color                     : $event-bar-hover-color,
+
+    $entity-selected-zindex                     : $selected-event-zindex,
+    $entity-bar-selected-background-color       : $event-bar-selected-background-color,
+    $entity-bar-selected-color                  : $event-bar-selected-color,
+    $entity-selected-font-weight                : $event-selected-font-weight,
+
+    $entity-bar-selected-hover-background-color : $event-bar-selected-hover-background-color,
+    $entity-bar-selected-hover-color            : $event-bar-selected-hover-color,
+
+    $entity-milestone-color                     : $gantt-milestone-background-color,
+    $entity-milestone-hover-color               : darken($gantt-milestone-background-color, 5),
+    $entity-milestone-selected-color            : darken($gantt-milestone-background-color, 15),
+    $entity-milestone-selected-hover-color      : darken($gantt-milestone-background-color, 15),
+    $entity-milestone-zindex                    : $milestone-zindex,
+
+    $entity-labels-color                        : $event-labels-color,
+    $selected-entity-labels-color               : $selected-event-labels-color,
+
+    $entity-parent-color                        : $gantt-parent-background-color
+);
+
+// TODO: Move suitable rules to eventrendering mixin
+
+.b-gantt-task {
+    border-radius: $gantt-task-border-radius;
+
+    &.b-task-selected,
+    &:hover {
+        background-color : $gantt-task-hover-background-color;
+    }
+}
+
+// Text and icon in task
+.b-gantt-task-content {
+    position      : absolute;
+    padding       : 0 .4em;
+    font-size     : .8em;
+    width         : 100%;
+    overflow      : hidden;
+    text-overflow : ellipsis;
+    // Above percent bar
+    z-index       : 1;
+}
+
+.b-gantt-task-parent .b-gantt-task {
+    border-radius : $gantt-task-border-radius $gantt-task-border-radius 0 0;
+
+    &.b-task-selected,
+    &:hover {
+        background-color : $gantt-task-parent-hover-background-color;
+
+        &::before {
+            border-top-color  : $gantt-task-parent-hover-background-color;
+            border-left-color : $gantt-task-parent-hover-background-color;
+        }
+
+        &::after {
+            border-top-color  : $gantt-task-parent-hover-background-color;
+            border-right-color : $gantt-task-parent-hover-background-color;
+        }
+    }
+}
+
+.b-gantt-task-wrap {
+     &.b-over-resize-handle {
+        .b-gantt-task {
+            cursor : ew-resize !important;
+        }
+    }
+}
+
+.b-new-column-column {
+    .b-grid-header-text {
+        display : none;
+    }
+}
+
+.b-new-column-combo {
+    .b-field-inner {
+        background-color : transparent;
+        border           : 0 none;
+        input {
+            padding : 0;
+        }
+    }
+}

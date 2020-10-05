@@ -1,0 +1,7 @@
+{
+  ".b-grid-row[data-index=\"4\"] .b-resourceassignment-cell" : {
+    "title"   : "Customised resource assignment picker",
+    "content" : "Edit the assigned resources to see the enhanced resource picker",
+    "align"   : "l-r"
+  }
+}

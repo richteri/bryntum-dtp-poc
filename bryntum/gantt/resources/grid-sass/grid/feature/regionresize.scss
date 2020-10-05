@@ -1,0 +1,185 @@
+@import '../../variables.scss';
+
+// Splitters are part of the flexbox layout and sit between the child widgets
+.b-grid-splitter {
+    z-index    : $grid-splitter-zindex;
+    position   : relative;
+    background : $grid-region-resize-splitter-narrow-color;
+
+    // When not a draggable splitter, it's just a narrow line.
+    flex       : 0 0 $grid-splitter-width;
+
+    .b-grid-splitter-inner {
+        // When not a draggable splitter, it's just a narrow line with no internal structure.
+        display        : none;
+
+        transition     : left 0.2s, width 0.2s;
+        width          : $grid-region-resize-splitter-width;
+        position       : absolute;
+        top            : 0;
+        left           : 0;
+        bottom         : 0;
+        flex-direction : column;
+        align-items    : center;
+    }
+
+    &:not(.b-grid-splitter-collapsed) .b-grid-splitter-inner {
+        cursor : col-resize;
+    }
+}
+
+.b-grid-splitter-buttons {
+    position       : absolute;
+    margin-top     : -50%;
+    display        : flex;
+    flex-direction : column;
+    align-items    : center;
+}
+
+.b-gridbase.b-split {
+    .b-grid-splitter {
+        flex       : 0 0 $grid-region-resize-splitter-width;
+        background : $grid-region-resize-splitter-color;
+
+        // There's internal structure when it's a draggable splitter
+        .b-grid-splitter-inner {
+            display : flex;
+        }
+
+        &.b-grid-splitter-collapsed {
+            cursor : initial;
+            flex   : 0 0 $grid-region-resize-splitter-collapsed-width;
+
+            .b-grid-splitter-inner {
+                background : $grid-region-resize-splitter-color;
+                width      : $grid-region-resize-splitter-collapsed-width;
+            }
+
+            &:not(.b-hover) .b-icon {
+                display : inline;
+                opacity : 0.5;
+            }
+
+            &:not(.b-grid-splitter-allow-collapse) .b-icon.b-icon-collapse-gridregion {
+                display : none;
+            }
+
+            &.b-grid-splitter-allow-collapse .b-icon.b-icon-expand-gridregion {
+                display : none;
+            }
+        }
+
+        // Hide right arrow for first splitter in a multi region grid
+        &.b-left-only:not(.b-grid-splitter-collapsed) {
+            .b-icon.b-icon-expand-gridregion {
+                display : none;
+            }
+        }
+
+        // Hide left arrow for last splitter in a multi region grid
+        &.b-right-only:not(.b-grid-splitter-collapsed) {
+            .b-icon.b-icon-collapse-gridregion {
+                display : none;
+            }
+        }
+
+        .b-icon {
+            display     : none;
+            cursor      : pointer;
+            color       : darken($grid-header-icon-color, 20);
+            font-size   : 1.6em;
+            line-height : 0.5;
+
+            &:hover {
+                color : $grid-text-brightest-color;
+            }
+        }
+
+        // When hovered or being moved, the inner pops out to cover a larger area
+        &.b-hover,
+        &.b-moving {
+            overflow : visible;
+
+            .b-grid-splitter-inner {
+                background : $grid-region-resize-splitter-color;
+                left       : -$grid-splitter-margin-hover;
+                width      : $grid-region-resize-splitter-width-hover;
+            }
+
+            .b-icon {
+                display : inline;
+            }
+        }
+
+        // When the first splitter is collapsed, and hovered, but not moving
+        // Don't move the inner leftwards - it will move it off the left side of the grid.
+        &.b-grid-splitter-collapsed:nth-child(2):hover:not(.b-moving) {
+            .b-grid-splitter-inner {
+                left : 0;
+            }
+        }
+    }
+}
+
+// Collapsing means drop to zero width whether in a .b-split grid or not.
+.b-grid-header-scroller.b-collapsed,
+.b-grid-footer-scroller.b-collapsed,
+.b-virtual-scroller.b-collapsed {
+    width : 0;
+}
+
+// Touch device styling
+.b-touch {
+
+    .b-splitter-scroller,
+    .b-icon-expand-gridregion,
+    .b-icon-collapse-gridregion {
+        display : none !important;
+    }
+
+    .b-moving {
+        .b-grid-splitter-inner {
+            width : $grid-region-resize-splitter-width-touch;
+        }
+
+        .b-grid-splitter-main {
+            &::before {
+                @extend .b-content-icon;
+                @extend .b-icon-resize-horizontal:before;
+                z-index          : $grid-splitter-zindex + 1;
+                font-size        : 1.5em;
+                color            : $grid-text-brightest-color;
+                position         : absolute;
+                top              : 1em;
+                left             : $grid-region-resize-splitter-width-touch / 4;
+                transform        : translate(-50%, -50%);
+                border-radius    : 100%;
+                background-color : $grid-header-icon-color;
+                padding          : 0.5em;
+                opacity          : 0.6;
+            }
+        }
+    }
+}
+
+// No hover, or moving behaviour during DragHelper activity
+.b-draghelper-active {
+    .b-gridbase.b-split {
+        .b-grid-splitter {
+            cursor        : initial;
+
+            .b-icon {
+                display : none !important;
+            }
+
+            flex          : 0 0 $grid-region-resize-splitter-width !important;
+
+            .b-grid-splitter-inner {
+                width : $grid-region-resize-splitter-width !important;
+            }
+
+            transform     : none !important;
+            -ms-transform : none !important;
+        }
+    }
+}

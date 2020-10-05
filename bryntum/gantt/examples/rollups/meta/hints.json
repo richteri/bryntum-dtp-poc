@@ -1,0 +1,7 @@
+{
+  ".b-task-rollup " : {
+    "title"   : "Rollup of child tasks",
+    "content" : "Hover for summary of child tasks",
+    "align"   : "l-r"
+  }
+}

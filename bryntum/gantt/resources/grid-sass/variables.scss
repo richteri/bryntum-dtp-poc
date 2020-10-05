@@ -1,0 +1,168 @@
+@import '../core-sass/variables.scss';
+
+//region Grid
+
+$grid-row-height : 45px !default;
+
+$grid-text-brightest-color : $lightest !default;
+$grid-text-darkest-color : $darkest !default;
+
+$grid-row-odd-color : lighten($light-gray, 8) !default;
+$grid-row-even-color : #fff !default;
+
+$grid-selection-color : $secondary-color !default;
+
+$grid-background-color : #fff !default;
+$grid-highlight-color : $secondary-color !default;
+$grid-red-color : $red !default;
+$grid-disabled-opacity : .5 !default;
+
+$grid-cell-focused-outline-color : transparentize($main-color, .5) !default;
+$grid-cell-focused-outline-width : 2px !default;
+$grid-cell-focused-outline-style : solid !default;
+$grid-cell-focused-background-color : null !default;
+$grid-cell-focused-border-radius : 0 !default;
+
+$grid-cell-color : $grid-text-darkest-color !default;
+$grid-cell-border-color : $light-gray !default;
+$grid-cell-font-weight : 300 !default;
+$grid-cell-hover-background-color : fade-out($grid-selection-color, 0.9) !default;
+$grid-cell-row-hover-background-color : fade-out($grid-selection-color, 0.95) !default;
+
+$grid-row-selected-background-color : fade-out($grid-selection-color, 0.95) !default;
+$grid-row-selected-cell-background-color : fade-out($grid-selection-color, 0.85) !default;
+$grid-focus-row-selected-background-color : fade-out($grid-selection-color, 0.9) !default;
+$grid-focus-row-selected-cell-background-color : fade-out($grid-selection-color, 0.85) !default;
+
+//endregion
+
+//region Header & Footer
+
+$grid-header-background-color : $light-gray !default;
+$grid-header-hover-background-color : lighten($grid-header-background-color, 5) !default;
+$grid-header-border-color : $gray !default;
+$grid-header-invalid-drag-color : $red !default;
+$grid-header-container-border-bottom-width : 1px !default;
+$grid-header-padding : 1em 0.5em !default;
+$grid-header-zindex : 4 !default; // 4 needed for strangeness in docs where group row is above header
+$grid-header-box-shadow : null !default;
+$grid-header-resizing-background-color : $grid-header-hover-background-color !default;
+
+$grid-header-icon-target : '' !default;
+
+$grid-header-icon-color : $gray !default;
+$grid-header-icon-light-color : darken($grid-header-background-color, 5) !default;
+$grid-header-icon-highlight-color : $secondary-color !default;
+$grid-header-icon-position : absolute !default;
+$grid-header-icon-top : 50% !default;
+$grid-header-icon-transform : translateY(-50%) !default;
+$grid-header-icon-font-size : null !default;
+
+$grid-header-resizer-handle-width : 10px !default;
+$grid-header-touch-resizer-handle-width : 20px !default;
+
+$grid-header-font-weight : inherit !default;
+$grid-header-font-size : 1em !default;
+$grid-header-text-color : lighten($grid-text-darkest-color, 15) !default;
+$grid-header-text-transform : none !default;
+
+$grid-header-filtered-color : #666 !default;
+
+$grid-footer-background-color : $grid-header-background-color !default;
+$grid-footer-border-color : $grid-header-border-color !default;
+$grid-footer-outline-color : $grid-header-border-color !default;
+$grid-footer-outline-width : $grid-header-container-border-bottom-width !default;
+$grid-footer-text-color : $grid-header-text-color !default;
+$grid-footer-box-shadow : $grid-header-box-shadow !default;
+
+//endregion
+
+//region region resize
+
+$grid-splitter-width : 1px !default;
+$grid-splitter-zindex : $grid-header-zindex + 1 !default; // above header
+$grid-region-resize-splitter-width : 5px !default;
+$grid-region-collapsed-width : 0 !default;
+$grid-region-resize-splitter-collapsed-width : 10px !default;
+$grid-region-resize-splitter-width-hover : 13px !default;
+$grid-region-resize-splitter-color : lighten($grid-header-border-color, 10) !default;
+$grid-region-resize-splitter-narrow-color : darken($grid-header-border-color, 10) !default;
+$grid-region-resize-splitter-width-touch : 25px !default;
+$grid-splitter-margin-hover : ($grid-region-resize-splitter-width-hover - $grid-region-resize-splitter-width) / 2;
+
+//endregion
+
+//region Columns
+
+$percent-bar-fill : $main-color !default;
+$percent-bar-low-fill : $red !default;
+$percent-bar-color : $widget-text-bright-color !default;
+$percent-bar-background : #f1f1f1 !default;
+
+$rownumber-background : #f1f1f1 !default;
+$rownumber-border-color : $grid-cell-border-color !default;
+
+$rating-empty-color : transparentize($light-gray, .7) !default;
+$rating-filled-color : lighten($amber, 10) !default;
+
+$tree-expander-color : $main-color !default;
+$tree-parent-font-weight : 400 !default;
+$tree-parent-color : lighten($grid-cell-color, 30%) !default;
+
+//endregion
+
+$quickfind-background-color : lighten($yellow, 20) !default;
+$quickfind-badge-color : darken($yellow, 30) !default;
+$quickfind-header-badge-color : $quickfind-badge-color !default;
+$quickfind-font-weight : bold !default;
+
+$rowreorder-box-shadow : 1px 1px 4px rgba(0, 0, 0, 0.2) !default;
+$rowreorder-row-background : $grid-row-even-color !default;
+$rowreorder-indicator-width : 2px;
+$rowreorder-indicator-color : $main-color;
+
+$grid-group-header-color : $dark-gray !default;
+$grid-group-header-background-color : #fff !default;
+$grid-group-header-line-color : $grid-header-border-color !default;
+$grid-group-header-line-width : 2px !default;
+$grid-group-header-icon-color : $dark-gray !default;
+$grid-group-header-font-weight : 500 !default;
+$grid-group-column-header-icon-color : $grid-header-icon-highlight-color !default;
+$grid-groupsummary-background-color : lighten($light-gray, 8) !default;
+$grid-group-header-text-transform : none !default;
+
+$sort-color : $grid-header-text-color !default;
+$sort-index-color : darken($grid-header-icon-color, 20) !default;
+
+$columndragtoolbar-background : $panel-background-color !default;
+$columndragtoolbar-box-shadow : none !default;
+$columndragtoolbar-border-radius : 1em !default;
+$columndragtoolbar-opacity : .4 !default;
+$columndragtoolbar-hover-opacity : .8 !default;
+$columndragtoolbar-default-color : $main-color !default;
+$columndragtoolbar-default-hover-color : $columndragtoolbar-default-color !default;
+$columndragtoolbar-icon-color : $main-color !default;
+$columndragtoolbar-secondary-color : $secondary-color !default;
+$columndragtoolbar-secondary-hover-color : $columndragtoolbar-secondary-color !default;
+$columndragtoolbar-secondary-background-color : transparent !default;
+$columndragtoolbar-button-color : $grid-text-brightest-color !default;
+$columndragtoolbar-button-border-width : .3em !default;
+$columndragtoolbar-button-background-color : transparent !default;
+$columndragtoolbar-title-color : #fff !default;
+$columndragtoolbar-button-box-shadow : none !default;
+$columndragtoolbar-button-hover-box-shadow : none !default;
+
+$celledit-background-color : transparent !default;
+$celledit-border-width : 0 !default;
+$celledit-border-color: null !default;
+
+@mixin b-grid-header-icon($color) {
+    font-family : $icon-font;
+    font-weight : $icon-font-weight;
+    font-size   : $grid-header-icon-font-size;
+    color       : $color;
+    margin-left : .5em;
+    transition  : transform 0.3s, color 0.2s;
+    transform   : none; // needed for safari
+    background  : inherit; /* Transparent bg will look bad if there is text under the icon */
+}

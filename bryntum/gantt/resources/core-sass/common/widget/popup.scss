@@ -1,0 +1,38 @@
+@import '../../variables.scss';
+
+.b-popup {
+    color         : $popup-color;
+
+    // Applied for popups configured to display unformatted text (via textContent), gives them a sane max-width
+    &.b-text-content {
+        max-width : 14em;
+    }
+}
+
+.b-popup-content {
+    background      : $popup-background-color;
+
+    a {
+        color : darken($popup-color, 20);
+    }
+}
+
+.b-popup-header {
+    background-color : $popup-header-background-color;
+    color            : $popup-header-color;
+}
+
+.b-popup-close:before {
+    content: '\f410';
+}
+
+.b-modal-mask {
+    background-color : $popup-modal-mask-color;
+    position         : absolute;
+    top              : 0;
+    left             : 0;
+    bottom           : 0;
+    right            : 0;
+    pointer-events   : all;
+}
+

@@ -1,0 +1,22 @@
+@import '../../variables.scss';
+
+.b-grid-footer-summary {
+    td {
+        padding : .25em 0;
+    }
+
+    .b-grid-summary-label {
+        font-size     : .7em;
+        padding-right : 1em;
+    }
+
+    .b-grid-summary-value {
+        width : 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.b-summary-disabled .b-grid-footer-container {
+    display: none;
+}

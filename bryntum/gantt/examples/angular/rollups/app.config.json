@@ -1,0 +1,10 @@
+{
+  "dependencies": [
+    {
+      "src": "../_shared",
+      "out": "../_shared/dist"
+    }
+  ],
+  "title": "Rollups Angular demo",
+  "description": "Shows how to display rollups in an Angular app"
+}

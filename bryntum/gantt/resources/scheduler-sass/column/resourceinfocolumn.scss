@@ -1,0 +1,28 @@
+@import '../variables.scss';
+
+.b-resource-info {
+    flex           : 1;
+    height         : 100%;
+
+    display        : flex;
+    flex-direction : row;
+    align-items    : center;
+
+    img {
+        width         : 2.4em;
+        height        : 2.4em;
+        border-radius : 50%;
+        margin-right  : .6em;
+    }
+
+    dt {
+        font-weight   : 400;
+        margin-bottom : .2em;
+    }
+
+    dd {
+        margin    : 0;
+        font-size : .8em;
+        color     : $resourceinfo-role-color;
+    }
+}

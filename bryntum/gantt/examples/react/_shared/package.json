@@ -1,0 +1,46 @@
+{
+  "name": "bryntum-react-shared",
+  "version": "2.1.9",
+  "description": "Shared resources and code for React demos",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production babel src/lib --out-dir build --copy-files",
+    "postinstall": "postinstall"
+  },
+  "postinstall": {
+    "src/resources": "copy build/resources",
+    "package-build.json": "copy build/package.json",
+    "src/lib/index.d.ts": "copy build/index.d.ts"
+  },
+  "keywords": [
+    "shared",
+    "react",
+    "demo",
+    "example",
+    "gantt",
+    "bryntum"
+  ],
+  "author": "Saki",
+  "license": "Commercial",
+  "devDependencies": {
+    "@babel/cli": "~7.4.4",
+    "babel-preset-react-app": "~9.0.0",
+    "cross-env": "~6.0.3",
+    "postinstall": "~0.4.2"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "ie >= 11",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

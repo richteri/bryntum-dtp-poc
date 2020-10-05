@@ -1,0 +1,58 @@
+@function side($value, $side) {
+    // Default assumption is a non-list value, eg "1em" from padding: 1em;
+    $full-list : $value $value $value $value!default;
+
+    // If it is a list value, break it up and create a 4 value list
+    @if type-of($value) == list {
+        $len       : length($value);
+
+        // Create a four value list from incomplete specification
+        @if ($len == 2) {
+            $full-list: nth($value, 1) nth($value, 2) nth($value, 1) nth($value, 2);
+        }
+        @else if ($len == 3) {
+            $full-list: nth($value, 1) nth($value, 2) nth($value, 3) nth($value, 2);
+        }
+        @else if ($len == 4) {
+            $full-list: $value;
+        }
+        @else if ($len != 4) {
+            @error 'Bad list length (#{$len}) for function side(#{$value}, #{$side})';
+        }
+    }
+
+    // Extract the required side value from the 4 value list
+    @if ($side == 'top') {
+        @return nth($full-list, 1);
+    }
+    @else if ($side == 'right') {
+        @return nth($full-list, 2);
+    }
+    @else if ($side == 'bottom') {
+        @return nth($full-list, 3);
+    }
+    @else if ($side == 'left') {
+        @return nth($full-list, 4);
+    }
+    @else {
+        @error 'Bad side for side() function: #{$side}';
+    }
+
+    @return 0;
+}
+
+@function top($value) {
+    @return side($value, 'top');
+}
+
+@function right($value) {
+    @return side($value, 'right');
+}
+
+@function bottom($value) {
+    @return side($value, 'bottom');
+}
+
+@function left($value) {
+    @return side($value, 'left');
+}

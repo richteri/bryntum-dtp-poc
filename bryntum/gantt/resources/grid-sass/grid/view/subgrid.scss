@@ -1,0 +1,184 @@
+@import '../../variables.scss';
+
+//region Row & cell
+
+.b-grid-row {
+    display        : flex;
+    flex-direction : row;
+    align-items    : stretch;
+    position       : absolute;
+    min-width      : 100%;
+    transition     : background-color 0.2s;
+    left           : 0;
+    overflow       : hidden;
+    border-bottom  : 1px solid $grid-cell-border-color;
+    // default row height, will be read during initial render, but after that rows set height in style
+    height         : $grid-row-height;
+
+    // Blink-only right now. Layouts triggered inside the row won't cause document layout.
+    // Must be "layout", not "strict", otherwise the cell won't "stretch" the row.
+    contain        : layout;
+}
+
+.b-grid-refreshing .b-grid-row {
+    transition : none;
+}
+
+.b-grid-row.b-selected {
+    background-color : $grid-row-selected-background-color;
+}
+
+.b-grid-row.b-removing {
+    left           : -100%;
+    transition     : left .4s;
+    // Should not trigger and mouse events on a row being removed
+    pointer-events : none;
+}
+
+.b-grid-cell {
+    position        : relative;
+    display         : flex;
+    align-items     : center;
+    color           : $grid-cell-color;
+    font-weight     : $grid-cell-font-weight;
+    padding         : 0 .5em;
+    overflow        : hidden;
+    white-space     : nowrap;
+    flex-shrink     : 0; // trick to make cells sized correctly in IE11
+    text-overflow   : ellipsis;
+    border-right    : 1px solid $grid-cell-border-color;
+    transform-style : flat;
+    //        transition      : background-color 0.2s;
+    width           : 0; // flex trick to get small widths correct
+
+    &:last-child {
+        border-right-color : transparent;
+    }
+
+    // Blink-only right now. Layouts triggered inside the cell won't cause document layout.
+    contain         : strict;
+
+    > i {
+        margin-right : .5em;
+    }
+
+    .b-show-dirty & {
+        &.b-cell-dirty:after {
+            content          : " ";
+            position         : absolute;
+            top              : -5px;
+            left             : -5px;
+            background-color : red;
+            width            : 10px;
+            height           : 10px;
+            transform        : rotateZ(45deg);
+        }
+    }
+
+    &.b-focused {
+        transition : none !important;
+
+        &:after {
+            content        : '';
+            position       : absolute;
+            top            : 0;
+            right          : 0;
+            bottom         : 0;
+            left           : 0;
+            pointer-events : none;
+            border         : $grid-cell-focused-outline-width $grid-cell-focused-outline-style $grid-cell-focused-outline-color !important;
+            border-radius  : $grid-cell-focused-border-radius;
+        }
+    }
+
+    &.b-selected {
+        //background : $grid-row-selected-background-color; //$grid-row-selected-cell-background-color;
+    }
+
+    &.b-checkbox-selection {
+        background-color : $rownumber-background;
+    }
+}
+
+// Only show focus outline when accessing group header cell with keyboard
+body:not(.b-using-keyboard) .b-group-row .b-grid-cell.b-focused {
+    &:after {
+        content : none;
+    }
+}
+
+// TODO: Remove usage of left and right for alignment.
+// Use start and end to be LTR/RTL neutral.
+.b-grid-cell-align-right, .b-grid-cell-align-end {
+    justify-content : flex-end;
+}
+
+.b-grid-cell-align-center {
+    justify-content : center;
+}
+
+//endregion
+
+.b-grid-subgrid {
+    &.b-grid-subgrid-collapsed {
+        width : $grid-region-collapsed-width;
+    }
+
+    //region Scroller
+    &.b-grid-horizontal-scroller {
+        // This is heighted by the align-items:stretch of the b-grid-vertical-scroller
+        overflow-x          : auto;
+        overflow-y          : hidden;
+        position            : relative;
+        -ms-overflow-style  : none;
+        overscroll-behavior : contain auto;
+
+        // hide original scrollbar in webkit, we are using virtual scrollbar instead
+        &::-webkit-scrollbar {
+            display : none;
+        }
+
+        // Firefox has a bug where the two scroll axes can not be one hidden and the
+        // other scroll or auto. So we have to use overflow:hidden and add a wheel
+        // event listener which performs the horizontal scroll;
+        // Important: Not in grids on systems which use overlayed scrollbars.
+        .b-firefox .b-gridbase:not(.b-overlay-scrollbar) &,
+        .b-gridbase.b-firefox:not(.b-overlay-scrollbar) & {
+            overflow : hidden !important; // needs to be important to override Scroller.js adding overflow to style
+        }
+    }
+
+    //endregion
+
+    //region Expand & collapse
+
+    &.b-grid-subgrid-animate-collapse {
+        transition : width .15s;
+    }
+
+    //endregion
+}
+
+// Default to disabling scroll while playing demos, otherwise it is to easy for users to interfere
+.b-playing-demo .b-grid-subgrid {
+    overflow : hidden !important;
+}
+
+.b-grid-header-scroller.b-grid-subgrid-animate-collapse {
+    transition : width .15s;
+}
+
+// NOTE: cannot use :hover since a row can be broken up between multiple subgrids and each need to be highlighted
+// (and also :hover gives some visual artifacts when scroll reusing elements)
+.b-gridbase:not(.b-moving-splitter) .b-grid-row.b-hover {
+    // Highlight row and cell on hover
+
+    .b-grid-cell {
+        background-color : $grid-cell-row-hover-background-color;
+    }
+
+    // NOTE: :hover is fine here since a cell cannot span multiple subgrids
+    .b-grid-cell:not(.b-focused):hover {
+        background-color : $grid-cell-hover-background-color;
+    }
+}

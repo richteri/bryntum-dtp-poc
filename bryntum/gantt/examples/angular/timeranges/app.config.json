@@ -1,0 +1,10 @@
+{
+  "dependencies": [
+    {
+      "src": "../_shared",
+      "out": "../_shared/dist"
+    }
+  ],
+  "title": "Time ranges Angular demo",
+  "description": "Highlight important dates or time spans in the schedule in an Angular app"
+}

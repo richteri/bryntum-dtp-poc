@@ -1,0 +1,203 @@
+@import '../../variables.scss';
+
+.b-columndragtoolbar {
+    position           : absolute;
+    top                : calc(100% - 3em);
+    left               : 50%;
+    z-index            : 100;
+    animation-name     : b-show-columndragtoolbar;
+    animation-duration : 0.2s;
+    transform          : translateX(-50%);
+
+    display            : inline-flex;
+    flex-direction     : row;
+    flex-wrap          : wrap;
+    align-items        : center;
+    justify-content    : center;
+
+    border-radius      : $columndragtoolbar-border-radius;
+    background         : $columndragtoolbar-background;
+    transition         : opacity 0.2s, top 0.2s;
+    box-shadow         : $columndragtoolbar-box-shadow;
+
+    padding            : 1em 1em 0.5em 1em;
+    opacity            : $columndragtoolbar-opacity;
+
+    font-size          : .8em;
+
+    &.b-closer {
+        top       : 50%;
+        transform : translate(-50%, -50%);
+    }
+
+    &.b-hover {
+        opacity : $columndragtoolbar-hover-opacity;
+    }
+
+    &.b-remove {
+        animation-name     : b-hide-columndragtoolbar;
+        animation-duration : 0.2s;
+        top                : 100%;
+        opacity            : 0;
+
+        &.b-closer {
+            animation-name : b-hide-columndragtoolbar-closer;
+        }
+    }
+
+    > .b-title {
+        color         : $columndragtoolbar-title-color;
+        flex-basis    : 100%;
+        margin-bottom : 1em;
+        text-align    : center;
+
+        &:before {
+            content : 'Drag header downwards'
+        }
+    }
+
+    &.b-closer {
+        > .b-title:before {
+            content : 'Drop header on a button'
+        }
+    }
+
+    .b-group {
+        display        : inline-flex;
+        flex-direction : column;
+        align-items    : center;
+        margin-right   : 1.5em;
+
+        &:last-child {
+            margin-right : 0;
+        }
+
+        .b-title {
+            color         : $columndragtoolbar-title-color;
+            margin-top    : .5em;
+            margin-bottom : .5em;
+        }
+    }
+
+    .b-buttons {
+        display        : inline-flex;
+        flex-direction : row;
+    }
+
+    .b-target-button {
+        display        : inline-flex;
+        flex-direction : column;
+        align-items    : center;
+        transition     : all .2s;
+        color          : $columndragtoolbar-button-color;
+        border         : $columndragtoolbar-button-border-width solid $columndragtoolbar-default-color;
+        border-radius  : $columndragtoolbar-border-radius;
+        background     : $columndragtoolbar-button-background-color;
+        padding        : 1em 0;
+        width          : 7em;
+        margin-right   : .5em;
+        box-shadow     : $columndragtoolbar-button-box-shadow;
+
+        &:last-child {
+            margin-right : 0;
+        }
+
+        i {
+            font-size      : 2.5em;
+            color          : $columndragtoolbar-icon-color;
+            pointer-events : none;
+            transition     : all .2s;
+        }
+
+        &.b-hover:not([data-disabled=true]) {
+            //opacity          : 1;
+            background-color : $columndragtoolbar-default-hover-color;
+            color            : #fff;
+            box-shadow       : $columndragtoolbar-button-hover-box-shadow;
+
+            i {
+                transform : scale(1.1);
+                color     : #fff;
+            }
+        }
+
+        &.b-activate {
+            i {
+                transform : scale(1.1) rotate(180deg) !important;
+            }
+        }
+
+        &[data-button-id^=group] {
+            border-color     : $columndragtoolbar-secondary-color;
+            background-color : $columndragtoolbar-secondary-background-color;
+
+            i {
+                color : $columndragtoolbar-secondary-color;
+            }
+
+            &.b-hover:not([data-disabled=true]) {
+                background-color : $columndragtoolbar-secondary-hover-color;
+
+                i {
+                    color : #fff;
+                }
+            }
+        }
+
+        &[data-button-id^=multisort] {
+            border-color : darken($columndragtoolbar-default-color, 10);
+
+            i {
+                color : darken($columndragtoolbar-icon-color, 10);
+            }
+
+            &.b-hover:not([data-disabled=true]) {
+                background-color : darken($columndragtoolbar-default-color, 10);
+
+                i {
+                    color : #fff;
+                }
+            }
+        }
+
+        &[data-disabled=true] {
+            opacity : .5;
+        }
+    }
+}
+
+@keyframes b-show-columndragtoolbar {
+    from {
+        top     : 100%;
+        opacity : 0;
+    }
+
+    to {
+        top     : calc(100% - 3em);
+        opacity : .4;
+    }
+}
+
+@keyframes b-hide-columndragtoolbar {
+    from {
+        top     : calc(100% - 3em);
+        opacity : .4;
+    }
+
+    to {
+        top     : 100%;
+        opacity : 0;
+    }
+}
+
+@keyframes b-hide-columndragtoolbar-closer {
+    from {
+        top     : 50%;
+        opacity : .4;
+    }
+
+    to {
+        top     : 100%;
+        opacity : 0;
+    }
+}

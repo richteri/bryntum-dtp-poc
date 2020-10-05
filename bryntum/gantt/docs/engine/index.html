@@ -1,0 +1,1274 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>scheduling-engine</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">scheduling-engine</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1> scheduling-engine</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<h1 id="bryntum-scheduling-engine">Bryntum Scheduling Engine</h1>
+				<p>This is a Scheduling Engine that powers the Bryntum Gantt. Its written in TypeScript, uses reactive, graph-based computational
+				engine <a href="https://github.com/bryntum/chronograph">ChronoGraph</a> under the hood, and is extremely fast and customizable.</p>
+				<p>Bryntum Scheduling Engine supports:</p>
+				<ul>
+					<li>Scheduling events using dependencies</li>
+					<li>Scheduling events using constraints</li>
+					<li>Asynchronous scheduling conflicts</li>
+					<li>Calendars for project, events and resources</li>
+					<li>Both recurrent and fixed time intervals for calendars</li>
+					<li>Unlimited size projects. Project size is limited only by the memory. Naturally, the bigger projects takes longer time to
+						schedule. Our benchmarks shows, that project with 10k events and 10k dependencies between them, schedules in 1.3s on the commodity notebook.
+					The scheduling time for your project data may vary, but these numbers gives you an idea about performance. </li>
+				</ul>
+				<h2 id="getting-started">Getting started</h2>
+				<p>You only need to interact with Scheduling Engine if you&#39;d like to extend or customize the scheduling logic it uses. Otherwise, you can
+				use the regular Gantt API.</p>
+				<p>For more details, please refer to the <a href="classes/gettingstartedguide.html">Getting started guide</a></p>
+				<h2 id="copyright-and-license">COPYRIGHT AND LICENSE</h2>
+				<p>Copyright (c) 2018-2019, Bryntum</p>
+				<p>All rights reserved.</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="enums/calendariteratorresult.html" class="tsd-kind-icon">Calendar<wbr>Iterator<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/constrainttype.html" class="tsd-kind-icon">Constraint<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/dependenciescalendar.html" class="tsd-kind-icon">Dependencies<wbr>Calendar</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/dependencytype.html" class="tsd-kind-icon">Dependency<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/direction.html" class="tsd-kind-icon">Direction</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/edgeinclusion.html" class="tsd-kind-icon">Edge<wbr>Inclusion</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/effectresolutionresult.html" class="tsd-kind-icon">Effect<wbr>Resolution<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/indexposition.html" class="tsd-kind-icon">Index<wbr>Position</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/instruction.html" class="tsd-kind-icon">Instruction</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/oncycleaction.html" class="tsd-kind-icon">On<wbr>Cycle<wbr>Action</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/projecttype.html" class="tsd-kind-icon">Project<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/propagationresult.html" class="tsd-kind-icon">Propagation<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/schedulingmode.html" class="tsd-kind-icon">Scheduling<wbr>Mode</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/timeunit.html" class="tsd-kind-icon">Time<wbr>Unit</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/variableinputstate.html" class="tsd-kind-icon">Variable<wbr>Input<wbr>State</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/base.html" class="tsd-kind-icon">Base</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/calendarcache.html" class="tsd-kind-icon">Calendar<wbr>Cache</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/calendarcacheinterval.html" class="tsd-kind-icon">Calendar<wbr>Cache<wbr>Interval</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/calendarcacheintervalmultiple.html" class="tsd-kind-icon">Calendar<wbr>Cache<wbr>Interval<wbr>Multiple</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/calendarcachemultiple.html" class="tsd-kind-icon">Calendar<wbr>Cache<wbr>Multiple</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/calendarcachesingle.html" class="tsd-kind-icon">Calendar<wbr>Cache<wbr>Single</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-private">
+						<a href="classes/calendarintervalstore.html" class="tsd-kind-icon">Calendar<wbr>Interval<wbr>Store</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/cancelpropagationeffect.html" class="tsd-kind-icon">Cancel<wbr>Propagation<wbr>Effect</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/chainediteratorclass.html" class="tsd-kind-icon">Chained<wbr>Iterator<wbr>Class</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/chronomodelfieldatom.html" class="tsd-kind-icon">Chrono<wbr>Model<wbr>Field<wbr>Atom</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/chronomodelreferencebucketfieldatom.html" class="tsd-kind-icon">Chrono<wbr>Model<wbr>Reference<wbr>Bucket<wbr>Field<wbr>Atom</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/chronomodelreferencefieldatom.html" class="tsd-kind-icon">Chrono<wbr>Model<wbr>Reference<wbr>Field<wbr>Atom</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/conflict.html" class="tsd-kind-icon">Conflict</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/conflictresolution.html" class="tsd-kind-icon">Conflict<wbr>Resolution</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/constraintinterval.html" class="tsd-kind-icon">Constraint<wbr>Interval</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/cycledescription.html" class="tsd-kind-icon">Cycle<wbr>Description</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/cycleresolution.html" class="tsd-kind-icon">Cycle<wbr>Resolution</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/cycleresolutioninput.html" class="tsd-kind-icon">Cycle<wbr>Resolution<wbr>Input</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/cycleresolutioninputchrono.html" class="tsd-kind-icon">Cycle<wbr>Resolution<wbr>Input<wbr>Chrono</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/dateinterval.html" class="tsd-kind-icon">Date<wbr>Interval</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/effect.html" class="tsd-kind-icon">Effect</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/entity.html" class="tsd-kind-icon">Entity</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/field.html" class="tsd-kind-icon">Field</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/formula.html" class="tsd-kind-icon">Formula</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/formulascache.html" class="tsd-kind-icon">Formulas<wbr>Cache</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/ganttevent.html" class="tsd-kind-icon">Gantt<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/gettingstartedguide.html" class="tsd-kind-icon">Getting<wbr>Started<wbr>Guide</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/graphcycledetectedeffect.html" class="tsd-kind-icon">Graph<wbr>Cycle<wbr>Detected<wbr>Effect</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/intervalcache.html" class="tsd-kind-icon">Interval<wbr>Cache</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/intervalconflict.html" class="tsd-kind-icon">Interval<wbr>Conflict</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/memoizediteratorclass.html" class="tsd-kind-icon">Memoized<wbr>Iterator<wbr>Class</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/minimalassignment.html" class="tsd-kind-icon">Minimal<wbr>Assignment</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/minimalassignmentstore.html" class="tsd-kind-icon">Minimal<wbr>Assignment<wbr>Store</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/minimalcalendar.html" class="tsd-kind-icon">Minimal<wbr>Calendar</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/minimalcalendarinterval.html" class="tsd-kind-icon">Minimal<wbr>Calendar<wbr>Interval</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/minimalcalendarmanagerstore.html" class="tsd-kind-icon">Minimal<wbr>Calendar<wbr>Manager<wbr>Store</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/minimalchronoatom.html" class="tsd-kind-icon">Minimal<wbr>Chrono<wbr>Atom</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/minimalchronograph.html" class="tsd-kind-icon">Minimal<wbr>Chrono<wbr>Graph</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/minimaldependency.html" class="tsd-kind-icon">Minimal<wbr>Dependency</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/minimaldependencystore.html" class="tsd-kind-icon">Minimal<wbr>Dependency<wbr>Store</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/minimalentityatom.html" class="tsd-kind-icon">Minimal<wbr>Entity<wbr>Atom</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/minimaleventstore.html" class="tsd-kind-icon">Minimal<wbr>Event<wbr>Store</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/minimalfieldatom.html" class="tsd-kind-icon">Minimal<wbr>Field<wbr>Atom</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/minimalganttproject.html" class="tsd-kind-icon">Minimal<wbr>Gantt<wbr>Project</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/minimalgraph.html" class="tsd-kind-icon">Minimal<wbr>Graph</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/minimalnode.html" class="tsd-kind-icon">Minimal<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/minimalreferenceatom.html" class="tsd-kind-icon">Minimal<wbr>Reference<wbr>Atom</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/minimalreferencebucketatom.html" class="tsd-kind-icon">Minimal<wbr>Reference<wbr>Bucket<wbr>Atom</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/minimalreplica.html" class="tsd-kind-icon">Minimal<wbr>Replica</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/minimalresource.html" class="tsd-kind-icon">Minimal<wbr>Resource</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/minimalresourcestore.html" class="tsd-kind-icon">Minimal<wbr>Resource<wbr>Store</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/minimalschedulerproject.html" class="tsd-kind-icon">Minimal<wbr>Scheduler<wbr>Project</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/modelbucketfield.html" class="tsd-kind-icon">Model<wbr>Bucket<wbr>Field</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/modelfield.html" class="tsd-kind-icon">Model<wbr>Field</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/modelreferencefield.html" class="tsd-kind-icon">Model<wbr>Reference<wbr>Field</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/promiseeffect.html" class="tsd-kind-icon">Promise<wbr>Effect</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/proposeddateoutsideofconstraint.html" class="tsd-kind-icon">Proposed<wbr>Date<wbr>Outside<wbr>OfConstraint</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/referencebucketfield.html" class="tsd-kind-icon">Reference<wbr>Bucket<wbr>Field</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/referencefield.html" class="tsd-kind-icon">Reference<wbr>Field</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/removeconstraininginterval.html" class="tsd-kind-icon">Remove<wbr>Constraining<wbr>Interval</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/restartpropagationeffect.html" class="tsd-kind-icon">Restart<wbr>Propagation<wbr>Effect</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/seddispatcher.html" class="tsd-kind-icon">SEDDispatcher</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/seddispatcheridentifier.html" class="tsd-kind-icon">SEDDispatcher<wbr>Identifier</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/sedwudispatcher.html" class="tsd-kind-icon">SEDWUDispatcher</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/sedwudispatcheridentifier.html" class="tsd-kind-icon">SEDWUDispatcher<wbr>Identifier</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/schedulerevent.html" class="tsd-kind-icon">Scheduler<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/schema.html" class="tsd-kind-icon">Schema</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/sortedmap.html" class="tsd-kind-icon">Sorted<wbr>Map</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/unspecifiedtimeintervalmodel.html" class="tsd-kind-icon">Unspecified<wbr>Time<wbr>Interval<wbr>Model</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/variablewalkcontext.html" class="tsd-kind-icon">Variable<wbr>Walk<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/walkbackwardcontext.html" class="tsd-kind-icon">Walk<wbr>Backward<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/walkcontext.html" class="tsd-kind-icon">Walk<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/walkforwardcontext.html" class="tsd-kind-icon">Walk<wbr>Forward<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/walkstate.html" class="tsd-kind-icon">Walk<wbr>State</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/assignmentmixin.html" class="tsd-kind-icon">Assignment<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/assignmentstoremixin.html" class="tsd-kind-icon">Assignment<wbr>Store<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/cacheinterval.html" class="tsd-kind-icon">Cache<wbr>Interval</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/calendarintervalmixin.html" class="tsd-kind-icon">Calendar<wbr>Interval<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/calendarmanagerstoremixin.html" class="tsd-kind-icon">Calendar<wbr>Manager<wbr>Store<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/calendarmixin.html" class="tsd-kind-icon">Calendar<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/cancriticalpath.html" class="tsd-kind-icon">Can<wbr>Critical<wbr>Path</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/chronoatomi.html" class="tsd-kind-icon">Chrono<wbr>AtomI</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/chronographi.html" class="tsd-kind-icon">Chrono<wbr>GraphI</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/chronomodelmixin.html" class="tsd-kind-icon">Chrono<wbr>Model<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/chronostoremixin.html" class="tsd-kind-icon">Chrono<wbr>Store<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/constrainedevent.html" class="tsd-kind-icon">Constrained<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/constrainedlateevent.html" class="tsd-kind-icon">Constrained<wbr>Late<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/dependencymixin.html" class="tsd-kind-icon">Dependency<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/dependencystorebasemixin.html" class="tsd-kind-icon">Dependency<wbr>Store<wbr>Base<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/dependencystoremixin.html" class="tsd-kind-icon">Dependency<wbr>Store<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/dependencyvalidationmixin.html" class="tsd-kind-icon">Dependency<wbr>Validation<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/entityatomi.html" class="tsd-kind-icon">Entity<wbr>AtomI</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/eventmixin.html" class="tsd-kind-icon">Event<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/eventstoremixin.html" class="tsd-kind-icon">Event<wbr>Store<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/fieldatomi.html" class="tsd-kind-icon">Field<wbr>AtomI</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/fixeddurationmixin.html" class="tsd-kind-icon">Fixed<wbr>Duration<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/fixedeffortmixin.html" class="tsd-kind-icon">Fixed<wbr>Effort<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/fixedunitsmixin.html" class="tsd-kind-icon">Fixed<wbr>Units<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ganttprojectmixin.html" class="tsd-kind-icon">Gantt<wbr>Project<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/hasassignments.html" class="tsd-kind-icon">Has<wbr>Assignments</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/hascalendarmixin.html" class="tsd-kind-icon">Has<wbr>Calendar<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/haschildren.html" class="tsd-kind-icon">Has<wbr>Children</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/hasdateconstraint.html" class="tsd-kind-icon">Has<wbr>Date<wbr>Constraint</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/hasdependencies.html" class="tsd-kind-icon">Has<wbr>Dependencies</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/haseffort.html" class="tsd-kind-icon">Has<wbr>Effort</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/haspercentdone.html" class="tsd-kind-icon">Has<wbr>Percent<wbr>Done</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/hasschedulingmode.html" class="tsd-kind-icon">Has<wbr>Scheduling<wbr>Mode</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/iprojectmixin.html" class="tsd-kind-icon">IProject<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/partofprojectgenericmixin.html" class="tsd-kind-icon">Part<wbr>OfProject<wbr>Generic<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/partofprojectmixin.html" class="tsd-kind-icon">Part<wbr>OfProject<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/partofprojectstoremixin.html" class="tsd-kind-icon">Part<wbr>OfProject<wbr>Store<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/projectmixin.html" class="tsd-kind-icon">Project<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/projectunconstrainedevent.html" class="tsd-kind-icon">Project<wbr>Unconstrained<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/resourcemixin.html" class="tsd-kind-icon">Resource<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/resourcestoremixin.html" class="tsd-kind-icon">Resource<wbr>Store<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/schedulerprojectmixin.html" class="tsd-kind-icon">Scheduler<wbr>Project<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#accumulateworkingtimeresult" class="tsd-kind-icon">Accumulate<wbr>Working<wbr>Time<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#allowednames" class="tsd-kind-icon">Allowed<wbr>Names</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#anyconstructor" class="tsd-kind-icon">Any<wbr>Constructor</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#anyfunction" class="tsd-kind-icon">Any<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#baseconstructor" class="tsd-kind-icon">Base<wbr>Constructor</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#chainediterator" class="tsd-kind-icon">Chained<wbr>Iterator</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#chronoatom" class="tsd-kind-icon">Chrono<wbr>Atom</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#chronocalculation" class="tsd-kind-icon">Chrono<wbr>Calculation</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#chronocontinuation" class="tsd-kind-icon">Chrono<wbr>Continuation</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#chronograph" class="tsd-kind-icon">Chrono<wbr>Graph</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#chronoid" class="tsd-kind-icon">Chrono<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#chronoiterationresult" class="tsd-kind-icon">Chrono<wbr>Iteration<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#chronoiterator" class="tsd-kind-icon">Chrono<wbr>Iterator</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#chronorevision" class="tsd-kind-icon">Chrono<wbr>Revision</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#chronovalue" class="tsd-kind-icon">Chrono<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-private">
+						<a href="globals.html#comparatorfn" class="tsd-kind-icon">Comparator<wbr>Fn</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#converterfunc" class="tsd-kind-icon">Converter<wbr>Func</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#criticalpath" class="tsd-kind-icon">Critical<wbr>Path</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#criticalpathnode" class="tsd-kind-icon">Critical<wbr>Path<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#cycleresolutionformulas" class="tsd-kind-icon">Cycle<wbr>Resolution<wbr>Formulas</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#cycleresolutionvalue" class="tsd-kind-icon">Cycle<wbr>Resolution<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#duration" class="tsd-kind-icon">Duration</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#effectresolverfunction" class="tsd-kind-icon">Effect<wbr>Resolver<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#enginereplica" class="tsd-kind-icon">Engine<wbr>Replica</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#entityatom" class="tsd-kind-icon">Entity<wbr>Atom</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#fieldatom" class="tsd-kind-icon">Field<wbr>Atom</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#fielddecorator" class="tsd-kind-icon">Field<wbr>Decorator</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#filterflags" class="tsd-kind-icon">Filter<wbr>Flags</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#finalizerfn" class="tsd-kind-icon">Finalizer<wbr>Fn</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#formulaid" class="tsd-kind-icon">Formula<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#graph" class="tsd-kind-icon">Graph</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#graphinputshash" class="tsd-kind-icon">Graph<wbr>Inputs<wbr>Hash</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#hasid" class="tsd-kind-icon">Has<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#iteratorresult" class="tsd-kind-icon">Iterator<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#memoizediterator" class="tsd-kind-icon">Memoized<wbr>Iterator</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#mixin" class="tsd-kind-icon">Mixin</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#mixinconstructor" class="tsd-kind-icon">Mixin<wbr>Constructor</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#modelfieldconfig" class="tsd-kind-icon">Model<wbr>Field<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#modelid" class="tsd-kind-icon">Model<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#modelinternalid" class="tsd-kind-icon">Model<wbr>Internal<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#name" class="tsd-kind-icon">Name</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#node" class="tsd-kind-icon">Node</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#onlypropertiesoftype" class="tsd-kind-icon">Only<wbr>Properties<wbr>OfType</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#projectdatapackage" class="tsd-kind-icon">Project<wbr>Data<wbr>Package</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#propagatesingleresult" class="tsd-kind-icon">Propagate<wbr>Single<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#referenceatom" class="tsd-kind-icon">Reference<wbr>Atom</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#referencebucketatom" class="tsd-kind-icon">Reference<wbr>Bucket<wbr>Atom</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#referencebucketfieldmixin" class="tsd-kind-icon">Reference<wbr>Bucket<wbr>Field<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#referencefieldmixin" class="tsd-kind-icon">Reference<wbr>Field<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#replica" class="tsd-kind-icon">Replica</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#resolverfunc" class="tsd-kind-icon">Resolver<wbr>Func</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#sortedmapentry" class="tsd-kind-icon">Sorted<wbr>Map<wbr>Entry</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#type" class="tsd-kind-icon">Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#variable" class="tsd-kind-icon">Variable</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#visitinfo" class="tsd-kind-icon">Visit<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#walkstep" class="tsd-kind-icon">Walk<wbr>Step</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#walkable" class="tsd-kind-icon">Walkable</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#walkablebackward" class="tsd-kind-icon">Walkable<wbr>Backward</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#walkablebackwardnode" class="tsd-kind-icon">Walkable<wbr>Backward<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#walkableforward" class="tsd-kind-icon">Walkable<wbr>Forward</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#walkableforwardnode" class="tsd-kind-icon">Walkable<wbr>Forward<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-private">
+						<a href="globals.html#emptyfn" class="tsd-kind-icon">empty<wbr>Fn</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-private">
+						<a href="globals.html#identityfn" class="tsd-kind-icon">identity<wbr>Fn</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#bryntumevent" class="tsd-kind-icon">Bryntum<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#ci" class="tsd-kind-icon">CI</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#calculateproposed" class="tsd-kind-icon">Calculate<wbr>Proposed</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#debug" class="tsd-kind-icon">DEBUG</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#debug_mode" class="tsd-kind-icon">DEBUG_<wbr>MODE</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#durationvar" class="tsd-kind-icon">Duration<wbr>Var</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#empty_interval" class="tsd-kind-icon">EMPTY_<wbr>INTERVAL</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#effortvar" class="tsd-kind-icon">Effort<wbr>Var</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#enddatevar" class="tsd-kind-icon">End<wbr>Date<wbr>Var</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#iteratorreturnedearly" class="tsd-kind-icon">Iterator<wbr>Returned<wbr>Early</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#max_date" class="tsd-kind-icon">MAX_<wbr>DATE</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#mi" class="tsd-kind-icon">MI</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#min_date" class="tsd-kind-icon">MIN_<wbr>DATE</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#not_visited" class="tsd-kind-icon">NOT_<wbr>VISITED</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#sedbackwardcycleresolutioncontext" class="tsd-kind-icon">SEDBackward<wbr>Cycle<wbr>Resolution<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#sedforwardcycleresolutioncontext" class="tsd-kind-icon">SEDForward<wbr>Cycle<wbr>Resolution<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#sedgraphdescription" class="tsd-kind-icon">SEDGraph<wbr>Description</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#startdatevar" class="tsd-kind-icon">Start<wbr>Date<wbr>Var</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#unitsvar" class="tsd-kind-icon">Units<wbr>Var</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#visited_topologically" class="tsd-kind-icon">VISITED_<wbr>TOPOLOGICALLY</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#walksource" class="tsd-kind-icon">Walk<wbr>Source</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#durationformula" class="tsd-kind-icon">duration<wbr>Formula</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#effortformula" class="tsd-kind-icon">effort<wbr>Formula</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#enddatebyeffortformula" class="tsd-kind-icon">end<wbr>Date<wbr>ByEffort<wbr>Formula</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#enddateformula" class="tsd-kind-icon">end<wbr>Date<wbr>Formula</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#field" class="tsd-kind-icon">field</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#fixeddurationsedwubackwardeffortdriven" class="tsd-kind-icon">fixed<wbr>DurationSEDWUBackward<wbr>Effort<wbr>Driven</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#fixeddurationsedwubackwardnoneffortdriven" class="tsd-kind-icon">fixed<wbr>DurationSEDWUBackward<wbr>Non<wbr>Effort<wbr>Driven</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#fixeddurationsedwuforwardeffortdriven" class="tsd-kind-icon">fixed<wbr>DurationSEDWUForward<wbr>Effort<wbr>Driven</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#fixeddurationsedwuforwardnoneffortdriven" class="tsd-kind-icon">fixed<wbr>DurationSEDWUForward<wbr>Non<wbr>Effort<wbr>Driven</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#fixeddurationsedwugraphdescription" class="tsd-kind-icon">fixed<wbr>DurationSEDWUGraph<wbr>Description</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#fixedeffortsedwubackward" class="tsd-kind-icon">fixed<wbr>EffortSEDWUBackward</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#fixedeffortsedwuforward" class="tsd-kind-icon">fixed<wbr>EffortSEDWUForward</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#fixedeffortsedwugraphdescription" class="tsd-kind-icon">fixed<wbr>EffortSEDWUGraph<wbr>Description</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#fixedunitssedwubackwardeffortdriven" class="tsd-kind-icon">fixed<wbr>UnitsSEDWUBackward<wbr>Effort<wbr>Driven</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#fixedunitssedwubackwardnoneffortdriven" class="tsd-kind-icon">fixed<wbr>UnitsSEDWUBackward<wbr>Non<wbr>Effort<wbr>Driven</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#fixedunitssedwuforwardeffortdriven" class="tsd-kind-icon">fixed<wbr>UnitsSEDWUForward<wbr>Effort<wbr>Driven</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#fixedunitssedwuforwardnoneffortdriven" class="tsd-kind-icon">fixed<wbr>UnitsSEDWUForward<wbr>Non<wbr>Effort<wbr>Driven</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#fixedunitssedwugraphdescription" class="tsd-kind-icon">fixed<wbr>UnitsSEDWUGraph<wbr>Description</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-private">
+						<a href="globals.html#later" class="tsd-kind-icon">later</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#startdatebyeffortformula" class="tsd-kind-icon">start<wbr>Date<wbr>ByEffort<wbr>Formula</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#startdateformula" class="tsd-kind-icon">start<wbr>Date<wbr>Formula</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#unitsformula" class="tsd-kind-icon">units<wbr>Formula</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#assignmentmixin" class="tsd-kind-icon">Assignment<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#assignmentstoremixin" class="tsd-kind-icon">Assignment<wbr>Store<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#buildganttevent" class="tsd-kind-icon">Build<wbr>Gantt<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#buildminimalassignment" class="tsd-kind-icon">Build<wbr>Minimal<wbr>Assignment</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#buildminimalassignmentstore" class="tsd-kind-icon">Build<wbr>Minimal<wbr>Assignment<wbr>Store</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#buildminimalcalendar" class="tsd-kind-icon">Build<wbr>Minimal<wbr>Calendar</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#buildminimalcalendarinterval" class="tsd-kind-icon">Build<wbr>Minimal<wbr>Calendar<wbr>Interval</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#buildminimalcalendarmanagerstore" class="tsd-kind-icon">Build<wbr>Minimal<wbr>Calendar<wbr>Manager<wbr>Store</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#buildminimaldependency" class="tsd-kind-icon">Build<wbr>Minimal<wbr>Dependency</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#buildminimaldependencystore" class="tsd-kind-icon">Build<wbr>Minimal<wbr>Dependency<wbr>Store</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#buildminimaleventstore" class="tsd-kind-icon">Build<wbr>Minimal<wbr>Event<wbr>Store</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#buildminimalganttproject" class="tsd-kind-icon">Build<wbr>Minimal<wbr>Gantt<wbr>Project</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#buildminimalproject" class="tsd-kind-icon">Build<wbr>Minimal<wbr>Project</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#buildminimalresource" class="tsd-kind-icon">Build<wbr>Minimal<wbr>Resource</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#buildminimalresourcestore" class="tsd-kind-icon">Build<wbr>Minimal<wbr>Resource<wbr>Store</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#buildminimalschedulerproject" class="tsd-kind-icon">Build<wbr>Minimal<wbr>Scheduler<wbr>Project</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#buildschedulerevent" class="tsd-kind-icon">Build<wbr>Scheduler<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#calendarintervalmixin" class="tsd-kind-icon">Calendar<wbr>Interval<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#calendarmanagerstoremixin" class="tsd-kind-icon">Calendar<wbr>Manager<wbr>Store<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#calendarmixin" class="tsd-kind-icon">Calendar<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#cancriticalpath" class="tsd-kind-icon">Can<wbr>Critical<wbr>Path</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#chainediterator" class="tsd-kind-icon">Chained<wbr>Iterator</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#chronoatom" class="tsd-kind-icon">Chrono<wbr>Atom</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#chronograph" class="tsd-kind-icon">Chrono<wbr>Graph</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#chronomodelmixin" class="tsd-kind-icon">Chrono<wbr>Model<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#chronostoremixin" class="tsd-kind-icon">Chrono<wbr>Store<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#constrainedevent" class="tsd-kind-icon">Constrained<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#constrainedlateevent" class="tsd-kind-icon">Constrained<wbr>Late<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#dependencymixin" class="tsd-kind-icon">Dependency<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#dependencystorebasemixin" class="tsd-kind-icon">Dependency<wbr>Store<wbr>Base<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#dependencystoremixin" class="tsd-kind-icon">Dependency<wbr>Store<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#dependencyvalidationmixin" class="tsd-kind-icon">Dependency<wbr>Validation<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#enginereplica" class="tsd-kind-icon">Engine<wbr>Replica</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#entity" class="tsd-kind-icon">Entity</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#entityatom" class="tsd-kind-icon">Entity<wbr>Atom</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#eventmixin" class="tsd-kind-icon">Event<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#eventstoremixin" class="tsd-kind-icon">Event<wbr>Store<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#fieldatom" class="tsd-kind-icon">Field<wbr>Atom</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#fixeddurationmixin" class="tsd-kind-icon">Fixed<wbr>Duration<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#fixedeffortmixin" class="tsd-kind-icon">Fixed<wbr>Effort<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#fixedunitsmixin" class="tsd-kind-icon">Fixed<wbr>Units<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#ganttprojectmixin" class="tsd-kind-icon">Gantt<wbr>Project<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#graph" class="tsd-kind-icon">Graph</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#hasassignments" class="tsd-kind-icon">Has<wbr>Assignments</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#hascalendarmixin" class="tsd-kind-icon">Has<wbr>Calendar<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#haschildren" class="tsd-kind-icon">Has<wbr>Children</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#hasdateconstraint" class="tsd-kind-icon">Has<wbr>Date<wbr>Constraint</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#hasdependencies" class="tsd-kind-icon">Has<wbr>Dependencies</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#haseffort" class="tsd-kind-icon">Has<wbr>Effort</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#hasid" class="tsd-kind-icon">Has<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#haspercentdone" class="tsd-kind-icon">Has<wbr>Percent<wbr>Done</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#hasschedulingmode" class="tsd-kind-icon">Has<wbr>Scheduling<wbr>Mode</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#memoizediterator" class="tsd-kind-icon">Memoized<wbr>Iterator</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#node" class="tsd-kind-icon">Node</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#partofprojectgenericmixin" class="tsd-kind-icon">Part<wbr>OfProject<wbr>Generic<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#partofprojectmixin" class="tsd-kind-icon">Part<wbr>OfProject<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#partofprojectstoremixin" class="tsd-kind-icon">Part<wbr>OfProject<wbr>Store<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#projectmixin" class="tsd-kind-icon">Project<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#projectunconstrainedevent" class="tsd-kind-icon">Project<wbr>Unconstrained<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#referenceatom" class="tsd-kind-icon">Reference<wbr>Atom</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#referencebucketatom" class="tsd-kind-icon">Reference<wbr>Bucket<wbr>Atom</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#referencebucketfieldmixin" class="tsd-kind-icon">Reference<wbr>Bucket<wbr>Field<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#referencefieldmixin" class="tsd-kind-icon">Reference<wbr>Field<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#replica" class="tsd-kind-icon">Replica</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#resourcemixin" class="tsd-kind-icon">Resource<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#resourcestoremixin" class="tsd-kind-icon">Resource<wbr>Store<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#schedulerprojectmixin" class="tsd-kind-icon">Scheduler<wbr>Project<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#walkable" class="tsd-kind-icon">Walkable</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#walkablebackward" class="tsd-kind-icon">Walkable<wbr>Backward</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#walkablebackwardnode" class="tsd-kind-icon">Walkable<wbr>Backward<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#walkableforward" class="tsd-kind-icon">Walkable<wbr>Forward</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#walkableforwardnode" class="tsd-kind-icon">Walkable<wbr>Forward<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#binarysearch" class="tsd-kind-icon">binary<wbr>Search</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#bucket" class="tsd-kind-icon">bucket</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#calculate" class="tsd-kind-icon">calculate</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#calculateeffectiveenddateconstraintinterval" class="tsd-kind-icon">calculate<wbr>Effective<wbr>End<wbr>Date<wbr>Constraint<wbr>Interval</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#calculateeffectivestartdateconstraintinterval" class="tsd-kind-icon">calculate<wbr>Effective<wbr>Start<wbr>Date<wbr>Constraint<wbr>Interval</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#chronoid" class="tsd-kind-icon">chrono<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#combinecalendars" class="tsd-kind-icon">combine<wbr>Calendars</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#concat" class="tsd-kind-icon">concat</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#concatiterable" class="tsd-kind-icon">concat<wbr>Iterable</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#createentityonprototype" class="tsd-kind-icon">create<wbr>Entity<wbr>OnPrototype</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#cycleinfo" class="tsd-kind-icon">cycle<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#dateconverter" class="tsd-kind-icon">date<wbr>Converter</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#debug" class="tsd-kind-icon">debug</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#delay" class="tsd-kind-icon">delay</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#drop" class="tsd-kind-icon">drop</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#emptyfn" class="tsd-kind-icon">empty<wbr>Fn</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#ensureentityonprototype" class="tsd-kind-icon">ensure<wbr>Entity<wbr>OnPrototype</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#every" class="tsd-kind-icon">every</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#filter" class="tsd-kind-icon">filter</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#generic_field" class="tsd-kind-icon">generic_<wbr>field</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#getdecoratedmodelfields" class="tsd-kind-icon">get<wbr>Decorated<wbr>Model<wbr>Fields</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#hasassignmentmixin" class="tsd-kind-icon">has<wbr>Assignment<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#hascalendarmixin" class="tsd-kind-icon">has<wbr>Calendar<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#hasdependencymixin" class="tsd-kind-icon">has<wbr>Dependency<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#hasdependencyvalidationmixin" class="tsd-kind-icon">has<wbr>Dependency<wbr>Validation<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#haseventmixin" class="tsd-kind-icon">has<wbr>Event<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#hashasassignments" class="tsd-kind-icon">has<wbr>Has<wbr>Assignments</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#hashascalendarmixin" class="tsd-kind-icon">has<wbr>Has<wbr>Calendar<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#haspartofprojectstoremixin" class="tsd-kind-icon">has<wbr>Part<wbr>OfProject<wbr>Store<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#hasresourcemixin" class="tsd-kind-icon">has<wbr>Resource<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#identityfn" class="tsd-kind-icon">identity<wbr>Fn</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#inbatchesbysize" class="tsd-kind-icon">in<wbr>Batches<wbr>BySize</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#injectstaticfieldsproperty" class="tsd-kind-icon">inject<wbr>Static<wbr>Fields<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#intersectintervals" class="tsd-kind-icon">intersect<wbr>Intervals</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-private">
+						<a href="globals.html#isatomicvalue" class="tsd-kind-icon">is<wbr>Atomic<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#isdatefinite" class="tsd-kind-icon">is<wbr>Date<wbr>Finite</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#isnotnumber" class="tsd-kind-icon">is<wbr>Not<wbr>Number</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#isreplica" class="tsd-kind-icon">is<wbr>Replica</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-private">
+						<a href="globals.html#lazybuild" class="tsd-kind-icon">lazy<wbr>Build</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#map" class="tsd-kind-icon">map</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#model_field" class="tsd-kind-icon">model_<wbr>field</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-private">
+						<a href="globals.html#prewalk" class="tsd-kind-icon">pre<wbr>Walk</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#reduce" class="tsd-kind-icon">reduce</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#reference" class="tsd-kind-icon">reference</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#required" class="tsd-kind-icon">required</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#reverse" class="tsd-kind-icon">reverse</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#some" class="tsd-kind-icon">some</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#split" class="tsd-kind-icon">split</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#strictequality" class="tsd-kind-icon">strict<wbr>Equality</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#strictequalitywithdates" class="tsd-kind-icon">strict<wbr>Equality<wbr>With<wbr>Dates</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-private">
+						<a href="globals.html#stripduplicates" class="tsd-kind-icon">strip<wbr>Duplicates</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#takeuntilexcluding" class="tsd-kind-icon">take<wbr>Until<wbr>Excluding</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#takeuntilincluding" class="tsd-kind-icon">take<wbr>Until<wbr>Including</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#takewhile" class="tsd-kind-icon">take<wbr>While</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#uniqueonly" class="tsd-kind-icon">unique<wbr>Only</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#uniqueonlyby" class="tsd-kind-icon">unique<wbr>Only<wbr>By</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-private">
+						<a href="globals.html#uppercasefirst" class="tsd-kind-icon">uppercase<wbr>First</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#validaterequiredproperties" class="tsd-kind-icon">validate<wbr>Required<wbr>Properties</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#warn" class="tsd-kind-icon">warn</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

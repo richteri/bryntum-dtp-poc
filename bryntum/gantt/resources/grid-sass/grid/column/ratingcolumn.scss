@@ -1,0 +1,62 @@
+@import '../../variables.scss';
+
+.b-rating-cell {
+    .b-icon {
+        font-size : 1.8em;
+    }
+
+    .b-empty {
+        color : $rating-empty-color;
+    }
+
+    .b-filled {
+        color : $rating-filled-color;
+    }
+}
+
+.b-gridbase:not(.b-readonly) .b-rating-cell-inner:not(.b-not-editable) {
+
+    .b-icon {
+        cursor     : pointer;
+        transition : all .2s linear;
+        position   : relative;
+    }
+
+    &:hover {
+        .b-icon {
+            color : $rating-filled-color;
+
+            //&::before {
+            //    content : '\f005';
+            //}
+
+            &.b-empty::before {
+                opacity : 0.4;
+            }
+        }
+    }
+
+    .b-icon:hover {
+        &.b-filled {
+            opacity : 1;
+        }
+
+        transform : scale(1.3);
+
+        &:hover ~ .b-icon::before {
+            //content : '\f005';
+            color   : $rating-empty-color;
+            opacity : 1;
+        }
+
+        //&:hover ~ .b-filled::before {
+        //    content : '\f005';
+        //}
+    }
+}
+
+.b-grid-body-container.b-scrolling .b-rating-cell-inner .b-icon {
+    transition: none;
+}
+
+

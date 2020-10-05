@@ -1,0 +1,8 @@
+{
+  "id": "aspnet",
+  "title": "ASP.net",
+  "group": "5 Integration",
+  "description": "Example with ASP.net-backend, links to trial download",
+  "tags": "asp.net,backend",
+  "openExternalUrl": "../aspnet/README.txt"
+}

@@ -1,0 +1,11 @@
+.b-responsive-small .b-grid-header {
+  font-size: .8em;
+}
+
+.b-responsive-small .b-sch-label {
+  font-size: 10px;
+}
+
+.b-responsive-medium .b-grid-header {
+  font-size: .9em;
+}

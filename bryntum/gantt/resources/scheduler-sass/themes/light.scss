@@ -1,0 +1,25 @@
+@import '../../grid-sass/themes/light.scss';
+
+//$event-color-red : #EF9A9A !default;
+//$event-color-pink : #F8BBD0 !default;
+//$event-color-purple : #CE93D8 !default;
+//$event-color-violet : #B39DDB !default;
+//$event-color-indigo : #9FA8DA !default;
+//$event-color-blue : #64B5F6 !default;
+//$event-color-cyan : #80DEEA !default;
+//$event-color-teal : #80CBC4 !default;
+//$event-color-green : #A5D6A7 !default;
+//$event-color-lime : #E6EE9C !default;
+//$event-color-yellow : #FFF59D !default;
+//$event-color-orange : #FFCC80 !default;
+
+$resourceinfo-role-color : #999;
+$event-labels-color : #999;
+$selected-event-labels-color : #333 !default;
+
+$dependency-terminal-valid-color : lighten($green, 10);
+$dependency-terminal-invalid-color : lighten($red, 10);
+
+$dependency-tooltip-terminal-color : #888;
+
+@import 'shared';

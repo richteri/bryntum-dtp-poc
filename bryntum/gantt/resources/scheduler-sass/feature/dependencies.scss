@@ -1,0 +1,396 @@
+@import '../../grid-sass/variables.scss';
+@import '../variables.scss';
+
+.b-sch-foreground-canvas > svg {
+    overflow       : visible;
+    position       : absolute;
+    top            : 0;
+    left           : 0;
+    pointer-events : none;
+    z-index        : $dependency-zindex;
+
+    marker {
+        fill : $dependency-color; // for IE 11
+
+        path {
+            stroke       : $dependency-color;
+            fill         : inherit;
+            stroke-width : 1 !important;
+        }
+    }
+
+    polyline {
+        pointer-events : visibleStroke;
+        fill           : transparent;
+        marker-end     : url("#arrowEnd");
+        stroke         : $dependency-color;
+        stroke-width   : 1;
+        transition     : stroke-width 0.2s linear;
+
+        &.b-sch-bidirectional-line {
+            marker-start : url("#arrowEnd");
+        }
+
+        &.b-sch-dependency-over {
+            stroke-width : 2;
+            stroke-dasharray: 0;
+        }
+
+        &.b-sch-released {
+            display : none;
+        }
+    }
+}
+
+.b-edge,
+.b-ie {
+    .b-sch-foreground-canvas {
+        polyline.b-sch-bidirectional-line {
+            marker-start : url("#arrowStart");
+        }
+
+        .b-no-start-marker {
+            marker-start : none;
+        }
+
+        .b-no-end-marker {
+            marker-end : none;
+        }
+    }
+}
+
+//region Terminals
+
+.b-dependencies {
+    .b-sch-event.b-sch-terminals-visible,
+    .b-gantt-task.b-sch-terminals-visible {
+        overflow : visible;
+    }
+}
+
+.b-sch-terminal {
+    width            : $terminal-size;
+    height           : $terminal-size;
+    background-color : $dependency-terminal-color;
+    border-width     : 1px;
+    border-style     : solid;
+    border-color     : inherit;
+    border-radius    : 50%;
+    position         : absolute;
+    z-index          : 6;
+    cursor           : pointer;
+
+    &.b-sch-terminal:hover {
+        background-color : $dependency-terminal-hover-color;
+    }
+
+    // Not visible when the scheduler is dragging or resizing an event
+    .b-dragging &,
+    .b-sch-event-resizing & {
+        display : none;
+    }
+}
+
+.b-creating-dependency .b-sch-terminal:hover {
+    background-color : $dependency-terminal-hover-color;
+
+    &.b-valid {
+        background-color : $dependency-terminal-valid-color;
+    }
+
+    &.b-invalid {
+        background-color : $dependency-terminal-invalid-color;
+    }
+}
+
+.b-sch-terminal-top {
+    top       : 0;
+    left      : 50%;
+    transform : translateX(-50%) translateY(-80%);
+}
+
+.b-sch-terminal-bottom {
+    bottom    : 0;
+    left      : 50%;
+    transform : translateX(-50%) translateY(80%);
+}
+
+.b-sch-terminal-left {
+    left      : 0;
+    top       : 50%;
+    transform : translateX(-80%) translateY(-50%);
+}
+
+.b-sch-terminal-right {
+    right     : 0;
+    top       : 50%;
+    transform : translateX(80%) translateY(-50%);
+}
+
+// Position left & right terminals differently for milestones, unless using milestone layout mode in which case they
+// are handled as normal events
+.b-schedulerbase:not(.b-sch-layout-milestones) .b-milestone:not(.b-sch-event-withicon),
+.b-gantt:not(.b-sch-layout-milestones) .b-milestone:not(.b-gantt-task-withicon) {
+    .b-sch-terminal-left {
+        .b-labels-topbottom & {
+            transform : translate(-0.35em, -50%);
+        }
+    }
+
+    .b-sch-terminal-right {
+        .b-labels-topbottom & {
+            transform : translate(0.35em, -50%);
+        }
+    }
+}
+
+//endregion
+
+//region Proxy
+
+.b-sch-dependency-connector {
+    position         : absolute;
+    contain          : strict;
+    border-top       : 2px dashed $dependency-color;
+    z-index          : 10;
+    transform-origin : 0 0;
+    pointer-events   : none;
+
+    &.b-removing {
+        transition : width 0.2s ease-out;
+    }
+
+    &.b-valid {
+        border-color     : $green;
+        border-top-style : solid;
+    }
+}
+
+//endregion
+
+//region Tooltip
+
+.b-sch-dependency-creation-tooltip {
+    &.b-popup {
+        max-width:none;
+    }
+
+    .b-popup-header {
+        padding          : 0.5em 0.075em 0.5em 0.075em;
+        background-color : $green;
+
+        i {
+            margin-bottom : .5em;
+        }
+    }
+
+    &.b-invalid .b-popup-header {
+        background-color : $red;
+    }
+
+    &.b-checking .b-popup-header {
+        background-color : $gray;
+    }
+}
+
+.b-sch-dependency-creation-tooltip,
+.b-sch-dependency-tooltip {
+
+    .b-panel-header {
+        color : #fff;
+    }
+
+    td:first-child {
+        padding-right : 5px;
+        font-size     : 12px;
+    }
+
+    .b-sch-box {
+        width       : 12px;
+        height      : 8px;
+        border      : 1px solid $dependency-color;
+        display     : none;
+        margin-left : 5px;
+        position    : relative;
+        top         : 2px;
+
+        &.b-left,
+        &.b-right,
+        &.b-top,
+        &.b-bottom {
+            display : block;
+        }
+
+        &:after {
+            content          : '';
+            width            : 3px;
+            height           : 3px;
+            border-radius    : 50%;
+            background-color : $dependency-tooltip-terminal-color;
+            position         : absolute;
+        }
+
+        &.b-right:after {
+            right     : -2px;
+            top       : 50%;
+            transform : translateY(-50%);
+        }
+
+        &.b-left:after {
+            left      : -2px;
+            top       : 50%;
+            transform : translateY(-50%);
+        }
+
+        &.b-top:after {
+            top       : -2px;
+            left      : 50%;
+            transform : translateX(-50%);
+        }
+
+        &.b-bottom:after {
+            bottom    : -2px;
+            left      : 50%;
+            transform : translateX(-50%);
+        }
+
+    }
+}
+
+// Predecessor picker list
+.b-predecessor-list {
+    display        : flex;
+    flex-direction : column;
+
+    > * {
+        flex       : 0 0 auto;
+        align-self : stretch;
+        width      : auto;
+    }
+
+    // Predecessor picker item
+    > .b-list-item {
+        .b-predecessor-item-text {
+            flex : 1;
+        }
+
+        .b-sch-box {
+            width       : 1.2em;
+            height      : .9em;
+            border      : 1px solid $list-dependency-color;
+            margin-left : .5em;
+            position    : relative;
+
+            &:after {
+                content          : '';
+                width            : .5em;
+                height           : .5em;
+                border-radius    : 50%;
+                background-color : $list-dependency-terminal-color;
+                position         : absolute;
+                border           : 1px solid $list-dependency-color;
+                display          : none;
+            }
+        }
+
+        &.b-selected {
+            .b-sch-box {
+                background-color : $list-dependency-background-color;
+            }
+
+            // Finish to Start
+            &.b-fs {
+                .b-sch-box {
+                    &.b-from {
+                        &:after {
+                            right     : -.25em;
+                            top       : 50%;
+                            transform : translateY(-50%);
+                            display   : block;
+                        }
+                    }
+
+                    &.b-to {
+                        &:after {
+                            left      : -.25em;
+                            top       : 50%;
+                            transform : translateY(-50%);
+                            display   : block;
+                        }
+                    }
+                }
+            }
+
+            // Start to Finish
+            &.b-sf {
+                .b-sch-box {
+                    &.b-from {
+                        &:after {
+                            left      : -.25em;
+                            top       : 50%;
+                            transform : translateY(-50%);
+                            display   : block;
+                        }
+                    }
+
+                    &.b-to {
+                        &:after {
+                            right     : -.25em;
+                            top       : 50%;
+                            transform : translateY(-50%);
+                            display   : block;
+                        }
+                    }
+                }
+            }
+
+            // Start to Start
+            &.b-ss {
+                .b-sch-box {
+                    &.b-from {
+                        &:after {
+                            left      : -.25em;
+                            top       : 50%;
+                            transform : translateY(-50%);
+                            display   : block;
+                        }
+                    }
+
+                    &.b-to {
+                        &:after {
+                            left      : -.25em;
+                            top       : 50%;
+                            transform : translateY(-50%);
+                            display   : block;
+                        }
+                    }
+                }
+            }
+
+            // Finish to Finish
+            &.b-ff {
+                .b-sch-box {
+                    &.b-from {
+                        &:after {
+                            right     : -.25em;
+                            top       : 50%;
+                            transform : translateY(-50%);
+                            display   : block;
+                        }
+                    }
+
+                    &.b-to {
+                        &:after {
+                            right     : -.25em;
+                            top       : 50%;
+                            transform : translateY(-50%);
+                            display   : block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//endregion

@@ -1,0 +1,37 @@
+h4.statusmessage {
+    margin: 1em 0 0 0;
+}
+
+.b-fa.statusicon {
+    margin-right:0.5em;
+}
+
+.b-toolbar .b-button {
+    margin-right : 1em;
+}
+
+.b-task-baseline[data-index="0"] {
+    background-color : #ddd;
+}
+.b-task-baseline[data-index="1"] {
+    background-color : darken(#ddd, 4);
+}
+.b-task-baseline[data-index="2"] {
+    background-color : darken(#ddd, 8);
+}
+
+.b-hide-baseline-1 {
+    .b-task-baseline[data-index="0"] {
+        display : none;
+    }
+}
+.b-hide-baseline-2 {
+    .b-task-baseline[data-index="1"] {
+        display : none;
+    }
+}
+.b-hide-baseline-3 {
+    .b-task-baseline[data-index="2"] {
+        display : none;
+    }
+}

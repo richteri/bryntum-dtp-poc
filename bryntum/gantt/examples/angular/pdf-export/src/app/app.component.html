@@ -1,0 +1,15 @@
+<header>
+    <h1><a href = "../../../../">PDF/PNG export Angular demo</a></h1>
+    <bry-button
+        cls     = "b-orange b-skip-test"
+        text    = "Export to PDF/PNG"
+        (click) = "onPdfExport()"
+    ></bry-button>
+    <bry-fullscreen></bry-fullscreen>
+</header>
+<bry-gantt
+    #gantt
+    [columns]   = "ganttConfig.columns"
+    [project]   = "ganttConfig.project"
+    [pdfExport] = "ganttConfig.features.pdfExport"
+></bry-gantt>

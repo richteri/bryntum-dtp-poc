@@ -1,0 +1,23 @@
+<!-- 
+ *- Rollups app template
+-->
+<header>
+    <h1><a href="../../../../">{{ title }}</a></h1>
+    <bry-widget
+        [config]         = "checkboxConfig"
+        (onWidgetEvents) = "onShowRollups($event)"
+    ></bry-widget>
+    <bry-fullscreen></bry-fullscreen>
+</header>
+
+<bry-gantt 
+    #gantt
+    [project]        = "ganttConfig.project"
+    [columns]        = "ganttConfig.columns"
+    [subGridConfigs] = "ganttConfig.subGridConfigs"
+    [viewPreset]     = "ganttConfig.viewPreset"
+    [rowHeight]      = "ganttConfig.rowHeight"
+    [barMargin]      = "ganttConfig.barMargin"
+    [columnLines]    = "ganttConfig.columnLines"
+    [rollups]        = "ganttConfig.features.rollups"
+></bry-gantt>

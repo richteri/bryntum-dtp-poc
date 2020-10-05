@@ -1,0 +1,86 @@
+.b-checkbox {
+
+    // For materials focus/hover effect, requires !important because of tricky overflow rule in widget
+    overflow : visible !important;
+
+    // Materials circular highlight
+    & .b-field-inner::before {
+        content          : '';
+
+        display          : block;
+        z-index          : 0;
+
+        position         : absolute;
+        left             : -.65em;
+        width            : 2.6em;
+        height           : 2.6em;
+
+        border-radius    : 50%;
+        background-color : transparent;
+        transition       : background-color .2s;
+    }
+
+    &:not(.b-disabled) {
+        // Show highlight on focus
+        &:hover:focus-within .b-field-inner::before,
+        &:focus-within .b-field-inner::before {
+            background-color : transparentize($primary, .8);
+        }
+
+        // More transparent highlight on hover
+        &:hover .b-field-inner::before {
+            background-color : transparentize($primary, .9);
+        }
+    }
+
+    // for use on dark background (demo header for example)
+    &.b-bright {
+        .b-checkbox-label:before {
+            border-color: $white;
+        }
+    }
+}
+
+// "Extends" default generated checkbox colors
+@mixin material-checkbox-color($colorName, $color) {
+    .b-checkbox.b-#{$colorName} {
+
+        // Transparent check when unchecked
+        .b-checkbox-label::before {
+            color: transparent;
+            border-color : $checkbox-box-border-color;
+        }
+
+        // Circular highlight in correct color
+        &:not(.b-disabled) {
+            &:hover:focus-within .b-field-inner::before,
+            &:focus-within .b-field-inner::before {
+                background-color : transparentize($color, .8);
+            }
+
+            &:hover .b-field-inner::before {
+                background-color : transparentize($color, .9);
+            }
+        }
+
+        &.b-disabled {
+            .b-checkbox-label::before {
+                border-color : $checkbox-disabled-box-border-color;
+            }
+        }
+    }
+}
+
+@include material-checkbox-color('blue', $blue);
+@include material-checkbox-color('deep-orange', $deep-orange);
+@include material-checkbox-color('orange', $orange);
+@include material-checkbox-color('indigo', $indigo);
+@include material-checkbox-color('green', $green);
+@include material-checkbox-color('purple', $purple);
+@include material-checkbox-color('yellow', $yellow);
+@include material-checkbox-color('red', $red);
+@include material-checkbox-color('amber', $amber);
+@include material-checkbox-color('lime', $lime);
+@include material-checkbox-color('teal', $teal);
+@include material-checkbox-color('light-green', $light-green);
+@include material-checkbox-color('purple', $purple);

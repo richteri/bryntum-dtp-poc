@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Bryntum Gantt - Examples</title>
+	<link rel="icon" href="_shared/images/favicon.png" sizes="32x32" />
+	<script src="_shared/browser/helper.js"></script>
+	<link rel="stylesheet" href="../build/gantt.stockholm.css" id="bryntum-theme">
+	<link rel="stylesheet" href="_shared/shared.css">
+	<link rel="stylesheet" href="_shared/browser/resources/browser.css">
+</head>
+
+<body>
+<div id="container" class="small-sized-tools">
+	<div id="browser">
+		<div id="intro">
+			<div id="inner">
+				<div id="live-example"></div>
+				<p>
+					Bryntum Gantt is a full featured Gantt chart for project management with support for all the features you need
+					like dependencies, filtering, critical path and much more.
+					Scroll down to browse demos or click the &quot;Documentation&quot; button above to view our guides and API docs.
+					The info button lets you switch theme and locale for the demos.
+				</p>
+				<div id="close-button"><i class="b-fa b-fa-times"></i></div>
+			</div>
+		</div>
+		<div id="scroller">
+                <h2 id="Basic" class="group-header Basic">Basic</h2>
+                <section class="examples">
+                
+                <a draggable="false" class="example  " id="example-aggregation-column" href="aggregation-column">
+                    <div class="image">
+                        <img draggable="false" src="aggregation-column/meta/thumb.stockholm.png" alt="Aggregation column demo - Shows how to aggregate values in a column">
+                        <i class="tooltip b-fa b-fa-info"></i>
+                        
+                    </div>
+                    <label class="title">Aggregation column</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-baselines" href="baselines">
+                    <div class="image">
+                        <img draggable="false" src="baselines/meta/thumb.stockholm.png" alt="Baselines demo - Illustrates usage of baselines">
+                        <i class="tooltip b-fa b-fa-info"></i>
+                        
+                    </div>
+                    <label class="title">Baselines demo</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-basic" href="basic">
+                    <div class="image">
+                        <img draggable="false" src="basic/meta/thumb.stockholm.png" alt="Basic demo - Shows a very basic Gantt setup">
+                        <i class="tooltip b-fa b-fa-info"></i>
+                        
+                    </div>
+                    <label class="title">Basic</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-criticalpaths" href="criticalpaths">
+                    <div class="image">
+                        <img draggable="false" src="criticalpaths/meta/thumb.stockholm.png" alt="Critical paths demo - Illustrates usage of the critical paths visualization feature">
+                        <i class="tooltip b-fa b-fa-info"></i>
+                        
+                    </div>
+                    <label class="title">Critical paths demo</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-indicators" href="indicators">
+                    <div class="image">
+                        <img draggable="false" src="indicators/meta/thumb.stockholm.png" alt="Indicators demo - Demo shows built in and custom date indicators on the task rows">
+                        <i class="tooltip b-fa b-fa-info"></i>
+                        
+                    </div>
+                    <label class="title">Indicators</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-labels" href="labels">
+                    <div class="image">
+                        <img draggable="false" src="labels/meta/thumb.stockholm.png" alt="Labels demo - Shows extra informational labels docked round tasks">
+                        <i class="tooltip b-fa b-fa-info"></i>
+                        
+                    </div>
+                    <label class="title">Labels</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-progressline" href="progressline">
+                    <div class="image">
+                        <img draggable="false" src="progressline/meta/thumb.stockholm.png" alt="Progress line demo - Shows project progress line">
+                        <i class="tooltip b-fa b-fa-info"></i>
+                        
+                    </div>
+                    <label class="title">Progress line demo</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-responsive" href="responsive">
+                    <div class="image">
+                        <img draggable="false" src="responsive/meta/thumb.stockholm.png" alt="Responsive demo - Shows how Gantt can be easily made responsive using a combination of configs and styling.">
+                        <i class="tooltip b-fa b-fa-info"></i>
+                        
+                    </div>
+                    <label class="title">Responsive</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-rollups" href="rollups">
+                    <div class="image">
+                        <img draggable="false" src="rollups/meta/thumb.stockholm.png" alt="Rollups demo - Shows how to display rollups">
+                        <i class="tooltip b-fa b-fa-info"></i>
+                        
+                    </div>
+                    <label class="title">Rollups demo</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-theme" href="theme">
+                    <div class="image">
+                        <img draggable="false" src="theme/meta/thumb.stockholm.png" alt="Theme demo - Try the included SASS themes">
+                        <i class="tooltip b-fa b-fa-info"></i>
+                        
+                    </div>
+                    <label class="title">Theme browser</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-timeranges" href="timeranges">
+                    <div class="image">
+                        <img draggable="false" src="timeranges/meta/thumb.stockholm.png" alt="Time ranges demo - Highlight important dates or time spans in the schedule">
+                        <i class="tooltip b-fa b-fa-info"></i>
+                        
+                    </div>
+                    <label class="title">Time Ranges</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-tooltips" href="tooltips">
+                    <div class="image">
+                        <img draggable="false" src="tooltips/meta/thumb.stockholm.png" alt="Tooltips demo - Shows how to customize the task tooltip">
+                        <i class="tooltip b-fa b-fa-info"></i>
+                        
+                    </div>
+                    <label class="title">Tooltips</label>
+                </a>
+                </section>
+            
+                <h2 id="Intermediate" class="group-header Intermediate">Intermediate</h2>
+                <section class="examples">
+                
+                <a draggable="false" class="example  " id="example-resourceassignment" href="resourceassignment">
+                    <div class="image">
+                        <img draggable="false" src="resourceassignment/meta/thumb.stockholm.png" alt="Customizing the resource assignment picker - Shows how to enhance the resource assignment picker">
+                        <i class="tooltip b-fa b-fa-info"></i>
+                        
+                    </div>
+                    <label class="title">Customizing the resource assignment picker</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-taskcontextmenu" href="taskcontextmenu">
+                    <div class="image">
+                        <img draggable="false" src="taskcontextmenu/meta/thumb.stockholm.png" alt="Task context menu demo - Shows how to customize the items of the TaskContextMenu">
+                        <i class="tooltip b-fa b-fa-info"></i>
+                        
+                    </div>
+                    <label class="title">Customizing the task context menu</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-taskeditor" href="taskeditor">
+                    <div class="image">
+                        <img draggable="false" src="taskeditor/meta/thumb.stockholm.png" alt="Task editor customization demo - Shows how to customize the task editor">
+                        <i class="tooltip b-fa b-fa-info"></i>
+                        
+                    </div>
+                    <label class="title">Customizing the task editor</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-localization" href="localization">
+                    <div class="image">
+                        <img draggable="false" src="localization/meta/thumb.stockholm.png" alt="Localization demo - All demos allows you to switch locale, but this demo has a german locale in addition.">
+                        <i class="tooltip b-fa b-fa-info"></i>
+                        
+                    </div>
+                    <label class="title">Localization</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-timeline" href="timeline">
+                    <div class="image">
+                        <img draggable="false" src="timeline/meta/thumb.stockholm.png" alt="Timeline demo - Shows the Timeline widget for important tasks">
+                        <i class="tooltip b-fa b-fa-info"></i>
+                        
+                    </div>
+                    <label class="title">The timeline widget</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-undoredo" href="undoredo">
+                    <div class="image">
+                        <img draggable="false" src="undoredo/meta/thumb.stockholm.png" alt="Undo/Redo demo - Shows a Gantt setup with undo/redo">
+                        <i class="tooltip b-fa b-fa-info"></i>
+                        
+                    </div>
+                    <label class="title">Undo/Redo</label>
+                </a>
+                </section>
+            
+                <h2 id="Advanced" class="group-header Advanced">Advanced</h2>
+                <section class="examples">
+                
+                <a draggable="false" class="example  " id="example-advanced" href="advanced">
+                    <div class="image">
+                        <img draggable="false" src="advanced/meta/thumb.stockholm.png" alt="Advanced demo - Shows a Gantt chart with many advanced options enabled.">
+                        <i class="tooltip b-fa b-fa-info"></i>
+                        
+                    </div>
+                    <label class="title">Advanced</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-exporttoexcel" href="exporttoexcel">
+                    <div class="image">
+                        <img draggable="false" src="exporttoexcel/meta/thumb.stockholm.png" alt="Export Gantt to Excel - This demo shows a custom solution of exporting Scheduler data to Excel without involving the server based on a third party library called zipcelx (https://www.npmjs.com/package/zipcelx)">
+                        <i class="tooltip b-fa b-fa-info"></i>
+                        
+                    </div>
+                    <label class="title">Export to Excel</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-export" href="export">
+                    <div class="image">
+                        <img draggable="false" src="export/meta/thumb.stockholm.png" alt="Export to PDF demo - Demonstrates how the Gantt chart can be exported to PDF/PNG">
+                        <i class="tooltip b-fa b-fa-info"></i>
+                        
+                    </div>
+                    <label class="title">Export to PDF/PNG</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-msprojectimport" href="msprojectimport">
+                    <div class="image">
+                        <img draggable="false" src="msprojectimport/meta/thumb.stockholm.png" alt="MSProject import demo - Shows how to load data from .msp files">
+                        <i class="tooltip b-fa b-fa-info"></i>
+                        
+                    </div>
+                    <label class="title">Import project data from MPP files</label>
+                </a>
+                </section>
+            
+                <h2 id="Integration" class="group-header Integration">Integration</h2>
+                <section class="examples">
+                
+                <a draggable="false" class="example  " id="example-aspnetcore" data-popup="aspnetcore">
+                    <div class="image">
+                        <img draggable="false" src="aspnetcore/meta/thumb.stockholm.png" alt=".NET demo - Shows Gantt with .NET backend">
+                        <i class="tooltip b-fa b-fa-cog build"></i>
+                        
+                    </div>
+                    <label class="title">ASP.NET Core demo</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-aspnet" data-popup="aspnet">
+                    <div class="image">
+                        <img draggable="false" src="aspnet/meta/thumb.stockholm.png" alt=".NET demo - Shows Gantt with .NET backend">
+                        <i class="tooltip b-fa b-fa-cog build"></i>
+                        
+                    </div>
+                    <label class="title">ASP.NET demo</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-php" data-popup="php">
+                    <div class="image">
+                        <img draggable="false" src="php/meta/thumb.stockholm.png" alt="PHP demo - The demo features existing advanced demo with sample PHP backend.">
+                        <i class="tooltip b-fa b-fa-cog build"></i>
+                        
+                    </div>
+                    <label class="title">Backend in PHP</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-custom-build" data-popup="custom-build">
+                    <div class="image">
+                        <img draggable="false" src="custom-build/meta/thumb.stockholm.png" alt="Custom build using WebPack - This very basic demo shows how to use webpack to do a custom build from our sources.">
+                        <i class="tooltip b-fa b-fa-cog build"></i>
+                        <div class="version">WebPack 4</div>
+                    </div>
+                    <label class="title">Custom build using WebPack</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-extjsmodern" href="extjsmodern">
+                    <div class="image">
+                        <img draggable="false" src="extjsmodern/meta/thumb.stockholm.png" alt="ExtJS Modern demo - Example of a Bryntum Gantt chart embedded in an ExtJS Modern application. Read more about ExtJS here: <a href='https://www.sencha.com/products/extjs' style='color: white; font-weight: bold'>https://www.sencha.com</a>">
+                        <i class="tooltip b-fa b-fa-info"></i>
+                        
+                    </div>
+                    <label class="title">Ext JS Modern demo</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-esmodule" href="esmodule">
+                    <div class="image">
+                        <img draggable="false" src="esmodule/meta/thumb.stockholm.png" alt="EcmaScript module demo - This example shows how to include and use Gantt using EcmaScript modules (import)">
+                        <i class="tooltip b-fa b-fa-info"></i>
+                        
+                    </div>
+                    <label class="title">Include using EcmaScript module</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-scripttag" href="scripttag">
+                    <div class="image">
+                        <img draggable="false" src="scripttag/meta/thumb.stockholm.png" alt="Script tag demo - This example shows how to include and use the Gantt bundle using an ordinary script tag.">
+                        <i class="tooltip b-fa b-fa-info"></i>
+                        
+                    </div>
+                    <label class="title">Include using a script tag</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-requirejs" href="requirejs">
+                    <div class="image">
+                        <img draggable="false" src="requirejs/meta/thumb.stockholm.png" alt="RequireJS demo - This example uses RequireJS to load Gantt (CommonJS format).">
+                        <i class="tooltip b-fa b-fa-info"></i>
+                        
+                    </div>
+                    <label class="title">Include with RequireJS</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-webcomponents" href="webcomponents">
+                    <div class="image">
+                        <img draggable="false" src="webcomponents/meta/thumb.stockholm.png" alt="Web Components demo - This example shows how to use the Custom elements version of the gantt. Currently following browsers support custom elements: Chrome, Firefox, Opera, Safari.">
+                        <i class="tooltip b-fa b-fa-info"></i>
+                        
+                    </div>
+                    <label class="title">Use as web component (WebKit only)</label>
+                </a>
+                </section>
+            
+                <h2 id="Integration/Angular" class="group-header Integration/Angular">Integration/Angular</h2>
+                <section class="examples">
+                
+                <a draggable="false" class="example  " id="example-angular-advanced" href="angular/advanced" data-popup="angular/advanced">
+                    <div class="image">
+                        <img draggable="false" src="angular/advanced/meta/thumb.stockholm.png" alt="Gantt Advanced Angular demo - This demo shows how to use Bryntum Gantt in an advanced configuration using Angular framework">
+                        <i class="tooltip b-fa b-fa-cog build"></i>
+                        <div class="version">Angular 7</div>
+                    </div>
+                    <label class="title">Angular Advanced demo</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-angular-pdf-export" href="angular/pdf-export" data-popup="angular/pdf-export">
+                    <div class="image">
+                        <img draggable="false" src="angular/pdf-export/meta/thumb.stockholm.png" alt="PDF/PNG export Angular demo - This demo shows how to use export to PDF/PNG feature with Gantt using Angular framework">
+                        <i class="tooltip b-fa b-fa-cog build"></i>
+                        <div class="version">Angular 8</div>
+                    </div>
+                    <label class="title">Angular PDF/PNG export demo</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-angular-rollups" href="angular/rollups" data-popup="angular/rollups">
+                    <div class="image">
+                        <img draggable="false" src="angular/rollups/meta/thumb.stockholm.png" alt="Rollups Angular demo - Shows how to display rollups in an Angular app">
+                        <i class="tooltip b-fa b-fa-cog build"></i>
+                        <div class="version">Angular 8</div>
+                    </div>
+                    <label class="title">Rollups Angular demo</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-angular-taskeditor" href="angular/taskeditor" data-popup="angular/taskeditor">
+                    <div class="image">
+                        <img draggable="false" src="angular/taskeditor/meta/thumb.stockholm.png" alt="Task editor customization Angular demo - This demo shows how to customize Bryntum Gantt task editor by adding a tab with attached files using Angular framework">
+                        <i class="tooltip b-fa b-fa-cog build"></i>
+                        <div class="version">Angular 7</div>
+                    </div>
+                    <label class="title">Task editor customization Angular demo</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-angular-timeranges" href="angular/timeranges" data-popup="angular/timeranges">
+                    <div class="image">
+                        <img draggable="false" src="angular/timeranges/meta/thumb.stockholm.png" alt="Time ranges Angular demo - Highlight important dates or time spans in the schedule in an Angular app">
+                        <i class="tooltip b-fa b-fa-cog build"></i>
+                        <div class="version">Angular 8</div>
+                    </div>
+                    <label class="title">Time ranges Angular demo</label>
+                </a>
+                </section>
+            
+                <h2 id="Integration/React" class="group-header Integration/React">Integration/React</h2>
+                <section class="examples">
+                
+                <a draggable="false" class="example  " id="example-react-javascript-advanced" href="react/javascript/advanced" data-popup="react/javascript/advanced">
+                    <div class="image">
+                        <img draggable="false" src="react/javascript/advanced/meta/thumb.stockholm.png" alt="Gantt Advanced React demo - This demo shows how to use Bryntum Gantt in an advanced configuration using React framework">
+                        <i class="tooltip b-fa b-fa-cog build"></i>
+                        <div class="version">React 16</div>
+                    </div>
+                    <label class="title">React Advanced demo</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-react-javascript-basic" href="react/javascript/basic" data-popup="react/javascript/basic">
+                    <div class="image">
+                        <img draggable="false" src="react/javascript/basic/meta/thumb.stockholm.png" alt="React Basic Gantt demo - This demo contains a Basic React Gantt example.">
+                        <i class="tooltip b-fa b-fa-cog build"></i>
+                        <div class="version">React 16</div>
+                    </div>
+                    <label class="title">React Basic demo</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-react-typescript-basic" href="react/typescript/basic" data-popup="react/typescript/basic">
+                    <div class="image">
+                        <img draggable="false" src="react/typescript/basic/meta/thumb.stockholm.png" alt="React Basic Gantt demo with TypeScript - This demo contains a Basic React Gantt example. The demo is written in TypeScript">
+                        <i class="tooltip b-fa b-fa-cog build"></i>
+                        <div class="version">React 16</div>
+                    </div>
+                    <label class="title">React Basic demo with TypeScript</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-react-javascript-pdf-export" href="react/javascript/pdf-export" data-popup="react/javascript/pdf-export">
+                    <div class="image">
+                        <img draggable="false" src="react/javascript/pdf-export/meta/thumb.stockholm.png" alt="React PDF export demo - This demo contains a React PDF export example.">
+                        <i class="tooltip b-fa b-fa-cog build"></i>
+                        <div class="version">React 16</div>
+                    </div>
+                    <label class="title">React PDF/PNG export demo</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-react-javascript-rollups" href="react/javascript/rollups" data-popup="react/javascript/rollups">
+                    <div class="image">
+                        <img draggable="false" src="react/javascript/rollups/meta/thumb.stockholm.png" alt="React Rollups demo - This example show how to display rollups in a React app.">
+                        <i class="tooltip b-fa b-fa-cog build"></i>
+                        <div class="version">React 16.12</div>
+                    </div>
+                    <label class="title">React Rollups demo</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-react-javascript-taskeditor" href="react/javascript/taskeditor" data-popup="react/javascript/taskeditor">
+                    <div class="image">
+                        <img draggable="false" src="react/javascript/taskeditor/meta/thumb.stockholm.png" alt="React Task editor customization demo - Shows how to customize the task editor">
+                        <i class="tooltip b-fa b-fa-cog build"></i>
+                        <div class="version">React 16.12</div>
+                    </div>
+                    <label class="title">React Task editor customization demo</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-react-javascript-timeranges" href="react/javascript/timeranges" data-popup="react/javascript/timeranges">
+                    <div class="image">
+                        <img draggable="false" src="react/javascript/timeranges/meta/thumb.stockholm.png" alt="React Time ranges demo - This example show how to highlight important dates or time spans in the schedule in a React app.">
+                        <i class="tooltip b-fa b-fa-cog build"></i>
+                        <div class="version">React 16.12</div>
+                    </div>
+                    <label class="title">React Time ranges demo</label>
+                </a>
+                </section>
+            
+                <h2 id="Integration/Vue" class="group-header Integration/Vue">Integration/Vue</h2>
+                <section class="examples">
+                
+                <a draggable="false" class="example  " id="example-vue-javascript-taskeditor" href="vue/javascript/taskeditor" data-popup="vue/javascript/taskeditor">
+                    <div class="image">
+                        <img draggable="false" src="vue/javascript/taskeditor/meta/thumb.stockholm.png" alt="Vue Task editor customization demo - Shows how to customize the task editor in Vue.">
+                        <i class="tooltip b-fa b-fa-cog build"></i>
+                        <div class="version">Vue 2</div>
+                    </div>
+                    <label class="title">Task editor Vue customization demo</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-vue-javascript-timeranges" href="vue/javascript/timeranges" data-popup="vue/javascript/timeranges">
+                    <div class="image">
+                        <img draggable="false" src="vue/javascript/timeranges/meta/thumb.stockholm.png" alt="Time ranges Vue demo - Shows how to display time ranges in Vue.">
+                        <i class="tooltip b-fa b-fa-cog build"></i>
+                        <div class="version">Vue 2</div>
+                    </div>
+                    <label class="title">Time ranges Vue demo</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-vue-javascript-advanced" href="vue/javascript/advanced" data-popup="vue/javascript/advanced">
+                    <div class="image">
+                        <img draggable="false" src="vue/javascript/advanced/meta/thumb.stockholm.png" alt="Gantt Advanced Vue demo - This demo shows how to use Bryntum Gantt in an advanced configuration using Vue framework">
+                        <i class="tooltip b-fa b-fa-cog build"></i>
+                        <div class="version">Vue 2</div>
+                    </div>
+                    <label class="title">Vue Advanced demo</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-vue-javascript-pdf-export" href="vue/javascript/pdf-export" data-popup="vue/javascript/pdf-export">
+                    <div class="image">
+                        <img draggable="false" src="vue/javascript/pdf-export/meta/thumb.stockholm.png" alt="PDF/PNG export Vue demo - Shows how to use Gantt PDF export feature in Vue">
+                        <i class="tooltip b-fa b-fa-cog build"></i>
+                        <div class="version">Vue 2</div>
+                    </div>
+                    <label class="title">Vue PDF/PNG export demo</label>
+                </a>
+                
+            
+                <a draggable="false" class="example  " id="example-vue-javascript-rollups" href="vue/javascript/rollups" data-popup="vue/javascript/rollups">
+                    <div class="image">
+                        <img draggable="false" src="vue/javascript/rollups/meta/thumb.stockholm.png" alt="Rollups Vue demo - Shows how to display rollups in Vue.">
+                        <i class="tooltip b-fa b-fa-cog build"></i>
+                        <div class="version">Vue 2</div>
+                    </div>
+                    <label class="title">Vue Rollups demo</label>
+                </a>
+                
+            </section></div>
+	</div>
+</div>
+<script src="_shared/data/examples.js"></script>
+<script src="_shared/data/widget.js"></script>
+<script type="module" src="_shared/browser/browser.js"></script>
+<iframe id="aweberFrame" name="aweberFrame" src="about:blank"></iframe>
+</body>
+
+</html>

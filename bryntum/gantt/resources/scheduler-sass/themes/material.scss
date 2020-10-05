@@ -1,0 +1,24 @@
+@import '../../grid-sass/themes/material.scss';
+
+$event-color-red : #EF5350;
+$event-color-pink : #EC407A;
+$event-color-purple : #AB47BC;
+$event-color-violet : #7E57C2;
+$event-color-indigo : #5C6BC0;
+$event-color-blue : #42A5F5;
+$event-color-cyan : #26C6DA;
+$event-color-teal : #26A69A;
+$event-color-green : #66BB6A;
+$event-color-lime : #D4E157;
+$event-color-yellow : #FDD835;
+$event-color-orange : #FFA726;
+
+$columnlines-major-color : #a0a0a0;
+
+$dependency-color : #ccc;
+$dependency-terminal-color : #fff;
+
+$list-dependency-terminal-color : #444;
+$list-dependency-terminal-color : darken($list-dependency-terminal-color, 10);
+
+@import 'shared';

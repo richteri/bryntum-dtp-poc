@@ -1,0 +1,23 @@
+.b-gantt .b-grid-row .b-grid-cell {
+    transition      : background-color 0.2s;
+}
+
+.b-gantt-critical-paths .b-grid-subgrid-locked .b-grid-row.b-critical {
+    .b-grid-cell {
+        background-color: #ffcccc;
+    }
+
+    &.b-selected {
+        background-color: #ff9999;
+    }
+
+    .b-theme-dark & {
+        .b-grid-cell {
+            background-color: #663333;
+        }
+
+        &.b-selected {
+            background-color: #330000;
+        }
+    }
+}

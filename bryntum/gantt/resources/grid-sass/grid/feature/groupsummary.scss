@@ -1,0 +1,22 @@
+@import '../../variables.scss';
+
+.b-group-summary {
+    .b-grid-row.b-group-footer {
+        .b-grid-cell {
+            border-right-color : transparent;
+            background-color   : $grid-groupsummary-background-color;
+        }
+
+        td {
+            padding : .25em 0;
+        }
+
+        .b-grid-summary-label {
+            padding-right : 1em;
+        }
+
+        .b-grid-summary-value {
+            width : 100%;
+        }
+    }
+}

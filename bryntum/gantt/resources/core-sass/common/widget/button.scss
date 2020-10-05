@@ -1,0 +1,238 @@
+@import '../../variables.scss';
+
+.b-button {
+    position        : relative;
+    padding         : $button-padding;
+    border-radius   : $widget-border-radius;
+    min-width       : 3em;
+    min-height      : $button-min-height;
+    border          : $widget-border-width solid;
+    cursor          : pointer;
+    font-size       : $button-font-size;
+    font-weight     : $button-font-weight;
+    transition      : $button-transition;
+    white-space     : nowrap;
+    display         : inline-flex;
+    align-items     : center;
+    justify-content : center;
+    text-transform  : $button-text-transform;
+
+    // Remove inner focus outline in FF
+    &::-moz-focus-inner {
+        border : 0;
+    }
+
+    &.b-icon-align-start {
+        i {
+            order        : -100;
+        }
+
+        label {
+            margin-left : 0.5em;
+        }
+    }
+
+    &.b-icon-align-end {
+        i {
+            order       : 100;
+        }
+
+        label {
+            margin-right: 0.5em;
+        }
+    }
+
+    i {
+        font-size : 1em;
+    }
+
+    label:empty {
+        display: none;
+    }
+
+    &.b-badge {
+        // badge overflows button
+        overflow : visible !important;
+    }
+
+    &:focus {
+        outline : none;
+    }
+
+    &:disabled {
+        cursor : default;
+    }
+
+    // Displayed in a toolbar
+    .b-toolbar & {
+        font-size : $button-toolbar-font-size;
+    }
+}
+
+a.b-button {
+    text-decoration: none;
+}
+
+//region Flat/outlined button, depending on theme
+
+@mixin button-color($colorName, $color) {
+
+    @if $colorName == "default" {
+        $colorName : null;
+    } @else {
+        $colorName : ".b-#{$colorName}"
+    }
+
+    .b-button#{$colorName} {
+        color            : $color;
+        border-color     : transparentize($color, .5);
+        background-color : transparentize($color, .97);;
+
+        body.b-using-keyboard &:focus {
+            background-color : transparentize($color, .7);
+        }
+
+        &.b-pressed {
+            color            : $button-color;
+            background-color : transparentize($color, .2);
+        }
+
+        &:hover:not([disabled]) {
+            color            : $button-color;
+            background-color : $color;
+
+            &:not(.b-pressed) {
+                border-color : $color;
+            }
+        }
+
+        &.b-pressed:hover {
+            color            : $button-color;
+            background-color : transparentize($color, .3);
+        }
+
+        &:active:not([disabled]) {
+            background-color : darken($color, 5);
+            border-color     : darken($color, 5);
+        }
+
+        &.b-disabled {
+            background-color : transparent;
+            color            : transparentize($color, .7);
+            border-color     : transparentize($color, .7);
+        }
+    }
+}
+
+@include button-color("white", $white);
+@include button-color("blue", $blue);
+@include button-color("deep-orange", $deep-orange);
+@include button-color("orange", $orange);
+@include button-color("amber", $amber);
+@include button-color("indigo", $indigo);
+@include button-color("lime", $lime);
+@include button-color("teal", $teal);
+@include button-color("green", $green);
+@include button-color("light-green", $light-green);
+@include button-color("purple", $purple);
+@include button-color("yellow", $yellow);
+@include button-color("red", $red);
+@include button-color("dark-gray", $dark-gray);
+@include button-color("gray", $gray);
+@include button-color("light-gray", $light-gray);
+
+@include button-color("default", $gray);
+
+//endregion
+
+//region Raised button (well actually filled in light/dark theme)
+
+@mixin button-raise($colorName, $color) {
+    @if $colorName == "default" {
+        $colorName : null;
+    } @else {
+        $colorName : ".b-#{$colorName}"
+    }
+
+    .b-button.b-raised#{$colorName} {
+        color            : $button-color;
+        border           : none;
+        background-color : $color;
+
+        body.b-using-keyboard &:focus {
+            background-color : lighten($color, 9);
+        }
+
+        body.b-using-keyboard &:focus:hover:not([disabled]),
+        &:hover:not([disabled]) {
+            background-color : scale-color($color, $lightness: $button-hover-lightness);
+        }
+
+        &.b-pressed,
+            // pressed button in button group should not have a hover effect
+        &.b-pressed[data-group]:hover {
+            background-color : scale-color($color, $lightness: $button-pressed-lightness);
+            box-shadow       : inset 0 0 5px rgba(0, 0, 0, 0.3)
+        }
+
+        &.b-pressed:hover,
+        body.b-using-keyboard &.b-pressed:focus:hover,
+        body.b-using-keyboard &.b-pressed:focus {
+            background-color : scale-color($color, $lightness: $button-pressed-hover-lightness);
+        }
+
+        &.b-pressed:active {
+            background-color : scale-color($color, $lightness: $button-pressed-active-lightness);
+        }
+
+        &.b-pressed:active:hover {
+            background-color : scale-color($color, $lightness: $button-pressed-active-hover-lightness);
+        }
+
+        &:active:not([disabled]) {
+            background-color : scale-color($color, $lightness: $button-active-lightness);
+            border-color     : scale-color($color, $lightness: $button-active-lightness);
+            box-shadow       : inset 0 0 5px rgba(0, 0, 0, 0.3)
+        }
+
+        &:active:hover:not([disabled]) {
+            background-color : scale-color($color, $lightness: $button-active-hover-lightness);
+            border-color     : scale-color($color, $lightness: $button-active-hover-lightness);
+            box-shadow       : inset 0 0 3px rgba(0, 0, 0, 0.3)
+        }
+
+        &:disabled:hover,
+        &:disabled {
+            background-color : $button-disabled-background-color;
+            color            : $button-disabled-color;
+            border-color     : darken($color, 20%);
+            cursor           : default;
+        }
+    }
+}
+
+.b-ie.b-button,
+.b-ie .b-button {
+    // Flex in IE does not seem to respect min-height for vertically centering contents, need height also
+    height : $button-min-height;
+}
+
+@include button-raise("blue", $blue);
+@include button-raise("deep-orange", $deep-orange);
+@include button-raise("orange", $orange);
+@include button-raise("amber", $amber);
+@include button-raise("indigo", $indigo);
+@include button-raise("lime", $lime);
+@include button-raise("teal", $teal);
+@include button-raise("green", $green);
+@include button-raise("light-green", $light-green);
+@include button-raise("purple", $purple);
+@include button-raise("yellow", $yellow);
+@include button-raise("red", $red);
+@include button-raise("dark-gray", $dark-gray);
+@include button-raise("gray", $gray);
+@include button-raise("light-gray", $light-gray);
+
+@include button-raise("default", $gray);
+
+//endregion

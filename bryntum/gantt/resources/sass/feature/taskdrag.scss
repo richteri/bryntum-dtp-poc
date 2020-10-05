@@ -1,0 +1,16 @@
+@import '../variables.scss';
+
+.b-ganttbase.b-dragging-task {
+    @include user-select-none();
+
+    // Prevent displaying percentbars, terminals etc on tasks while dragging
+    .b-gantt-task,
+    .b-sch-dependency {
+        pointer-events : none;
+    }
+}
+
+.b-gantt-taskdrag-tooltip .b-sch-tip-message {
+    display : none;
+}
+

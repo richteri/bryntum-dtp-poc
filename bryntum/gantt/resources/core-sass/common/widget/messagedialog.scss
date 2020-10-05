@@ -1,0 +1,111 @@
+@import '../../variables.scss';
+
+// IE11 can't reset to "initial".
+// TODO: reset using "initial" when we drop IE11
+$display-reset-value : inline-flex;
+
+.b-messagedialog.b-popup {
+    min-width : 18em;
+
+    .b-messagedialog-header,
+    .b-messagedialog-content {
+        padding : 1em;
+    }
+
+    .b-messagedialog-content.b-panel-content {
+        border-radius : 0;
+    }
+
+    .b-toolbar.b-dock-bottom {
+        padding : 0.6em 1em 0;
+    }
+
+    // All items are opt-in. Hidden by default
+    .b-msgdialog-message,
+    .b-msgdialog-input,
+    .b-msgdialog-yesbutton,
+    .b-msgdialog-nobutton,
+    .b-msgdialog-cancelbutton {
+        display : none;
+    }
+
+    // Show All
+    &.b-show-message-input-yes-no-cancel {
+        .b-msgdialog-message,
+        .b-msgdialog-input,
+        .b-msgdialog-yesbutton,
+        .b-msgdialog-nobutton,
+        .b-msgdialog-cancelbutton {
+            display : $display-reset-value;
+        }
+    }
+
+    // Show input with all three buttons
+    &.b-show-input-yes-no-cancel {
+        .b-msgdialog-input,
+        .b-msgdialog-yesbutton,
+        .b-msgdialog-nobutton,
+        .b-msgdialog-cancelbutton {
+            display : $display-reset-value;
+        }
+    }
+
+    // Show message with all three buttons
+    &.b-show-message-yes-no-cancel {
+        .b-msgdialog-message,
+        .b-msgdialog-yesbutton,
+        .b-msgdialog-nobutton,
+        .b-msgdialog-cancelbutton {
+            display : $display-reset-value;
+        }
+    }
+
+    // Message and input with just Yes and No buttons
+    &.b-show-message-input-yes-no {
+        .b-msgdialog-message,
+        .b-msgdialog-input,
+        .b-msgdialog-yesbutton,
+        .b-msgdialog-nobutton {
+            display : $display-reset-value;
+        }
+    }
+
+    // Message with just Yes and No buttons
+    &.b-show-message-yes-no {
+        .b-msgdialog-message,
+        .b-msgdialog-yesbutton,
+        .b-msgdialog-nobutton {
+            display : $display-reset-value;
+        }
+    }
+
+    // Input with just Yes and No buttons
+    &.b-show-input-yes-no {
+        .b-msgdialog-input,
+        .b-msgdialog-yesbutton,
+        .b-msgdialog-nobutton {
+            display : $display-reset-value;
+        }
+    }
+
+    // Just the three buttons
+    &.b-show-yes-no-cancel {
+        .b-msgdialog-yesbutton,
+        .b-msgdialog-nobutton,
+        .b-msgdialog-cancelbutton {
+            display : $display-reset-value;
+        }
+    }
+
+    // Just the Yes and No buttons
+    &.b-show-yes-no {
+        .b-msgdialog-yesbutton,
+        .b-msgdialog-nobutton {
+            display : $display-reset-value;
+        }
+    }
+
+    .b-toolbar {
+        justify-content : space-evenly;
+    }
+}

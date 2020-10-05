@@ -1,0 +1,14 @@
+@import '../../scheduler-sass/themes/material.scss';
+@import 'shared';
+
+// Put custom code here
+.b-popup.b-schedulerpro-taskeditor {
+    .b-divider {
+        // There is some insanely long selector applied for inline-flex
+        display: none !important;
+    }
+
+    .b-tabpanel-body {
+        padding-bottom : 0;
+    }
+}

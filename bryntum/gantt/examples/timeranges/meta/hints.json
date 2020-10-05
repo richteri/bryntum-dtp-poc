@@ -1,0 +1,7 @@
+{
+    ".b-timerange": {
+        "title": "Important date",
+        "content": "Highlight important dates or time spans in the schedule",
+        "align": "l0-r0"
+    }
+}

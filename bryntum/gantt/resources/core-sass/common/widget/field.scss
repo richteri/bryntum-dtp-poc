@@ -1,0 +1,320 @@
+@import '../../variables.scss';
+
+@keyframes b-field-updated {
+    0% {
+        color : green;
+    }
+    50% {
+        color : green;
+    }
+    100% {
+        color : $field-color;
+    }
+}
+
+.b-has-label {
+    label {
+        margin-right   : 1em;
+        color          : $field-label-color;
+        font-size      : $field-label-font-size;
+        text-transform : $field-label-text-transform;
+        font-weight    : $field-label-font-weight;
+        text-align     : $field-label-text-align;
+        white-space    : nowrap;
+        text-overflow  : ellipsis;
+        // Commented out since it makes labels to narrow, should instead be handled in some responsive way
+        //overflow       : hidden;
+    }
+
+    // Color of label for active field
+    &.b-open,
+    &:focus-within,
+    &.b-ie:focus {
+        label {
+            color : $field-active-label-color;
+        }
+    }
+
+    .b-container & {
+        label {
+            color       : $field-container-label-color;
+            margin-left : $field-container-margin-left;
+            &.b-align-end {
+                margin-left : 1em;
+                text-align  : left;
+            }
+        }
+
+        &.b-open,
+        &:focus-within,
+        &.b-ie:focus {
+            label {
+                color : $field-container-active-label-color;
+            }
+        }
+    }
+
+    // Invalid rendition needs important to override the :hover and focus rules.
+    &.b-invalid {
+        label {
+            color : $field-invalid-border-color !important;
+        }
+    }
+
+    &.b-disabled {
+        label {
+            color : $field-disabled-label-color;
+        }
+    }
+}
+
+.b-field-updated {
+    animation-name     : b-field-updated;
+    animation-duration : 1.5s;
+}
+
+// When in a container, have fields full width with a 0.6em margin below
+.b-content-element:not(.b-toolbar) > .b-field {
+    flex          : 1 0 100%;
+    margin-bottom : .6em;
+
+    // Add b-inline for inline sequences of fields which need a right margin.
+    &.b-inline {
+        .b-field-inner {
+            margin-right : 0.6em;
+        }
+    }
+
+    // Fields on last row need no margin-bottom.
+    // :last-child cannot work because of multiple
+    // fields on one row using flex-flow: row wrap
+    &.b-last-row {
+        margin-bottom : 0;
+    }
+}
+
+// The container of the triggers and the input field.
+// This carries the border. The input field has no border.
+.b-field-inner {
+    display          : flex;
+    flex             : 1 1 100%;
+    align-items      : center;
+    background-color : $field-background-color;
+    border-radius    : $field-border-radius;
+    border-width     : $field-border-width;
+    border-style     : solid;
+    border-color     : $field-border-color;
+    min-width        : 0; // Won't flex shrink without this!
+    position         : relative;
+}
+
+.b-numberfield,
+.b-textfield {
+    align-items   : center;
+    min-width     : 3em;
+    color         : $field-color;
+    border-color  : $field-outer-border-color;
+    border-radius : $field-border-radius;
+    position      : relative;
+    width         : 12em;
+
+    &.b-contains-focus {
+        .b-field-inner {
+            border-color : $widget-highlight-color;
+        }
+    }
+
+    .b-fieldtrigger {
+        color     : $field-trigger-color;
+        font-size : $field-trigger-font-size;
+        cursor    : pointer;
+        flex      : 0 0 auto;
+
+        // padding is used intentionally to increase clicking area
+        // TODO: make equal paddings for both left and right: https://github.com/bryntum/support/issues/760
+        &.b-align-start {
+            padding-left : $field-input-padding;
+        }
+
+        &.b-align-end {
+            padding-right : .5em;
+
+            &:last-child {
+                padding-right : right($field-input-padding);
+            }
+        }
+
+        &:before {
+            font-size  : 1.3em;
+            transition : all .3s;
+            transform  : scale(1);
+        }
+    }
+
+    .b-spintrigger {
+        flex-direction : column;
+        font-size      : 1em;
+
+        .b-spin-up:before {
+            content        : '\F0D8';
+            vertical-align : bottom
+        }
+
+        .b-spin-down:before {
+            content        : '\F0D7';
+            vertical-align : top;
+        }
+    }
+
+    &.b-hide-spinner {
+        .b-spintrigger {
+            display : none;
+        }
+    }
+
+    input, textarea {
+        background-color : transparent;
+        color            : inherit;
+        padding          : $field-input-padding; //calc(0.8em + 1px); // to match that buttons has 1px thicker border
+        font-weight      : $widget-font-weight;
+        flex             : 1 1 0px;
+        border           : 0 none;
+        margin           : 0; // needed for Safari, seems to default to 2px otherwise
+        font-family      : inherit;
+        font-size        : inherit;
+        min-width        : 1em; // Won't flex shrink without this, but make it at least visible!
+
+        &:focus {
+            outline : none;
+        }
+
+        &::-ms-clear {
+            display : none;
+        }
+    }
+
+    ::-webkit-input-placeholder {
+        color : $field-placeholder-color;
+    }
+
+    // hide clear trigger in empty field
+    &.b-empty {
+        .b-fieldtrigger.b-icon-remove {
+            display : none;
+        }
+    }
+
+    &:focus-within {
+        label i {
+            color : $widget-highlight-color;
+        }
+    }
+
+    &:not(.b-disabled):hover {
+        label i {
+            color : $widget-highlight-color;
+        }
+
+        .b-field-inner {
+            border-color : $field-highlight-color;
+        }
+    }
+
+    // Color of label for active field
+    // &.b-open,
+    // &:focus-within,
+    // &.b-ie:focus {
+    //     label {
+    //         color : $field-active-label-color;
+    //     }
+    // }
+
+    // .b-container & {
+    //     label {
+    //         color       : $field-container-label-color;
+    //         margin-left : $field-container-margin-left;
+    //     }
+
+    //     &.b-open,
+    //     &:focus-within,
+    //     &.b-ie:focus {
+    //         label {
+    //             color : $field-container-active-label-color;
+    //         }
+    //     }
+    // }
+
+    // Invalid rendition needs important to override the :hover and focus rules.
+    &.b-invalid {
+        // label {
+        //     color : $field-invalid-border-color !important;
+        // }
+
+        .b-field-inner {
+            border-color : $field-invalid-border-color !important;
+        }
+    }
+
+    &.b-disabled {
+        color  : $field-disabled-label-color;
+        cursor : default;
+
+        input {
+            cursor : default;
+        }
+
+        // label,
+        .b-fieldtrigger {
+            color : $field-disabled-trigger-color;
+        }
+
+        .b-fieldtrigger {
+            cursor : default;
+        }
+
+        .b-field-inner {
+            border-style : $field-disabled-border-style;
+        }
+    }
+
+    &.b-readonly {
+        cursor : default;
+
+        input {
+            cursor : default;
+        }
+
+        // label,
+        .b-fieldtrigger {
+            color : $field-disabled-trigger-color;
+            cursor : default;
+        }
+    }
+}
+
+.b-numberfield {
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance : none;
+        margin             : 0;
+    }
+
+    input {
+        -moz-appearance : textfield;
+    }
+
+    // make clearable icon smaller in numberfield, to better match spinner icons
+    .b-field-inner .b-fieldtrigger.b-icon-remove {
+        font-size : .8em;
+    }
+}
+
+.b-tooltip.b-field-error-tip {
+    border : 1px solid $field-invalid-border-color;
+
+    .b-popup-content {
+        background-color : $error-tip-background-color;
+        color            : $error-tip-color;
+        font-weight      : bold;
+    }
+}

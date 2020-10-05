@@ -1,0 +1,26 @@
+@import '../../variables.scss';
+
+.b-grid-cell.b-row-number-cell {
+    background-color : $rownumber-background;
+    border-right     : 1px solid $rownumber-border-color;
+}
+
+.b-grid-row.b-hover {
+    .b-grid-cell.b-row-number-cell:hover {
+        border-right     : 1px solid $rownumber-border-color;
+    }
+}
+
+.b-group-row {
+    .b-grid-cell.b-row-number-cell:first-child {
+        border-right     : 1px solid $rownumber-border-color;
+    }
+}
+
+.b-gridbase:focus {
+    .b-grid-row.b-selected {
+        .b-grid-cell.b-row-number-cell.b-selected {
+            border-right : 1px solid $grid-cell-border-color;
+        }
+    }
+}

@@ -1,0 +1,234 @@
+@import '../variables.scss';
+
+.b-float-root > .b-floating.b-interaction-tooltip {
+    pointer-events : none;
+}
+
+.b-sch-timerange {
+    display         : flex;
+    flex-direction  : row;
+    align-items     : center;
+    position        : absolute;
+    left            : 0;
+    overflow        : hidden;
+    justify-content : center;
+
+    color           : $range-color;
+    z-index         : $range-zindex;
+    cursor          : pointer;
+
+    &.b-over-resize-handle {
+        cursor : ew-resize;
+    }
+
+    // Move hovered range to front, unless dragging
+    .b-schedulerbase:not(.b-dragging-timerange) &:hover {
+        z-index : $range-zindex + 2;
+    }
+
+    label {
+        font-size     : .8em;
+
+        color         : inherit;
+        white-space   : nowrap;
+        cursor        : inherit;
+        text-overflow : ellipsis;
+        overflow      : hidden;
+        padding       : 0.3em;
+    }
+}
+
+.b-sch-current-time {
+    pointer-events : none;
+}
+
+.b-animating .b-sch-timerange {
+    transition : transform 0.3s, width 0.3s, height 0.3s;
+}
+
+// Sub grid time range styling
+.b-timeline-subgrid {
+
+    .b-sch-timerange {
+        height      : 100%;
+        align-items : start;
+        min-width   : 1px;
+        color       : $range-color;
+        font-size   : 14px;
+
+        &:not(.b-sch-line) {
+            // If the width is greater than the range width, write vertically
+            label.b-vertical {
+                -webkit-writing-mode : vertical-lr;
+                writing-mode         : vertical-lr;
+                -ms-writing-mode     : tb-lr;
+            }
+        }
+
+        // No support for icons shown in lines the timeline body
+        &.b-sch-line:before {
+            display : none;
+        }
+    }
+
+    .b-sch-range {
+        background-color : $range-background-color;
+        pointer-events   : none;
+    }
+
+    .b-sch-line {
+        border-left : $line-width $line-style $line-color;
+        color       : #fff;
+        padding     : 0;
+        z-index     : $range-zindex + 1;
+
+        label {
+            background-color : $line-color;
+            padding          : 0.3em;
+            white-space      : nowrap;
+            margin-top       : 0.5em;
+        }
+    }
+
+    .b-sch-current-time {
+        border-left-color : $current-time-color;
+    }
+}
+
+.b-sch-vertical {
+    .b-sch-timerange {
+        left : auto;
+        top  : 0;
+
+        label {
+            -webkit-writing-mode : vertical-lr;
+            writing-mode         : vertical-lr;
+            -ms-writing-mode     : tb-lr;
+            transform            : rotate(180deg);
+        }
+
+        &.b-over-resize-handle {
+            cursor : ns-resize;
+        }
+    }
+
+    .b-timeline-subgrid {
+        .b-sch-timerange {
+            height : auto;
+            width  : 100%;
+        }
+
+        .b-sch-line {
+            border-top : $line-width $line-style $line-color;
+            color      : #fff;
+            padding    : 0;
+
+            label {
+                background-color : $line-color;
+                padding          : 0.3em;
+                white-space      : nowrap;
+                margin-left      : 0.5em;
+            }
+        }
+    }
+}
+
+// Header time range styling, horizontal mode
+.b-grid-header {
+    .b-sch-timerange {
+        flex-direction   : row;
+        justify-content  : center;
+        bottom           : 0;
+        background-color : $range-header-background-color;
+        color            : $range-header-color;
+
+        &.b-sch-line {
+            padding          : 0 .5em;
+            background-color : $line-color;
+            z-index          : $range-zindex + 1; // In front of zones in header
+        }
+
+        &.b-sch-current-time {
+            background-color : $current-time-color;
+        }
+
+        @include user-select-none();
+
+        &:before {
+            margin-right : 0.3em;
+        }
+
+        label {
+            padding : 0;
+        }
+    }
+
+    &.b-sch-timeaxiscolumn-levels-1 .b-sch-timerange {
+        height : 100%;
+    }
+
+    &.b-sch-timeaxiscolumn-levels-2 .b-sch-timerange {
+        height : 50%;
+    }
+
+    &.b-sch-timeaxiscolumn-levels-3 .b-sch-timerange {
+        height : (100%/3);
+    }
+
+    .b-sch-line {
+        border-bottom-right-radius : 5px;
+        border-top-right-radius    : 5px;
+
+        &.b-sch-timerange-with-headerlabel label {
+            left : -$line-width;
+        }
+    }
+}
+
+.b-verticaltimeaxiscolumn {
+    .b-sch-timerange {
+        flex-direction   : column;
+        justify-content  : center;
+        right            : 0;
+        background-color : $range-header-background-color;
+        color            : $range-header-color;
+
+        @include user-select-none();
+
+        &:before {
+            margin-bottom : 0.5em;
+        }
+    }
+
+    &.b-sch-timeaxiscolumn-levels-1 .b-sch-timerange {
+        width : 100%;
+    }
+
+    &.b-sch-timeaxiscolumn-levels-2 .b-sch-timerange {
+        width : 50%;
+    }
+
+    &.b-sch-timeaxiscolumn-levels-3 .b-sch-timerange {
+        width : (100%/3);
+    }
+
+    .b-sch-line {
+        border-bottom-left-radius  : 5px;
+        border-bottom-right-radius : 5px;
+
+        &.b-sch-timerange-with-headerlabel label {
+            top : -$line-width;
+        }
+    }
+}
+
+
+// Hide icon in body if we are showing header elements
+.b-sch-timeranges-with-headerelements {
+    .b-timeline-subgrid {
+        .b-sch-range:before {
+            display : none;
+        }
+    }
+}
+

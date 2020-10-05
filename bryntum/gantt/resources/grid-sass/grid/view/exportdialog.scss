@@ -1,0 +1,12 @@
+@import '../../variables.scss';
+
+.b-exportdialog.b-popup .b-bottom-toolbar {
+    > button {
+        flex : 1;
+        margin-right : .5em;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

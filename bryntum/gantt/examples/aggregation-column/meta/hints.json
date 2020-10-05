@@ -1,0 +1,7 @@
+{
+    "[data-column=cost]": {
+        "title": "Cost (aggregated) column",
+        "content": "Automatically calculates parent cost based on child cost values",
+        "align": "l0-r0"
+    }
+}

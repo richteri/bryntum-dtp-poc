@@ -1,0 +1,47 @@
+@import "bryntum-gantt/gantt.stockholm.css";
+
+@font-face {
+    font-family: Lato;
+    src: url('bryntum-angular-shared/assets/fonts/lato/Lato-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('bryntum-angular-shared/assets/fonts/lato/Lato-Italic.woff2') format('woff2'), /* Super Modern Browsers */
+         url('bryntum-angular-shared/assets/fonts/lato/Lato-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+         url('bryntum-angular-shared/assets/fonts/lato/Lato-Italic.woff') format('woff'); /* Pretty Modern Browsers */
+    font-weight: 400;
+}
+@font-face {
+    font-family: Lato;
+    src: url('bryntum-angular-shared/assets/fonts/lato/Lato-Medium.woff2') format('woff2'), /* Super Modern Browsers */
+         url('bryntum-angular-shared/assets/fonts/lato/Lato-MediumItalic.woff2') format('woff2'), /* Super Modern Browsers */
+         url('bryntum-angular-shared/assets/fonts/lato/Lato-Medium.woff') format('woff'), /* Pretty Modern Browsers */
+         url('bryntum-angular-shared/assets/fonts/lato/Lato-MediumItalic.woff') format('woff'); /* Pretty Modern Browsers */
+    font-weight: 500;
+}
+@font-face {
+    font-family: Lato;
+    src: url('bryntum-angular-shared/assets/fonts/lato/Lato-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+         url('bryntum-angular-shared/assets/fonts/lato/Lato-BoldItalic.woff2') format('woff2'), /* Super Modern Browsers */
+         url('bryntum-angular-shared/assets/fonts/lato/Lato-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+         url('bryntum-angular-shared/assets/fonts/lato/Lato-BoldItalic.woff') format('woff'); /* Pretty Modern Browsers */
+    font-weight: 700;
+}
+
+body {
+    font-family : Lato, sans-serif;
+    font-size   : 14px;
+    height      : 100%;
+    padding     : 0;
+    margin      : 0;
+}
+  
+app-root {
+    flex           : 1;
+    display        : flex;
+    flex-direction : column;
+    height         : 100vh;
+}
+  
+bry-gantt {
+    flex : 1;
+}
+ 
+// eof

@@ -1,0 +1,46 @@
+/**
+ * @author Saki
+ * @date 2019-02-07 13:30:47
+ * @Last Modified by: Saki
+ * @Last Modified time: 2019-12-17 09:58:47
+ *
+ * Main application sass file that contains all the application styling
+ */
+.b-react-gantt-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+#content {
+  display : flex;
+  flex : 1 1 auto;
+  flex-direction : row;
+}
+
+.timeranges-grid {
+  .b-panel-content {
+    padding: 0;
+  }
+
+  .b-grid {
+    .b-grid-row:before {
+      display:none;
+    }
+
+    .b-grid-cell {
+      cursor : pointer;
+    }
+
+    i {
+      margin-right : 10px;
+      color        : #4887e5;
+    }
+  }
+}
+
+.b-grid-header {
+  height : 57px;
+}
+
+// eof

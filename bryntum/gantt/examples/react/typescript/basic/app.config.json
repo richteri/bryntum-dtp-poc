@@ -1,0 +1,10 @@
+{
+  "dependencies": [
+    {
+      "src": "../../_shared",
+      "out": "../../_shared/build"
+    }
+  ],
+  "title": "React Basic Gantt demo with TypeScript",
+  "description": "This demo contains a Basic React Gantt example. The demo is written in TypeScript"
+}

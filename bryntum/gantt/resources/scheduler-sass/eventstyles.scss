@@ -1,0 +1,988 @@
+@import 'variables.scss';
+
+//region Colors
+
+// for usage on other elements, such as in combos or in grid columns
+.b-sch-red {
+    background-color : $event-color-red;
+}
+
+.b-sch-pink {
+    background-color : $event-color-pink;
+}
+
+.b-sch-purple {
+    background-color : $event-color-purple;
+}
+
+.b-sch-violet {
+    background-color : $event-color-violet;
+}
+
+.b-sch-indigo {
+    background-color : $event-color-indigo;
+}
+
+.b-sch-blue {
+    background-color : $event-color-blue;
+}
+
+.b-sch-cyan {
+    background-color : $event-color-cyan;
+}
+
+.b-sch-teal {
+    background-color : $event-color-teal;
+}
+
+.b-sch-green {
+    background-color : $event-color-green;
+}
+
+.b-sch-lime {
+    background-color : $event-color-lime;
+}
+
+.b-sch-yellow {
+    background-color : $event-color-yellow;
+}
+
+.b-sch-orange {
+    background-color : $event-color-orange;
+}
+
+.b-sch-gray {
+    background-color : $event-color-gray;
+}
+
+//endregion
+
+//region Plain
+
+// default plain style if no color specified
+
+.b-sch-style-plain .b-sch-event:not(.b-milestone) {
+    background-color : $event-bar-background-color;
+    border-color     : $event-bar-background-color;
+    color            : $event-bar-color;
+    font-weight      : $event-font-weight;
+
+    &:hover,
+    &.b-sch-event-selected {
+        background-color : scale_color($event-bar-background-color, $saturation : 30%, $lightness : -40%);
+        background-image : none;
+    }
+
+    &.b-sch-event-selected {
+        font-weight : $event-selected-font-weight;
+    }
+
+    &.b-sch-event-resizing,
+    &.b-sch-event-selected:hover {
+        background-color : scale_color($event-bar-background-color, $saturation : 40%, $lightness : -45%);
+        background-image : none;
+    }
+}
+
+.b-sch-style-plain .b-sch-event.b-milestone:before {
+    background-color : $event-milestone-color;
+}
+
+// generate other plain styles
+@mixin event-plain($cls, $color, $saturate: 30%) {
+    $hover-color : scale_color($color, $saturation : $saturate, $lightness : -40%);
+    $selected-hover-color : scale_color($color, $saturation : $saturate + 10%, $lightness : -45%);
+
+    .b-sch-style-plain.b-sch-color-#{$cls} .b-sch-event:not(.b-milestone) {
+        background-color : $color;
+        border-color     : $color;
+
+        &:hover,
+        &.b-sch-event-selected {
+            background-color : $hover-color;
+        }
+
+        &.b-sch-event-resizing,
+        &.b-sch-event-selected:hover {
+            background-color : $selected-hover-color
+        }
+    }
+
+    .b-sch-style-plain.b-sch-color-#{$cls} .b-sch-event.b-milestone {
+        &:before {
+            background-color : $color;
+            border-color     : $color;
+        }
+
+        &:hover:before,
+        &.b-sch-event-selected:before {
+            background-color : $hover-color;
+        }
+
+        &.b-sch-event-resizing:before,
+        &.b-sch-event-selected:hover:before {
+            background-color : $selected-hover-color
+        }
+    }
+
+    // Layouted milestones
+    .b-sch-layout-milestones .b-sch-style-plain.b-sch-color-#{$cls}.b-milestone-wrap {
+        .b-sch-event {
+            background : $color;
+        }
+
+        &:hover {
+            .b-sch-event {
+                background : $hover-color;
+            }
+        }
+
+        &.b-sch-event-selected:hover {
+            .b-sch-event {
+                background : $selected-hover-color;
+            }
+        }
+    }
+}
+
+@include event-plain("red", $event-color-red);
+@include event-plain("pink", $event-color-pink);
+@include event-plain("purple", $event-color-purple);
+@include event-plain("violet", $event-color-violet);
+@include event-plain("indigo", $event-color-indigo);
+@include event-plain("blue", $event-color-blue);
+@include event-plain("cyan", $event-color-cyan);
+@include event-plain("teal", $event-color-teal);
+@include event-plain("green", $event-color-green);
+@include event-plain("lime", $event-color-lime);
+@include event-plain("yellow", $event-color-yellow);
+@include event-plain("orange", $event-color-orange);
+@include event-plain("gray", $event-color-gray, 0%);
+
+//endregion
+
+//region Border
+
+// default border style if no color specified
+
+.b-sch-style-border .b-sch-event {
+    background-color : $event-bar-background-color;
+    border-color     : scale_color($event-bar-background-color, $lightness : -30%);
+    border-style     : solid;
+    border-width     : 0;
+    font-weight      : $event-font-weight + 100;
+    opacity          : .8;
+    border-radius    : 3px;
+
+    &:not(.b-milestone) {
+        color        : $event-bar-color;
+        font-size    : $event-font-size - 2;
+        border-width : 1px;
+
+        &.b-sch-event-startsoutside {
+            border-left : none;
+        }
+
+        &:hover,
+        &.b-sch-event-resizing {
+            background-color : scale_color($event-bar-background-color, $lightness : -30%);
+            background-image : none;
+            opacity          : 1;
+        }
+
+        &.b-sch-event-selected {
+            font-weight : $event-selected-font-weight + 100;
+        }
+
+        &.b-sch-event-selected:hover {
+            background-color : scale_color($event-bar-background-color, $lightness : -35%);
+            background-image : none;
+        }
+    }
+
+    &.b-milestone {
+        background : none;
+
+        &:before {
+            border-width  : 1px;
+            border-radius : 3px;
+            opacity       : .8;
+        }
+
+        &:hover,
+        &.b-sch-event-selected {
+            opacity : 1;
+
+            &:before {
+                opacity : 1;
+            }
+        }
+    }
+}
+
+// generate other border styles
+@mixin event-border($cls, $color) {
+    $hover-color : scale_color($color, $lightness : -30%);
+    $selected-hover-color : scale_color($color, $lightness : -35%);
+    $border-color : scale_color($color, $lightness : -30%);
+
+    .b-sch-style-border.b-sch-color-#{$cls} .b-sch-event {
+        border-color : $border-color;
+    }
+
+    .b-sch-style-border:not(.b-milestone-wrap).b-sch-color-#{$cls} {
+        .b-sch-event {
+            background-color : $color;
+
+            &:hover,
+            &.b-sch-event-selected {
+                background-color : $hover-color;
+            }
+
+            &.b-sch-event-resizing,
+            &.b-sch-event-selected:hover {
+                background-color : $selected-hover-color;
+            }
+        }
+
+        &.b-dragging {
+            .b-sch-event {
+                background-color : $selected-hover-color;
+            }
+        }
+    }
+
+    .b-sch-style-border.b-milestone-wrap.b-sch-color-#{$cls} .b-sch-event:not(.b-sch-event-withicon) {
+        &:before {
+            background-color : $color;
+        }
+
+        &:hover,
+        &.b-sch-event-selected {
+            &:before {
+                background-color : $hover-color;
+            }
+        }
+
+        &.b-sch-event-selected:hover {
+            &:before {
+                background-color : $selected-hover-color;
+            }
+        }
+    }
+
+    // Layouted milestones
+    .b-sch-layout-milestones .b-sch-style-border.b-sch-color-#{$cls}.b-milestone-wrap {
+        .b-sch-event {
+            background    : $color;
+
+            :before, :after {
+                height : 0.74em;
+                width  : 0.74em;
+            }
+
+            border-top    : 1px solid $border-color;
+            border-bottom : 1px solid $border-color;
+
+            :before {
+                border-color : $border-color;
+                border-width : 0 0 1px 1px;
+                border-style : solid;
+            }
+
+            :after {
+                border-color : $border-color;
+                border-width : 0 1px 1px 0;
+                border-style : solid;
+            }
+        }
+
+        &:hover,
+        &.b-sch-event-selected {
+            .b-sch-event {
+                background : $hover-color;
+            }
+        }
+
+        &.b-sch-event-selected:hover {
+            .b-sch-event {
+                background : $selected-hover-color;
+            }
+        }
+    }
+}
+
+@include event-border("red", $event-color-red);
+@include event-border("pink", $event-color-pink);
+@include event-border("purple", $event-color-purple);
+@include event-border("violet", $event-color-violet);
+@include event-border("indigo", $event-color-indigo);
+@include event-border("blue", $event-color-blue);
+@include event-border("cyan", $event-color-cyan);
+@include event-border("teal", $event-color-teal);
+@include event-border("green", $event-color-green);
+@include event-border("lime", $event-color-lime);
+@include event-border("yellow", $event-color-yellow);
+@include event-border("orange", $event-color-orange);
+@include event-border("gray", $event-color-gray);
+
+//endregion
+
+//region Hollow
+
+// default hollow style if no color specified
+
+.b-sch-style-hollow.b-sch-event-wrap .b-sch-event {
+    background-color : rgba(255, 255, 255, .5);
+    border-color     : $event-bar-background-color;
+    border-style     : solid;
+    border-width     : 0;
+    font-weight      : $event-font-weight + 100;
+    opacity          : .8;
+    border-radius    : 3px;
+
+    &:not(.b-milestone) {
+        color        : $event-bar-background-color;
+        font-size    : $event-font-size - 2;
+        border-width : 2px;
+
+        &.b-sch-event-startsoutside {
+            border-left : none;
+        }
+
+        &:hover,
+        &.b-sch-event-selected {
+            color            : $event-bar-color;
+            background-image : none;
+        }
+    }
+
+    &.b-milestone {
+        &:before {
+            background-color : rgba(255, 255, 255, .5);
+            border-width     : 2px;
+            border-radius    : 3px;
+            opacity          : .8;
+        }
+
+        &:hover,
+        &.b-sch-event-selected {
+            background-color : $event-bar-background-color;
+            opacity          : 1;
+            background-image : none;
+        }
+
+        &.b-sch-event-selected {
+            font-weight : $event-selected-font-weight + 100;
+        }
+
+        &.b-sch-event-selected:hover {
+            background-color : scale_color($event-bar-background-color, $lightness : -10%);
+            background-image : none;
+        }
+    }
+}
+
+// generate other border styles
+@mixin event-hollow($cls, $color) {
+
+    .b-sch-style-hollow.b-sch-event-wrap {
+        &.b-sch-color-#{$cls} .b-sch-event {
+            border-color : $color;
+            color        : $color;
+        }
+
+        &:not(.b-milestone-wrap).b-sch-color-#{$cls} {
+            .b-sch-event {
+                &:hover,
+                &.b-sch-event-selected,
+                &.b-sch-event-resizing {
+                    background-color : $color;
+                    color            : $event-bar-color;
+                }
+
+                &.b-sch-event-selected:hover {
+                    background-color : scale_color($color, $lightness : -10%);
+                }
+            }
+
+            &.b-dragging .b-sch-event {
+                background-color : $color;
+                color            : $event-bar-color;
+            }
+        }
+
+        &.b-milestone-wrap.b-sch-color-#{$cls} .b-sch-event {
+            &:hover,
+            &.b-sch-event-selected,
+            &.b-dragging {
+                &:before {
+                    background-color : $color;
+                }
+            }
+
+            &.b-sch-event-selected:hover {
+                &:before {
+                    background-color : scale_color($color, $lightness : -10%);
+                }
+            }
+        }
+    }
+
+    // Layouted milestones
+    .b-sch-layout-milestones .b-sch-style-hollow.b-sch-color-#{$cls}.b-sch-event.b-milestone {
+        > * {
+            background    : none;
+            color         : $color;
+            border-top    : 2px solid $color;
+            border-bottom : 2px solid $color;
+            font-size     : $event-font-size - 2;
+            font-weight   : $event-font-weight + 100;
+            width         : 100%;
+
+            :before,
+            :after {
+                height : 0.74em;
+                width  : 0.74em;
+            }
+
+            :before {
+                border-color : $color;
+                border-width : 0 0 2px 2px;
+                border-style : solid;
+            }
+
+            :after {
+                border-color : $color;
+                border-width : 0 2px 2px 0;
+                border-style : solid;
+            }
+        }
+
+
+        &:hover {
+            > * {
+                background : none;
+            }
+        }
+
+        &.b-sch-event-selected:hover {
+            > * {
+                background : none;
+            }
+        }
+    }
+}
+
+@include event-hollow("red", $event-color-red);
+@include event-hollow("pink", $event-color-pink);
+@include event-hollow("purple", $event-color-purple);
+@include event-hollow("violet", $event-color-violet);
+@include event-hollow("indigo", $event-color-indigo);
+@include event-hollow("blue", $event-color-blue);
+@include event-hollow("cyan", $event-color-cyan);
+@include event-hollow("teal", $event-color-teal);
+@include event-hollow("green", $event-color-green);
+@include event-hollow("lime", $event-color-lime);
+@include event-hollow("yellow", $event-color-yellow);
+@include event-hollow("orange", $event-color-orange);
+@include event-hollow("gray", $event-color-gray);
+
+//endregion
+
+//region Colored
+
+// default colored style if no color specified
+
+.b-sch-style-colored.b-sch-event-wrap .b-sch-event {
+    background-color  : scale_color($event-bar-background-color, $lightness : 80%);
+    border-color      : scale_color($event-bar-background-color, $lightness : -10%);
+    border-left-width : 3px;
+    border-left-style : solid;
+    font-weight       : $event-font-weight;
+    opacity           : .8;
+
+    &:not(.b-milestone) {
+        color : scale_color($event-bar-background-color, $lightness : -30%);
+    }
+
+    &:hover,
+    &.b-sch-event-resizing,
+    &.b-sch-event-selected {
+        background-color : $event-bar-background-color;
+        background-image : none;
+        opacity          : 1;
+
+        &:not(.b-milestone) {
+            color : $event-bar-color;
+        }
+    }
+
+    &.b-sch-event-selected {
+        // Color change is enough, looks better with same font-weight
+        font-weight : $event-font-weight;
+        opacity     : 1;
+    }
+
+    &.b-sch-event-selected:hover {
+        background-color : scale_color($event-bar-background-color, $lightness : -30%);
+        background-image : none;
+    }
+
+    &.b-sch-event-startsoutside {
+        border-left : none;
+    }
+
+    &.b-milestone {
+        border-width : 0;
+    }
+
+    // Milestones with layout
+    .b-sch-layout-milestones &.b-milestone-wrap {
+        .b-sch-event,
+        .b-gantt-task,
+        &::before,
+        &::after {
+            background : scale_color($event-bar-background-color, $lightness : 80%);
+        }
+
+        &::before,
+        &::after {
+            height : 0.74em;
+            width  : 0.74em;
+        }
+
+        &::before {
+            border-top    : 3px solid transparent;
+            border-right  : 3px solid transparent;
+            border-bottom : 3px solid scale_color($event-bar-background-color, $lightness : -10%);
+            border-left   : 3px solid scale_color($event-bar-background-color, $lightness : -10%);
+        }
+
+        &:hover {
+            > *,
+            &::before,
+            &::after {
+                background : none;
+            }
+        }
+
+        &.b-sch-event-selected:hover {
+            > *,
+            &::before,
+            &::after {
+                background : none;
+            }
+        }
+    }
+
+    .b-sch-vertical & {
+        border-top-width : 3px;
+        border-top-style : solid;
+        border-left-width : 0;
+        border-left-style : none;
+    }
+}
+
+// generate other colored styles
+@mixin event-colored($cls, $color) {
+    $border-color : scale_color($color, $lightness : -10%);
+    $text-color : scale_color($color, $lightness : -30%);
+    $hover-color : scale_color($color, $lightness : 60%);
+    $selected-hover-color : scale_color($color, $lightness : -10%);
+
+    .b-sch-style-colored:not(.b-milestone-wrap).b-sch-color-#{$cls} {
+        .b-sch-event {
+            background-color : scale_color($color, $lightness : 80%);
+            border-color     : $border-color;
+
+            &:not(.b-milestone) {
+                color : $text-color;
+            }
+
+            &:hover {
+                background-color : $hover-color;
+            }
+
+            &.b-sch-event-resizing,
+            &.b-sch-event-selected {
+                background-color : $color;
+
+                &:not(.b-milestone) {
+                    color : $event-bar-color;
+                }
+            }
+
+            &.b-sch-event-selected:hover {
+                background-color : $selected-hover-color;
+            }
+        }
+    }
+
+    .b-sch-style-colored.b-milestone-wrap.b-sch-color-#{$cls}:not(.b-sch-event-withicon) .b-sch-event {
+        background : none;
+
+        &:before {
+            background-color : scale_color($color, $lightness : 80%);
+            border           : 3px solid $border-color;
+        }
+
+        &:hover {
+            &:before {
+                background-color : $hover-color;
+            }
+        }
+
+        &.b-sch-event-selected {
+            &:before {
+                background-color : $color;
+            }
+        }
+
+        &.b-sch-event-selected:hover {
+            &:before {
+                background-color : $selected-hover-color;
+            }
+        }
+    }
+
+    // Milestones with layout
+    .b-sch-layout-milestones .b-sch-style-colored.b-sch-color-#{$cls}.b-sch-event.b-milestone {
+        .b-sch-event,
+        .b-gantt-task,
+        &::before,
+        &::after {
+            background : scale_color($color, $lightness : 80%);
+        }
+
+        > * {
+            width       : 100%;
+            color       : $text-color;
+            font-weight : $event-font-weight;
+        }
+
+        &::before {
+            border-bottom-color : $border-color;
+            border-left-color   : $border-color;
+        }
+
+        &:hover {
+            > *,
+            &::before,
+            &::after {
+                background : $hover-color;
+            }
+        }
+
+        &.b-sch-event-selected {
+            background : none;
+
+            > * {
+                color : $event-bar-color;
+            }
+
+            > *,
+            &::before,
+            &::after {
+                background : $color;
+            }
+        }
+
+        &.b-sch-event-selected:hover {
+
+            > * {
+                color : $event-bar-color;
+            }
+
+            > *,
+            &::before,
+            &::after {
+                background : $selected-hover-color;
+            }
+        }
+    }
+}
+
+@include event-colored("red", $event-color-red);
+@include event-colored("pink", $event-color-pink);
+@include event-colored("purple", $event-color-purple);
+@include event-colored("violet", $event-color-violet);
+@include event-colored("indigo", $event-color-indigo);
+@include event-colored("blue", $event-color-blue);
+@include event-colored("cyan", $event-color-cyan);
+@include event-colored("teal", $event-color-teal);
+@include event-colored("green", $event-color-green);
+@include event-colored("lime", $event-color-lime);
+@include event-colored("yellow", $event-color-yellow);
+@include event-colored("orange", $event-color-orange);
+@include event-colored("gray", $event-color-gray);
+
+//endregion
+
+//region Line
+
+// default line style if no color specified
+
+.b-sch-event-wrap.b-sch-style-line .b-sch-event {
+    background-color : transparent;
+    border-color     : $event-bar-background-color;
+    border-width     : 5px 0 0 0;
+    border-style     : solid;
+    padding          : 5px 0 0 0;
+    color            : $event-milestone-color;
+    font-weight      : $event-font-weight;
+    justify-content  : center;
+    overflow         : visible;
+    top              : 5px;
+    height           : auto !important;
+
+    &.b-active {
+        outline-offset : 5px;
+    }
+
+    &:not(.b-milestone) {
+        &::before,
+        &::after {
+            content       : '';
+            border-color  : inherit;
+            border-style  : solid;
+            border-width  : 0;
+            height        : 13px;
+            position      : absolute;
+            top           : -9px;
+            border-radius : 2px;
+        }
+
+        &::before {
+            border-left-width : 5px;
+            left              : 0;
+        }
+
+        &::after {
+            border-right-width : 5px;
+            right              : 0;
+        }
+    }
+
+    &.b-milestone {
+        top          : initial;
+        border-width : 0;
+
+        &:before {
+            background-color : transparent;
+            border-width     : 5px;
+            border-style     : solid;
+        }
+    }
+
+    &:hover,
+    &.b-sch-event-selected,
+    &.b-sch-event-resizing {
+        background-color : transparent;
+        border-color     : scale_color($event-bar-background-color, $lightness : -25%);
+        background-image : none;
+    }
+
+    &.b-sch-event-selected {
+        font-weight : $event-selected-font-weight;
+    }
+
+    &.b-sch-event-selected:hover {
+        background-color : transparent;
+        border-color     : scale_color($event-bar-background-color, $lightness : -30%);
+        background-image : none;
+    }
+}
+
+// generate other line styles
+@mixin event-line($cls, $color) {
+    .b-sch-event-wrap.b-sch-style-line.b-sch-color-#{$cls} .b-sch-event {
+        border-color : $color;
+        color        : $color;
+
+        &:hover,
+        &.b-sch-event-selected {
+            border-color : scale_color($color, $lightness : -25%);
+        }
+
+        &.b-sch-event-selected:hover {
+            border-color : scale_color($color, $lightness : -30%);
+        }
+    }
+}
+
+@include event-line("red", $event-color-red);
+@include event-line("pink", $event-color-pink);
+@include event-line("purple", $event-color-purple);
+@include event-line("violet", $event-color-violet);
+@include event-line("indigo", $event-color-indigo);
+@include event-line("blue", $event-color-blue);
+@include event-line("cyan", $event-color-cyan);
+@include event-line("teal", $event-color-teal);
+@include event-line("green", $event-color-green);
+@include event-line("lime", $event-color-lime);
+@include event-line("yellow", $event-color-yellow);
+@include event-line("orange", $event-color-orange);
+@include event-line("gray", $event-color-gray);
+
+//endregion
+
+// region Dashed
+
+// default dashed style if no color specified
+
+.b-sch-event-wrap.b-sch-style-dashed .b-sch-event {
+    background-color : transparent;
+    border-color     : $event-bar-background-color;
+    border-width     : 5px 0 0 0;
+    border-style     : dashed;
+    padding          : 5px 0 3px 0;
+    color            : $event-milestone-color;
+    font-weight      : $event-font-weight;
+    justify-content  : center;
+    overflow         : visible;
+    top              : 5px;
+    height           : auto !important;
+
+    &:hover,
+    &.b-sch-event-selected,
+    &.b-sch-event-resizing {
+        background-color : transparent;
+        border-color     : scale_color($event-bar-background-color, $lightness : -25%);
+        background-image : none;
+    }
+
+    &.b-sch-event-selected {
+        font-weight : $event-selected-font-weight;
+    }
+
+    &.b-sch-event-selected:hover {
+        background-color : transparent;
+        border-color     : scale_color($event-bar-background-color, $lightness : -30%);
+        background-image : none;
+    }
+
+    &.b-milestone {
+        top          : initial;
+        border-width : 0;
+
+        &:before {
+            background-color : transparent;
+            border-width     : 5px;
+            border-style     : dashed;
+        }
+    }
+}
+
+// generate other dashed styles
+@mixin event-dashed($cls, $color) {
+    .b-sch-event-wrap.b-sch-style-dashed.b-sch-color-#{$cls} .b-sch-event {
+        border-color : $color;
+        color        : $color;
+
+        &:hover,
+        &.b-sch-event-selected {
+            border-color : scale_color($color, $lightness : -25%);
+        }
+
+        &.b-sch-event-selected:hover {
+            border-color : scale_color($color, $lightness : -30%);
+        }
+    }
+}
+
+@include event-dashed("red", $event-color-red);
+@include event-dashed("pink", $event-color-pink);
+@include event-dashed("purple", $event-color-purple);
+@include event-dashed("violet", $event-color-violet);
+@include event-dashed("indigo", $event-color-indigo);
+@include event-dashed("blue", $event-color-blue);
+@include event-dashed("cyan", $event-color-cyan);
+@include event-dashed("teal", $event-color-teal);
+@include event-dashed("green", $event-color-green);
+@include event-dashed("lime", $event-color-lime);
+@include event-dashed("yellow", $event-color-yellow);
+@include event-dashed("orange", $event-color-orange);
+@include event-dashed("gray", $event-color-gray);
+
+//endregion
+
+// region Minimal
+
+// default minimal style if no color specified
+
+.b-sch-style-minimal:not(.b-milestone) .b-sch-event {
+    background-color    : transparent;
+    border-color        : $event-bar-background-color;
+    border-bottom-width : 1px;
+    border-bottom-style : solid;
+    padding             : 0;
+    color               : $event-milestone-color;
+    font-weight         : $event-font-weight;
+    overflow            : visible;
+    font-size           : 10px;
+    align-items         : flex-end;
+
+    &:hover,
+    &.b-sch-event-selected,
+    &.b-sch-event-resizing {
+        background-color : transparent;
+        border-color     : scale_color($event-bar-background-color, $lightness : -25%);
+        background-image : none;
+    }
+
+    &.b-sch-event-selected {
+        font-weight : $event-selected-font-weight;
+    }
+
+    &.b-sch-event-selected:hover {
+        background-color : transparent;
+        border-color     : scale_color($event-bar-background-color, $lightness : -30%);
+        background-image : none;
+    }
+
+    &.b-milestone {
+        border-width : 0;
+
+        &:before {
+            border-width : 1px;
+            border-style : solid;
+        }
+
+        label {
+            font-size : 10px;
+        }
+    }
+}
+
+// generate other minimal styles
+@mixin event-minimal($cls, $color) {
+    .b-sch-style-minimal:not(.b-milestone).b-sch-color-#{$cls} .b-sch-event {
+        border-color : $color;
+
+        &:hover,
+        &.b-sch-event-selected {
+            border-color : scale_color($color, $lightness : -25%);
+        }
+
+        &.b-sch-event-selected:hover {
+            border-color : scale_color($color, $lightness : -30%);
+        }
+    }
+}
+
+@include event-minimal("red", $event-color-red);
+@include event-minimal("pink", $event-color-pink);
+@include event-minimal("purple", $event-color-purple);
+@include event-minimal("violet", $event-color-violet);
+@include event-minimal("indigo", $event-color-indigo);
+@include event-minimal("blue", $event-color-blue);
+@include event-minimal("cyan", $event-color-cyan);
+@include event-minimal("teal", $event-color-teal);
+@include event-minimal("green", $event-color-green);
+@include event-minimal("lime", $event-color-lime);
+@include event-minimal("yellow", $event-color-yellow);
+@include event-minimal("orange", $event-color-orange);
+@include event-minimal("gray", $event-color-gray);
+
+//endregion

@@ -1,0 +1,27 @@
+{
+    "rules": {
+        "no-new": "off"
+    },
+    "env": {
+        "browser": true
+    },
+    "globals": {
+        "AjaxHelper": true,
+        "app": true,
+        "bowser": true,
+        "bryntum": true,
+        "BryntumCoreTest": true,
+        "BryntumGanttTest": true,
+        "BryntumGridTest": true,
+        "BryntumSchedulerProTest": true,
+        "BryntumSchedulerTest": true,
+        "BryntumTestHelper": true,
+        "Class": true,
+        "describe": true,
+        "Event": true,
+        "Siesta": true,
+        "StartTest": true,
+        "Test": true,
+        "XMLHttpRequest": true
+    }
+}

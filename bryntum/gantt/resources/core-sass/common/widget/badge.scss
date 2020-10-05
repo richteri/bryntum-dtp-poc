@@ -1,0 +1,43 @@
+@import '../../variables.scss';
+
+.b-widget.b-badge {
+    // Badges need the badge element to appear outside bounds.
+    overflow : visible;
+}
+
+.b-badge:before {
+    content            : attr(data-badge);
+    position           : absolute;
+    min-width          : 2.223em;
+    min-height         : 2.223em;
+    right              : -1em;
+    top                : -1em;
+    padding            : .5em;
+    background-color   : $widget-badge-background-color;
+    color              : $widget-badge-color;
+    border-radius      : 50%;
+    font-size          : .6em;
+    z-index            : 1;
+    display            : flex;
+    justify-content    : center;
+    align-items        : center;
+
+    animation-name     : b-badge-show;
+    animation-duration : .3s;
+}
+
+.b-button.b-badge:before {
+    font-size : .7em;
+}
+
+@keyframes b-badge-show {
+    0% {
+        opacity   : 0;
+        transform : scale(.1) rotate(180deg);
+    }
+
+    100% {
+        opacity   : 1;
+        transform : scale(1) rotate(0deg);
+    }
+}

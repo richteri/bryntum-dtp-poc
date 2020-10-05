@@ -1,0 +1,109 @@
+@import '../variables.scss';
+
+// Horizontal mode resize
+.b-eventresize:not(.b-sch-vertical):not(.b-readonly) {
+    .b-sch-event-wrap.b-sch-event-hover .b-sch-event,
+    .b-sch-event-resizing {
+        &.b-sch-event-resizable-start:before,
+        &.b-sch-event-resizable-end:after,
+            // true = start + end
+        &.b-sch-event-resizable-true:before,
+        &.b-sch-event-resizable-true:after {
+            content        : '';
+            width          : 4px;
+            height         : 50%;
+            top            : 25%;
+            position       : absolute;
+            border-style   : solid;
+            border-color   : fade_out($event-bar-color, 0.5);
+            pointer-events : none;
+        }
+
+        &.b-sch-event-resizable-true:before,
+        &.b-sch-event-resizable-start:before {
+            margin-left  : 3px;
+            left         : 0;
+            border-width : 0 1px;
+        }
+
+        &.b-sch-event-resizable-true:after,
+        &.b-sch-event-resizable-end:after,
+        &.b-sch-event-resizable-true:hover:after,
+        &.b-sch-event-resizable-end:hover:after {
+            margin-right : 3px;
+            right        : 0;
+            border-width : 0 1px;
+        }
+    }
+
+    .b-sch-event.b-resize-handle {
+        cursor : ew-resize;
+    }
+
+    &.b-resizing-event,
+    & .b-sch-event-resizing {
+        @include user-select-none();
+        cursor : ew-resize !important;
+    }
+}
+
+// Vertical mode resize
+.b-eventresize.b-sch-vertical:not(.b-readonly) {
+    .b-sch-event-wrap.b-sch-event-hover .b-sch-event,
+    .b-sch-event-resizing {
+        &.b-sch-event-resizable-start:before,
+        &.b-sch-event-resizable-end:after,
+            // true = start + end
+        &.b-sch-event-resizable-true:before,
+        &.b-sch-event-resizable-true:after {
+            content        : '';
+            height         : 4px;
+            width          : 2em;
+            position       : absolute;
+            left           : 50%;
+            transform      : translateX(-50%);
+            border-style   : solid;
+            border-color   : fade_out($event-bar-color, 0.5);
+            pointer-events : none;
+        }
+
+        &.b-sch-event-resizable-true:before,
+        &.b-sch-event-resizable-start:before {
+            margin-top   : 3px;
+            top          : 0;
+            border-width : 1px 0;
+        }
+
+        &.b-sch-event-resizable-true:after,
+        &.b-sch-event-resizable-end:after,
+        &.b-sch-event-resizable-true:hover:after,
+        &.b-sch-event-resizable-end:hover:after {
+            margin-bottom : 3px;
+            bottom        : 0;
+            border-width  : 1px 0;
+        }
+    }
+
+    .b-sch-event.b-resize-handle {
+        cursor : ns-resize;
+    }
+
+    &.b-resizing-event,
+    & .b-sch-event-resizing {
+        @include user-select-none();
+        cursor : ns-resize !important;
+    }
+}
+
+// Shared
+.b-sch-event-wrap.b-sch-event-wrap-resizing {
+    z-index : $interacting-event-zindex;
+}
+
+.b-schedulerbase.b-resizing-event {
+    .b-sch-timeaxis-cell,
+    .b-sch-event-wrap {
+        /* prevent drag create */
+        pointer-events : none;
+    }
+}

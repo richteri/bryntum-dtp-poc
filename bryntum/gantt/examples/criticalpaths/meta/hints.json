@@ -1,0 +1,7 @@
+{
+    "[data-ref=\"criticalPathsButton\"]": {
+        "title"   : "Click the button",
+        "content" : "to toggle the project Critical Paths visualization",
+        "align"   : "l-r"
+    }
+}

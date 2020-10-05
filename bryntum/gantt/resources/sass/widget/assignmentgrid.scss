@@ -1,0 +1,76 @@
+.b-assignmentfield {
+    .b-assignment-chipview {
+        flex-flow           : row nowrap !important;
+        overscroll-behavior : contain auto;
+    }
+
+    .b-chip {
+        font-size    : .9em;
+        white-space  : nowrap;
+        padding-left : .45em;
+    }
+}
+
+.b-resourceassignment-cell {
+    align-items  : center;
+
+    .b-assignment-chipview-wrap {
+        // This will be the vertically centered element and will clip
+        // any scrollbar on the ChipView out of visbility.
+        overflow : hidden;
+
+        .b-assignment-chipview {
+            display        : flex;
+            overflow-x     : auto;
+
+            .b-chip {
+                font-size     : .9em;
+                padding       : .45em;
+                margin-bottom : 0;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+
+.b-assignmentgrid-assign-all-column {
+    .b-grid-header-text {
+        display : none;
+    }
+
+    .b-checkbox {
+        justify-content : center;
+
+        .b-field-inner {
+            flex : none;
+        }
+
+        label.b-checkbox-label {
+            &:before {
+                margin : 0;
+            }
+        }
+    }
+}
+
+.b-assignmentgrid-resource-column {
+    flex-direction : row;
+
+    // Needs the extra specificity to override grid's own styling
+    &.b-grid-header.b-depth-0 {
+        padding-top    : 0.3em;
+        padding-bottom : 0.3em;
+    }
+
+    .b-filter-bar-field {
+        margin-bottom : 0;
+    }
+
+    .b-grid-header-text,
+    .b-grid-header-text-content {
+        display : none;
+    }
+}

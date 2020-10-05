@@ -1,0 +1,156 @@
+{
+    "success" : true,
+    "tasks"   : {
+        "rows" : [
+            {
+                "id"                : 1,
+                "name"              : "Rollup tasks",
+                "percentDone"       : 50,
+                "startDate"         : "2017-01-15",
+                "expanded"          : true,
+                "duration"          : 120,
+                "manuallyScheduled" : true,
+                "children"          : [
+                    {
+                        "id"                : 11,
+                        "name"              : "Important task",
+                        "percentDone"       : 50,
+                        "startDate"         : "2017-01-18",
+                        "rollup"            : true,
+                        "duration"          : 13,
+                        "manuallyScheduled" : true
+                    },
+                    {
+                        "id"                : 12,
+                        "name"              : "Other task",
+                        "percentDone"       : 50,
+                        "startDate"         : "2017-03-21",
+                        "rollup"            : true,
+                        "duration"          : 10,
+                        "manuallyScheduled" : true
+                    },
+                    {
+                        "id"                : 13,
+                        "name"              : "Go through checklist",
+                        "Resizable"         : false,
+                        "percentDone"       : 50,
+                        "startDate"         : "2017-04-23",
+                        "rollup"            : true,
+                        "duration"          : 17,
+                        "manuallyScheduled" : true
+                    },
+                    {
+                        "id"                : 14,
+                        "name"              : "Email customer",
+                        "percentDone"       : 100,
+                        "startDate"         : "2017-01-31",
+                        "rollup"            : true,
+                        "duration"          : 0,
+                        "manuallyScheduled" : true
+                    },
+                    {
+                        "id"                : 15,
+                        "name"              : "Make list of emails",
+                        "percentDone"       : 100,
+                        "startDate"         : "2017-01-30",
+                        "rollup"            : true,
+                        "duration"          : 0,
+                        "manuallyScheduled" : true
+                    },
+                    {
+                        "id"                : 16,
+                        "name"              : "Close ticket #1",
+                        "percentDone"       : 100,
+                        "startDate"         : "2017-04-30",
+                        "rollup"            : true,
+                        "duration"          : 0,
+                        "manuallyScheduled" : true
+                    },
+                    {
+                        "id"                : 17,
+                        "name"              : "Close ticket #2",
+                        "percentDone"       : 100,
+                        "startDate"         : "2017-04-30",
+                        "rollup"            : true,
+                        "duration"          : 0,
+                        "manuallyScheduled" : true
+                    },
+                    {
+                        "id"                : 18,
+                        "name"              : "Close ticket #3",
+                        "percentDone"       : 100,
+                        "startDate"         : "2017-04-30",
+                        "rollup"            : true,
+                        "duration"          : 0,
+                        "manuallyScheduled" : true
+                    }
+                ]
+            },
+            {
+                "id"                : 2,
+                "name"              : "Rollups with milestone",
+                "percentDone"       : 50,
+                "startDate"         : "2017-01-17",
+                "EndDate"           : "2017-06-15",
+                "expanded"          : true,
+                "manuallyScheduled" : true,
+                "children"          : [
+                    {
+                        "id"                : 21,
+                        "name"              : "Important one",
+                        "percentDone"       : 50,
+                        "startDate"         : "2017-01-17",
+                        "rollup"            : true,
+                        "duration"          : 0,
+                        "manuallyScheduled" : true
+                    },
+                    {
+                        "id"                : 22,
+                        "name"              : "Task X",
+                        "percentDone"       : 50,
+                        "startDate"         : "2017-02-15",
+                        "rollup"            : true,
+                        "duration"          : 0,
+                        "manuallyScheduled" : true
+                    },
+                    {
+                        "id"                : 23,
+                        "name"              : "Another milestone",
+                        "percentDone"       : 50,
+                        "startDate"         : "2017-03-15",
+                        "rollup"            : true,
+                        "duration"          : 0,
+                        "manuallyScheduled" : true
+                    },
+                    {
+                        "id"                : 24,
+                        "name"              : "Checkpoint A",
+                        "percentDone"       : 50,
+                        "startDate"         : "2017-04-15",
+                        "rollup"            : true,
+                        "duration"          : 0,
+                        "manuallyScheduled" : true
+                    },
+                    {
+                        "id"                : 25,
+                        "name"              : "Checkpoint B",
+                        "percentDone"       : 100,
+                        "startDate"         : "2017-05-15",
+                        "rollup"            : true,
+                        "duration"          : 0,
+                        "manuallyScheduled" : true
+                    },
+                    {
+                        "id"                : 26,
+                        "name"              : "Checkpoint C",
+                        "percentDone"       : 100,
+                        "startDate"         : "2017-06-15",
+                        "rollup"            : true,
+                        "duration"          : 0,
+                        "manuallyScheduled" : true
+                    }
+                ]
+            }
+        ]
+    }
+}

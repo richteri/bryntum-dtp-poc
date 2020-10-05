@@ -1,0 +1,43 @@
+.ui.popup {
+    .ui.input,
+    .ui.calendar {
+        margin-top : 10px;
+    }
+
+    .ui.input:first-child,
+    .ui.calendar:first-child {
+        margin-top : 0;
+    }
+}
+
+.ui.popup.context-menu {
+    padding : 0;
+
+    .menu {
+        border : none;
+
+        .item.separator:before {
+            height : 2px;
+        }
+    }
+}
+
+.ui.button {
+    position : relative;
+}
+
+.ui.slider {
+    float        : left;
+    margin-right : 5px;
+
+    .label {
+        text-align  : center;
+        font-weight : 300;
+    }
+}
+
+.ui.dropdown {
+    .menu {
+        z-index : 20;
+    }
+}

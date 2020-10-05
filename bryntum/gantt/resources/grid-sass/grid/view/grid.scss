@@ -1,0 +1,207 @@
+@import '../../variables.scss';
+
+.b-gridbase {
+    display                     : flex;
+    flex-flow                   : column nowrap;
+    background-color            : $grid-background-color;
+    -webkit-tap-highlight-color : rgba(0, 0, 0, 0);
+
+    // If not in a container...
+    &.b-outer {
+        height : 100%;
+    }
+
+    &.b-autoheight {
+        height : auto;
+        flex   : none;
+    }
+
+    // If we're not autoHeighting the grid, the scroller element must always be full height so that
+    // mouse wheel events are received from below the row content.
+    &:not(.b-autoheight) {
+        .b-grid-body-container {
+            // auto height does not work in edge if these styles are applied
+            flex    : 1 1 auto;
+            contain : strict;
+        }
+
+        > .b-grid-body-container > .b-grid-vertical-scroller {
+            min-height : 100%;
+        }
+    }
+
+    &.b-grid-translate,
+    &.b-grid-translate3d {
+        .b-grid-row {
+            transform-style : flat;
+            // This unintentionally limits translation range
+            //will-change     : transform;
+        }
+    }
+
+    &.b-no-column-lines {
+        // Rule needs to be this specific to override a rule for column lines coloring in scheduler
+        .b-grid-row .b-grid-cell {
+            border-right-color : transparent;
+        }
+    }
+
+    /*
+     * This implements the fillLastColumn config. It causes the last leaf header, and the last cell in
+     * each row to flex-grow to consume all available space when there are no configured flexed columns and rows are not
+     * wider than their container.
+     */
+    &.b-fill-last-column {
+        .b-grid-horizontal-scroller:not(.b-has-flex):not(.b-overflowing-horizontally) .b-grid-cell:last-child,
+        .b-grid-footer-scroller:not(.b-has-flex):not(.b-overflowing) .b-grid-footer:last-child,
+        .b-grid-header-scroller:not(.b-has-flex):not(.b-overflowing) .b-last-parent,
+        .b-grid-header-scroller:not(.b-has-flex):not(.b-overflowing) .b-last-leaf {
+            flex-grow : 1;
+        }
+    }
+
+    .b-grid-empty .b-grid-subgrid:first-child::before {
+        color    : $grid-header-text-color;
+        content  : attr(data-empty-text);
+        position : absolute;
+        top      : 1em;
+        left     : 1em;
+    }
+
+    &.b-grid-notextselection .b-grid-cell {
+        @include user-select-none();
+    }
+
+    &.b-notransition * {
+        transition : none !important;
+    }
+
+    &.b-disabled {
+        opacity : $grid-disabled-opacity;
+    }
+}
+
+.b-grid-row:not(.b-grid-row-updating) * {
+    transition : none;
+}
+
+.b-grid-body-container {
+    position : relative;
+
+    &:focus {
+        outline : none;
+
+        .b-grid-row.b-selected {
+            background-color : $grid-focus-row-selected-background-color;
+        }
+
+        //.b-grid-cell.b-selected {
+        //    background-color : $grid-focus-row-selected-background-color; //$grid-focus-row-selected-cell-background-color;
+        //}
+    }
+}
+
+// Default to disabling scroll while playing demos, otherwise it is to easy for users to interfere
+.b-playing-demo .b-grid-body-container {
+    overflow : hidden !important;
+}
+
+.b-grid-vertical-scroller {
+    position       : absolute;
+    display        : flex;
+    flex-flow      : row nowrap;
+    overflow       : hidden;
+    //        overflow-x : hidden;
+    width          : 100%;
+    align-items    : stretch;
+}
+
+.b-grid-row-container {
+    display   : inline-block;
+    min-width : 100%;
+}
+
+//region Virtual scrollbars
+
+.b-virtual-scrollers {
+    display        : flex;
+    flex-direction : row;
+    contain        : paint style layout;
+
+    .b-firefox & {
+        // `contain : style;` is not supported by Firefox
+        contain : paint layout;
+    }
+
+    // If it's an overlaying scrollbar, make it absolutely positioned, docked to
+    // the bottom of the grid.
+    //
+    // If it's an overlaying scrollbar, it should not interact with pointers.
+    // The "wheel" event will go directly to the scrollable content, and mouseovers
+    // should go through to the grid content.
+    //
+    // We need to force a height if the platform is using overlaying scrollbars
+    // and therefore will not "stretch" the overflowing element with a permanent scrollbar.
+    //
+    // Since it's a non-interacting, overlayed element, the height is unimportant as long
+    // as it is tall enough to show its overlayed scrollbars when being scrolled.
+    &.b-overlay-scrollbar {
+        position       : absolute;
+        bottom         : 0;
+        pointer-events : none;
+
+        .b-virtual-scroller {
+            height : 20px;
+        }
+    }
+
+    .b-visible-scrollbar:not(.b-ie) & {
+        &.b-grid-vertical-overflow {
+            overflow-y : scroll;
+        }
+    }
+
+    .b-virtual-scroller {
+        overflow-x       : scroll;
+        overflow-y       : hidden;
+
+        .b-safari & {
+            overflow-x : scroll !important; // Needed for Safari, to override overflowX: auto from Scroller.js
+        }
+    }
+
+    .b-virtual-width {
+        height : 1px;
+    }
+}
+
+/* using tag name to increase specificity, otherwise rule gets overridden by salesforce styles */
+.b-grid-footer-container,
+header.b-grid-header-container {
+    display        : flex;
+    flex-direction : row;
+}
+
+.b-grid-header-container {
+    border-bottom : $grid-header-container-border-bottom-width solid $grid-header-border-color;
+}
+
+.b-grid-footer-scroller,
+.b-grid-header-scroller {
+    overflow : hidden;
+    position : relative;
+    display  : flex;
+}
+
+.b-grid-footers,
+.b-grid-headers {
+    z-index : 2;
+    contain : paint style layout;
+
+    .b-firefox & {
+        // `contain : style;` is not supported by Firefox
+        contain : paint layout;
+    }
+}
+
+//endregion

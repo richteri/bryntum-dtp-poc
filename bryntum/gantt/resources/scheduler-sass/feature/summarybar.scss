@@ -1,0 +1,52 @@
+.b-grid-footer.b-sch-timeaxiscolumn {
+    padding         : 0;
+    flex-direction  : row;
+
+    // Override .b-grid-footer's centering
+    justify-content : start;
+
+
+    // Override the b-fill-last-column stretching
+    flex-grow        : unset !important;
+
+    .b-timeaxis-tick {
+        display         : flex;
+        flex-direction  : column;
+        text-align      : center;
+        overflow        : hidden;
+        //height          : 1em;
+        justify-content : center;
+        align-items     : stretch;
+        padding         : .5em 0;
+    }
+
+    .b-timeaxis-tick:not(:last-child) {
+        border-right : 1px solid $timeaxis-cell-footer-border-color;
+    }
+}
+
+.b-timeaxis-summary-tip {
+    display        : flex;
+    flex-direction : row;
+    flex-wrap      : wrap;
+
+    header {
+        width         : 100%;
+        text-align    : center;
+        font-weight   : 700;
+        margin-bottom : 1em;
+    }
+
+    label {
+        flex      : 1 1 50%;
+    }
+
+    .b-timeaxis-summary-value {
+        flex : 0 0 auto;
+    }
+
+}
+
+.b-ie .b-grid-footer.b-sch-timeaxiscolumn .b-timeaxis-tick {
+    flex-shrink : 0;
+}

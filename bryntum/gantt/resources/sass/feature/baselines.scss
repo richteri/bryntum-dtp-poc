@@ -1,0 +1,48 @@
+@import '../variables.scss';
+
+.b-gantt-task-wrap {
+
+    .b-baseline-wrap {
+        display        : flex;
+        flex-direction : column;
+        align-self     : flex-start;
+        position       : relative;
+        transition     : none;
+    }
+
+    .b-task-baseline {
+        // Baselines are shifted to before/after the task
+        position         : relative;
+        align-self       : start;
+
+        // Baselines are hidden by flexing down to zero height by default
+        display          : block;
+        flex             : $gantt-baseline-flex;
+        border           : $gantt-baseline-border-width solid $gantt-baseline-border-color;
+        transition       : flex $gantt-baseline-animate-duration, border-width $gantt-baseline-animate-duration, font-size $gantt-baseline-animate-duration;
+        background-color : $gantt-baseline-background-color;
+        margin-top       : $gantt-baseline-margin-top;
+
+        &:before {
+            font-size  : inherit;
+            transition : font-size $gantt-baseline-animate-duration;
+        }
+    }
+}
+
+.b-gantt-task-wrap.b-milestone-wrap.b-has-baselines {
+    .b-gantt-task {
+        font-size  : 60%;
+        transition : flex $gantt-baseline-animate-duration, font-size $gantt-baseline-animate-duration;
+    }
+
+    .b-task-baseline {
+        border     : $gantt-baseline-margin-top solid $gantt-baseline-milestone-border-color;
+        font-size  : 50%;
+        align-self : center;
+
+        &:before {
+            border-width : inherit;
+        }
+    }
+}

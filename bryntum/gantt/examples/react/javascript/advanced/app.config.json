@@ -1,0 +1,10 @@
+{
+  "dependencies": [
+    {
+      "src": "../../_shared",
+      "out": "../../_shared/dist"
+    }
+  ],
+  "title": "Gantt Advanced React demo",
+  "description": "This demo shows how to use Bryntum Gantt in an advanced configuration using React framework"
+}

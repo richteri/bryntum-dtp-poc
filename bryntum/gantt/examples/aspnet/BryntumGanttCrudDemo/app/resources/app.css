@@ -1,0 +1,233 @@
+@import "./fonts/fonts.css";
+@import "../node_modules/bryntum-gantt/gantt.stockholm.css";
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-size: 14px !important;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+  padding-right: 0;
+  transition: padding-right .3s;
+}
+
+body.b-initially-hidden {
+  visibility: hidden;
+}
+
+body.b-change-size #container {
+  transition: all .3s;
+}
+
+body.b-generating-thumb * {
+  transition: none !important;
+  animation-duration: 0s !important;
+}
+
+.b-grid {
+  flex: 1;
+}
+
+#container {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  transform: translate(0, 0);
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+#container::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  max-height: 0;
+  left: 0;
+  border: none;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+.demo-header {
+  display: flex;
+  color: #fff;
+  padding: 2em 0;
+  transition: background-color .5s, padding .5s, font-size .1s;
+  background-color: #1e88e5;
+  flex: 0 0 auto;
+}
+
+.demo-header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.demo-header #title-container {
+  display: inline-flex;
+  align-items: center;
+  flex: 1;
+  min-height: 3em;
+  overflow: hidden;
+}
+
+.demo-header #title {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 1em;
+  padding: 0.2em 0 0.2em 2.1em;
+  font-size: 1.8em;
+  background: url(images/logo_bryntum_bw.png) no-repeat;
+  background-size: 1.6em;
+  background-position-y: center;
+  white-space: nowrap;
+}
+
+.demo-header #tools {
+  display: flex;
+  align-items: center;
+  background-color: inherit;
+  transition: background-color 0s, margin-top .3s;
+  padding-right: 1em;
+}
+
+.demo-header #tools > .b-widget:not([data-group]) {
+  margin-left: .5em;
+}
+
+.demo-header #tools .b-field {
+  margin-right: 1em;
+}
+
+.demo-header #tools .b-numberfield {
+  width: 18em;
+}
+
+.demo-header #tools .b-has-label label {
+  color: #fff;
+}
+
+.b-hint .header {
+  font-weight: bold;
+}
+
+.b-notransition .demo-header {
+  transition: none;
+}
+
+.b-notransition * {
+  transition: none !important;
+}
+
+#header-tools {
+  display: none;
+}
+
+.demo-header #header-tools {
+  display: inline-block;
+}
+
+.info-popup.b-popup .b-popup-content {
+  padding: 1.5em;
+}
+
+.info-popup.b-popup .b-popup-content .b-html {
+  flex-direction: column;
+}
+
+.info-popup.b-popup .b-popup-content .header {
+  font-weight: 700;
+}
+
+.info-popup.b-popup .b-popup-content .description {
+  padding-top: .5em;
+  line-height: 1.4em;
+}
+
+.info-popup.b-popup .b-popup-content .b-widget:not(.b-html):not(.b-fieldtrigger) {
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+
+.info-popup.b-popup .b-popup-content .b-button {
+  justify-content: center;
+  margin-right: 1em;
+}
+
+.b-scheduler .name {
+  display: flex;
+}
+
+.b-scheduler .name img {
+  width: 38px;
+  border-radius: 100%;
+  margin: 0 15px 0 5px;
+}
+
+.b-scheduler .name dl {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.b-scheduler .name dt {
+  font-weight: bold;
+  color: #444;
+}
+
+.b-scheduler .name dd {
+  font-size: 0.8em;
+  color: #999;
+  margin: 4px 0;
+}
+
+.dark .name dt {
+  color: #eee;
+}
+
+@keyframes fake-progress {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.b-sch-event.b-sch-committing::before, .b-sch-event.b-sch-committing:hover::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.b-sch-event.b-sch-committing::after, .b-sch-event.b-sch-committing:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 2px;
+  width: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  animation: fake-progress;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+}
+
+#favicon {
+  visibility: hidden;
+  background: url('images/favicon.png');
+}

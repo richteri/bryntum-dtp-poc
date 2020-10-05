@@ -1,0 +1,62 @@
+@import '../../variables.scss';
+
+.b-grid-footer-container {
+    background-color : $grid-footer-background-color;
+    // use outline to overlap last rows bottom border for nicer look
+    outline          : $grid-footer-outline-width solid $grid-footer-outline-color;
+    z-index          : 2;
+    box-shadow       : $grid-footer-box-shadow;
+
+    &.b-hidden {
+        display : none;
+    }
+}
+
+.b-grid-footers {
+    display             : inline-flex;
+    align-items : stretch;
+    height              : 100%;
+    white-space         : nowrap;
+    // In case page uses its own line-height, it would break our rendering potentially
+    line-height : initial;
+
+    .b-overflowing > & {
+        flex : 1;
+    }
+
+    :not(.b-overflowing) > & {
+        min-width : 100%;
+    }
+}
+
+.b-grid-footer {
+    display         : flex;
+    border-right    : 1px solid $grid-footer-border-color;
+    flex-direction  : column; // want to stack summary cells within footer
+    flex-shrink     : 0;
+    align-items     : stretch;
+    justify-content : center;
+    position        : relative;
+    padding         : 0.5em .5em;
+    white-space     : nowrap;
+    text-overflow   : ellipsis;
+    height          : 100%;
+    color           : $grid-footer-text-color;
+    overflow        : hidden;
+}
+
+.b-grid-footer:last-child {
+    border-right : none;
+}
+
+.b-grid-footer-align-left {
+    text-align : left;
+}
+
+.b-grid-footer-align-center {
+    text-align : center;
+}
+
+.b-grid-footer-align-right {
+    text-align : right;
+}

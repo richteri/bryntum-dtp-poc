@@ -1,0 +1,25 @@
+@import '../variables.scss';
+
+.b-schedulerbase.b-dragcreating {
+    // prevent tooltips from showing when creating events and prevent 'scheduleclick' from firing on the mouseup of a dragcreate
+    .b-sch-timeaxis-cell {
+        pointer-events: none;
+    }
+}
+
+.b-schedulerbase.b-dragcreating-proxy-sizing {
+    @include user-select-none();
+
+    /* prevent other events from reacting to hover during drag create */
+    .b-sch-event-wrap {
+        pointer-events: none;
+    }
+}
+
+.b-sch-dragcreator-proxy {
+    background-color : transparentize(adjust_hue(lighten($event-bar-background-color, 15%), 5%), 0.4);
+    z-index          : $interacting-event-zindex;
+    position         : absolute;
+    pointer-events   : all;
+    font-size        : $event-font-size;
+}

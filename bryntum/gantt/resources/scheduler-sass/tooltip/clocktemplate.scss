@@ -1,0 +1,128 @@
+﻿@import "../variables.scss";
+
+.b-sch-clockwrap {
+    display : flex;
+
+    &:not(:first-child) {
+        margin-top : .3em;
+    }
+}
+
+.b-sch-clock {
+    position    : relative;
+    height      : 21px;
+    width       : 21px;
+
+    // Flexbox compresses child boxes without this rule
+    min-width   : 21px;
+    white-space : nowrap;
+    //display     : inline-block;
+    //text-indent : -100px;
+
+    .b-sch-hour-indicator {
+        border-top    : 2px solid transparent;
+        border-bottom : 6px solid #777;
+    }
+
+    .b-sch-minute-indicator {
+        border-top : 8px solid #777;
+    }
+
+    .b-sch-minute-indicator,
+    .b-sch-hour-indicator {
+        position         : absolute;
+        left             : 50%;
+        top              : 1px;
+        width            : 2px;
+        height           : 8px;
+        overflow         : hidden;
+        margin-left      : -1px;
+        transform-origin : 50% 100%;
+    }
+}
+
+.b-sch-clock-hour {
+    .b-sch-clock {
+        border           : 2px solid $main-color;
+        background-color : $clock-background-color;
+        //box-shadow       : 0px 1px 1px #444 inset;
+        border-radius    : 100%;
+    }
+
+    .b-sch-clock-dot {
+        position      : absolute;
+        left          : 50%;
+        top           : 50%;
+        width         : 4px;
+        height        : 4px;
+        margin-left   : -2px;
+        margin-top    : -2px;
+        background    : #777;
+        border-radius : 3px;
+        z-index       : 2;
+    }
+}
+
+.b-sch-clock-day {
+    .b-sch-clock {
+        background-color : $clock-background-color;
+        //border     : 1px solid #ccc;
+        border           : none;
+        border-radius    : $widget-border-radius;
+
+        .b-sch-hour-indicator {
+            width                   : inherit;
+            position                : static !important;
+            background-color        : $main-color;
+            border-top-left-radius  : $widget-border-radius;
+            border-top-right-radius : $widget-border-radius;
+            //border-bottom    : 1px solid navy;
+            font-size               : 7px;
+            line-height             : 8px;
+            text-align              : center;
+            color                   : #fff;
+            height                  : 9px;
+            text-indent             : 0;
+            margin-top              : -1px;
+            margin-left             : 0;
+            border                  : 0 none;
+            // Maintainer: Needed to override leftover transform when switching mode
+            transform               : none !important;
+            //filter           : none !important;
+        }
+
+        .b-sch-minute-indicator {
+            width            : inherit;
+            color            : #555;
+            position         : static !important;
+            height           : 16px;
+            background-color : transparent;
+            font-size        : 10px;
+            text-align       : center;
+            text-indent      : 0;
+            line-height      : 12px;
+            border           : none;
+            margin-left      : 0;
+            // Maintainer: Needed to override leftover transform when switching mode
+            transform        : none !important;
+            //filter           : none !important;
+        }
+    }
+
+    .b-sch-clock-dot {
+        display : none;
+    }
+}
+
+.b-sch-clock-text {
+    margin-left : 8px;
+    padding-top : 1px;
+    white-space : nowrap;
+    width       : 100%;
+}
+
+/*.b-rtl .b-sch-clock-text {
+    margin-left  : auto;
+    margin-right : 25px;
+}*/
+

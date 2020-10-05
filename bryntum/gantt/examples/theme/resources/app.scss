@@ -1,0 +1,67 @@
+#container.b-panel {
+    flex : 1;
+
+    > .b-toolbar {
+        border-bottom : 1px solid;
+
+        > .b-widget {
+            margin-right : 1em;
+        }
+
+        .b-button {
+            min-width : 3.5em;
+        }
+    }
+
+    .b-panel-content {
+        background-color : transparent;
+    }
+
+    .b-panel-content {
+        padding : 0;
+    }
+}
+
+.b-theme-stockholm #container.b-panel > .b-toolbar {
+    border-bottom-color : #d8d9da;
+}
+
+.b-theme-default #container.b-panel > .b-toolbar {
+    background-color    : #f1f1f4;
+    border-bottom-color : #b0b0b6;
+
+    .label {
+        color : #555;
+    }
+}
+
+.b-theme-light #container.b-panel > .b-toolbar {
+    background-color    : #fff;
+    border-bottom-color : #e0e0e0;
+}
+
+.b-theme-material #container.b-panel > .b-toolbar {
+    background-color : #fff;
+    border-bottom    : none;
+
+    .label {
+        color : #555;
+    }
+}
+
+.b-theme-dark #container.b-panel > .b-toolbar {
+    background-color    : #2b2b2f;
+    border-bottom-color : #2a2b2e;
+}
+
+.label
+{
+    align-items: center;
+}
+
+// make sure buttons fit on narrow devices
+@media (max-width: 450px) {
+    #container.b-panel .b-toolbar{
+        font-size:0.7em;
+    }
+}

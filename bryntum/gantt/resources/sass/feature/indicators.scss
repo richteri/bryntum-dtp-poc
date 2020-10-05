@@ -1,0 +1,152 @@
+@import '../variables.scss';
+
+.b-indicator {
+    position       : absolute;
+    pointer-events : all;
+    z-index        : 6;
+    overflow       : visible;
+    white-space    : nowrap;
+    transition     : color .2s, border-color .2s;
+    color          : $indicator-dates-color;
+
+    .b-animating & {
+        transition : all .2s;
+    }
+
+    i {
+        position  : absolute;
+        top       : 50%;
+        transform : translate(-50%, -50%);
+        font-size : .6em;
+        color     : $indicator-dates-color;
+    }
+
+    &:hover {
+        z-index      : 7;
+        color        : $indicator-dates-hover-color;
+        border-color : $indicator-dates-hover-color;
+    }
+
+    &.b-has-icon::before {
+        top : 90%;
+    }
+
+    &.b-bottom {
+        top : $indicator-at-bottom-top;
+    }
+
+    &.b-early-dates,
+    &.b-late-dates {
+        height       : $indicator-at-bottom-size !important;
+        border-width : 1px;
+        border-style : solid;
+        border-top   : none;
+        border-color : $indicator-dates-color;
+
+        &:hover {
+            border-color : $indicator-dates-hover-color;
+        }
+    }
+
+    &.b-deadline-date {
+        @extend .b-icon;
+
+        width : auto;
+        left  : -2.5px;
+
+        &::before {
+            @extend .b-fa-flag:before;
+            color          : $red;
+            font-size      : $indicator-at-bottom-size * 2;
+            vertical-align : top;
+            position       : relative;
+            top            : -2px;
+            transition     : color .2s;
+        }
+
+        &:hover::before {
+            color : darken($red, 20);
+        }
+    }
+
+    &.b-constraint-date {
+        width : $indicator-at-bottom-size;
+
+        &::before {
+            transition : border-color .2s, background-color .2s;
+        }
+
+        &:hover::before {
+            border-color : $indicator-dates-hover-color;
+        }
+    }
+
+    &.b-constraint-type-muststarton,
+    &.b-constraint-type-mustfinishon {
+        @extend .b-icon;
+
+        border : none;
+        width  : auto;
+        left   : -$indicator-at-bottom-size * .75; // Cannot use translateX(-50%) on pseudo, misaligns tooltip
+
+        &::before {
+            @extend .b-fa-thumbtack:before;
+            font-size      : $indicator-at-bottom-size * 2;
+            vertical-align : top;
+            position       : relative;
+            top            : -2px;
+        }
+    }
+
+    &.b-constraint-type-startnoearlierthan,
+    &.b-constraint-type-startnolaterthan {
+        &::before {
+            content                    : '';
+            display                    : block;
+            font-size                  : 10px;
+            width                      : .5em;
+            height                     : 1em !important;
+            border-top-right-radius    : 2em;
+            border-bottom-right-radius : 2em;
+            border                     : 1px solid $indicator-dates-color;
+            background-color           : $indicator-dates-color;
+        }
+    }
+
+    &.b-constraint-type-startnolaterthan {
+        &::before {
+            background-color : transparent;
+        }
+    }
+
+    &.b-constraint-type-startnoearlierthan:hover::before {
+        background-color : $indicator-dates-hover-color;
+    }
+
+    &.b-constraint-type-finishnoearlierthan,
+    &.b-constraint-type-finishnolaterthan {
+        left : -$indicator-at-bottom-size + 1;
+
+        &::before {
+            content                   : '';
+            display                   : block;
+            font-size                 : 10px;
+            width                     : .5em;
+            height                    : 1em !important;
+            border-top-left-radius    : 2em;
+            border-bottom-left-radius : 2em;
+            border                    : 1px solid $indicator-dates-color;
+            background-color          : $indicator-dates-color;
+        }
+    }
+
+    &.b-constraint-type-finishnolaterthan {
+        &::before {
+            background-color : transparent;
+        }
+    }
+
+    &.b-constraint-type-finishnoearlierthan:hover::before {
+        background-color : $indicator-dates-hover-color;
+    }
+}

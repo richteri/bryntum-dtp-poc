@@ -1,0 +1,78 @@
+@import "../../variables.scss";
+
+// Hidden by default
+.b-row-drop-indicator {
+    display        : none;
+    pointer-events : none;
+}
+
+.b-row-reordering {
+    // A full-width line. It's translated to the row top, and it's top position meakes
+    // it position correctly between rows.
+    .b-row-drop-indicator {
+        position         : absolute;
+        display          : block;
+        left             : 0;
+        top              : #{-$rowreorder-indicator-width / 2};
+        width            : 100%;
+        height           : $rowreorder-indicator-width;
+        background-color : $rowreorder-indicator-color;
+        z-index          : 2000;
+    }
+
+    .b-drag-proxy.b-dragging {
+        transition : margin-top 0.2s, opacity 0.2s;
+        margin-top : 5em;
+        background : transparent;
+        opacity    : 1;
+
+        & .b-grid-row {
+            transition : transform 0.2s, background-color 0.2s;
+            box-shadow : $rowreorder-box-shadow;
+            transform  : scale(0.8);
+            background : $rowreorder-row-background;
+        }
+
+        &.b-drag-invalid .b-grid-row {
+            border: 2px solid $red;
+        }
+    }
+
+    // Must move above the .b-grid-splitter element during drag
+    .b-grid-body-container {
+        z-index : 4;
+    }
+
+    .b-drag-original {
+        opacity : 0.3;
+    }
+
+    // transition back on drop
+    .b-drag-proxy.b-dropping {
+        margin-top : 0;
+        opacity    : 0;
+
+        & .b-grid-row {
+            transform : scale(1);
+        }
+    }
+
+    // Highlight parent to which a dragged node will belong on drop
+    .b-row-reordering-target-parent .b-tree-cell {
+        color      : $main-color;
+        overflow   : visible;
+        contain    : none;
+
+        .b-tree-expander::before {
+            color      : $main-color;
+        }
+
+        &::before {
+            @extend .b-icon:before;
+            @extend .b-icon-right:before;
+            position : absolute;
+            left     : -.5em;
+        }
+    }
+}
+

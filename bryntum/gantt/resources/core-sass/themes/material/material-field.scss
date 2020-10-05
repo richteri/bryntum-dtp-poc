@@ -1,0 +1,123 @@
+.b-widget.b-numberfield,
+.b-widget.b-textfield {
+    // For materials label, requires !important because of tricky overflow rule in widget
+    overflow : visible !important;
+
+    // Space for the label to migrate into, moves up on focus or if field has value
+    &.b-has-label,
+        // Used to align a field without label with one that has a label
+    &.b-match-label {
+        margin-top : 1.2em;
+    }
+
+    // Animated bottom border
+    .b-field-inner::before {
+        display          : inline-block;
+        position         : absolute;
+        background-color : $primary;
+        height           : 2px;
+        left             : 0;
+        right            : 0;
+        bottom           : -1px;
+        content          : '';
+        transition       : transform 0.3s;
+        transform        : scaleX(0);
+    }
+
+    // Stretch that bottom border out on focus or when field has value
+    & .b-field-inner:focus-within::before,
+    &.b-open .b-field-inner::before {
+        transform : scaleX(1);
+    }
+
+    // Turn animated bottom border red on invalid field
+    &.b-invalid .b-field-inner::before {
+        background-color : $field-invalid-border-color;
+    }
+
+    // Hide placeholder text for fields that have a label, since material displays label within field when empty
+    &.b-has-label ::-webkit-input-placeholder {
+        color : transparent;
+    }
+
+    label {
+        position      : absolute;
+        top           : -1em;
+        bottom        : auto;
+        transition    : all 0.2s;
+
+        // We need !important because Material embeds labels inside field input
+        // and must override all app-based label width settings.
+        width         : 100% !important;
+
+        // And because it's limited to the input field width, we must handle long labels.
+        // They do not wrap, they clip at the end with ellipsis.
+        white-space   : nowrap;
+        overflow      : hidden;
+        text-overflow : ellipsis;
+    }
+
+    // Larger label at baseline of empty field
+    &.b-empty:not(:focus-within):not(.b-open) label {
+        font-size : 1em;
+        top       : 1em;
+    }
+
+    // Special styling for displaying on dark background
+    &.b-bright {
+        border-color : $gray200;
+        color        : #fff;
+
+        &:not(.b-has-label) ::-webkit-input-placeholder {
+            color : #fff;
+        }
+
+        label, label i {
+            color : rgba(255, 255, 255, .9);
+        }
+
+
+        &:hover:not(.b-disabled) .b-field-inner {
+            border-color : #fff;
+        }
+
+        .b-field-inner {
+            .b-fieldtrigger {
+                color : inherit;
+            }
+
+            // Orange bottom animated thingy
+            &::before {
+                background-color : $secondary;
+            }
+        }
+    }
+
+    .b-fieldtrigger.b-align-start {
+        padding-right : .5em;
+    }
+}
+
+.b-cell-editor .b-field input {
+    padding-left  : .5em;
+    padding-right : .5em;
+}
+
+
+.b-timefield {
+    // Add some space between the Left arrow icon and editor
+    .b-icon.b-align-start {
+        margin-right : .5em;
+    }
+
+    // Raised label has no extra space at left
+    &:focus-within label {
+        margin-left : 0;
+    }
+
+    // Left arrow icon should not cover the label
+    label {
+        margin-left : 1.8em;
+        margin-top  : -0.2em;
+    }
+}

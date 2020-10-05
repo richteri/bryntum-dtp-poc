@@ -1,0 +1,28 @@
+.b-widget.b-timeline {
+  flex: none;
+  height: 13em;
+}
+
+.b-widget.b-timeline.small {
+  height: 9em;
+  padding-top: 2em;
+  padding-bottom: 3em;
+}
+
+.b-widget.b-timeline.small .b-sch-event {
+  font-size: 11px;
+}
+
+.b-widget.b-timeline.small .b-milestone-wrap .b-milestone label {
+  margin-top: 1em;
+}
+
+.b-widget.b-timeline.small .b-milestone-wrap .b-milestone label:before {
+  display: none;
+}
+
+.b-widget.b-timeline.large {
+  height: 18em;
+  padding-top: 4em;
+  padding-bottom: 6em;
+}

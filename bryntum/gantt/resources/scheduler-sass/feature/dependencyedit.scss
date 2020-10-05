@@ -1,0 +1,36 @@
+@import '../variables.scss';
+
+.b-dependencyeditor.b-popup {
+    width : 29em;
+
+    .b-popup-content {
+        padding : 1em 1em 0 1em;
+
+        .b-textfield {
+            label {
+                flex : 1 0 $dependencyedit-label-width;
+            }
+        }
+    }
+
+    .b-bottom-toolbar {
+        padding         : 1em 1em 0.4em 1em;
+        //justify-content : space-between;
+
+        .b-label-filler {
+            @if $dependencyedit-label-filler-width == null {
+                display : none;
+            }
+            width : $dependencyedit-label-filler-width;
+        }
+
+        > button {
+            flex : 1;
+            margin-right : .5em;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}

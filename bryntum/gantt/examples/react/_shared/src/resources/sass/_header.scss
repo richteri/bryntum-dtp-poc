@@ -1,0 +1,74 @@
+/**
+ *- Header styling
+ */
+@import 'variables';
+
+// header styling
+.demo-header {
+  display: flex;
+  flex-shrink: 0;
+  padding: $header-padding;
+  transition: $header-transition;
+  background-color: $header-background-color;
+  color: $header-text-color;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  #title-container {
+    display: inline-flex;
+    align-items: center;
+    flex: 1;
+    min-height: $header-title-container-min-height;
+  } // eo #title-container
+
+  #title {
+    display: inline-flex;
+    align-items: center;
+    margin-left: $header-title-margin-left;
+    padding: $header-title-padding;
+    font-size: $header-title-font-size;
+    font-weight: $header-title-font-weight;
+
+    background-image: url(../images/logo_bryntum_bw.png);
+    background-size: $header-title-background-size;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    white-space: nowrap; 
+  } // eo #title
+
+  #tools {
+    display: flex;
+    align-items: center;
+    background-color: inherit;
+    transition: $header-tools-transition;
+    padding-right: $header-tools-padding-right;
+
+    
+    .b-widget {
+      font-size: 1em;
+      font-weight: 400;
+    }
+
+    > .b-widget:not([data-group]) {
+      margin-left: $header-widget-margin-left-no-data;
+      display:inline-flex;
+    }
+
+    .b-button[data-group] {
+        margin-left: $header-widget-margin-left-data;
+    }
+
+    .b-field {
+        margin-right: $header-field-margin-right;
+    }
+
+    .b-numberfield {
+        width: $header-numberfield-width;
+    }
+  }
+} // eo .demo-header
+
+// eof

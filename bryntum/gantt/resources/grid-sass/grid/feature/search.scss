@@ -1,0 +1,30 @@
+@import "../../variables.scss";
+
+.b-search-hit-cell {
+    background : $quickfind-background-color;
+}
+
+.b-search-hit-text {
+    font-weight : $quickfind-font-weight;
+    background  : $quickfind-background-color;
+    padding     : .3em 0;
+}
+
+.b-search-hit-field {
+    position   : absolute;
+    top        : 0;
+    left       : 0;
+    bottom     : 0;
+    right      : 0;
+    padding    : .5em 0;
+    background : $quickfind-background-color;
+}
+
+.b-search-hit-cell-badge {
+    position    : absolute;
+    top         : .4em;
+    right       : .4em;
+    font-size   : .7em;
+    line-height : .7em;
+    color       : $quickfind-badge-color;
+}

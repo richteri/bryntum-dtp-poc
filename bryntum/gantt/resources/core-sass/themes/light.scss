@@ -1,0 +1,50 @@
+// Embed theme details in content.
+// See DomHelper#themeInfo
+.b-theme-info:before {
+    content : '{"name":"Light"}';
+}
+
+// redefine variables here
+$blue : #64B5F6;
+$orange : #FFCC80;
+$amber : #FFD54F;
+$red : #EF9A9A;
+$yellow : #FFF176;
+$green : #A5D6A7;
+$gray : #E0E0E0;
+$light-gray : #F9F9F9;
+$dark-gray : #757575;
+
+$widget-border-color : transparentize(#BDBDBD, .5);
+$checkbox-color : #fff;
+$float-box-shadow : 2px 2px 6px rgba(0, 0, 0, 0.1);
+$datepicker-background-color : $light-gray;
+//$datepicker-month-color : $light-gray;
+$widget-text-bright-color : #616161;
+$tooltip-background-color : lighten(#FFFDE7, 3);
+$menu-item-border-color : darken($light-gray, 10);
+$list-item-border-color : $menu-item-border-color;
+$popup-background-color : #f9f9f9;
+$panel-background-color : #eee;
+$field-container-label-color : #616161;
+$field-container-active-label-color : #212121;
+$panel-background-color : #fafafa;
+$panel-toolbar-background-color : $popup-background-color;
+
+$button-color : #fff;
+
+$splitter-background-color : #f0f0f0;
+
+$tabpanel-border-color : transparent;
+$tabpanel-background-color : #fefefe;
+$tabpanel-tab-hover-background-color : #f4f4f4;
+$tabpanel-tab-color : #777;
+
+$field-container-label-color : #f9f9f9 !default;
+$field-container-active-label-color : #fff !default;
+
+@import "shared";
+
+header.demo-header {
+    background-color : #42A5F5;
+}

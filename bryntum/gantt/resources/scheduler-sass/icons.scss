@@ -1,0 +1,25 @@
+// additional scheduler icons
+
+.b-icon-unassign:before {
+    @extend .b-fa-unlink:before;
+}
+
+.b-icon-valid:before {
+    @extend .b-fa-check:before;
+}
+
+.b-icon-invalid:before {
+    @extend .b-fa-ban:before;
+}
+
+.b-icon-checking:before {
+    @extend .b-fa-spinner:before;
+}
+
+.b-icon-prev:before {
+    @extend .b-fa-angle-left:before;
+}
+
+.b-icon-next:before {
+    @extend .b-fa-angle-right:before;
+}

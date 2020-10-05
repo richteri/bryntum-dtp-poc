@@ -1,0 +1,64 @@
+@import '../../core-sass/themes/stockholm.scss';
+
+$grid-row-odd-color : #fafafa;
+$grid-cell-border-color : #e9eaeb;
+$grid-cell-font-weight : 400;
+$grid-cell-color : lighten($dark-gray, 10%);
+$grid-region-resize-splitter-color : $gray;
+$grid-header-text-color : lighten($widget-text-dark-color, 10%);
+$grid-header-background-color : #f3f4f5;
+$grid-header-border-color : #d8d9da;
+$grid-header-font-weight : $stockholm-font-weight;
+$grid-header-text-transform : uppercase;
+$grid-header-font-size : .9em;
+$grid-header-box-shadow : 0 2px 4px rgba(0, 0, 0, 0.08);
+$grid-selection-color : $main-color;
+$grid-cell-focused-outline-color : transparentize($secondary-color, .4);
+$grid-cell-focused-outline-width : 1px;
+$grid-header-icon-font-size : .8em;
+
+$grid-footer-box-shadow : 0 -2px 4px rgba(0, 0, 0, 0.08);
+
+$grid-group-header-color : $widget-text-dark-color;
+$grid-group-header-background-color : #fafbfc;
+$grid-group-header-line-width : 1px;
+$grid-group-header-icon-color : #babbbc;
+$grid-group-header-text-transform : uppercase;
+$grid-groupsummary-background-color : #fffbf5;
+
+$grid-cell-row-hover-background-color : fade-out($grid-selection-color, 0.85);
+$grid-row-selected-background-color : fade-out($grid-selection-color, 0.75);
+$grid-focus-row-selected-background-color : fade-out($grid-selection-color, 0.7);
+
+$grid-region-resize-splitter-color : $grid-cell-border-color;
+
+$tree-expander-color : lighten($grid-cell-color, 30%);
+$tree-parent-font-weight : 600;
+$tree-parent-color : lighten($grid-cell-color, 10%);
+
+$columndragtoolbar-button-color : $widget-text-dark-color;
+
+$quickfind-font-weight : 400;
+
+.b-icon-sort-asc:before {
+    @extend .b-fa-arrow-up:before;
+}
+
+.b-icon-sort-desc:before {
+    @extend .b-fa-arrow-down:before;
+}
+
+.b-icon-group-collapse:before {
+    content : '\f068' !important;
+}
+
+.b-icon-group-expand:before {
+    content : '\f067' !important;
+}
+
+@import "shared";
+
+// hide borders in headers when column lines are hidden
+.b-gridbase.b-no-column-lines .b-grid-header {
+    border-right-color : transparent;
+}

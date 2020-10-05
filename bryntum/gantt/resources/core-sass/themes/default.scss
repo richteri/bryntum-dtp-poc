@@ -1,0 +1,7 @@
+@import "shared";
+
+// Embed theme details in content.
+// See DomHelper#themeInfo
+.b-theme-info:before {
+    content: '{"name":"Default"}';
+}

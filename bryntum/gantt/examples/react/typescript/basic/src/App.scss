@@ -1,0 +1,13 @@
+/**
+ *- Main application scss file
+ */
+
+// remove the left margin from fullscreen button to evenly space header controls
+.demo-header #tools button#fullscreen-button {
+    margin-left : 0;
+}
+.b-react-gantt-container {
+    flex : 1;
+}
+
+// eof

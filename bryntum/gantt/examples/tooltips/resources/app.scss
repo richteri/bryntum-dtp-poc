@@ -1,0 +1,25 @@
+.b-gantt-task-tooltip {
+    td {
+        padding : 3px 10px;
+
+        &:first-child {
+            width : 150px;
+        }
+
+        &:last-child {
+            background-color : #f3f3f3;
+
+            .b-theme-default & {
+                color : #262626;
+            }
+
+            .b-theme-dark & {
+                color : #2b2b2f;
+            }
+
+            .b-theme-material & {
+                color : #757575;
+            }
+        }
+    }
+}

@@ -1,0 +1,76 @@
+@import "../variables.scss";
+
+.b-ie {
+    .b-sch-event-wrap, .b-gantt-task-wrap {
+        .b-sch-label-right {
+            right     : -5px;
+            top       : 50%;
+            // Must use translate3d to overcome Safari flickering
+            transform : translate3d(100%, -50%, 0);
+        }
+
+        .b-sch-label-left {
+            left      : -5px;
+            top       : 50%;
+            // Must use translate3d to overcome Safari flickering
+            transform : translate3d(-100%, -50%, 0);
+        }
+    }
+}
+
+.b-sch-event-wrap, .b-gantt-task-wrap {
+    .b-sch-label {
+        font-size      : 12px;
+        text-align     : center;
+        white-space    : nowrap;
+        margin         : .2em 0;
+        color          : $event-labels-color;
+        font-weight    : $event-font-weight;
+        // prevent text being selected during drag drop in Gantt
+        @include user-select-none();
+
+        // .b-gantt-task-wrap has pointer-events: none for some reason
+        pointer-events : all;
+
+        &.b-sch-label-top {
+            order: -2;
+        }
+        &.b-sch-label-left {
+            order: -1;
+        }
+    }
+
+    &.b-sch-event-selected .b-sch-label {
+        color : $selected-event-labels-color;
+    }
+
+    //&.b-sch-label-bottom {
+    //}
+
+    .b-sch-label-left {
+        position   : absolute;
+        align-self : self-start;
+        // Must use translate3d to overcome Safari flickering
+        transform  : translate3d(calc(-100% - #{$event-label-spacing}), 0, 0);
+        margin     : 0;
+    }
+
+    .b-sch-label-right {
+        position   : absolute;
+        align-self : flex-end;
+        // Must use translate3d to overcome Safari flickering
+        transform  : translate3d(calc(100% + #{$event-label-spacing}), 0, 0);
+        margin     : 0;
+    }
+
+    // When there are baselines, align left/right labels to top
+    &.b-has-baselines {
+        .b-baselines & {
+            .b-sch-label-left, .b-sch-label-right {
+                top         : 0;
+                line-height : 85%;
+            }
+        }
+    }
+
+}

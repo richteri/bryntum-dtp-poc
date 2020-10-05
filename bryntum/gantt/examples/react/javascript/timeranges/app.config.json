@@ -1,0 +1,10 @@
+{
+  "dependencies": [
+    {
+      "src": "../../_shared",
+      "out": "../../_shared/build"
+    }
+  ],
+  "title": "React Time ranges demo",
+  "description": "This example show how to highlight important dates or time spans in the schedule in a React app."
+}

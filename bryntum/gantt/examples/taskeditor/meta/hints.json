@@ -1,0 +1,7 @@
+{
+  ".b-gantt-task-wrap:not(.b-gantt-task-parent)" : {
+    "title"   : "Custom task editor",
+    "content" : "Double click to see a custom task editor with an extra `Files` tab added, and two custom fields added to the General tab",
+    "align"   : "t100-b100"
+  }
+}

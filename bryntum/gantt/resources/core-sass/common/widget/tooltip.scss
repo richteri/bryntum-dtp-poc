@@ -1,0 +1,35 @@
+@import '../../variables.scss';
+
+.b-tooltip {
+    @include user-select-none();
+
+    // By default tooltips are not given a max width, since most of our tooltips are pre-formatted
+    //max-width      : 14em;
+
+    .b-tooltip-loading .b-icon {
+        display      : inline-block;
+        margin-right : .5em;
+    }
+}
+
+.b-tooltip-content {
+    background     : $tooltip-background-color;
+    color          : $tooltip-color;
+    font-size      : 1em;
+    line-height    : 1.4em;
+    padding        : 1em;
+
+    a {
+        color : $tooltip-color;
+    }
+}
+
+// Allow themes that use larger header font size to adjust it for headers docked to the sides
+.b-tooltip-header.b-dock-right,
+.b-tooltip-header.b-dock-left {
+    .b-header-title {
+        font-size : $tooltip-side-header-font-size;
+    }
+}
+
+

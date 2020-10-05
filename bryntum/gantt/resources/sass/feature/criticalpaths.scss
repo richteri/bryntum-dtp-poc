@@ -1,0 +1,57 @@
+@import '../variables.scss';
+
+.b-gantt-critical-paths {
+
+    marker#arrowEndCritical {
+        fill : $gantt-critical-dependency-stroke;
+
+        path {
+            fill   : $gantt-critical-dependency-stroke;
+            stroke : $gantt-critical-dependency-stroke;
+        }
+    }
+
+    /* parents */
+    .b-gantt-task-parent {
+
+        .b-gantt-task.b-critical {
+
+            &::before {
+                border-top-color  : $gantt-critical-parent-background-color;
+                border-left-color : $gantt-critical-parent-background-color;
+            }
+
+            &::after {
+                border-top-color   : $gantt-critical-parent-background-color;
+                border-right-color : $gantt-critical-parent-background-color;
+            }
+
+            background-color : $gantt-critical-parent-background-color;
+        }
+    }
+
+    /* leaves */
+    .b-gantt-task.b-critical {
+        background-color : $gantt-critical-task-background-color;
+    }
+
+    .b-milestone-wrap .b-gantt-task.b-critical:not(.b-gantt-task-withicon) {
+        background-color : $gantt-critical-task-background-color;
+    }
+
+    /* dependencies */
+    .b-sch-foreground-canvas > svg {
+        polyline.b-critical {
+            stroke       : $gantt-critical-dependency-stroke;
+            stroke-width : 2;
+            marker-start : url("#arrowEndCritical");
+        }
+    }
+}
+
+/* Edge has overriding styles to use marker in predefined orientation, need to override here too */
+.b-edge .b-gantt-critical-paths .b-sch-foreground-canvas > svg {
+    polyline.b-critical {
+        marker-start : url("#arrowEndCritical");
+    }
+}

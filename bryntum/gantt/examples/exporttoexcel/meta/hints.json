@@ -1,0 +1,14 @@
+{
+    "[data-ref=excelExportBtn1]" : {
+        "title"   : "Export with default settings",
+        "content" : "Settings are taken automatically from the Scheduler locked columns"
+    },
+    "[data-ref=excelExportBtn2]" : {
+        "title"   : "Export with custom settings",
+        "content" : "Configured in the buttons handler. Starts and Ends columns are 140px width."
+    },
+    "[data-ref=excelExportBtn3]" : {
+        "title"   : "Export all event fields",
+        "content" : "Configured in the buttons handler. Gets all non-persisted fields from the event model. Headers are not specified."
+    }
+}

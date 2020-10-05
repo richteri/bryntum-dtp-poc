@@ -1,0 +1,38 @@
+/**
+ *- Application global styles
+ */
+@font-face {
+    font-family : "Source Sans Pro";
+    src         : url("assets/SourceSansPro-Regular.ttf.woff2") format("woff2"), url("assets/SourceSansPro-Regular.ttf.woff") format("woff");
+    font-weight : 400;
+}
+
+html, body, #app {
+    height : 100%;
+}
+
+body {
+    visibility  : unset;
+    font-family : "Source Sans Pro", "Helvetica Neue", Helvetica, sans-serif;
+    font-size   : 15px;
+    margin      : 0;
+}
+
+#container {
+    display        : flex;
+    height         : 100%;
+    flex-direction : column;
+
+    .b-gantt {
+        width: 100%;
+    }
+};
+
+#app {
+    display        : flex;
+    flex-direction : column;
+}
+
+.b-gantt-container {
+    flex : 1;
+}

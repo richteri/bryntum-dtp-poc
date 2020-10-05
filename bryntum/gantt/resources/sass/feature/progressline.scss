@@ -1,0 +1,11 @@
+@import '../variables.scss';
+
+.b-sch-foreground-canvas {
+    .b-progress-line-canvas {
+        z-index: $event-zindex + 20;
+    }
+
+    .b-gantt-progress-line {
+        stroke: $red;
+    }
+}

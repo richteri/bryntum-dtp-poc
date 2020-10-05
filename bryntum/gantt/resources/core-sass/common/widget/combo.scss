@@ -1,0 +1,56 @@
+@import '../../variables.scss';
+
+.b-combo {
+    .b-fieldtrigger.b-icon-picker:before {
+        transition : transform 0.3s;
+    }
+
+    &.b-open {
+        .b-fieldtrigger.b-icon-picker:before {
+            transform : rotate(180deg);
+        }
+    }
+
+    // make clearable icon smaller in combo, to better match trigger icon
+    .b-field-inner .b-fieldtrigger.b-icon-remove {
+        font-size : .8em;
+    }
+
+    &.b-hide-trigger {
+        .b-fieldtrigger.b-icon-picker {
+            display : none;
+        }
+    }
+
+    &.b-multiselect {
+        // Chip view should flow inline when inside a multiselect.
+        // It should consume space left free by any triggers
+        // present.
+        .b-chipview {
+            display     : flex;
+            flex-flow   : wrap;
+            flex        : 1 1 auto;
+            align-items : center;
+            margin      : .3em 0.3em .1em 0;
+        }
+
+        // When there's a ChipView visible, we need less padding.
+        // And the input field is layed out at the end.
+        &:not(.b-empty) {
+            input {
+                padding-left : 0.2em;
+                order        : 99999
+            }
+        }
+        // When it's not editable, the input area should be invisible but accessible (not display:none).
+        &.b-not-editable {
+            input {
+                order         : -1;
+                min-width     : 0;
+                padding-left  : 0;
+                padding-right : 0;
+                flex          : 0 1 0px;
+            }
+        }
+    }
+}

@@ -1,0 +1,53 @@
+@import '../../variables.scss';
+
+.b-timepicker {
+
+    width : 20em;
+
+    &.b-24h {
+        width : 12.8em
+    }
+
+    .b-panel-content {
+        display        : flex;
+        flex-direction : row;
+        align-items    : center;
+        padding        : 0.3em;
+
+        .b-widget {
+            margin : 0.3em;
+
+            &.b-html {
+                margin : 0;
+            }
+
+            label {
+                font-weight : bold;
+            }
+        }
+
+        .b-numberfield {
+            flex : 0 1 5.3em;
+        }
+
+        .b-button {
+            flex : 0 0 3em;
+        }
+    }
+}
+
+// IE11 Styling
+.b-ie.b-timepicker {
+    width : 25em;
+
+    &.b-24h {
+        width : 13.8em
+    }
+
+    .b-panel-content {
+
+        .b-button {
+            line-height : 3em;
+        }
+    }
+}

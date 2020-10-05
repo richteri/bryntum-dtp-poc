@@ -1,0 +1,90 @@
+@import '../../variables.scss';
+
+@mixin bryntum-toolbar-ui(
+    $toolbar-background-color,
+    $toolbar-color,
+    $toolbar-padding
+) {
+    $separator-start-color : null !default;
+    $separator-end-color   : null !default;
+
+    @if lightness($toolbar-background-color) > lightness($toolbar-color) {
+        // Light background theme
+        $separator-start-color : darken($toolbar-background-color, 10%);
+        $separator-end-color   : darken($toolbar-background-color, 5%)
+    }
+    @else {
+        // dark background theme
+        $separator-start-color : lighten($toolbar-background-color, 20%);
+        $separator-end-color   : lighten($toolbar-background-color, 10%);
+    }
+
+    .b-panel {
+        .b-toolbar {
+            background-color : $toolbar-background-color;
+            color            : $toolbar-color;
+            align-items      : center;
+
+
+            // A filler element to push elements along.
+            > .b-toolbar-fill {
+                flex : 1 1 0%;
+            }
+
+            &.b-dock-top,
+            &.b-dock-bottom {
+                flex-flow : row nowrap;
+                padding   : top($toolbar-padding) right($toolbar-padding) 0 left($toolbar-padding);
+
+                // Create the bottom margin by putting padding on child widgets.
+                // This is for when the toolbar wraps to create space between rows.
+                > .b-widget {
+                    margin-bottom : bottom($toolbar-padding);
+                }
+
+                > .b-toolbar-separator {
+                    margin-left        : 0.5em;
+                    margin-right       : 0.5em;
+                    height             : 2.3em;
+                    border-style       : solid;
+                    border-width       : 0 1px 0 1px;
+                    border-left-color  : $separator-start-color;
+                    border-right-color : $separator-end-color;
+                }
+            }
+
+            &.b-dock-left,
+            &.b-dock-right {
+                flex-flow : column nowrap;
+                padding   : top($toolbar-padding) 0 bottom($toolbar-padding) left($toolbar-padding);
+
+                // Create the right margin by putting padding on child widgets.
+                // This is for when the toolbar wraps to create space between rows.
+                > .b-widget {
+                    margin-right : bottom($toolbar-padding) ;
+                }
+
+                > .b-toolbar-separator {
+                    margin-top          : 0.5em;
+                    margin-bottom       : 0.5em;
+                    width               : 2.3em;
+                    border-style        : solid;
+                    border-width        : 1px 0 1px 0;
+                    border-top-color    : $separator-start-color;
+                    border-bottom-color : $separator-end-color;
+                }
+            }
+        }
+    }
+
+    // When displayed in a tabpanel, match its color
+    .b-tabpanel .b-panel .b-toolbar {
+        background-color : $tabpanel-background-color;
+    }
+}
+
+@include bryntum-toolbar-ui(
+    $panel-toolbar-background-color,
+    $panel-toolbar-color,
+    $panel-toolbar-padding
+);

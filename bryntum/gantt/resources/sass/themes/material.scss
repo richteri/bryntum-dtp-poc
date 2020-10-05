@@ -1,0 +1,7 @@
+@import '../../schedulerpro-sass/themes/material.scss';
+
+$gantt-timeline-border-color: $grid-cell-border-color;
+$gantt-timeline-label-color: darken($grid-cell-border-color, 10%);
+$gantt-timeline-label-font-weight : 400;
+
+@import 'shared';

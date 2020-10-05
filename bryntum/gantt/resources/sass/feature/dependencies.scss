@@ -1,0 +1,25 @@
+@import '../variables.scss';
+
+.b-ganttbase {
+    .b-sch-terminal {
+        cursor: pointer !important;
+    }
+
+    .b-sch-foreground-canvas > svg {
+        .b-sch-dependency {
+            marker-end   : none;
+            marker-start : url("#arrowEnd");
+
+            &.b-sch-dependency-ends-outside {
+                marker-start: none;
+            }
+        }
+    }
+
+    // Edge doesn't support auto-reversing markers, so we use specific style to draw arrows for dependency lines
+    &.b-edge .b-sch-foreground-canvas > svg {
+        .b-sch-dependency:not(.b-sch-dependency-ends-outside) {
+            marker-start : url("#arrowStart");
+        }
+    }
+}

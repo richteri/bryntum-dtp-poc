@@ -1,0 +1,154 @@
+@import '../../core-sass/themes/material.scss';
+
+//region Grid
+
+$grid-header-background-color : #fafafa;
+$grid-header-text-color : #757575;
+$grid-header-font-weight : 500;
+$grid-header-border-color : transparent;
+$grid-header-hover-background-color : darken($grid-header-background-color, 5);
+$grid-header-container-border-bottom-width : 0;
+$grid-header-padding : 1.3em 0.5em;
+$grid-header-box-shadow : 0 2px 4px rgba(0, 0, 0, 0.08);
+
+$grid-header-icon-light-color : $gray300;
+
+$grid-footer-background-color : $grid-header-background-color;
+$grid-footer-box-shadow : 0 -2px 4px rgba(0, 0, 0, 0.08);
+
+$grid-background-color : #fff;
+
+$grid-cell-color : #212121;
+$grid-cell-border-color : #e0e0e0;
+$grid-cell-font-weight : 300;
+
+$grid-cell-row-hover-background-color : #eeeeee;
+$grid-cell-hover-background-color : #e7e7e7;
+
+$grid-row-selected-background-color : #f5f5f5;
+$grid-row-selected-cell-background-color : #f0f0f0;
+$grid-focus-row-selected-background-color : #f5f5f5;
+$grid-focus-row-selected-cell-background-color : #f0f0f0;
+
+$grid-cell-focused-outline-color : $primary;
+
+$grid-group-header-line-color : #d5d5d5;
+$grid-groupsummary-background-color : $grid-header-background-color;
+
+$tree-parent-font-weight : 500;
+
+//endregion
+
+//region Features
+
+$celledit-background-color : #fff !default;
+$celledit-border-color : $primary;
+$celledit-border-width : 1px 1px 0 1px; // no bottom border, since fields have that anyway
+
+// sorted header has emphasized text
+$sort-color : $grid-cell-color;
+
+$grid-header-icon-position : static;
+$grid-header-icon-transform : none;
+$grid-header-icon-top : auto;
+
+$grid-region-resize-splitter-color : #ebebeb;
+$grid-region-resize-splitter-narrow-color : $grid-cell-border-color;
+
+$columndragtoolbar-background : $white;
+$columndragtoolbar-box-shadow : 0 3px 6px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.24);
+$columndragtoolbar-border-radius : .2em;
+$columndragtoolbar-opacity : .8;
+$columndragtoolbar-hover-opacity : 1;
+$columndragtoolbar-button-background-color : $primary;
+$columndragtoolbar-button-border-width : 0;
+$columndragtoolbar-icon-color : $white;
+$columndragtoolbar-title-color : $grid-header-text-color;
+$columndragtoolbar-button-box-shadow : 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+$columndragtoolbar-default-hover-color : lighten($primary, 5);
+$columndragtoolbar-button-hover-box-shadow : 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+$columndragtoolbar-secondary-color : $white;
+$columndragtoolbar-secondary-background-color : $secondary;
+$columndragtoolbar-secondary-hover-color : lighten($secondary, 5);
+
+$quickfind-background-color : $yellow200;
+
+//endregion
+
+//region Columns
+
+$percent-bar-fill : $primary;
+$percent-bar-low-fill : $red500;
+$percent-bar-color : #fff;
+
+$rating-filled-color : $yellow600;
+
+$rownumber-background : $grid-header-background-color;
+$rownumber-border-color : transparent;
+
+//endregion
+
+@import "shared";
+@import '../variables.scss';
+
+//region Custom icons
+
+.b-icon-column-move-left:before {
+    content : '\f060';
+}
+
+.b-icon-column-move-right:before {
+    content : '\f061';
+}
+
+.b-icon-group-collapse:before {
+    content    : '\f0d7';
+    width      : .6em;
+    text-align : center;
+}
+
+.b-icon-group-expand:before {
+    content    : '\f0da';
+    width      : .6em;
+    text-align : center;
+}
+
+.b-icon-sort-asc:before {
+    content : '\f062';
+}
+
+.b-icon-sort-desc:before {
+    content : '\f063';
+}
+
+//endregion
+
+@import './material/material-columndragtoolbar.scss';
+
+.b-gridbase {
+    // no border between cells (horizontally)
+    .b-grid-cell {
+        border-right-color : transparent;
+    }
+}
+
+.b-grid-header-text {
+    // Not full width on Material so that the sort icon is immediately on its right
+    > .b-grid-header-text-content {
+        flex: none;
+        // Need to override `width: 0` added to make IE resize correctly
+        width: auto;
+    }
+}
+
+.b-grid-header-align-center .b-grid-header-text {
+    justify-content: center;
+}
+
+.b-grid-header-align-right .b-grid-header-text {
+    justify-content: flex-end;
+}
+
+.b-grid-footer-scroller {
+    background : $grid-footer-background-color;
+}

@@ -1,0 +1,84 @@
+@import '../../core-sass/themes/dark.scss';
+
+$grid-header-icon-color : #777;
+$grid-header-icon-light-color : #555657;
+
+$tree-parent-color : #ccc;
+
+@import '../variables.scss';
+
+//region Grid
+
+$grid-header-background-color : darken($dark-gray, 10);
+$grid-header-text-color : $light-gray;
+$grid-header-border-color : darken($dark-gray, 15);
+$grid-header-hover-background-color : darken($dark-gray, 15);
+$grid-header-resizing-background-color : $grid-header-hover-background-color;
+
+$grid-header-filtered-color : $grid-header-text-color;
+
+$grid-footer-background-color : $grid-header-background-color;
+$grid-footer-border-color : $grid-header-border-color;
+$grid-footer-outline-color : $grid-header-border-color;
+$grid-footer-text-color : $grid-header-text-color;
+
+$grid-background-color : darken($dark-gray, 5);
+
+$grid-cell-hover-background-color : darken($grid-background-color, 7);
+$grid-cell-row-hover-background-color : darken($grid-background-color, 4);
+
+$grid-row-selected-background-color : darken($grid-background-color, 4);
+$grid-row-selected-cell-background-color : darken($grid-background-color, 7);
+$grid-focus-row-selected-background-color : darken($grid-background-color, 9);
+$grid-focus-row-selected-cell-background-color : darken($grid-background-color, 11);
+
+$grid-cell-color : lighten($light-gray, 5);
+$grid-cell-border-color : $grid-header-border-color;
+$grid-cell-focused-outline-color : $orange;
+
+$grid-row-odd-color : $dark-gray;
+$grid-row-even-color : darken($dark-gray, 5);
+
+$grid-group-header-color : darken($grid-cell-color, 5);
+$grid-group-header-background-color : darken($dark-gray, 9);
+$grid-group-header-line-color : $grid-header-border-color;
+$grid-group-header-icon-color : $grid-header-icon-light-color;
+$grid-group-column-header-icon-color : $grid-header-icon-light-color;
+$grid-groupsummary-background-color : darken($dark-gray, 7);
+
+$grid-region-resize-splitter-color : $grid-header-border-color;
+$grid-region-resize-splitter-narrow-color : darken($grid-header-border-color, 20);
+
+$rownumber-background : darken($dark-gray, 10);
+$rownumber-border-color : $grid-cell-border-color;
+
+//endregion
+
+//region Features
+
+$columndragtoolbar-default-color : $blue;
+$columndragtoolbar-icon-color : $blue;
+$columndragtoolbar-secondary-color : $orange;
+
+$quickfind-background-color : #f57f17;
+$quickfind-badge-color : #f57f17;
+$quickfind-header-badge-color : $grid-header-background-color;
+$quickfind-font-weight : inherit;
+
+$sort-color : $grid-header-text-color;
+$sort-index-color : lighten($grid-header-icon-color, 10);
+
+$rowreorder-row-background : $grid-row-odd-color;
+
+//endregion
+
+// Theme specific styling
+.b-grid-cell a {
+    color : lighten($blue, 25);
+
+    &:visited {
+        color : lighten($blue, 20);
+    }
+}
+
+@import 'shared';

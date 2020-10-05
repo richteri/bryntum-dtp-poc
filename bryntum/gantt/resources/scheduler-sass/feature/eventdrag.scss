@@ -1,0 +1,36 @@
+@import '../variables.scss';
+
+.b-schedulerbase.b-dragging-event {
+    @include user-select-none();
+}
+
+.b-sch-event-wrap.b-dragging {
+    z-index        : $interacting-event-zindex;
+    pointer-events : none;
+    opacity        : 0.65;
+
+    &.b-drag-main {
+        z-index : 10;
+        opacity : 1;
+    }
+}
+
+// When in a unifiedDrag proxy, make less opaque
+.b-drag-proxy {
+    .b-sch-event-wrap {
+        opacity : 0.5;
+    }
+}
+
+
+.b-sch-event-wrap.b-aborting {
+    transition : $event-default-transition, transform 0.2s;
+}
+
+.b-sch-tip-message {
+    margin-top:0.5em;
+
+    &:empty {
+        display : none;
+    }
+}

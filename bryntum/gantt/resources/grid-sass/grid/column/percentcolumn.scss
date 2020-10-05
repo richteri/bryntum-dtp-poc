@@ -1,0 +1,39 @@
+@import '../../variables.scss';
+
+.b-percent-bar-outer {
+    width      : calc(100% - 1em);
+    height     : 1.4em;
+    position   : absolute;
+    top        : calc(50% - .7em);
+    background : $percent-bar-background;
+}
+
+.b-percent-bar {
+    // For vertically aligning the text
+    display         : flex;
+    flex-direction  : column;
+    justify-content : center;
+    height          : 100%;
+    max-width       : 100%;
+    padding         : 0 .2em;
+    background      : $percent-bar-fill;
+    color           : $percent-bar-color;
+    font-size       : .7em;
+    text-align      : right;
+    transition      : width 0.5s, padding .5s, background-color .5s;
+
+    &.b-zero {
+        padding : 0;
+        text-indent: .2em;
+    }
+
+    &.b-low {
+        background: $percent-bar-low-fill;
+    }
+}
+
+.b-grid-body-container.b-scrolling {
+    .b-percent-bar {
+        transition: none;
+    }
+}

@@ -1,0 +1,30 @@
+.b-panel.b-calendarpanel {
+    // Need this extra class to increase specificity.
+    &.b-widget {
+        display : inline-flex;
+    }
+
+    .b-week-number-cell {
+        display : none;
+    }
+    &.b-show-week-number {
+        .b-week-number-cell {
+            // IE11 can't reset to "initial".
+            // TODO: reset using "initial" when we drop IE11
+            display : flex;
+        }
+    }
+
+    .b-calendarpanel-content {
+        flex-direction : column;
+        align-items    : stretch;
+
+        .b-calendar-row {
+            display : flex;
+        }
+        .b-weeks-container {
+            display        : flex;
+            flex-direction : column;
+        }
+    }
+}

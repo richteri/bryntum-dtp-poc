@@ -1,0 +1,10 @@
+{
+  "dependencies": [
+    {
+      "src": "../_shared",
+      "out": "../_shared/dist"
+    }
+  ],
+  "title": "Task editor customization Angular demo",
+  "description": "This demo shows how to customize Bryntum Gantt task editor by adding a tab with attached files using Angular framework"
+}

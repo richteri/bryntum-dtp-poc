@@ -1,0 +1,4 @@
+{
+  "title": "Export Gantt to Excel",
+  "description": "This demo shows a custom solution of exporting Scheduler data to Excel without involving the server based on a third party library called zipcelx (https://www.npmjs.com/package/zipcelx)"
+}

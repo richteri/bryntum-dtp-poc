@@ -1,0 +1,12 @@
+{
+    "rules": {
+        "no-new": "off",
+        "import/extenstions": "off"
+    },
+    "env": {
+        "browser": true
+    },
+    "globals": {
+        "bryntum": true
+    }
+}

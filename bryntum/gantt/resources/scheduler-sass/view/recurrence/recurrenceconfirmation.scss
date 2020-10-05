@@ -1,0 +1,23 @@
+.b-recurrenceconfirmationpopup.b-popup {
+    width : 29em;
+    max-width: none;
+
+    .b-recurrenceconfirmationpopup-header,
+    .b-recurrenceconfirmationpopup-content {
+        padding : 1em;
+    }
+
+    .b-toolbar.b-dock-bottom {
+        padding : 0.6em 1em 0;
+    }
+
+    .b-bottom-toolbar {
+        > button {
+            margin-right : .5em;
+
+            &:last-child {
+                margin-right : 0;
+            }
+        }
+    }
+}

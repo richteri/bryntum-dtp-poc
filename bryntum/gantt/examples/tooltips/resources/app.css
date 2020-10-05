@@ -1,0 +1,23 @@
+.b-gantt-task-tooltip td {
+  padding: 3px 10px;
+}
+
+.b-gantt-task-tooltip td:first-child {
+  width: 150px;
+}
+
+.b-gantt-task-tooltip td:last-child {
+  background-color: #f3f3f3;
+}
+
+.b-theme-default .b-gantt-task-tooltip td:last-child {
+  color: #262626;
+}
+
+.b-theme-dark .b-gantt-task-tooltip td:last-child {
+  color: #2b2b2f;
+}
+
+.b-theme-material .b-gantt-task-tooltip td:last-child {
+  color: #757575;
+}

@@ -1,0 +1,22 @@
+@import '../../variables.scss';
+
+.b-dependencytab {
+    .b-button {
+        width           : auto;
+        margin-left     : 0;
+        margin-right    : .5em;
+        justify-content : center;
+    }
+
+    .b-grid {
+        margin-top       : .5em;
+
+        .b-grid-row.b-invalid {
+            border-bottom: 1px dotted $red;
+
+            .b-icon-warning {
+                color: $red;
+            }
+        }
+    }
+}

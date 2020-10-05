@@ -1,0 +1,12 @@
+{
+    ".b-filepicker": {
+        "title": "",
+        "content": "1. Click this to pick file from file system",
+        "align": "r-l"
+    },
+    ".b-load-button": {
+        "title": "",
+        "content": "2. Click this to import",
+        "align": "t-b"
+    }
+}

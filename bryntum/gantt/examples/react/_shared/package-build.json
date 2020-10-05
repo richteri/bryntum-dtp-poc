@@ -1,0 +1,26 @@
+{
+  "name": "bryntum-react-shared",
+  "version": "1.1.2",
+  "private": true,
+  "main": "index.js",
+  "dependencies": {
+    "react": "~16.8.6",
+    "react-dom": "~16.8.6"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "ie >= 11",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

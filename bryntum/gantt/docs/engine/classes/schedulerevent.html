@@ -1,0 +1,1621 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>SchedulerEvent | scheduling-engine</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">scheduling-engine</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="schedulerevent.html">SchedulerEvent</a>
+				</li>
+			</ul>
+			<h1>Class SchedulerEvent</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<a href="../interfaces/hasdependencies.html" class="tsd-signature-type">HasDependencies</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">this</span><span class="tsd-signature-symbol">&gt;</span>
+						<span class="tsd-signature-symbol"> &amp; </span>
+						<a href="../interfaces/haschildren.html" class="tsd-signature-type">HasChildren</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">this</span><span class="tsd-signature-symbol">&gt;</span>
+						<span class="tsd-signature-symbol"> &amp; </span>
+						<a href="../interfaces/hasassignments.html" class="tsd-signature-type">HasAssignments</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">this</span><span class="tsd-signature-symbol">&gt;</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">SchedulerEvent</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-inherited">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#assigned" class="tsd-kind-icon">assigned</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#assignmentsbycalendar" class="tsd-kind-icon">assignments<wbr>ByCalendar</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#childevents" class="tsd-kind-icon">child<wbr>Events</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="schedulerevent.html#dontremoveme" class="tsd-kind-icon">dont<wbr>Remove<wbr>Me</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#effectivecalendarscombination" class="tsd-kind-icon">effective<wbr>Calendars<wbr>Combination</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#incomingdeps" class="tsd-kind-icon">incoming<wbr>Deps</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#outgoingdeps" class="tsd-kind-icon">outgoing<wbr>Deps</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#parentevent" class="tsd-kind-icon">parent<wbr>Event</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#seteffortdriven" class="tsd-kind-icon">set<wbr>Effort<wbr>Driven</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-inherited">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#assignments" class="tsd-kind-icon">assignments</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#parent" class="tsd-kind-icon">parent</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#__computed" class="tsd-kind-icon">__computed</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#addassignment" class="tsd-kind-icon">add<wbr>Assignment</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#assign" class="tsd-kind-icon">assign</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#calculateassignmentsbycalendar" class="tsd-kind-icon">calculate<wbr>Assignments<wbr>ByCalendar</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#calculatedurationproposed" class="tsd-kind-icon">calculate<wbr>Duration<wbr>Proposed</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="schedulerevent.html#calculateearlyenddateconstraintintervals" class="tsd-kind-icon">calculate<wbr>Early<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#calculateearlyenddateraw" class="tsd-kind-icon">calculate<wbr>Early<wbr>End<wbr>Date<wbr>Raw</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="schedulerevent.html#calculateearlystartdateconstraintintervals" class="tsd-kind-icon">calculate<wbr>Early<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#calculateearlystartdateraw" class="tsd-kind-icon">calculate<wbr>Early<wbr>Start<wbr>Date<wbr>Raw</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#calculateeffectivecalendarscombination" class="tsd-kind-icon">calculate<wbr>Effective<wbr>Calendars<wbr>Combination</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#calculateenddateconstraintintervals" class="tsd-kind-icon">calculate<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#calculateenddateproposed" class="tsd-kind-icon">calculate<wbr>End<wbr>Date<wbr>Proposed</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#calculateenddatepure" class="tsd-kind-icon">calculate<wbr>End<wbr>Date<wbr>Pure</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#calculatelateenddateconstraintintervals" class="tsd-kind-icon">calculate<wbr>Late<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#calculatelatestartdateconstraintintervals" class="tsd-kind-icon">calculate<wbr>Late<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#calculatemaxchildrenenddate" class="tsd-kind-icon">calculate<wbr>Max<wbr>Children<wbr>End<wbr>Date</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#calculateminchildrenstartdate" class="tsd-kind-icon">calculate<wbr>Min<wbr>Children<wbr>Start<wbr>Date</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#calculateprojectedduration" class="tsd-kind-icon">calculate<wbr>Projected<wbr>Duration</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#calculateprojectedxdatewithduration" class="tsd-kind-icon">calculate<wbr>ProjectedXDate<wbr>With<wbr>Duration</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#calculatestartdateconstraintintervals" class="tsd-kind-icon">calculate<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#calculatestartdateproposed" class="tsd-kind-icon">calculate<wbr>Start<wbr>Date<wbr>Proposed</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#calculatestartdatepure" class="tsd-kind-icon">calculate<wbr>Start<wbr>Date<wbr>Pure</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#foreachavailabilityinterval" class="tsd-kind-icon">for<wbr>Each<wbr>Availability<wbr>Interval</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#getassignmentfor" class="tsd-kind-icon">get<wbr>Assignment<wbr>For</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#getbaseoptionsfordurationcalculations" class="tsd-kind-icon">get<wbr>Base<wbr>Options<wbr>For<wbr>Duration<wbr>Calculations</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#getonremoveaction" class="tsd-kind-icon">get<wbr>OnRemove<wbr>Action</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#hasassignmentchanges" class="tsd-kind-icon">has<wbr>Assignment<wbr>Changes</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#hasproposedvalueforunits" class="tsd-kind-icon">has<wbr>Proposed<wbr>Value<wbr>For<wbr>Units</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#hassubevents" class="tsd-kind-icon">has<wbr>Sub<wbr>Events</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#isassignedto" class="tsd-kind-icon">is<wbr>Assigned<wbr>To</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="schedulerevent.html#leaveproject" class="tsd-kind-icon">leave<wbr>Project</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#maybeskipnonworkingtime" class="tsd-kind-icon">maybe<wbr>Skip<wbr>Non<wbr>Working<wbr>Time</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#reassign" class="tsd-kind-icon">reassign</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#removeassignment" class="tsd-kind-icon">remove<wbr>Assignment</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#setincomingdeps" class="tsd-kind-icon">set<wbr>Incoming<wbr>Deps</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#setoutgoingdeps" class="tsd-kind-icon">set<wbr>Outgoing<wbr>Deps</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#skipnonworkingtime" class="tsd-kind-icon">skip<wbr>Non<wbr>Working<wbr>Time</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#subeventsiterable" class="tsd-kind-icon">sub<wbr>Events<wbr>Iterable</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="schedulerevent.html#unassign" class="tsd-kind-icon">unassign</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static"><a href="schedulerevent.html#constrainedevent" class="tsd-kind-icon">Constrained<wbr>Event</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static"><a href="schedulerevent.html#constrainedlateevent" class="tsd-kind-icon">Constrained<wbr>Late<wbr>Event</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static"><a href="schedulerevent.html#hasassignments" class="tsd-kind-icon">Has<wbr>Assignments</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static"><a href="schedulerevent.html#haschildren" class="tsd-kind-icon">Has<wbr>Children</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static"><a href="schedulerevent.html#hasdependencies" class="tsd-kind-icon">Has<wbr>Dependencies</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="assigned" class="tsd-anchor"></a>
+					<h3>assigned</h3>
+					<div class="tsd-signature tsd-kind-icon">assigned<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/assignmentmixin.html" class="tsd-signature-type">AssignmentMixin</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from HasAssignments.assigned</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasAssignments.ts#L44">lib/Engine/data/model/event/HasAssignments.ts:44</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="assignmentsbycalendar" class="tsd-anchor"></a>
+					<h3>assignments<wbr>ByCalendar</h3>
+					<div class="tsd-signature tsd-kind-icon">assignments<wbr>ByCalendar<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/calendarmixin.html" class="tsd-signature-type">CalendarMixin</a><span class="tsd-signature-symbol">, </span><a href="../interfaces/assignmentmixin.html" class="tsd-signature-type">AssignmentMixin</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new Map()</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from HasAssignments.assignmentsByCalendar</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasAssignments.ts#L50">lib/Engine/data/model/event/HasAssignments.ts:50</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="childevents" class="tsd-anchor"></a>
+					<h3>child<wbr>Events</h3>
+					<div class="tsd-signature tsd-kind-icon">child<wbr>Events<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">HasChildren</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from HasChildren.childEvents</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L26">lib/Engine/data/model/event/HasChildren.ts:26</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+					<a name="dontremoveme" class="tsd-anchor"></a>
+					<h3>dont<wbr>Remove<wbr>Me</h3>
+					<div class="tsd-signature tsd-kind-icon">dont<wbr>Remove<wbr>Me<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from HasDependencies.dontRemoveMe</p>
+						<p>Overrides HasAssignments.dontRemoveMe</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasDependencies.ts#L26">lib/Engine/data/model/event/HasDependencies.ts:26</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="effectivecalendarscombination" class="tsd-anchor"></a>
+					<h3>effective<wbr>Calendars<wbr>Combination</h3>
+					<div class="tsd-signature tsd-kind-icon">effective<wbr>Calendars<wbr>Combination<span class="tsd-signature-symbol">:</span> <a href="calendarcachemultiple.html" class="tsd-signature-type">CalendarCacheMultiple</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from HasAssignments.effectiveCalendarsCombination</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasAssignments.ts#L47">lib/Engine/data/model/event/HasAssignments.ts:47</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="incomingdeps" class="tsd-anchor"></a>
+					<h3>incoming<wbr>Deps</h3>
+					<div class="tsd-signature tsd-kind-icon">incoming<wbr>Deps<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/dependencymixin.html" class="tsd-signature-type">DependencyMixin</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from HasDependencies.incomingDeps</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasDependencies.ts#L38">lib/Engine/data/model/event/HasDependencies.ts:38</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="outgoingdeps" class="tsd-anchor"></a>
+					<h3>outgoing<wbr>Deps</h3>
+					<div class="tsd-signature tsd-kind-icon">outgoing<wbr>Deps<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/dependencymixin.html" class="tsd-signature-type">DependencyMixin</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from HasDependencies.outgoingDeps</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasDependencies.ts#L32">lib/Engine/data/model/event/HasDependencies.ts:32</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="parentevent" class="tsd-anchor"></a>
+					<h3>parent<wbr>Event</h3>
+					<div class="tsd-signature tsd-kind-icon">parent<wbr>Event<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">HasChildren</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from HasChildren.parentEvent</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L20">lib/Engine/data/model/event/HasChildren.ts:20</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="seteffortdriven" class="tsd-anchor"></a>
+					<h3>set<wbr>Effort<wbr>Driven</h3>
+					<div class="tsd-signature tsd-kind-icon">set<wbr>Effort<wbr>Driven<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from HasAssignments.setEffortDriven</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasAssignments.ts#L876">lib/Engine/data/model/event/HasAssignments.ts:876</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/propagationresult.html" class="tsd-signature-type">PropagationResult</a><span class="tsd-signature-symbol">&gt;</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>value: <span class="tsd-signature-type">boolean</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/propagationresult.html" class="tsd-signature-type">PropagationResult</a><span class="tsd-signature-symbol">&gt;</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="assignments" class="tsd-anchor"></a>
+					<h3>assignments</h3>
+					<div class="tsd-signature tsd-kind-icon">assignments<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<p>Inherited from HasAssignments.assignments</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasAssignments.ts#L53">lib/Engine/data/model/event/HasAssignments.ts:53</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="parent" class="tsd-anchor"></a>
+					<h3>parent</h3>
+					<div class="tsd-signature tsd-kind-icon">parent<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<p>Inherited from HasChildren.parent</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L475">lib/Engine/data/model/event/HasChildren.ts:475</a></li>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L480">lib/Engine/data/model/event/HasChildren.ts:480</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="__computed" class="tsd-anchor"></a>
+					<h3>__computed</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">__computed<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasAssignments.[hasMixin]</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasAssignments.ts#L27">lib/Engine/data/model/event/HasAssignments.ts:27</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="addassignment" class="tsd-anchor"></a>
+					<h3>add<wbr>Assignment</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Assignment<span class="tsd-signature-symbol">(</span>assignment<span class="tsd-signature-symbol">: </span><a href="../interfaces/assignmentmixin.html" class="tsd-signature-type">AssignmentMixin</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/assignmentmixin.html" class="tsd-signature-type">AssignmentMixin</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasAssignments.addAssignment</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasAssignments.ts#L852">lib/Engine/data/model/event/HasAssignments.ts:852</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>assignment: <a href="../interfaces/assignmentmixin.html" class="tsd-signature-type">AssignmentMixin</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/assignmentmixin.html" class="tsd-signature-type">AssignmentMixin</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="assign" class="tsd-anchor"></a>
+					<h3>assign</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">assign<span class="tsd-signature-symbol">(</span>resource<span class="tsd-signature-symbol">: </span><a href="../interfaces/resourcemixin.html" class="tsd-signature-type">ResourceMixin</a>, units<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/propagationresult.html" class="tsd-signature-type">PropagationResult</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasAssignments.assign</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasAssignments.ts#L815">lib/Engine/data/model/event/HasAssignments.ts:815</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>resource: <a href="../interfaces/resourcemixin.html" class="tsd-signature-type">ResourceMixin</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> units: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;100</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/propagationresult.html" class="tsd-signature-type">PropagationResult</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="calculateassignmentsbycalendar" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Assignments<wbr>ByCalendar</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Assignments<wbr>ByCalendar<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">this[&quot;assignmentsByCalendar&quot;]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasAssignments.calculateAssignmentsByCalendar</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasAssignments.ts#L927">lib/Engine/data/model/event/HasAssignments.ts:927</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">this[&quot;assignmentsByCalendar&quot;]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="calculatedurationproposed" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Duration<wbr>Proposed</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Duration<wbr>Proposed<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#duration" class="tsd-signature-type">Duration</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasChildren.calculateDurationProposed</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L94">lib/Engine/data/model/event/HasChildren.ts:94</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#duration" class="tsd-signature-type">Duration</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+					<a name="calculateearlyenddateconstraintintervals" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Early<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Early<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><a href="dateinterval.html" class="tsd-signature-type">DateInterval</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasDependencies.calculateEarlyEndDateConstraintIntervals</p>
+								<p>Overrides HasChildren.calculateEarlyEndDateConstraintIntervals</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasDependencies.ts#L104">lib/Engine/data/model/event/HasDependencies.ts:104</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><a href="dateinterval.html" class="tsd-signature-type">DateInterval</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="calculateearlyenddateraw" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Early<wbr>End<wbr>Date<wbr>Raw</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Early<wbr>End<wbr>Date<wbr>Raw<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasChildren.calculateEarlyEndDateRaw</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L590">lib/Engine/data/model/event/HasChildren.ts:590</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+					<a name="calculateearlystartdateconstraintintervals" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Early<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Early<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><a href="dateinterval.html" class="tsd-signature-type">DateInterval</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasDependencies.calculateEarlyStartDateConstraintIntervals</p>
+								<p>Overrides HasChildren.calculateEarlyStartDateConstraintIntervals</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasDependencies.ts#L41">lib/Engine/data/model/event/HasDependencies.ts:41</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><a href="dateinterval.html" class="tsd-signature-type">DateInterval</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="calculateearlystartdateraw" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Early<wbr>Start<wbr>Date<wbr>Raw</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Early<wbr>Start<wbr>Date<wbr>Raw<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasChildren.calculateEarlyStartDateRaw</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L565">lib/Engine/data/model/event/HasChildren.ts:565</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="calculateeffectivecalendarscombination" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Effective<wbr>Calendars<wbr>Combination</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Effective<wbr>Calendars<wbr>Combination<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">this[&quot;effectiveCalendarsCombination&quot;]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasAssignments.calculateEffectiveCalendarsCombination</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasAssignments.ts#L917">lib/Engine/data/model/event/HasAssignments.ts:917</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">this[&quot;effectiveCalendarsCombination&quot;]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="calculateenddateconstraintintervals" class="tsd-anchor"></a>
+					<h3>calculate<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">this[&quot;endDateConstraintIntervals&quot;]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasChildren.calculateEndDateConstraintIntervals</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L514">lib/Engine/data/model/event/HasChildren.ts:514</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">this[&quot;endDateConstraintIntervals&quot;]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="calculateenddateproposed" class="tsd-anchor"></a>
+					<h3>calculate<wbr>End<wbr>Date<wbr>Proposed</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>End<wbr>Date<wbr>Proposed<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasChildren.calculateEndDateProposed</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L83">lib/Engine/data/model/event/HasChildren.ts:83</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="calculateenddatepure" class="tsd-anchor"></a>
+					<h3>calculate<wbr>End<wbr>Date<wbr>Pure</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>End<wbr>Date<wbr>Pure<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasChildren.calculateEndDatePure</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L61">lib/Engine/data/model/event/HasChildren.ts:61</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="calculatelateenddateconstraintintervals" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Late<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Late<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><a href="constraintinterval.html" class="tsd-signature-type">ConstraintInterval</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasDependencies.calculateLateEndDateConstraintIntervals</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasDependencies.ts#L230">lib/Engine/data/model/event/HasDependencies.ts:230</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><a href="constraintinterval.html" class="tsd-signature-type">ConstraintInterval</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="calculatelatestartdateconstraintintervals" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Late<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Late<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><a href="constraintinterval.html" class="tsd-signature-type">ConstraintInterval</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasDependencies.calculateLateStartDateConstraintIntervals</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasDependencies.ts#L167">lib/Engine/data/model/event/HasDependencies.ts:167</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><a href="constraintinterval.html" class="tsd-signature-type">ConstraintInterval</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="calculatemaxchildrenenddate" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Max<wbr>Children<wbr>End<wbr>Date</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Max<wbr>Children<wbr>End<wbr>Date<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasChildren.calculateMaxChildrenEndDate</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L125">lib/Engine/data/model/event/HasChildren.ts:125</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="calculateminchildrenstartdate" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Min<wbr>Children<wbr>Start<wbr>Date</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Min<wbr>Children<wbr>Start<wbr>Date<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasChildren.calculateMinChildrenStartDate</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L105">lib/Engine/data/model/event/HasChildren.ts:105</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="calculateprojectedduration" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Projected<wbr>Duration</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Projected<wbr>Duration<span class="tsd-signature-symbol">(</span>startDate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span>, endDate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span>, durationUnit<span class="tsd-signature-symbol">: </span><a href="../enums/timeunit.html" class="tsd-signature-type">TimeUnit</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#duration" class="tsd-signature-type">Duration</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasAssignments.calculateProjectedDuration</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasAssignments.ts#L993">lib/Engine/data/model/event/HasAssignments.ts:993</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>startDate: <span class="tsd-signature-type">Date</span></h5>
+								</li>
+								<li>
+									<h5>endDate: <span class="tsd-signature-type">Date</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> durationUnit: <a href="../enums/timeunit.html" class="tsd-signature-type">TimeUnit</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#duration" class="tsd-signature-type">Duration</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="calculateprojectedxdatewithduration" class="tsd-anchor"></a>
+					<h3>calculate<wbr>ProjectedXDate<wbr>With<wbr>Duration</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>ProjectedXDate<wbr>With<wbr>Duration<span class="tsd-signature-symbol">(</span>baseDate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span>, isForward<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span>, duration<span class="tsd-signature-symbol">: </span><a href="../globals.html#duration" class="tsd-signature-type">Duration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasAssignments.calculateProjectedXDateWithDuration</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasAssignments.ts#L1024">lib/Engine/data/model/event/HasAssignments.ts:1024</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>baseDate: <span class="tsd-signature-type">Date</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> isForward: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></h5>
+								</li>
+								<li>
+									<h5>duration: <a href="../globals.html#duration" class="tsd-signature-type">Duration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="calculatestartdateconstraintintervals" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">this[&quot;startDateConstraintIntervals&quot;]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasChildren.calculateStartDateConstraintIntervals</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L497">lib/Engine/data/model/event/HasChildren.ts:497</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">this[&quot;startDateConstraintIntervals&quot;]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="calculatestartdateproposed" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Start<wbr>Date<wbr>Proposed</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Start<wbr>Date<wbr>Proposed<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasChildren.calculateStartDateProposed</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L72">lib/Engine/data/model/event/HasChildren.ts:72</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="calculatestartdatepure" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Start<wbr>Date<wbr>Pure</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Start<wbr>Date<wbr>Pure<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasChildren.calculateStartDatePure</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L50">lib/Engine/data/model/event/HasChildren.ts:50</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="foreachavailabilityinterval" class="tsd-anchor"></a>
+					<h3>for<wbr>Each<wbr>Availability<wbr>Interval</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">for<wbr>Each<wbr>Availability<wbr>Interval<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><a href="../enums/calendariteratorresult.html" class="tsd-signature-type">CalendarIteratorResult</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasAssignments.forEachAvailabilityInterval</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasAssignments.ts#L879">lib/Engine/data/model/event/HasAssignments.ts:879</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <span class="tsd-signature-type">object</span></h5>
+									<ul class="tsd-parameters">
+									</ul>
+								</li>
+								<li>
+									<h5>func: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>startDate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span>, endDate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span>, calendarCacheIntervalMultiple<span class="tsd-signature-symbol">: </span><a href="calendarcacheintervalmultiple.html" class="tsd-signature-type">CalendarCacheIntervalMultiple</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>startDate: <span class="tsd-signature-type">Date</span></h5>
+														</li>
+														<li>
+															<h5>endDate: <span class="tsd-signature-type">Date</span></h5>
+														</li>
+														<li>
+															<h5>calendarCacheIntervalMultiple: <a href="calendarcacheintervalmultiple.html" class="tsd-signature-type">CalendarCacheIntervalMultiple</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">false</span>
+														<span class="tsd-signature-symbol"> | </span>
+														<span class="tsd-signature-type">void</span>
+													</h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><a href="../enums/calendariteratorresult.html" class="tsd-signature-type">CalendarIteratorResult</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getassignmentfor" class="tsd-anchor"></a>
+					<h3>get<wbr>Assignment<wbr>For</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Assignment<wbr>For<span class="tsd-signature-symbol">(</span>resource<span class="tsd-signature-symbol">: </span><a href="../interfaces/resourcemixin.html" class="tsd-signature-type">ResourceMixin</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/assignmentmixin.html" class="tsd-signature-type">AssignmentMixin</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasAssignments.getAssignmentFor</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasAssignments.ts#L771">lib/Engine/data/model/event/HasAssignments.ts:771</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>resource: <a href="../interfaces/resourcemixin.html" class="tsd-signature-type">ResourceMixin</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/assignmentmixin.html" class="tsd-signature-type">AssignmentMixin</a>
+								<span class="tsd-signature-symbol"> | </span>
+								<span class="tsd-signature-type">null</span>
+							</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getbaseoptionsfordurationcalculations" class="tsd-anchor"></a>
+					<h3>get<wbr>Base<wbr>Options<wbr>For<wbr>Duration<wbr>Calculations</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Base<wbr>Options<wbr>For<wbr>Duration<wbr>Calculations<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasAssignments.getBaseOptionsForDurationCalculations</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasAssignments.ts#L954">lib/Engine/data/model/event/HasAssignments.ts:954</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getonremoveaction" class="tsd-anchor"></a>
+					<h3>get<wbr>OnRemove<wbr>Action</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>OnRemove<wbr>Action<span class="tsd-signature-symbol">(</span>dependency<span class="tsd-signature-symbol">: </span><a href="../interfaces/dependencymixin.html" class="tsd-signature-type">DependencyMixin</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasDependencies.getOnRemoveAction</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasDependencies.ts#L293">lib/Engine/data/model/event/HasDependencies.ts:293</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>dependency: <a href="../interfaces/dependencymixin.html" class="tsd-signature-type">DependencyMixin</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">function</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter-siganture">
+									<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+										<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="hasassignmentchanges" class="tsd-anchor"></a>
+					<h3>has<wbr>Assignment<wbr>Changes</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">has<wbr>Assignment<wbr>Changes<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasAssignments.hasAssignmentChanges</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasAssignments.ts#L1086">lib/Engine/data/model/event/HasAssignments.ts:1086</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="hasproposedvalueforunits" class="tsd-anchor"></a>
+					<h3>has<wbr>Proposed<wbr>Value<wbr>For<wbr>Units</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">has<wbr>Proposed<wbr>Value<wbr>For<wbr>Units<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasAssignments.hasProposedValueForUnits</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasAssignments.ts#L1073">lib/Engine/data/model/event/HasAssignments.ts:1073</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="hassubevents" class="tsd-anchor"></a>
+					<h3>has<wbr>Sub<wbr>Events</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">has<wbr>Sub<wbr>Events<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasChildren.hasSubEvents</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L35">lib/Engine/data/model/event/HasChildren.ts:35</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="isassignedto" class="tsd-anchor"></a>
+					<h3>is<wbr>Assigned<wbr>To</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Assigned<wbr>To<span class="tsd-signature-symbol">(</span>resource<span class="tsd-signature-symbol">: </span><a href="../interfaces/resourcemixin.html" class="tsd-signature-type">ResourceMixin</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasAssignments.isAssignedTo</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasAssignments.ts#L782">lib/Engine/data/model/event/HasAssignments.ts:782</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>resource: <a href="../interfaces/resourcemixin.html" class="tsd-signature-type">ResourceMixin</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+					<a name="leaveproject" class="tsd-anchor"></a>
+					<h3>leave<wbr>Project</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">leave<wbr>Project<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasDependencies.leaveProject</p>
+								<p>Overrides HasAssignments.leaveProject</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasDependencies.ts#L374">lib/Engine/data/model/event/HasDependencies.ts:374</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="maybeskipnonworkingtime" class="tsd-anchor"></a>
+					<h3>maybe<wbr>Skip<wbr>Non<wbr>Working<wbr>Time</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">maybe<wbr>Skip<wbr>Non<wbr>Working<wbr>Time<span class="tsd-signature-symbol">(</span>date<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span>, isForward<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasChildren.maybeSkipNonWorkingTime</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L486">lib/Engine/data/model/event/HasChildren.ts:486</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>date: <span class="tsd-signature-type">Date</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> isForward: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="reassign" class="tsd-anchor"></a>
+					<h3>reassign</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">reassign<span class="tsd-signature-symbol">(</span>oldResource<span class="tsd-signature-symbol">: </span><a href="../interfaces/resourcemixin.html" class="tsd-signature-type">ResourceMixin</a>, newResource<span class="tsd-signature-symbol">: </span><a href="../interfaces/resourcemixin.html" class="tsd-signature-type">ResourceMixin</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/propagationresult.html" class="tsd-signature-type">PropagationResult</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasAssignments.reassign</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasAssignments.ts#L787">lib/Engine/data/model/event/HasAssignments.ts:787</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>oldResource: <a href="../interfaces/resourcemixin.html" class="tsd-signature-type">ResourceMixin</a></h5>
+								</li>
+								<li>
+									<h5>newResource: <a href="../interfaces/resourcemixin.html" class="tsd-signature-type">ResourceMixin</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/propagationresult.html" class="tsd-signature-type">PropagationResult</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="removeassignment" class="tsd-anchor"></a>
+					<h3>remove<wbr>Assignment</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Assignment<span class="tsd-signature-symbol">(</span>assignment<span class="tsd-signature-symbol">: </span><a href="../interfaces/assignmentmixin.html" class="tsd-signature-type">AssignmentMixin</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/assignmentmixin.html" class="tsd-signature-type">AssignmentMixin</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasAssignments.removeAssignment</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasAssignments.ts#L860">lib/Engine/data/model/event/HasAssignments.ts:860</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>assignment: <a href="../interfaces/assignmentmixin.html" class="tsd-signature-type">AssignmentMixin</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/assignmentmixin.html" class="tsd-signature-type">AssignmentMixin</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="setincomingdeps" class="tsd-anchor"></a>
+					<h3>set<wbr>Incoming<wbr>Deps</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Incoming<wbr>Deps<span class="tsd-signature-symbol">(</span>deps<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/dependencymixin.html" class="tsd-signature-type">DependencyMixin</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/dependencymixin.html" class="tsd-signature-type">DependencyMixin</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/propagationresult.html" class="tsd-signature-type">PropagationResult</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasDependencies.setIncomingDeps</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasDependencies.ts#L300">lib/Engine/data/model/event/HasDependencies.ts:300</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>deps: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/dependencymixin.html" class="tsd-signature-type">DependencyMixin</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/dependencymixin.html" class="tsd-signature-type">DependencyMixin</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/propagationresult.html" class="tsd-signature-type">PropagationResult</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="setoutgoingdeps" class="tsd-anchor"></a>
+					<h3>set<wbr>Outgoing<wbr>Deps</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Outgoing<wbr>Deps<span class="tsd-signature-symbol">(</span>deps<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/dependencymixin.html" class="tsd-signature-type">DependencyMixin</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/dependencymixin.html" class="tsd-signature-type">DependencyMixin</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/propagationresult.html" class="tsd-signature-type">PropagationResult</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasDependencies.setOutgoingDeps</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasDependencies.ts#L315">lib/Engine/data/model/event/HasDependencies.ts:315</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>deps: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/dependencymixin.html" class="tsd-signature-type">DependencyMixin</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/dependencymixin.html" class="tsd-signature-type">DependencyMixin</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/propagationresult.html" class="tsd-signature-type">PropagationResult</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="skipnonworkingtime" class="tsd-anchor"></a>
+					<h3>skip<wbr>Non<wbr>Working<wbr>Time</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">skip<wbr>Non<wbr>Working<wbr>Time<span class="tsd-signature-symbol">(</span>date<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span>, isForward<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasAssignments.skipNonWorkingTime</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasAssignments.ts#L959">lib/Engine/data/model/event/HasAssignments.ts:959</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>date: <span class="tsd-signature-type">Date</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> isForward: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="subeventsiterable" class="tsd-anchor"></a>
+					<h3>sub<wbr>Events<wbr>Iterable</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">sub<wbr>Events<wbr>Iterable<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/eventmixin.html" class="tsd-signature-type">EventMixin</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasChildren.subEventsIterable</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L45">lib/Engine/data/model/event/HasChildren.ts:45</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/eventmixin.html" class="tsd-signature-type">EventMixin</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="unassign" class="tsd-anchor"></a>
+					<h3>unassign</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">unassign<span class="tsd-signature-symbol">(</span>resource<span class="tsd-signature-symbol">: </span><a href="../interfaces/resourcemixin.html" class="tsd-signature-type">ResourceMixin</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/propagationresult.html" class="tsd-signature-type">PropagationResult</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasAssignments.unassign</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasAssignments.ts#L836">lib/Engine/data/model/event/HasAssignments.ts:836</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>resource: <a href="../interfaces/resourcemixin.html" class="tsd-signature-type">ResourceMixin</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/propagationresult.html" class="tsd-signature-type">PropagationResult</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static">
+					<a name="constrainedevent" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> Constrained<wbr>Event</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">Constrained<wbr>Event&lt;T&gt;<span class="tsd-signature-symbol">(</span>base<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ConstrainedEvent</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">T</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedEvent.ts#L135">lib/Engine/data/model/event/ConstrainedEvent.ts:135</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="../globals.html#anyconstructor" class="tsd-signature-type">AnyConstructor</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/eventmixin.html" class="tsd-signature-type">EventMixin</a><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>base: <span class="tsd-signature-type">T</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ConstrainedEvent</span>
+								<span class="tsd-signature-symbol"> &amp; </span>
+								<span class="tsd-signature-type">T</span>
+							</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static">
+					<a name="constrainedlateevent" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> Constrained<wbr>Late<wbr>Event</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">Constrained<wbr>Late<wbr>Event&lt;T&gt;<span class="tsd-signature-symbol">(</span>base<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ConstrainedLateEvent</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">T</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedLateEvent.ts#L14">lib/Engine/data/model/event/ConstrainedLateEvent.ts:14</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="../globals.html#anyconstructor" class="tsd-signature-type">AnyConstructor</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/constrainedevent.html" class="tsd-signature-type">ConstrainedEvent</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/haschildren.html" class="tsd-signature-type">HasChildren</a><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>base: <span class="tsd-signature-type">T</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ConstrainedLateEvent</span>
+								<span class="tsd-signature-symbol"> &amp; </span>
+								<span class="tsd-signature-type">T</span>
+							</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static">
+					<a name="hasassignments" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> Has<wbr>Assignments</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">Has<wbr>Assignments&lt;T&gt;<span class="tsd-signature-symbol">(</span>base<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HasAssignments</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">T</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasAssignments.ts#L24">lib/Engine/data/model/event/HasAssignments.ts:24</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="../globals.html#anyconstructor" class="tsd-signature-type">AnyConstructor</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/haschildren.html" class="tsd-signature-type">HasChildren</a><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>base: <span class="tsd-signature-type">T</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">HasAssignments</span>
+								<span class="tsd-signature-symbol"> &amp; </span>
+								<span class="tsd-signature-type">T</span>
+							</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static">
+					<a name="haschildren" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> Has<wbr>Children</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">Has<wbr>Children&lt;T&gt;<span class="tsd-signature-symbol">(</span>base<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HasChildren</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">T</span></li>
+						<li class="tsd-signature tsd-kind-icon">Has<wbr>Children&lt;T&gt;<span class="tsd-signature-symbol">(</span>base<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HasChildren</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">T</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L12">lib/Engine/data/model/event/HasChildren.ts:12</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="../globals.html#anyconstructor" class="tsd-signature-type">AnyConstructor</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/constrainedevent.html" class="tsd-signature-type">ConstrainedEvent</a><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>base: <span class="tsd-signature-type">T</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">HasChildren</span>
+								<span class="tsd-signature-symbol"> &amp; </span>
+								<span class="tsd-signature-type">T</span>
+							</h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L12">lib/Engine/data/model/event/HasChildren.ts:12</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="../globals.html#anyconstructor" class="tsd-signature-type">AnyConstructor</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/constrainedevent.html" class="tsd-signature-type">ConstrainedEvent</a><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>base: <span class="tsd-signature-type">T</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">HasChildren</span>
+								<span class="tsd-signature-symbol"> &amp; </span>
+								<span class="tsd-signature-type">T</span>
+							</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static">
+					<a name="hasdependencies" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> Has<wbr>Dependencies</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">Has<wbr>Dependencies&lt;T&gt;<span class="tsd-signature-symbol">(</span>base<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HasDependencies</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">T</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasDependencies.ts#L16">lib/Engine/data/model/event/HasDependencies.ts:16</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="../globals.html#anyconstructor" class="tsd-signature-type">AnyConstructor</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/constrainedlateevent.html" class="tsd-signature-type">ConstrainedLateEvent</a><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>base: <span class="tsd-signature-type">T</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">HasDependencies</span>
+								<span class="tsd-signature-symbol"> &amp; </span>
+								<span class="tsd-signature-type">T</span>
+							</h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
+						<a href="schedulerevent.html" class="tsd-kind-icon">Scheduler<wbr>Event</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#assigned" class="tsd-kind-icon">assigned</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#assignmentsbycalendar" class="tsd-kind-icon">assignments<wbr>ByCalendar</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#childevents" class="tsd-kind-icon">child<wbr>Events</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+								<a href="schedulerevent.html#dontremoveme" class="tsd-kind-icon">dont<wbr>Remove<wbr>Me</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#effectivecalendarscombination" class="tsd-kind-icon">effective<wbr>Calendars<wbr>Combination</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#incomingdeps" class="tsd-kind-icon">incoming<wbr>Deps</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#outgoingdeps" class="tsd-kind-icon">outgoing<wbr>Deps</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#parentevent" class="tsd-kind-icon">parent<wbr>Event</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#seteffortdriven" class="tsd-kind-icon">set<wbr>Effort<wbr>Driven</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#assignments" class="tsd-kind-icon">assignments</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#parent" class="tsd-kind-icon">parent</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#__computed" class="tsd-kind-icon">__computed</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#addassignment" class="tsd-kind-icon">add<wbr>Assignment</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#assign" class="tsd-kind-icon">assign</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#calculateassignmentsbycalendar" class="tsd-kind-icon">calculate<wbr>Assignments<wbr>ByCalendar</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#calculatedurationproposed" class="tsd-kind-icon">calculate<wbr>Duration<wbr>Proposed</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+								<a href="schedulerevent.html#calculateearlyenddateconstraintintervals" class="tsd-kind-icon">calculate<wbr>Early<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#calculateearlyenddateraw" class="tsd-kind-icon">calculate<wbr>Early<wbr>End<wbr>Date<wbr>Raw</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+								<a href="schedulerevent.html#calculateearlystartdateconstraintintervals" class="tsd-kind-icon">calculate<wbr>Early<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#calculateearlystartdateraw" class="tsd-kind-icon">calculate<wbr>Early<wbr>Start<wbr>Date<wbr>Raw</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#calculateeffectivecalendarscombination" class="tsd-kind-icon">calculate<wbr>Effective<wbr>Calendars<wbr>Combination</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#calculateenddateconstraintintervals" class="tsd-kind-icon">calculate<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#calculateenddateproposed" class="tsd-kind-icon">calculate<wbr>End<wbr>Date<wbr>Proposed</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#calculateenddatepure" class="tsd-kind-icon">calculate<wbr>End<wbr>Date<wbr>Pure</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#calculatelateenddateconstraintintervals" class="tsd-kind-icon">calculate<wbr>Late<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#calculatelatestartdateconstraintintervals" class="tsd-kind-icon">calculate<wbr>Late<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#calculatemaxchildrenenddate" class="tsd-kind-icon">calculate<wbr>Max<wbr>Children<wbr>End<wbr>Date</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#calculateminchildrenstartdate" class="tsd-kind-icon">calculate<wbr>Min<wbr>Children<wbr>Start<wbr>Date</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#calculateprojectedduration" class="tsd-kind-icon">calculate<wbr>Projected<wbr>Duration</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#calculateprojectedxdatewithduration" class="tsd-kind-icon">calculate<wbr>ProjectedXDate<wbr>With<wbr>Duration</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#calculatestartdateconstraintintervals" class="tsd-kind-icon">calculate<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#calculatestartdateproposed" class="tsd-kind-icon">calculate<wbr>Start<wbr>Date<wbr>Proposed</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#calculatestartdatepure" class="tsd-kind-icon">calculate<wbr>Start<wbr>Date<wbr>Pure</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#foreachavailabilityinterval" class="tsd-kind-icon">for<wbr>Each<wbr>Availability<wbr>Interval</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#getassignmentfor" class="tsd-kind-icon">get<wbr>Assignment<wbr>For</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#getbaseoptionsfordurationcalculations" class="tsd-kind-icon">get<wbr>Base<wbr>Options<wbr>For<wbr>Duration<wbr>Calculations</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#getonremoveaction" class="tsd-kind-icon">get<wbr>OnRemove<wbr>Action</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#hasassignmentchanges" class="tsd-kind-icon">has<wbr>Assignment<wbr>Changes</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#hasproposedvalueforunits" class="tsd-kind-icon">has<wbr>Proposed<wbr>Value<wbr>For<wbr>Units</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#hassubevents" class="tsd-kind-icon">has<wbr>Sub<wbr>Events</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#isassignedto" class="tsd-kind-icon">is<wbr>Assigned<wbr>To</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+								<a href="schedulerevent.html#leaveproject" class="tsd-kind-icon">leave<wbr>Project</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#maybeskipnonworkingtime" class="tsd-kind-icon">maybe<wbr>Skip<wbr>Non<wbr>Working<wbr>Time</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#reassign" class="tsd-kind-icon">reassign</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#removeassignment" class="tsd-kind-icon">remove<wbr>Assignment</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#setincomingdeps" class="tsd-kind-icon">set<wbr>Incoming<wbr>Deps</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#setoutgoingdeps" class="tsd-kind-icon">set<wbr>Outgoing<wbr>Deps</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#skipnonworkingtime" class="tsd-kind-icon">skip<wbr>Non<wbr>Working<wbr>Time</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#subeventsiterable" class="tsd-kind-icon">sub<wbr>Events<wbr>Iterable</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="schedulerevent.html#unassign" class="tsd-kind-icon">unassign</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static">
+								<a href="schedulerevent.html#constrainedevent" class="tsd-kind-icon">Constrained<wbr>Event</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static">
+								<a href="schedulerevent.html#constrainedlateevent" class="tsd-kind-icon">Constrained<wbr>Late<wbr>Event</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static">
+								<a href="schedulerevent.html#hasassignments" class="tsd-kind-icon">Has<wbr>Assignments</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static">
+								<a href="schedulerevent.html#haschildren" class="tsd-kind-icon">Has<wbr>Children</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static">
+								<a href="schedulerevent.html#hasdependencies" class="tsd-kind-icon">Has<wbr>Dependencies</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

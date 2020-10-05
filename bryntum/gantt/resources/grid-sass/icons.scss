@@ -1,0 +1,111 @@
+// Additional Grid icons
+
+//region Column
+
+.b-icon-column-move-left:before {
+    @extend .b-fa-arrow-circle-left:before;
+}
+
+.b-icon-column-move-right:before {
+    @extend .b-fa-arrow-circle-right:before;
+}
+
+.b-icon-hide-column:before {
+    @extend .b-fa-times-circle:before;
+}
+
+//endregion
+
+// region Sort
+
+.b-icon-sort:before {
+    @extend .b-fa-sort:before;
+}
+
+.b-icon-sort-asc:before {
+    @extend .b-fa-sort-alpha-up:before;
+}
+
+.b-icon-sort-desc:before {
+    @extend .b-fa-sort-alpha-down-alt:before;
+}
+
+.b-icon-sorted-asc:before {
+    @extend .b-fa-arrow-up:before;
+}
+
+//.b-icon-sorted-desc:before {
+//    @extend .b-fa-arrow-down:before;
+//}
+
+//endregion
+
+//region Group
+
+.b-icon-group-asc:before {
+    @extend .b-fa-sort-amount-up-alt:before;
+}
+
+.b-icon-group-desc:before {
+    @extend .b-fa-sort-amount-down:before;
+}
+
+.b-icon-group-collapse:before {
+    @extend .b-fa-minus-circle:before;
+}
+
+.b-icon-group-expand:before {
+    @extend .b-fa-plus-circle:before;
+}
+
+.b-icon-grouped-asc:before {
+    @extend .b-fa-signal:before;
+}
+
+//.b-icon-grouped-desc:before {
+//    @extend .b-fa-signal:before;
+//}
+
+//endregion
+
+//region Tree
+
+.b-icon-tree-expand:before {
+    @extend .b-fa-angle-right:before;
+}
+
+.b-icon-tree-collapse:before {
+    @extend .b-fa-angle-down:before;
+}
+
+.b-icon-tree-folder:before {
+    @extend .b-fa-folder:before;
+}
+
+.b-icon-tree-folder-open:before {
+    @extend .b-fa-folder-open:before;
+}
+
+.b-icon-tree-leaf:before {
+    @extend .b-fa-circle:before;
+}
+
+//endregion
+
+//region Splitter
+
+.b-icon-expand-gridregion:before {
+    @extend .b-fa-caret-right:before;
+}
+
+.b-icon-collapse-gridregion:before {
+    @extend .b-fa-caret-left:before;
+}
+
+// Fix for IE11 styling
+.b-ie .b-icon-expand-gridregion,
+.b-ie .b-icon-collapse-gridregion {
+   margin-left: -0.2em;
+}
+
+//endregion

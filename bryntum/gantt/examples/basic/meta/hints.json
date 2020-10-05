@@ -1,0 +1,11 @@
+{
+    "[data-index='1'] .b-grid-cell": {
+        "title": "Tasks",
+        "content": "Displayed in columns to the left",
+        "align": "l0-r0"
+    },
+    "#b-scheduler-3-_dirtyEventModel16-r2-x": {
+        "title": "Task bar",
+        "content": "Shown in the right section. Draggable and resizable using the mouse"
+    }
+}

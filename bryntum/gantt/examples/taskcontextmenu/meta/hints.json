@@ -1,0 +1,7 @@
+{
+  ".b-gantt-task-wrap:not(.b-gantt-task-parent)" : {
+    "title"   : "Context menu",
+    "content" : "Click right mouse button to open task context menu",
+    "align"   : "t100-b100"
+  }
+}

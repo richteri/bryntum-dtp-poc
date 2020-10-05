@@ -1,0 +1,11 @@
+.b-notestab .b-taskeditor-notes-field {
+    height : 100%;
+
+    .b-field-inner {
+        align-self: stretch;
+
+        textarea {
+            padding:0.8em;
+        }
+    }
+}

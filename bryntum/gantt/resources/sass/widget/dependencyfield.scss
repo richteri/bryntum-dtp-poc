@@ -1,0 +1,10 @@
+@import '../variables.scss';
+
+.b-dependency-list-filter {
+    position         : sticky;
+    top              : 0;
+    z-index          : 1;
+
+    // The filter field must occlude the list since it is position: sticky
+    background-color : $list-background-color;
+}

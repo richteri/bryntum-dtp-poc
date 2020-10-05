@@ -1,0 +1,52 @@
+@import '../../variables.scss';
+
+.b-buttongroup {
+    // In case it contains buttons with badges
+    overflow : visible;
+
+    &.b-content-element {
+        // Want it to shrink-wrap its contents
+        display   : inline-flex;
+        flex-wrap : nowrap;
+    }
+
+    .b-button {
+        // To override any margin added by demo styling, convenient to have
+        margin     : 0;
+
+        &:not(.b-pressed) {
+            box-shadow : none !important;
+        }
+        &.b-pressed,
+        &:active {
+            z-index: 2;
+        }
+
+        &:not(:first-child) {
+            margin-left : $buttongroup-button-left-margin;
+        }
+    }
+
+    &.b-columned.b-content-element {
+        flex : 1;
+        flex-wrap : wrap;
+
+        .b-button {
+            margin-left : 0;
+        }
+    }
+
+    .b-button:not(:first-child):not(:last-child) {
+        border-radius : 0;
+    }
+
+    .b-button:first-child:not(:last-child) {
+        border-top-right-radius    : 0;
+        border-bottom-right-radius : 0;
+    }
+
+    .b-button:last-child:not(:first-child) {
+        border-top-left-radius    : 0;
+        border-bottom-left-radius : 0;
+    }
+}

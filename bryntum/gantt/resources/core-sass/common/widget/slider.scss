@@ -1,0 +1,147 @@
+@import '../../variables.scss';
+
+// Styling Cross-Browser Compatible Range Inputs with Sass
+// Github: https://github.com/darlanrod/input-range-sass
+// Author: Darlan Rod https://github.com/darlanrod
+// Version 1.4.1
+// MIT License
+
+@mixin track {
+    cursor     : pointer;
+    height     : $slider-track-height;
+    transition : all .2s ease;
+    width      : 100%;
+}
+
+@mixin thumb {
+    background    : $slider-thumb-color;
+    border        : none;
+    border-radius : 50%;
+    cursor        : pointer;
+    height        : $slider-thumb-radius * 2;
+    width         : $slider-thumb-radius * 2;
+}
+
+.b-slider {
+    background-color : transparent;
+
+    // Label goes below the slider, so we layout as a column.
+    flex-direction   : column;
+    align-items      : center;
+    justify-content  : center;
+    overflow         : visible; // Don't crop thumb box shadow
+
+    label {
+        font-size  : $slider-label-font-size;
+        transition : color 0.2s;
+    }
+
+    [type='range'] {
+        align-self         : stretch;
+        max-width          : 100%;
+        -webkit-appearance : none;
+        margin             : $slider-margin;
+        padding            : 0;
+        align-self         : stretch;
+        font-size          : inherit;
+        background-color   : transparent;
+
+        &:focus {
+            outline : 0;
+
+            &::-webkit-slider-runnable-track {
+                background : lighten($slider-thumb-color, $slider-contrast);
+            }
+
+            &::-moz-range-track {
+                background : lighten($slider-thumb-color, $slider-contrast);
+            }
+
+            &::-ms-fill-lower,
+            &::-ms-fill-upper {
+                background : lighten($slider-thumb-color, $slider-contrast);
+            }
+
+            &::-webkit-slider-thumb {
+                box-shadow : 0 2px 4px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.20);
+            }
+        }
+
+        &::-moz-focus-outer {
+            border : 0;
+        }
+
+        &::-ms-tooltip {
+            display : none;
+        }
+
+        &::-webkit-slider-runnable-track {
+            @include track;
+            background    : $slider-track-color;
+            border        : none;
+            border-radius : $widget-border-radius;
+        }
+
+        &::-webkit-slider-thumb {
+            @include thumb;
+            -webkit-appearance : none;
+            margin-top         : ($slider-track-height / 2) - $slider-thumb-radius;
+            transition         : all 0.5s;
+        }
+
+        &::-moz-range-track {
+            @include track;
+            background    : $slider-track-color;
+            border        : none;
+            border-radius : $widget-border-radius;
+        }
+
+        &::-moz-range-thumb {
+            @include thumb;
+        }
+
+        &::-ms-track {
+            @include track;
+            background   : transparent;
+            border-color : transparent;
+            border-width : $slider-thumb-radius 0;
+            color        : transparent;
+        }
+
+        &::-ms-fill-lower,
+        &::-ms-fill-upper {
+            background    : $slider-track-color;
+            border        : none;
+            border-radius : $widget-border-radius * 2;
+        }
+
+        &::-ms-thumb {
+            @include thumb;
+            margin-top : 0;
+        }
+    }
+
+    &.b-disabled {
+        [type='range'] {
+            &::-ms-thumb,
+            &::-ms-fill-lower,
+            &::-ms-fill-upper {
+                background : darken($slider-track-color, 5);
+                cursor     : default;
+            }
+
+            &::-moz-range-thumb,
+            &::-moz-range-track {
+                background : darken($slider-track-color, 5);
+                cursor     : default;
+            }
+
+            &::-webkit-slider-thumb,
+            &::-webkit-slider-runnable-track {
+                background : darken($slider-track-color, 5);
+                cursor     : default;
+            }
+        }
+    }
+
+}

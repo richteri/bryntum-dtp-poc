@@ -1,0 +1,75 @@
+@import '../../variables.scss';
+
+@keyframes b-filter-icon-color {
+    0% {
+        color : $grid-header-icon-color;
+    }
+    50% {
+        color : $grid-header-icon-highlight-color;
+    }
+    100% {
+        color : $grid-header-icon-color;
+    }
+}
+
+.b-grid-header {
+
+    // filter icon, hidden by default
+    .b-filter-icon {
+        display    : none;
+        cursor     : pointer;
+        transition : opacity .2s;
+
+        &::after {
+            @include b-grid-header-icon($grid-header-icon-light-color);
+            @extend .b-icon-filter:before;
+        }
+
+        // uses darker color when hovering the icon
+        &:hover::after {
+            color : $grid-header-icon-color;
+        }
+    }
+}
+
+// Styling of filter icons when feature is disabled
+.b-gridbase:not(.b-filter) {
+    .b-filter-icon {
+        opacity        : 0.2;
+        pointer-events : none;
+    }
+}
+
+// filter icon shown when hovering the header, but not while resizing/dragging
+.b-gridbase:not(.b-column-resizing) .b-grid-header-container:not(.b-dragging-header) .b-grid-header:hover .b-filter-icon {
+    display : flex;
+}
+
+// header with filter, shows the filter icon
+.b-grid-header.b-filter {
+
+    .b-grid-header-text {
+        font-weight : 700;
+        color       : $grid-header-filtered-color;
+    }
+
+    .b-filter-icon {
+        display : flex;
+
+        &::after {
+            color : $grid-header-icon-color;
+        }
+
+        // highlight the newest filter
+        &.b-latest::after {
+            animation-name     : b-filter-icon-color;
+            animation-duration : 0.75s;
+        }
+    }
+}
+
+.b-filter-popup {
+    .b-field {
+        width : 15em;
+    }
+}

@@ -1,0 +1,16 @@
+@import '../../variables.scss';
+
+.b-splitter {
+    background-color : $splitter-background-color;
+    flex             : 0 0 $splitter-size;
+
+    &.b-horizontal {
+        cursor     : ns-resize;
+        min-height : $splitter-size;
+    }
+
+    &.b-vertical {
+        cursor    : ew-resize;
+        min-width : $splitter-size;
+    }
+}

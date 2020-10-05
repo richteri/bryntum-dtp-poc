@@ -1,0 +1,28 @@
+@import '../variables.scss';
+
+.b-timeaxis-group-summary {
+    display        : flex;
+    flex-direction : row;
+    width          : 100%;
+    height         : 100%;
+
+    .b-timeaxis-tick {
+        display         : flex;
+        flex-direction  : column;
+        align-items     : stretch;
+        justify-content : center;
+    }
+
+    .b-timeaxis-summary-value {
+        text-align: center;
+    }
+}
+
+.b-gridbase.b-schedulerbase .b-timeline-subgrid .b-grid-row.b-group-footer.b-hover {
+    // Highlight row and cell on hover
+
+    .b-grid-cell,
+    .b-grid-cell:hover {
+        background-color : $grid-groupsummary-background-color;
+    }
+}

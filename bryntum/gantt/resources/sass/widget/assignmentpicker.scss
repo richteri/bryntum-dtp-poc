@@ -1,0 +1,26 @@
+@import '../variables.scss';
+
+.b-assignmentpicker {
+
+    //border: 1px solid $widget-border-color;
+
+    .b-panel-content {
+        padding: 0;
+        background-color: $field-background-color;
+    }
+
+    .b-assignmentgrid {
+        flex: 1 1 auto;
+    }
+
+    .b-bottom-toolbar {
+        > button {
+            flex : 1;
+            margin-right : .5em;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}

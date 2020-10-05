@@ -1,0 +1,21 @@
+@import '../../variables.scss';
+
+.b-datefield {
+    &.b-open {
+        .b-fieldtrigger {
+            color : $main-color!important;
+        }
+    }
+
+    // Steppers not shown by default.
+    .b-step-trigger {
+        display : none;
+    }
+
+    // Only if configured to do so.
+    &.b-show-steppers {
+        .b-step-trigger {
+            display : inline-block;
+        }
+    }
+}

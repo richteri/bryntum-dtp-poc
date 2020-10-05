@@ -1,0 +1,305 @@
+/* critical paths styling */
+/* The color that is mixed into critical tasks/dependency colors */
+/* The percentage used to mix $gantt-critical-paths-base-color into critical tasks/dependency colors */
+/* The color that is mixed into critical summary tasks background color */
+/* The color that is mixed into critical tasks background color */
+/* The color that is mixed into critical dependencies stroke color */
+/* baseline styling */
+body {
+  visibility: hidden;
+  background: #f3f3f3;
+}
+
+.b-watermark {
+  display: none;
+}
+
+#browser {
+  flex: 1;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+}
+
+#scroller {
+  padding: 2em;
+}
+
+#intro {
+  position: relative;
+  color: #fff;
+  font-weight: 400;
+  font-size: 1.2em;
+  overflow: hidden;
+  max-height: 500px;
+  background-color: #166dba;
+  transition: max-height 0.3s;
+}
+
+.b-theme-stockholm #intro {
+  background-color: #1e519d;
+}
+
+.b-theme-light #intro {
+  background-color: #72bcf8;
+}
+
+.b-theme-dark #intro {
+  background-color: #093272;
+}
+
+.b-theme-material #intro {
+  background-color: #166dba;
+}
+
+#intro #inner {
+  display: flex;
+  flex-direction: row;
+  padding: 2em;
+  flex: 1;
+}
+
+#intro #inner a {
+  font-weight: 400;
+  color: inherit;
+}
+
+#intro #inner a:hover {
+  text-decoration: underline;
+}
+
+#intro #inner .b-watermark a {
+  color: #166dba;
+}
+
+#intro #live-example {
+  flex: 1;
+  background: #fff;
+  font-size: .8em;
+  max-width: 500px;
+  transition: max-width 0.3s;
+}
+
+#intro p {
+  flex: 1;
+  margin: 2em 1em 2em 2em;
+  transition: margin 0.4s;
+  line-height: 1.6em;
+  max-width: 50em;
+}
+
+#intro #close-button {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  font-size: 1em;
+  margin-left: 1em;
+  cursor: pointer;
+}
+
+.group-header {
+  position: sticky;
+  top: 0;
+  background-color: #f3f3f3;
+  z-index: 1;
+  padding: 1em 0.8em;
+  border-bottom: 2px solid #166dba;
+}
+
+h2 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+p:first-child {
+  margin-top: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.examples {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+  grid-gap: 1em;
+}
+
+.example {
+  padding: 1em;
+  border: 2px dotted transparent;
+  max-width: 512px;
+  cursor: pointer;
+  position: relative;
+}
+
+.example.updated label:after,
+.example.new label:after {
+  content: 'new';
+  display: inline-block;
+  color: #fff;
+  margin-left: .5em;
+  padding: 0 0.2em 0.2em 0.2em;
+  background: #ff5722;
+  border-radius: .2em;
+  font-size: .8em;
+  position: relative;
+  top: -.1em;
+}
+
+.example.updated label:after {
+  content: 'updated';
+}
+
+.example .image {
+  position: relative;
+  transition: all 0.2s;
+  padding-top: 75%;
+  background-color: #ddd;
+}
+
+.b-ie .example .image {
+  padding-top: 0;
+  background-color: transparent;
+}
+
+.example img {
+  position: absolute;
+  top: 0;
+  max-width: 100%;
+  max-height: 100%;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+.b-ie .example img {
+  position: relative;
+  top: auto;
+}
+
+.example i {
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+  font-size: 1em;
+  color: #fff;
+  background-color: #03a9f4;
+  padding: .7em;
+  transition: background-color 0.2s linear;
+  border-radius: 50%;
+}
+
+.example i::before {
+  display: block;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+}
+
+.example i:hover {
+  background-color: #ff9800;
+}
+
+.example i.build {
+  background-color: #ff9800;
+}
+
+.example i.build:hover {
+  background-color: #03a9f4;
+}
+
+.example .title {
+  display: block;
+  cursor: pointer;
+  padding: .5em;
+  text-align: center;
+  color: #000;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+.example .version {
+  position: absolute;
+  left: 1em;
+  bottom: 1.1em;
+  font-size: 1em;
+  color: #fff;
+  background-color: #03a9f4;
+  padding: .5em;
+  border-radius: 0.2em;
+}
+
+.example:hover .image, .example:focus .image {
+  transform: scale(1.05);
+}
+
+.example:hover img, .example:focus img {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.example:focus {
+  border: 2px dotted #03a9f4;
+  border-radius: 2px;
+  outline: none;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .examples {
+    display: block;
+  }
+  .example {
+    display: inline-block;
+    margin-right: 1em;
+    margin-bottom: 1em;
+  }
+  .example img {
+    width: 256px;
+  }
+}
+
+.b-tooltip ul {
+  padding: 0 1.5em;
+}
+
+.b-tooltip ul li {
+  white-space: nowrap;
+}
+
+@media (max-width: 800px) {
+  #intro #live-example {
+    display: none;
+    max-width: 0;
+  }
+  #intro #live-example .b-grid.b-ie {
+    width: 0;
+  }
+  #intro p {
+    margin: 0;
+  }
+}
+
+@media (max-width: 810px) {
+  .demo-header .b-button label {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  p {
+    font-size: calc(.7em + 1vw);
+    line-height: calc(1.1em + 1vw);
+  }
+}
+
+.light #intro {
+  background-color: #039be5;
+}
+
+iframe[name=aweberFrame] {
+  display: none;
+}

@@ -1,0 +1,19 @@
+version: "3"
+services:
+    bryntum_gantt_mysql:
+        build: ./sql
+        image: bryntum_gantt_mysql
+        container_name: bryntum_gantt_mysql
+        ports:
+            - "33062:3306"
+    bryntum_gantt_aspnetcore:
+        build: .
+        image: bryntum_gantt_aspnetcore
+        container_name: bryntum_gantt_aspnetcore
+        environment:
+            - MySQL__Host=bryntum_gantt_mysql
+            - MySQL__Port=3306
+        ports:
+            - "8080:80"
+        depends_on:
+            - bryntum_gantt_mysql

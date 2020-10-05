@@ -1,0 +1,10 @@
+@import '../../scheduler-sass/themes/stockholm.scss';
+@import 'shared';
+
+// Put custom code here
+
+.b-popup.b-schedulerpro-taskeditor {
+    .b-tabpanel-body {
+        padding-bottom : 0;
+    }
+}

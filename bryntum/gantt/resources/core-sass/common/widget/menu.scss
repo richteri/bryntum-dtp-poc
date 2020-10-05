@@ -1,0 +1,135 @@
+@import '../../variables.scss';
+
+.b-menu {
+    min-height     : 20px;
+    outline        : none;
+    display        : flex;
+    flex-direction : column;
+    align-items    : stretch;
+
+    .b-panel-content {
+        background-color : $menu-background-color;
+    }
+
+    &.b-empty::after {
+        content : attr(data-empty-text);
+        display : block;
+        padding : .8em;
+        color   : $menu-color;
+    }
+
+    /* HACK for IE11. Withouth this padding menu may scroll on first/last item hover */
+    /* Covered by Menu.t.js */
+    &.b-ie .b-menu-content {
+        padding-bottom : 1px;
+    }
+
+    .b-icon:before, .b-icon-fw:before {
+        min-width : 1.3em; // make sure icons of different width have same width for proper text alignment
+    }
+
+    // leave empty space where there are no expand icons
+    &.b-menu-with-submenu .b-menuitem:not(.b-has-submenu) .b-menu-text {
+        margin-right : 2em;
+    }
+}
+
+.b-sub-menu {
+    // Fill space above/below anchor arrow with empty hoverable space to make sure we never really
+    // exit the Menu element when moving to a submenu
+    .b-anchor:before {
+        position   : absolute;
+        height     : 2.7em;
+        width      : ($widget-anchor-height + 3);
+        left       : -2px;
+        content    : ' ';
+        margin-top : -0.8em;
+    }
+}
+
+.b-menu-content {
+    flex-flow       : column nowrap;
+    justify-content : start;
+    align-items     : stretch;
+    padding         : 0;
+
+    > :not(.b-menuitem) {
+        margin  : 0.6em;
+        display : flex;
+    }
+}
+
+
+.b-menuitem {
+    flex-shrink : 0; // Must not try to shrink when there's vertical overflow
+    padding     : .8em;
+    color       : $menu-color;
+    cursor      : pointer;
+    transition  : background-color 0.2s, color 0.2s;
+    border-top  : 1px dotted transparentize($menu-item-border-color, .2);
+    font-size   : 1em;
+    min-width   : 7em;
+    display     : flex;
+
+    &.b-disabled {
+        opacity : .5;
+    }
+
+    &:first-child {
+        border-top              : none;
+        border-top-right-radius : $widget-border-radius;
+        border-top-left-radius  : $widget-border-radius;
+    }
+
+    &:last-child {
+        border-bottom-right-radius : $widget-border-radius;
+        border-bottom-left-radius  : $widget-border-radius;
+    }
+
+    &.b-separator:not(:first-child) {
+        border-top : 1px solid $menu-item-separator-color;
+    }
+
+    // Disabled menu items are focusable but cannot be activated.
+    // https://www.w3.org/TR/wai-aria-practices/#h-note-17
+    &.b-contains-focus,
+    &:focus {
+        outline          : none;
+        background-color : $menu-highlight-color;
+        color            : $menu-active-color;
+    }
+
+    span.b-menu-text {
+        flex        : 1 1 auto;
+        white-space : nowrap;
+        margin-left : 0.6em;
+    }
+
+    &.b-has-submenu {
+        .b-icon-sub-menu {
+            margin-left : .3em;
+        }
+    }
+}
+
+a.b-menuitem:hover .b-menu-text {
+    text-decoration : underline;
+}
+
+
+.b-menu-with-icon {
+    // Fixed width on menu items, to allow text to align
+    .b-menuitem-icon {
+        width : $menu-item-icon-width;
+    }
+
+    // Item without icon
+    span.b-menu-text {
+        margin-left : $menu-item-icon-width;
+    }
+
+    // Item with icon, no margin on text since icon has width set above
+    .b-menuitem-icon ~ span.b-menu-text {
+        margin-left : 0;
+    }
+}

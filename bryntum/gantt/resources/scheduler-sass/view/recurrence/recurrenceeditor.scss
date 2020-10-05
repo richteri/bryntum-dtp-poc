@@ -1,0 +1,45 @@
+@import '../../variables.scss';
+
+.b-recurrenceeditor.b-popup {
+    .b-recurrenceeditor-content.b-popup-content {
+        padding : 1em 1em 0 1em;
+
+        .b-field {
+            label.b-align-start {
+                flex : 1 0 $recurrenceeditor-label-width;
+            }
+        }
+
+        .b-recurrencepositionscombo {
+            flex : none;
+            @if $field-container-margin-left {
+                width : $recurrenceeditor-label-width - $field-container-margin-left - 0.5em;
+            }
+            @else {
+                width : $recurrenceeditor-label-width - 0.5em;
+            }
+        }
+
+        .b-recurrencedayscombo {
+            margin-left : 0.5em;
+        }
+    }
+
+    .b-bottom-toolbar {
+        .b-label-filler {
+            @if $recurrenceeditor-label-filler-width == null {
+                display : none;
+            }
+            width : $recurrenceeditor-label-filler-width;
+        }
+
+        > button {
+            flex : 1;
+            margin-right : .5em;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}

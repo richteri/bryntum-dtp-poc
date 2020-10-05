@@ -1,0 +1,94 @@
+@import '../../variables.scss';
+
+.b-list {
+    display          : block;
+    background-color : $list-background-color;
+    outline          : none;
+
+    &.b-floating {
+        border-radius : $widget-border-radius;
+    }
+
+    &.b-empty {
+        min-height : initial !important; // empty rule must override inline style
+        &::after {
+            content : attr(data-empty-text);
+            display : block;
+            padding : .8em;
+            color   : $list-color;
+        }
+    }
+
+    // Selected icon is not layed out by default/
+    .b-selected-icon {
+        margin-inline-end : 0.5em;
+        display           : none;
+
+        // margin-inline-end which is RTL compliant not supported on IE
+        // When we come to support RTL, we should exclude IE.
+        .b-ie & {
+            margin-right : 0.5em;
+        }
+    }
+
+    &.b-multiselect {
+        .b-list-item {
+            // Inside a multiselect list, the selected icon is layed out, but invisible
+            .b-selected-icon {
+                // IE11 can't reset to "initial".
+                // TODO: reset using "initial" when we drop IE11
+                display    : block;
+                visibility : hidden
+            }
+
+            // Selected icon becomes visible when selected
+            &.b-selected {
+                .b-selected-icon {
+                    visibility : visible;
+                }
+            }
+        }
+    }
+}
+
+.b-list-item {
+    position         : relative;
+    padding          : .8em;
+    color            : $list-color;
+    cursor           : pointer;
+    background-color : transparent;
+    transition       : background-color 0.2s, color 0.2s;
+    border-top       : 1px dotted transparentize($list-item-border-color, .2);
+    min-width        : 100px;
+    overflow         : hidden;
+    white-space      : nowrap;
+
+    display          : flex;
+    flex-direction   : row;
+    align-items      : center;
+
+    &.b-hidden {
+        display : none;
+    }
+
+    &:first-child {
+        border-top              : none;
+        border-top-right-radius : $widget-border-radius;
+        border-top-left-radius  : $widget-border-radius;
+    }
+
+    &:last-child {
+        border-bottom-right-radius : $widget-border-radius;
+        border-bottom-left-radius  : $widget-border-radius;
+    }
+
+    &.b-active,
+    &:focus {
+        outline : none;
+
+        &:not(.b-disabled) {
+            background-color : $list-highlight-color;
+            color            : $list-active-color;
+        }
+    }
+}

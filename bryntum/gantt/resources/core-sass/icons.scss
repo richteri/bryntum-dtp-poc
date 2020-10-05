@@ -1,0 +1,259 @@
+@import '../fontawesome/scss/_variables.scss';
+@import '../fontawesome/scss/_icons.scss';
+@import '../fontawesome/scss/_mixins.scss';
+@import '../fontawesome/scss/_fixed-width.scss';
+@import '../fontawesome/scss/_core.scss';
+@import 'variables.scss';
+
+// some demos use fa icons
+.b-fa {
+    font-family : inherit;
+    line-height : inherit;
+    -webkit-font-smoothing: inherit;
+}
+
+.b-fa:before {
+    font-family : $icon-font;
+    font-weight : $icon-font-weight;
+}
+
+// our own icon class, to allow customization by client
+.b-icon:before {
+    @include fa-icon();
+    font-family    : $icon-font;
+    font-weight    : $icon-font-weight;
+    vertical-align : 0;
+}
+
+.b-fw-icon:before {
+    @include fa-icon();
+    @extend .b-fa-fw;
+    font-family    : $icon-font;
+    font-weight    : $icon-font-weight;
+    vertical-align : 0;
+}
+
+.b-content-icon {
+    @include fa-icon();
+    font-family    : $icon-font;
+    font-weight    : $icon-font-weight;
+    vertical-align : 0;
+}
+
+//region Actions
+
+.b-icon-add:before {
+    @extend .b-fa-plus:before;
+}
+
+.b-icon-remove:before {
+    @extend .b-fa-times:before;
+}
+
+.b-icon-clear:before {
+    @extend .b-fa-times:before;
+}
+
+.b-icon-search:before {
+    @extend .b-fa-search:before;
+}
+
+.b-icon-search-plus:before {
+    @extend .b-fa-search-plus:before;
+}
+
+.b-icon-search-minus:before {
+    @extend .b-fa-search-minus:before;
+}
+
+.b-icon-hide:before {
+    @extend .b-fa-times-circle:before;
+}
+
+.b-icon-trash:before {
+    @extend .b-fa-trash:before;
+}
+
+.b-icon-edit:before {
+    @extend .b-fa-pencil-alt:before;
+}
+
+//endregion
+
+//region Docs
+
+.b-icon-code:before {
+    @extend .b-fa-code:before;
+}
+
+.b-icon-clipboard:before {
+    @extend .b-fa-clipboard:before;
+}
+
+//endregion
+
+//region Filter
+
+.b-icon-filter:before,
+.b-icon-filter-equal:before {
+    @extend .b-fa-filter:before;
+}
+
+.b-icon-filter-less:before,
+.b-icon-filter-before:before {
+    @extend .b-fa-chevron-left:before;
+}
+
+.b-icon-filter-more:before,
+.b-icon-filter-after:before {
+    @extend .b-fa-chevron-right:before;
+}
+
+//endregion
+
+//region Checkboxes
+
+.b-icon-check:before {
+    @extend .b-fa-check:before;
+}
+
+.b-icon-checked:before {
+    @extend .b-fa-check-square:before;
+}
+
+.b-icon-unchecked:before {
+    @extend .b-fa-square:before;
+}
+
+//endregion
+
+//region Others
+
+.b-icon-info:before {
+    @extend .b-fa-info:before;
+}
+
+.b-icon-sub-menu:before {
+    @extend .b-fa-chevron-right:before;
+}
+
+.b-icon-star:before {
+    @extend .b-fa-star:before;
+}
+
+.b-icon-warning:before {
+    @extend .b-fa-exclamation-triangle:before;
+}
+
+.b-icon-columns:before {
+    @extend .b-fa-columns:before;
+}
+
+.b-icon-picker:before {
+    @extend .b-fa-caret-down:before;
+}
+
+.b-icon-resize-horizontal:before {
+    @extend .b-fa-arrows-alt-h:before
+}
+
+.b-icon-calendar:before {
+    @extend .b-fa-calendar:before
+}
+
+.b-icon-clock:before {
+    @extend .b-fa-clock:before
+}
+
+.b-icon-fullscreen:before {
+    @extend .b-fa-arrows-alt:before
+}
+
+.b-icon-circle:before {
+    @extend .b-fa-circle:before
+}
+
+//endregion
+
+//region Arrows
+
+.b-icon-up:before {
+    @extend .b-fa-arrow-up:before
+}
+
+.b-icon-down:before {
+    @extend .b-fa-arrow-down:before
+}
+
+.b-icon-right:before {
+    @extend .b-fa-arrow-right:before
+}
+
+.b-icon-angle-left:before {
+    @extend .b-fa-angle-left:before
+}
+
+.b-icon-angle-right:before {
+    @extend .b-fa-angle-right:before
+}
+
+//endregion
+
+//region Live clock
+
+.b-icon-clock-live {
+    background-color : $field-trigger-color;
+    border-radius    : 50%;
+    width            : 1em;
+    height           : 1em;
+    position         : relative;
+    animation-delay  : 0s;
+
+    &:before,
+    &:after {
+        position      : absolute;
+        display       : block;
+        font-size     : 1em !important;
+        content       : "";
+        width         : .10em !important;
+        left          : .44em; /* half width of clock - half width of hand */
+        background    : #fff;
+        border-radius : .5em;
+    }
+
+    &:before {
+        top                  : .15em;
+        // need !important since i:before has fixed height when used in fields etc. need to override it
+        height               : .4em !important; /* half the width/height of the clock */
+        transform-origin     : .05em .35em;
+        animation            : rotate 6s infinite linear;
+        animation-play-state : paused;
+        animation-delay      : inherit;
+    }
+
+    &:after {
+        top                  : .22em;
+        height               : .33em; /* top + height for little hand must = top + height for big hand */
+        transform-origin     : .05em .3em;
+        animation            : rotate 72s infinite linear; /* time should be big-hand time * 12 */
+        animation-play-state : paused;
+        animation-delay      : inherit;
+    }
+}
+
+/* Animations */
+@keyframes rotate {
+    0% {
+        transform : rotate(0deg);
+    }
+    100% {
+        transform : rotate(360deg);
+    }
+}
+
+//endregion
+
+.b-icon-spinner:before {
+    @extend .b-fa-spinner:before;
+    animation : rotate 2s infinite linear;
+}

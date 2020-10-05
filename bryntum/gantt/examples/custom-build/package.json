@@ -1,0 +1,17 @@
+{
+  "name": "custom-build",
+  "version": "1.0.0",
+  "description": "Shows how to make a custom build of Grid using WebPack",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "npx webpack"
+  },
+  "author": "Bryntum",
+  "devDependencies": {
+    "babel-loader": "8.1.0",
+    "@babel/core": "7.10.3",
+    "@babel/preset-env": "7.10.3",
+    "webpack": "4.43.0",
+    "webpack-cli": "3.3.12"
+  }
+}

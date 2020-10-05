@@ -1,0 +1,70 @@
+.b-chipview {
+    background-color : $chipview-background-color;
+
+    &.b-empty::after {
+        display : none;
+    }
+
+    input {
+        padding-top    : top($chip-padding) * 2;
+        padding-bottom : calc(#{bottom($chip-margin) + bottom($chip-padding)} + 1px);
+    }
+
+    .b-chip {
+        display          : flex;
+        align-items      : center;
+        margin           : $chip-margin;
+        padding          : $chip-padding;
+        border-radius    : $chip-border-radius;
+        background-color : $chip-background-color;
+        color            : $chip-color;
+        transition       : background-color .3s, color .3s;
+
+        .b-icon {
+            height           : $chip-icon-size;
+            width            : $chip-icon-size;
+            border-radius    : 50%;
+            display          : flex;
+            align-items      : center;
+            justify-content  : center;
+            background-color : $chip-icon-background-color;
+            color            : $chip-icon-color;
+
+            // Any added icon to the left gets a margin on the right before the text
+            &:first-child:not(.b-close-icon) {
+                margin-right : $chip-icon-spacing;
+            }
+        }
+
+        &:hover {
+            background-color : $chip-hover-background-color;
+            color            : $chip-hover-color;
+            .b-icon {
+                background-color : $chip-hover-icon-background-color;
+                color            : $chip-hover-icon-color;
+            }
+        }
+
+        &.b-selected {
+            background-color : $chip-selected-background-color;
+            color            : $chip-selected-color;
+            .b-icon {
+                background-color : $chip-selected-icon-background-color;
+                color            : $chip-selected-icon-color;
+            }
+            &:hover {
+                background-color : $chip-hover-selected-background-color;
+                color            : $chip-hover-selected-color;
+                .b-icon {
+                    background-color : $chip-hover-selected-icon-background-color;
+                    color            : $chip-hover-selected-icon-color;
+                }
+            }
+        }
+
+        .b-close-icon {
+            margin-left : $chip-icon-spacing;
+            cursor      : pointer;
+        }
+    }
+}

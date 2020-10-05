@@ -1,0 +1,69 @@
+@import '../../variables.scss';
+
+.b-grid-header.b-group {
+    // display icon on grouped header
+    .b-grid-header-text::after {
+        @include b-grid-header-icon($grid-group-column-header-icon-color);
+        @extend .b-icon-grouped-asc:before;
+        transform : rotate(90deg);
+    }
+
+    // rotate it when grouping descending, uses transition
+    &.b-desc .b-grid-header-text:after {
+        transform : rotate(270deg) scaleX(-1);
+    }
+}
+
+.b-group-row {
+    background : $grid-group-header-background-color;
+
+    // no border-right in group headers
+    .b-grid-cell {
+        border-right-color : transparent;
+    }
+
+    .b-group-title {
+        // TODO: Remove usage of left and right for alignment.
+        // Use start and end to be LTR/RTL neutral.
+        &.b-grid-cell-align-right, &.b-grid-cell-align-end {
+            justify-content : flex-end;
+        }
+
+        &.b-grid-cell-align-center {
+            justify-content : start;
+        }
+    }
+}
+
+.b-grid-cell.b-group-title {
+    color          : $grid-group-header-color;
+    overflow       : visible;
+    contain        : size layout style;
+
+    .b-firefox & {
+        // `contain : style;` is not supported by Firefox
+        contain : size layout;
+    }
+
+    font-weight    : $grid-group-header-font-weight;
+    text-transform : $grid-group-header-text-transform;
+
+    &:before {
+        @extend .b-content-icon;
+        @extend .b-icon-group-collapse:before;
+
+        margin-right : .5em;
+        cursor       : pointer;
+        color        : $grid-group-header-icon-color;
+    }
+}
+
+.b-grid-group-collapsed .b-group-title:before {
+    @extend .b-icon-group-expand:before;
+}
+
+.b-stripe .b-grid-row.b-group-row,
+.b-grid-row.b-group-row {
+    border-bottom : $grid-group-header-line-width solid $grid-group-header-line-color;
+    cursor        : pointer;
+}

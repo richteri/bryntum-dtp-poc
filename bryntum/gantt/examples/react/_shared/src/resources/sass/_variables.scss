@@ -1,0 +1,29 @@
+/**
+ * Variables for App.scss.
+ */
+// header
+$header-background-color: #1E88E5;
+$header-text-color:#fff;
+$header-padding: 2em 0;
+$header-transition: background-color .5s, padding .5s, font-size .1s;
+
+// header title
+$header-title-container-min-height: 3em;
+$header-title-margin-left: 1em;
+$header-title-padding: 0.2em 0 0.2em 2.1em;
+$header-title-font-size:1.8em;
+$header-title-background-size: 1.6em;
+$header-title-font-weight:500;
+
+// header tools
+$header-tools-transition: background-color 0s, margin-top .3s;
+$header-tools-padding-right: 1em;
+
+
+// widgets
+$header-widget-margin-left-no-data: .5em;
+$header-widget-margin-left-data: .5em;
+$header-field-margin-right: 1em;
+$header-numberfield-width: 18em;
+
+// eof

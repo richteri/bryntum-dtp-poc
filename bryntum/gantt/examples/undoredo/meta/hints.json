@@ -1,0 +1,23 @@
+{
+    "#undoBtn" : {
+        "title" : "Undo button",
+        "content" : "Click it to undo the currently selected transaction.",
+        "align" : "r-l"
+    },
+
+    "#redoBtn" : {
+        "title" : "Redo button",
+        "content" : "Click it to redo transaction next to the currently selected."
+    },
+
+    ".b-actionsgrid .b-grid-row" : {
+        "title" : "Current data model state",
+        "content" : "Select top level nodes from this grid to restore recorded state, expand nodes to see more fine grained action list constituting a transaction."
+    },
+
+    ".b-gantt" : {
+        "title" : "Gantt chart",
+        "content" : "Interract with the Gantt chart to change it's data model and data model transactions to be recorded.",
+        "align" : "t-t"
+    }
+}

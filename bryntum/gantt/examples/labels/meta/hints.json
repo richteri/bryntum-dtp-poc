@@ -1,0 +1,11 @@
+{
+    ".b-sch-label-bottom": {
+        "title": "",
+        "content": "Labels may be configured at all four edges.",
+        "align": "t-b"
+    },
+    "button": {
+        "title": "",
+        "content": "Change label confguration"
+    }
+}

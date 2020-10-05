@@ -1,0 +1,127 @@
+@import '../variables.scss';
+@import '../functions.scss';
+
+.b-noselect {
+    @include user-select-none();
+}
+
+.b-released,
+.b-hide-display {
+    display: none!important;
+}
+.b-hide-visibility {
+    visibility: hidden!important;
+}
+
+// TODO: check if used
+.b-fx-highlight {
+    //animation-name     : b-fx-highlight-animation;
+    //animation-duration : 1s;
+    animation : b-fx-highlight-animation 1s ease 0s 1;
+}
+
+@keyframes b-fx-highlight-animation {
+    0% {
+        box-shadow : none;
+    }
+    50% {
+        box-shadow : 0 0 10px 5px rgba(253, 126, 20, .5);
+    }
+    100% {
+        box-shadow : none;
+    }
+}
+
+/**
+ * DomHelper size monitoring polyfill for when ResizeObserver not available
+ */
+.b-resize-monitored {
+    position: relative;
+
+    .b-resize-monitors {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        visibility: hidden;
+        overflow: hidden;
+
+        > * {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        > .b-resize-monitor-expand:after {
+            content: '';
+            display: block;
+            width: 100000px;
+            height: 100000px;
+        }
+
+        > .b-resize-monitor-shrink:after {
+            content: '';
+            display: block;
+            width: 200%;
+            height: 200%;
+            min-width: 1px;
+            min-height: 1px;
+        }
+    }
+}
+
+// This is the element which lifts floating Widgets above the document.
+// Within this, they rely on DOM order for visual stacking.
+// A 'to top" operation appends the Widget's element to its owning .b-float-root
+.b-float-root {
+    position        : fixed;
+    top             : 0;
+    left            : 0;
+    right           : 0;
+    bottom          : 0;
+    pointer-events  : none;
+    overflow        : hidden;
+    z-index         : $float-root-z-index;
+    contain         : strict;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+
+    > .b-floating {
+        position       : absolute;
+        contain        : layout style;
+
+        .b-firefox & {
+            // `contain : style;` is not supported by Firefox
+            contain : layout;
+        }
+
+        pointer-events : all;
+        transition     : opacity 0.2s;
+        box-shadow     : $float-box-shadow;
+        top            : 0; // gets strange pos in safari otherwise
+        left           : 0; // gets strange pos in safari otherwise
+        // Floating widgets need the anchor to appear outside bounds.
+        overflow       : visible;
+        // In Safari & IE11 active buttons in button groups overlaps floating pickers unless this is set,
+        // probably different z-index stacking rules
+        z-index         : $float-root-z-index + 1;
+        // Opacity of floating Widgets is animated to 1 upon show.
+        &.b-hidden {
+            opacity: 0;
+        }
+
+        // To make measurable, we have to override hidden display :none
+        &.b-measure {
+            display : block!important;
+        }
+    }
+
+    // Centered floaters are absolutely positioned in the center
+    > .b-floating.b-centered {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

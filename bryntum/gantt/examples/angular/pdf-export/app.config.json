@@ -1,0 +1,10 @@
+{
+  "dependencies": [
+    {
+      "src": "../_shared",
+      "out": "../_shared/dist"
+    }
+  ],
+  "title": "PDF/PNG export Angular demo",
+  "description": "This demo shows how to use export to PDF/PNG feature with Gantt using Angular framework"
+}

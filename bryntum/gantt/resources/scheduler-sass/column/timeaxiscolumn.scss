@@ -1,0 +1,82 @@
+@import '../variables.scss';
+
+.b-schedulerbase.b-animating {
+    .b-grid-row {
+        transition : height 0.2s, transform 0.2s;
+    }
+}
+
+.b-grid-footer-container .b-sch-timeaxiscolumn {
+    padding : 0;
+    /*flex    : none !important;*/
+}
+
+.b-sch-timeaxis-cell {
+    padding      : 0;
+    flex         : none !important;
+    align-items  : baseline;
+    border-right : none;
+
+    /* No focus outline in scheduler */
+    &.b-focused::after {
+        content : none;
+    }
+}
+
+// Override grid higlighting scheduler row
+.b-gridbase .b-timeline-subgrid .b-grid-row.b-selected {
+    &:not(.b-group-row) {
+        background-color : transparent;
+    }
+
+    .b-grid-cell.b-sch-timeaxis-cell.b-selected {
+        background-color : transparent;
+    }
+}
+
+.b-gridbase.b-timelinebase .b-timeline-subgrid .b-grid-row.b-hover {
+    // Highlight row and cell on hover
+    .b-grid-cell,
+    .b-grid-cell:hover {
+        background-color : transparent;
+    }
+}
+
+// Override striping highlighting scheduler row
+.b-stripe .b-timeline-subgrid,
+.b-gridbase.b-stripe .b-timeline-subgrid {
+    .b-grid-row.b-selected.b-odd,
+    .b-grid-row.b-odd {
+        background-color : transparentize($grid-row-odd-color, .2);
+    }
+
+    .b-grid-row.b-selected.b-even,
+    .b-grid-row.b-even {
+        background-color : transparentize($grid-row-even-color, .2);
+    }
+}
+
+.b-stripe .b-timeline-subgrid .b-grid-row.b-selected {
+
+    .b-grid-cell.b-selected {
+        background-color : transparent;
+    }
+}
+
+.b-stripe .b-timeline-subgrid .b-grid-row.b-selected {
+    .b-grid-cell.b-selected {
+        background-color : transparent;
+    }
+}
+
+// Move group row in front of column lines to hide them
+.b-gridbase .b-timeline-subgrid .b-group-row.b-selected,
+.b-timeline-subgrid .b-group-row.b-selected,
+.b-timeline-subgrid .b-group-row {
+    z-index          : $foreground-canvas-zindex + 1;
+    background-color : transparentize($grid-group-header-background-color, 0.2);
+}
+
+.b-timeline-subgrid {
+    @include user-select-none();
+}

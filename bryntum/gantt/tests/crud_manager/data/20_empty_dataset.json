@@ -1,0 +1,41 @@
+{
+    "success" : true,
+
+    "project" : {
+        "calendar" : "general"
+    },
+
+    "calendars" : {
+        "rows" : [
+            {
+                "id"        : "general",
+                "name"      : "General",
+                "intervals" : [
+                    {
+                        "recurrentStartDate" : "on Sat at 0:00",
+                        "recurrentEndDate"   : "on Mon at 0:00",
+                        "isWorking"          : false
+                    }
+                ]
+            }
+        ]
+    },
+
+    "tasks" : {
+        "rows" : [
+            {
+                "id": 1,
+                "name": "Launch SaaS Product",
+                "percentDone": 50,
+                "startDate": "2019-01-02"
+            }
+        ]
+    },
+
+
+    "resources" : {
+        "rows" : [
+            { "id" : 1, "name" : "Celia", "city" : "Barcelona" }
+        ]
+    }
+}

@@ -1,0 +1,121 @@
+@import '../variables.scss';
+@import '../../scheduler-sass/view/eventrendering.scss';
+
+.b-gantt-task-percent {
+    background-color          : $gantt-task-percent-background-color;
+    height                    : 100%;
+    max-width                 : 100%;
+    position                  : relative;
+    box-sizing                : content-box;
+    mix-blend-mode            : $gantt-task-percent-mix-blend-mode;
+
+    // Always transition background-color, for hover etc.
+    transition                : background-color 0.2s;
+
+    // Only transition width while animating changes
+    .b-animating & {
+        transition : background-color 0.2s, width 0.2s
+    }
+
+    text-align                : right;
+    border-top-left-radius    : $gantt-task-border-radius;
+    border-bottom-left-radius : $gantt-task-border-radius;
+    // if outside page uses line-height on BODY tag it will displace the % text
+    line-height               : initial;
+
+    .b-gantt-task.b-task-finished & {
+        border-radius : $gantt-task-border-radius;
+    }
+
+    // No transition on width when resizing
+    .b-gantt-task-percent-resizing & {
+        transition : background-color 0.2s;
+    }
+
+    .b-gantt-task-percent-handle {
+        display            : none;
+        position           : absolute;
+        bottom             : 0;
+        width              : 0;
+        height             : 0;
+        right              : 0;
+        cursor             : ew-resize !important;
+        margin-right       : -5px;
+        z-index            : 1000;
+        overflow           : hidden;
+        border-color       : #fff;
+        border-right-color : transparent;
+        border-left-color  : transparent;
+        border-width       : 0px 5px 6px 5px;
+        border-style       : solid;
+    }
+
+    &::after {
+        font-size : .7em;
+        margin    : 0 .3em;
+        // Want to use relative to not affect right alignment, using absolute will not look good when width shrinks
+        position  : relative;
+        top       : calc(50% - 1em);
+        transform : translateY(-50%);
+    }
+}
+
+.b-gantt-task-parent .b-gantt-task-percent::after {
+    top : calc(50% - 1em - 4px);
+}
+
+.b-ganttbase.b-percentbar {
+    .b-gantt-task-parent {
+        border-bottom-left-radius  : 0;
+        border-bottom-right-radius : 0;
+
+        .b-gantt-task-percent {
+            border-bottom-left-radius  : 0;
+            border-bottom-right-radius : 0;
+        }
+    }
+}
+
+// Display the percent bar sizing handle on hover, but not on a parent task.
+// Their progress is the total progress of child tasks.
+.b-gantt-task-hover:not(.b-gantt-task-parent) .b-gantt-task {
+    .b-gantt-task-percent .b-gantt-task-percent-handle {
+        display : block;
+    }
+}
+
+// Display xx%
+.b-percentbar:not(.b-gantt-resizing-task-percent):not(.b-resizing-event):not(.b-dragging-event) .b-gantt-task-hover .b-gantt-task-percent::after,
+.b-gantt-resizing-task-percent .b-gantt-task-percent-resizing .b-gantt-task .b-gantt-task-percent::after,
+.b-percentbar.b-resizing-event .b-sch-event-resizing .b-gantt-task-percent::after,
+.b-percentbar .b-dragproxy .b-gantt-task-percent::after {
+    content : attr(data-percent) '%';
+}
+
+// Do not display percentage in the bar when bar has other content
+.b-gantt-task.b-has-content .b-gantt-task-percent::after {
+    display : none;
+}
+
+// highlight percentbar when hovering resize handle and not resizing something else
+.b-gantt:not(.b-gantt-resizing-task-percent):not(.b-resizing-event):not(.b-dragging-event) .b-over-percent-resize-handle,
+.b-gantt-task-percent-resizing {
+    & .b-gantt-task-percent {
+        cursor : ew-resize !important;
+
+        // Resizing handle only appears when mouse is over or when actively resizing
+        .b-gantt-task-percent-handle {
+            display : block
+        }
+    }
+}
+
+.b-gantt-resizing-task-percent {
+    user-select : none;
+    cursor      : ew-resize !important;
+}
+
+.b-percentbar-drag-disabled .b-gantt-task-percent-handle,
+.b-readonly .b-gantt-task-percent-handle {
+    display : none !important;
+}

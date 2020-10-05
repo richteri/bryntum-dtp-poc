@@ -1,0 +1,16 @@
+.b-columndragtoolbar {
+    .b-target-button {
+        text-transform: uppercase;
+        width          : 7.5em;
+
+        &[data-button-id^=multisort] {
+            &.b-hover:not([data-disabled=true]) {
+                background-color : lighten($columndragtoolbar-default-color, 5);
+
+                i {
+                    color : #fff;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+<!-- 
+ *- App component template
+-->
+<header>
+    <h1><a href="../../../../">{{ title }}</a></h1>
+    <bry-widget 
+        [config] = "{
+            type        : 'button',
+            toggleable  : true,
+            color       : 'b-blue b-raised',
+            text        : 'Show header elements',
+            tooltip     : 'Toggles the rendering of time range header elements',
+            pressed     : true,
+            icon        : 'b-fa-square',
+            pressedIcon : 'b-fa-check-square'
+        }"
+        (onWidgetEvents) = "onShowHeaders($event)"
+    ></bry-widget>
+    <bry-fullscreen></bry-fullscreen>
+</header>
+<bry-widget 
+    #container
+    class="container" 
+    [config]="containerConfig">
+</bry-widget>
+

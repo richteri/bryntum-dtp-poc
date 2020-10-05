@@ -1,0 +1,18 @@
+{
+  "author": {
+    "name": "Bryntum Dev Team",
+    "email": "support@bryntum.com"
+  },
+  "browserslist": [
+    "ie >= 11",
+    "last 2 versions"
+  ],
+  "dependencies": {},
+  "description": "Package of shared resources and components for Vue examples",
+  "devDependencies": {},
+  "homepage": "https://bryntum.com",
+  "license": "Commercial",
+  "main": "index.js",
+  "name": "bryntum-vue-shared",
+  "version": "2.1.9"
+}

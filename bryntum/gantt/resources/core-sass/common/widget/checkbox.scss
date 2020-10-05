@@ -1,0 +1,136 @@
+@import '../../variables.scss';
+
+.b-container {
+    .b-checkbox {
+        .b-checkbox-label {
+            margin-left : 0;
+        }
+
+        .b-checkbox-label:before {
+            margin       : $checkbox-container-vertical-margin;
+            margin-right : 0.4em;
+            margin-left  : 0;
+        }
+    }
+}
+
+.b-checkbox {
+    position    : relative;
+    align-items : center;
+
+    .b-ie &,
+    &.b-ie {
+        display : block;
+    }
+
+    .b-field-inner {
+        border           : none;
+        background-color : transparent;
+    }
+
+    .b-checkbox-label {
+        position  : relative;
+        font-size : inherit;
+        cursor    : pointer;
+    }
+
+    // :before used as check icon
+    // default styling if no color specified
+    .b-checkbox-label:before {
+        @extend .b-content-icon;
+        @extend .b-icon-check;
+        display         : inline-flex;
+        justify-content : center;
+        align-items     : center;
+        margin-right    : 0.4em;
+        font-size       : $checkbox-box-font-size;
+        width           : $checkbox-box-width;
+        height          : $checkbox-box-height;
+        padding         : $checkbox-box-padding;
+        border-radius   : $widget-border-radius;
+        transition      : color 0.2s, background 0.2s;
+        color           : $checkbox-box-color;
+        background      : $checkbox-box-background-color;
+        border          : $checkbox-box-border-width solid $checkbox-box-border-color;
+    }
+
+    input {
+        z-index    : 1;
+        opacity    : 0;
+        width      : 2.2em;
+        height     : 2.2em;
+        position   : absolute;
+        top        : 0; // Needed for IE
+        left       : 0; // Needed for IE
+        margin     : 0;
+        cursor     : pointer;
+        transition : color 0.5s, background-color 0.5s;
+    }
+
+    input[type=checkbox]:checked + .b-checkbox-label:before {
+        color        : $checkbox-checked-box-color;
+        background   : $checkbox-checked-box-background-color;
+        border-color : $checkbox-checked-box-border-color;
+    }
+
+    &.b-disabled {
+        .b-checkbox-label {
+            color : $field-disabled-label-color;
+        }
+
+        .b-checkbox-label::before {
+            border-color : $checkbox-disabled-box-border-color;
+            background   : $checkbox-disabled-box-background-color;
+        }
+
+        input[type=checkbox]:checked + .b-checkbox-label:before {
+            background   : transparentize($checkbox-checked-box-background-color, $checkbox-disabled-transparency);
+            border-color : transparentize($checkbox-checked-box-background-color, $checkbox-disabled-transparency);
+        }
+    }
+
+}
+
+//region Checkbox color
+
+@mixin checkbox-color($colorName, $color, $textColor) {
+    .b-checkbox.b-#{$colorName} {
+        .b-checkbox-label:before {
+            color        : transparentize($color, .9);
+            border-color : transparentize($color, $checkbox-box-border-transparency);
+        }
+
+        input[type=checkbox]:checked + .b-checkbox-label:before {
+            color        : $checkbox-checked-box-color;
+            background   : $color;
+            border-color : $color;
+        }
+
+        &.b-disabled {
+            .b-checkbox-label::before {
+                border-color : transparentize($color, $checkbox-disabled-transparency);
+            }
+
+            input[type=checkbox]:checked + .b-checkbox-label:before {
+                background   : transparentize($color, $checkbox-disabled-transparency);
+                border-color : transparentize($color, $checkbox-disabled-transparency);
+            }
+        }
+    }
+}
+
+@include checkbox-color('blue', $blue, $widget-text-bright-color);
+@include checkbox-color('deep-orange', $deep-orange, $widget-text-bright-color);
+@include checkbox-color('orange', $orange, $widget-text-bright-color);
+@include checkbox-color('indigo', $indigo, $widget-text-bright-color);
+@include checkbox-color('green', $green, $widget-text-bright-color);
+@include checkbox-color('purple', $purple, $widget-text-bright-color);
+@include checkbox-color('yellow', $yellow, $widget-text-bright-color);
+@include checkbox-color('red', $red, $widget-text-bright-color);
+@include checkbox-color('amber', $amber, $widget-text-bright-color);
+@include checkbox-color('lime', $lime, $widget-text-bright-color);
+@include checkbox-color('teal', $teal, $widget-text-bright-color);
+@include checkbox-color('light-green', $light-green, $widget-text-bright-color);
+@include checkbox-color('purple', $purple, $widget-text-bright-color);
+
+//endregion

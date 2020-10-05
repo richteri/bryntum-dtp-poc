@@ -1,0 +1,4 @@
+{
+  "title": "Web Components demo",
+  "description": "This example shows how to use the Custom elements version of the gantt. Currently following browsers support custom elements: Chrome, Firefox, Opera, Safari."
+}

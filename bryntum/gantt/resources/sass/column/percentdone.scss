@@ -1,0 +1,60 @@
+@import '../variables.scss';
+
+// Percent done column
+.b-percentdone-circle {
+    display          : inline-block;
+    position         : relative;
+    border-radius    : 100%;
+    background-color : $percentcircle-background-color;
+    background-image : linear-gradient(to right, transparent 50%, $percentcircle-done-color 0);
+    text-align       : center;
+
+    &::before {
+        content              : '';
+        position             : absolute;
+        top                  : 0;
+        left                 : 50%;
+        width                : 50%;
+        height               : 100%;
+        border-radius        : 0 100% 100% 0 / 50%;
+        background-color     : inherit;
+        transform-origin     : left;
+        animation            : percentcircle-spin 50s linear infinite, percentcircle-bg 100s step-end infinite;
+        animation-play-state : paused;
+        animation-delay      : inherit;
+    }
+
+    // Center label + fill
+    &::after {
+        content         : attr(data-value);
+
+        display         : flex;
+        align-items     : center;
+        justify-content : center;
+
+        position        : absolute;
+        top             : 50%;
+        left            : 50%;
+        width           : $percentcircle-thickness;
+        height          : $percentcircle-thickness;
+        transform       : translate(-50%, -50%);
+
+        border-radius   : 100%;
+        background      : $percentcircle-label-background;
+        font-size       : $percentcircle-label-font-size;
+        color           : $percentcircle-label-color;
+    }
+}
+
+// Circle sector
+@keyframes percentcircle-spin {
+    to {
+        transform : rotate(.5turn);
+    }
+}
+
+@keyframes percentcircle-bg {
+    50% {
+        background : $percentcircle-done-color;
+    }
+}

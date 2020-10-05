@@ -1,0 +1,297 @@
+@import 'mixins.scss';
+
+//region Colors
+
+$blue : #03a9f4 !default;
+$deep-orange : #ff5722 !default;
+$orange : #ff9800 !default;
+$amber : #ffc107 !default;
+$indigo : #3f51b5 !default;
+$lime : #cddc39 !default;
+$teal : #009688 !default;
+$green : #4caf50 !default;
+$light-green : #8bc34a !default;
+$purple : #9c27b0 !default;
+$yellow : #ffeb3b !default;
+$red : #f44336 !default;
+$dark-gray : #505057 !default;
+$gray : #b0b0b7 !default;
+$light-gray : #e0e0e7 !default;
+$white : #fff !default;
+
+$darkest : #000 !default;
+$lightest : #fff !default;
+
+$main-color : $blue !default;
+$secondary-color : $orange !default;
+
+//endregion
+
+//region layout
+
+// Horizontal space around card items inside a card layout container.
+$card-margin : 1em;
+
+//endregion
+
+//region Widgets
+
+// Mask and float root could be on the same level if widget adopts body, which makes it obvious that float root
+// should have higher z-index
+$mask-z-index : 10000 !default;
+$float-root-z-index : 11000 !default;
+
+$widget-font-weight : 400 !default;
+
+$widget-highlight-color : $secondary-color !default;
+$widget-text-bright-color : $lightest !default;
+$widget-text-dark-color : lighten($darkest, 15) !default;
+$widget-border-color : rgba(119, 119, 119, .5) !default;
+$widget-border-radius : 2px !default;
+$widget-border-width : 1px !default;
+$widget-disabled-border-color : $gray !default;
+
+$widget-anchor-width : 16px !default;
+$widget-anchor-height : 8px !default;
+
+$widget-badge-color : $widget-text-bright-color !default;
+$widget-badge-background-color : $red !default;
+
+$panel-background-color : lighten($dark-gray, 15%) !default;
+$panel-color : $widget-text-bright-color !default;
+$panel-header-background-color : $main-color !default;
+$panel-header-color : #fff !default;
+$panel-header-font-size : null !default;
+$panel-header-font-weight : null !default;
+$panel-header-padding : .75em !default;
+$panel-header-border-bottom : null !default;
+$panel-tool-color : $panel-header-color !default;
+$panel-content-padding: .6em !default;
+
+$float-box-shadow : 3px 3px 6px rgba(0, 0, 0, 0.4) !default;
+
+$button-color : $widget-text-bright-color !default;
+$button-disabled-color : $dark-gray !default;
+$button-disabled-background-color : $light-gray !default;
+$button-text-transform : none !default;
+$button-font-size : null !default;
+$button-font-weight : $widget-font-weight !default;
+$button-transition: background-color 200ms, color 200ms, border 200ms !default;
+$button-padding: 0 1em !default;
+$button-min-height : 3em !default;
+$button-toolbar-font-size : null !default;
+
+$button-hover-lightness : 10% !default;
+$button-pressed-lightness : -15% !default;
+$button-active-lightness : -20% !default;
+$button-pressed-hover-lightness : $button-pressed-lightness + $button-hover-lightness !default; // -5
+$button-active-hover-lightness : $button-active-lightness + $button-hover-lightness !default; // -10
+$button-pressed-active-lightness : $button-pressed-lightness + $button-active-lightness !default; // -35
+$button-pressed-active-hover-lightness : $button-pressed-lightness + $button-active-lightness  + $button-hover-lightness !default; // -25
+
+$buttongroup-button-left-margin : -1px !default;
+
+$checkbox-box-padding : 0.15em !default;
+$checkbox-container-vertical-margin : 0.675em !default;
+$checkbox-box-width : 1.6em !default;
+$checkbox-box-height : 1.6em !default;
+$checkbox-box-font-size : inherit !default;
+$checkbox-box-background-color : transparent !default;
+$checkbox-box-border-width : $widget-border-width !default;
+$checkbox-box-border-transparency : .5 !default;
+
+$checkbox-checked-box-color : $widget-text-bright-color !default;
+$checkbox-checked-box-background-color : $gray !default;
+$checkbox-checked-box-border-color : $checkbox-checked-box-background-color !default;
+$checkbox-disabled-transparency : .8 !default;
+$checkbox-disabled-box-background-color : transparent !default;
+$checkbox-disabled-box-border-color : transparentize($checkbox-checked-box-background-color, $checkbox-disabled-transparency) !default;
+
+$checkbox-box-color : transparentize($checkbox-checked-box-background-color, .8) !default;
+$checkbox-box-border-color : transparentize($checkbox-checked-box-background-color, $checkbox-box-border-transparency) !default;
+
+$container-color : $widget-text-bright-color !default;
+
+$datepicker-header-background-color : $panel-header-background-color !default;
+$datepicker-header-color : $panel-header-color !default;
+$datepicker-header-icon-color : $panel-color !default;
+$datepicker-weekdays-border-bottom : $panel-header-border-bottom !default;
+$datepicker-weekdays-color : null !default;
+
+
+//$datepicker-background-color : #555 !default;
+$datepicker-color : $widget-text-bright-color !default;
+$datepicker-month-color : $widget-text-bright-color !default;
+
+$datepicker-cell-border-width : $widget-border-width !default;
+$datepicker-cell-border-radius : 50% !default;
+$datepicker-cell-size : 2.2em !default;
+$datepicker-cell-margin : 4px 5px !default;
+$datepicker-week-number-color : #76c579 !default;
+
+$datepicker-other-month-cell-background-color : null!default;
+$datepicker-other-month-cell-color : #aaa!default;
+
+$datepicker-disabled-cell-background-color : null!default;
+$datepicker-disabled-cell-color : #aaa!default;
+
+$datepicker-out-of-range-cell-background-color : null!default;
+$datepicker-out-of-range-cell-color : #aaa!default;
+
+$datepicker-selected-cell-color: #fff !default;
+$datepicker-selected-cell-background-color: $main-color !default;
+$datepicker-selected-cell-border-color: $main-color !default;
+
+$datepicker-hover-cell-color: null !default;
+$datepicker-hover-cell-background-color: transparentize($main-color, .5) !default;
+$datepicker-hover-cell-border-color: transparentize($main-color, .5) !default;
+
+$datepicker-today-cell-color: null !default;
+$datepicker-today-cell-background-color: null !default;
+$datepicker-today-cell-border-color: $orange !default;
+$datepicker-today-cell-border-width : $datepicker-cell-border-width !default;
+
+$datepicker-hover-today-cell-color: null !default;
+$datepicker-hover-today-cell-background-color: $orange !default;
+$datepicker-hover-today-cell-border-color: $orange !default;
+
+$datepicker-active-cell-color: null !default;
+$datepicker-active-cell-background-color: null !default;
+$datepicker-active-cell-border-color: $main-color !default;
+
+$time-picker-color : $datepicker-color !default;
+
+$field-color : $widget-text-dark-color !default;
+$field-background-color : $lightest !default;
+$field-invalid-border-color : $red !default;
+$field-outer-border-color : none !default;
+$field-border-radius : $widget-border-radius !default;
+$field-border-width : $widget-border-width !default;
+$field-border-color : $widget-border-color !default;
+$field-highlight-color : $widget-highlight-color !default;
+$field-input-padding : 0.8em !default;
+$field-label-color : $lightest !default;
+$field-label-font-size : .9em !default;
+$field-label-text-transform : null !default;
+$field-label-font-weight : null !default;
+$field-label-text-align : null !default;
+$field-active-label-color : $field-label-color !default;
+$field-disabled-border-style : solid !default;
+$field-disabled-label-color : $gray !default;
+$field-placeholder-color : $gray !default;
+$field-container-label-color: darken($widget-text-bright-color, 10) !default;
+$field-container-active-label-color: $widget-text-bright-color !default;
+$field-container-margin-left : null !default;
+$field-trigger-color : $widget-border-color !default;
+$field-trigger-font-size : null !default;
+$field-disabled-trigger-color : lighten($field-trigger-color, 20%) !default;
+
+$error-tip-color : $red !default;
+$error-tip-background-color : lighten(#FFFDE7, 3) !default;
+
+$panel-toolbar-background-color : $panel-background-color !default;
+$panel-toolbar-color : $panel-color !default;
+$panel-toolbar-padding : 0.6em !default;
+
+$popup-background-color : $panel-background-color !default;
+$popup-color : $panel-color !default;
+$popup-header-background-color : $panel-header-background-color !default;
+$popup-header-color : $panel-header-color !default;
+$popup-modal-mask-color : rgba(100, 100, 100, 0.5);
+
+$menu-color : $widget-text-bright-color !default;
+$menu-background-color : lighten($panel-background-color, 5) !default;
+$menu-item-border-color : lighten($panel-background-color, 15) !default;
+$menu-item-separator-color : lighten($menu-item-border-color, 10) !default;
+$menu-item-icon-width : 2em !default;
+$menu-highlight-color : $main-color !default;
+$menu-active-color : $menu-color !default;
+
+$list-color : $widget-text-bright-color !default;
+$list-active-color : $list-color !default;
+$list-background-color : lighten($panel-background-color, 5) !default;
+$list-item-border-color : lighten($panel-background-color, 15) !default;
+$list-item-separator-color : $list-item-border-color !default;
+$list-highlight-color : $main-color !default;
+
+$slider-thumb-color : $main-color !default;
+$slider-track-color : $light-gray !default;
+$slider-thumb-radius : 10px !default;
+$slider-track-height : 8px !default;
+$slider-contrast : 40% !default;
+$slider-margin : $slider-thumb-radius 0 !default;
+$slider-label-font-size : null !default;
+
+$splitter-size : .5em !default;
+$splitter-background-color : lighten($gray, 10%) !default;
+
+$tabpanel-background-color : darken($panel-background-color, 5) !default;
+
+$tabpanel-border-color : $widget-border-color !default;
+$tabpanel-border-width : 0 !default;
+$tabpanel-border-style : solid !default;
+
+$tabpanel-body-padding : null !default;
+
+$tabpanel-tabs-border-bottom : null !default;
+
+$tabpanel-tab-background-color : transparent !default;
+$tabpanel-tab-border-color : transparent !default;
+$tabpanel-tab-border-width : 0 !default;
+$tabpanel-tab-border-style : solid !default;
+$tabpanel-tab-color : darken($widget-text-bright-color, 20) !default;
+$tabpanel-tab-font-weight : $widget-font-weight !default;
+$tabpanel-tab-font-size : null !default;
+$tabpanel-tab-min-width : 3em !default;
+$tabpanel-tab-height : auto !default;
+$tabpanel-tab-text-transform : none !default;
+$tabpanel-tab-padding : 0.6em !default;
+
+$tabpanel-tab-active-background-color : $tabpanel-background-color !default;
+$tabpanel-tab-active-border-color : $tabpanel-border-color !default;
+$tabpanel-tab-active-color : $widget-text-bright-color !default;
+$tabpanel-tab-active-font-weight : null !default;
+
+$tabpanel-tab-hover-background-color : darken($panel-background-color, 5) !default;
+$tabpanel-tab-hover-color : $widget-text-bright-color !default;
+
+$toast-background-color : $panel-background-color !default;
+$toast-color : $widget-text-bright-color !default;
+$toast-progress-color : $main-color !default;
+
+$tooltip-color : $widget-text-bright-color !default;
+$tooltip-background-color : lighten($panel-background-color, 5) !default;
+$tooltip-side-header-font-size : null !default;
+
+$mask-background-color : $main-color !default;
+$mask-color : $widget-text-bright-color !default;
+$mask-progress-color : $secondary-color !default;
+
+$chipview-background-color                 : transparent !default;
+$chip-margin                               : 0 0 .3em .3em !default;
+$chip-padding                              : .3em .3em !default;
+$chip-border-radius                        : .8em !default;
+$chip-icon-size                            : 1.5em !default;
+$chip-icon-spacing                         : .5em !default;
+
+$chip-background-color                     : $light-gray!default;
+$chip-color                                : lighten($widget-text-dark-color, 5) !default;
+$chip-icon-background-color                : lighten($light-gray, 5) !default;
+$chip-icon-color                           : $dark-gray !default;
+
+$chip-hover-background-color               : darken($light-gray, 5) !default;
+$chip-hover-color                          : $widget-text-dark-color !default;
+$chip-hover-icon-background-color          : $chip-icon-background-color !default;
+$chip-hover-icon-color                     : $chip-icon-color !default;
+
+$chip-selected-background-color            : $main-color !default;
+$chip-selected-color                       : $widget-text-bright-color !default;
+$chip-selected-icon-background-color       : $chip-hover-icon-background-color !default;
+$chip-selected-icon-color                  : $chip-selected-background-color !default;
+
+$chip-hover-selected-background-color      : darken($chip-selected-background-color, 5) !default;
+$chip-hover-selected-color                 : $chip-selected-color !default;
+$chip-hover-selected-icon-background-color : $chip-selected-icon-background-color !default;
+$chip-hover-selected-icon-color            : $chip-hover-selected-background-color !default;
+
+//endregion

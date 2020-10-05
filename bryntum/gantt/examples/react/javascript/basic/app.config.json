@@ -1,0 +1,10 @@
+{
+  "dependencies": [
+    {
+      "src": "../../_shared",
+      "out": "../../_shared/build"
+    }
+  ],
+  "title": "React Basic Gantt demo",
+  "description": "This demo contains a Basic React Gantt example."
+}

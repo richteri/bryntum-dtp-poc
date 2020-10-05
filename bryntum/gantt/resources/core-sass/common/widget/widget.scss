@@ -1,0 +1,140 @@
+@import '../../variables.scss';
+
+.b-widget {
+    display     : inline-flex;
+    overflow    : hidden;
+    // IE11 can't reset to "initial".
+    // TODO: reset using "initial" when we drop IE11
+    line-height : normal; // protect against CSS from outside world influencing us
+    font-weight : $widget-font-weight;
+    font-size   : 1em;
+    box-sizing  : border-box;
+
+    * {
+        box-sizing : border-box;
+    }
+
+    &:before,
+    &:after,
+    *:before,
+    *:after {
+        box-sizing : border-box;
+    }
+
+    // Widgets which are positioned: true are like floating, but they are rendered inside another widget's
+    // contentElement, and positioned relative to that element. For example Editors.
+    &.b-positioned {
+        position : absolute;
+        top      : 0;
+        left     : 0;
+    }
+
+    .b-focus-trap {
+        // By default, these are not tabbable and use no resource.
+        position : absolute;
+        display  : none;
+
+        // When given layout, they are accessible but invisible.
+        clip     : rect(0, 0, 0, 0);
+    }
+
+    // Only make tabbable if the widget is tagged with the
+    // focus-trapped class *and* it contains focus.
+    &.b-focus-trapped.b-contains-focus .b-focus-trap {
+        display : inherit;
+    }
+
+    &.b-hidden {
+        display : none !important; // ugly but needed since subclasses can override normal display with more specificity
+    }
+
+    // During an animated hide, the element must not be interactive
+    &.b-hiding {
+        pointer-events : none;
+    }
+
+    .b-widget-inner {
+        width    : 100%;
+        position : relative;
+        flex     : 1;
+    }
+
+    .b-anchor {
+        width    : $widget-anchor-width;
+        height   : $widget-anchor-height;
+        position : absolute;
+        z-index  : -1; // content element must occlude line ends.
+
+        svg {
+            position : absolute;
+            top      : 0;
+            overflow : visible // So that the shadow is visible
+        }
+
+        &.b-anchor-top {
+            left   : 0;
+            bottom : calc(100% - 1px);
+        }
+
+        &.b-anchor-bottom {
+            left : 0;
+            top  : calc(100% - 1px);
+
+            svg {
+                transform : rotate(180deg);
+            }
+        }
+
+        &.b-anchor-left {
+            top    : 0;
+            width  : $widget-anchor-height;
+            height : $widget-anchor-width;
+            right  : calc(100% - 1px);
+
+            svg {
+                transform        : rotate(270deg);
+                transform-origin : $widget-anchor-height $widget-anchor-height;
+            }
+        }
+
+        &.b-anchor-right {
+            top    : 0;
+            width  : $widget-anchor-height;
+            height : $widget-anchor-width;
+            left   : calc(100% - 1px);
+
+            svg {
+                transform        : rotate(90deg);
+                transform-origin : $widget-anchor-height/2 $widget-anchor-height/2;
+            }
+        }
+    }
+}
+
+.b-widget-scroller {
+    overflow                   : hidden; // overridden inline by the Scroller
+    -webkit-overflow-scrolling : touch;
+    overflow-anchor            : none; /* without this we see weird issues in Mac Chrome <= 63 with no scrollbar, covered in Tree.t.js */
+
+    &.b-hide-scroll {
+        -ms-overflow-style : none;
+
+        &::-webkit-scrollbar {
+            display : none;
+        }
+
+        // Firefox has no way to hide unwanted scrollbars
+        // So Scroller overflow: 'hidden-scroll' is not possible.
+        .b-firefox & {
+            overflow : hidden !important;
+        }
+    }
+}
+
+.b-scroller-stretcher {
+    position : absolute;
+    top      : 0;
+    left     : 0;
+    height   : 1px;
+    width    : 1px;
+}

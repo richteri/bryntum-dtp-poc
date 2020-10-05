@@ -1,0 +1,39 @@
+@import '../../variables.scss';
+
+.b-editor {
+    @if ($field-background-color == transparent) {
+        background-color : #fff;
+    }
+    @else {
+        background-color : $field-background-color;
+    }
+
+    border-radius : $widget-border-radius;
+
+    &.b-positioned {
+        box-shadow       : 0 0 6px rgba(0, 0, 0, 0.1);
+    }
+
+    // Extract the field padding side values.
+    // These are in fact applied to the b-field-inner.
+    $field-left-padding  : left($field-input-padding);
+    $field-right-padding : right($field-input-padding);
+    $field-top-padding   : top($field-input-padding);
+
+    // Want no margin around fields when used in an editor, since editor uses box-shadow
+    &.b-content-element > .b-widget.b-field {
+        margin : 0;
+    }
+
+    // For themes which have no left/right padding in their field-inner.
+    // Editor needs some so that the field and any triggers don't collide
+    // with the editor edge, so make left & right padding same as top.
+    .b-field-inner {
+        @if ($field-left-padding == 0) {
+            padding-left : $field-top-padding;
+        }
+        @if ($field-right-padding == 0) {
+            padding-right : $field-top-padding;
+        }
+    }
+}

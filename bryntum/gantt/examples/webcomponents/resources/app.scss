@@ -1,0 +1,16 @@
+html, body {
+    height : 100%;
+    margin : 0;
+}
+
+bryntum-gantt {
+    width  : 100%;
+    flex: 1;
+}
+
+data,
+column {
+    display : none;
+}
+
+/*# sourceMappingURL=app.css.map */

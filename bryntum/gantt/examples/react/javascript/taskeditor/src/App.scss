@@ -1,0 +1,47 @@
+/**
+ * @author Saki
+ * @date 2019-02-07 13:30:47
+ * @Last Modified by: Saki
+ * @Last Modified time: 2019-12-14 20:34:15
+ *
+ * Main application sass file that contains all the application styling
+ */
+.b-react-gantt-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.b-color-picker-container {
+  width : 18em !important;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(248, 249, 250);
+
+  .b-color-picker-item {
+    width: 3em;
+    height: 3em;
+    padding: 0.3em;
+
+    div {
+      width: 100%;
+      height: 100%;
+    }
+
+    &:hover {
+      box-shadow: 0 0 1em rgba(0,0,0,0.7)
+    }
+  }
+}
+
+.b-gantt {
+  .b-gantt-task {
+
+    .b-gantt-task-percent,
+    &:hover .b-gantt-task-percent {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+// eof

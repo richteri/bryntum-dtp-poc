@@ -1,0 +1,28 @@
+@import '../../grid-sass/themes/dark.scss';
+
+$event-color-red : #D32F2F;
+$event-color-pink : #E91E63;
+$event-color-purple : #8E24AA;
+$event-color-violet : #673AB7;
+$event-color-indigo : #3F51B5;
+$event-color-blue : #1E88E5;
+$event-color-cyan : #00ACC1;
+$event-color-teal : #00897B;
+$event-color-green : #7CB342;
+$event-color-lime : #C0CA33;
+$event-color-yellow : #FBC02D;
+$event-color-orange : #FB8C00;
+
+$range-header-background-color : darken($event-color-blue, 30%);
+$range-header-color : transparentize(#fff, .3);
+$range-background-color : rgba(56, 57, 58, .5);
+$resourceinfo-role-color : $light-gray;
+$event-labels-color : #fff;
+$selected-event-labels-color : #7fca7a;
+$dependency-color : #222;
+
+$columnlines-tick-color : scale_color($grid-cell-border-color, $lightness: 7%);
+
+$weekend-background-color : transparentize(#7b1818, .7);
+
+@import 'shared';

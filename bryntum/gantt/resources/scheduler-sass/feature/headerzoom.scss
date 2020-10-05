@@ -1,0 +1,13 @@
+@import '../variables.scss';
+
+.b-headerzoom-rect {
+  position         : absolute;
+  left             : 0;
+  top              : 0;
+  height           : 100%;
+  transform-origin : 0 0;
+  pointer-events   : none;
+  z-index          : 100;
+
+  background       : transparentize($range-header-background-color, .7);
+}

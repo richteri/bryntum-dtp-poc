@@ -1,0 +1,536 @@
+@font-face {
+  font-family: Lato;
+  src: url("../../resources/fonts/Lato-Thin.woff2") format("woff2"), url("../../resources/fonts/Lato-Thin.woff") format("woff");
+  /* Pretty Modern Browsers */
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: Lato;
+  src: url("../../resources/fonts/Lato-Light.woff2") format("woff2"), url("../../resources/fonts/Lato-Light.woff") format("woff");
+  /* Pretty Modern Browsers */
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Lato;
+  src: url("../../resources/fonts/Lato-Regular.woff2") format("woff2"), url("../../resources/fonts/Lato-Regular.woff") format("woff");
+  /* Pretty Modern Browsers */
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Lato;
+  src: url("../../resources/fonts/Lato-Medium.woff2") format("woff2"), url("../../resources/fonts/Lato-Medium.woff") format("woff");
+  /* Pretty Modern Browsers */
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Lato;
+  src: url("../../resources/fonts/Lato-Bold.woff2") format("woff2"), url("../../resources/fonts/Lato-Bold.woff") format("woff");
+  /* Pretty Modern Browsers */
+  font-weight: 700;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-size: 14px !important;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+  padding-right: 0;
+  transition: padding-right .3s;
+}
+
+body.b-initially-hidden {
+  visibility: hidden;
+}
+
+body.b-change-size #container {
+  transition: all .3s;
+}
+
+body.b-generating-thumb * {
+  transition: none !important;
+  animation-duration: 0s !important;
+}
+
+body.b-size-phone {
+  display: flex;
+  background: url(images/woodsmall.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.b-size-phone #container {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex: 0 0 375px;
+  max-width: 375px;
+  height: 727px;
+  max-height: 727px;
+  min-height: 727px;
+  overflow: visible;
+}
+
+body.b-size-phone #container .demo-header {
+  flex-direction: column;
+  padding: 0;
+  flex: 0 0 auto;
+}
+
+body.b-size-phone #container .demo-header #title {
+  height: 3em;
+}
+
+body.b-size-phone #container .demo-header #tools {
+  justify-content: flex-end;
+  padding-right: 1em;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 5em;
+  transition: background-color 0.4s, margin-top .3s;
+}
+
+body.b-size-phone #container #fullscreen-button {
+  display: none;
+}
+
+body.b-size-phone #container::after {
+  content: '';
+  position: absolute;
+  width: auto;
+  height: auto;
+  max-height: calc(100% + 60px);
+  top: -30px;
+  right: -10px;
+  bottom: -30px;
+  left: -10px;
+  border: 10px solid black;
+  border-bottom-width: 30px;
+  border-top-width: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.b-grid {
+  flex: 1;
+}
+
+#container {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  transform: translate(0, 0);
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+#container::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  max-height: 0;
+  left: 0;
+  border: none;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+.demo-header {
+  display: flex;
+  color: #fff;
+  padding: 2em 0;
+  transition: background-color .5s, padding .5s, font-size .1s;
+  background-color: #1e88e5;
+  flex: 0 0 auto;
+}
+
+.demo-header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.demo-header #title-container {
+  display: inline-flex;
+  align-items: center;
+  flex: 1;
+  min-height: 3em;
+  overflow: hidden;
+}
+
+.demo-header #title {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 1em;
+  padding: 0.2em 0 0.2em 2.1em;
+  font-size: 1.8em;
+  background: url(images/logo_bryntum_bw.png) no-repeat;
+  background-size: 1.6em;
+  background-position-y: center;
+  white-space: nowrap;
+}
+
+.demo-header #tools {
+  display: flex;
+  align-items: center;
+  background-color: inherit;
+  transition: background-color 0s, margin-top .3s;
+  padding-right: 1em;
+}
+
+.demo-header #tools > .b-widget:not([data-group]) {
+  margin-left: .5em;
+}
+
+.demo-header #tools .b-field {
+  margin-right: 1em;
+}
+
+.demo-header #tools .b-numberfield {
+  width: 18em;
+}
+
+.demo-header #tools .b-has-label label {
+  color: #fff;
+}
+
+.b-hint .header {
+  font-weight: bold;
+}
+
+.b-notransition .demo-header {
+  transition: none;
+}
+
+.b-notransition * {
+  transition: none !important;
+}
+
+@media (max-width: 450px) {
+  .b-hint {
+    display: none;
+  }
+}
+
+@media (max-width: 568px) {
+  .demo-header {
+    padding: .75em 0;
+    font-size: calc(.45em + 1vw);
+    transition: font-size 0.1s;
+  }
+  .demo-header #title {
+    margin-left: .5em;
+  }
+  .demo-header #tools {
+    padding-right: .75em;
+  }
+}
+
+@media (max-width: 370px) {
+  #container:not(.no-tools) .demo-header {
+    flex-direction: column;
+    padding: 0;
+    flex: 0 0 auto;
+  }
+  #container:not(.no-tools) .demo-header #title {
+    height: 3em;
+  }
+  #container:not(.no-tools) .demo-header #tools {
+    justify-content: flex-end;
+    padding-right: 1em;
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 5em;
+    transition: background-color 0.4s, margin-top .3s;
+  }
+}
+
+@media (max-width: 530px) {
+  .small-sized-tools .demo-header {
+    flex-direction: column;
+    padding: 0;
+    flex: 0 0 auto;
+  }
+  .small-sized-tools .demo-header #title {
+    height: 3em;
+  }
+  .small-sized-tools .demo-header #tools {
+    justify-content: flex-end;
+    padding-right: 1em;
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 5em;
+    transition: background-color 0.4s, margin-top .3s;
+  }
+}
+
+@media (max-width: 750px) {
+  .medium-sized-tools .demo-header {
+    flex-direction: column;
+    padding: 0;
+    flex: 0 0 auto;
+  }
+  .medium-sized-tools .demo-header #title {
+    height: 3em;
+  }
+  .medium-sized-tools .demo-header #tools {
+    justify-content: flex-end;
+    padding-right: 1em;
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 5em;
+    transition: background-color 0.4s, margin-top .3s;
+  }
+  .medium-sized-tools .demo-header {
+    font-size: calc(.45em + 1vw);
+  }
+  .medium-sized-tools .demo-header #title-container #title {
+    height: 2em;
+  }
+  .medium-sized-tools .demo-header #tools {
+    height: 4.5em;
+    padding-right: .75em;
+  }
+}
+
+@media (max-width: 900px) {
+  .large-sized-tools .demo-header {
+    flex-direction: column;
+    padding: 0;
+    flex: 0 0 auto;
+  }
+  .large-sized-tools .demo-header #title {
+    height: 3em;
+  }
+  .large-sized-tools .demo-header #tools {
+    justify-content: flex-end;
+    padding-right: 1em;
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 5em;
+    transition: background-color 0.4s, margin-top .3s;
+  }
+}
+
+#header-tools {
+  display: none;
+}
+
+.demo-header #header-tools {
+  display: inline-block;
+}
+
+.info-popup.b-popup .b-popup-content {
+  padding: 1.5em;
+}
+
+.info-popup.b-popup .b-popup-content .b-html {
+  flex-direction: column;
+}
+
+.info-popup.b-popup .b-popup-content .header {
+  font-weight: 700;
+}
+
+.info-popup.b-popup .b-popup-content .description {
+  padding-top: .5em;
+  line-height: 1.4em;
+}
+
+.info-popup.b-popup .b-popup-content .b-widget:not(.b-html):not(.b-fieldtrigger) {
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+
+.info-popup.b-popup .b-popup-content .b-button {
+  justify-content: center;
+  margin-right: 1em;
+}
+
+.b-widget.b-codeeditor {
+  flex: none;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: auto;
+  width: 450px;
+  border-left: 5px solid #d8d9da;
+  border-radius: 0;
+}
+
+.b-widget.b-codeeditor:not(.b-resizing) {
+  transition: border-width .1s;
+}
+
+.b-widget.b-codeeditor .b-toolbar {
+  flex: 0 0 auto;
+}
+
+.b-widget.b-codeeditor .b-panel-header {
+  border-radius: 0;
+}
+
+.b-widget.b-codeeditor .b-panel-content {
+  background-color: #333435;
+  color: #fff;
+  border-radius: 0;
+  padding: 0;
+}
+
+.b-widget.b-codeeditor .b-panel-content code:focus {
+  outline: none;
+}
+
+.b-widget.b-codeeditor .b-panel-content pre {
+  padding: 1em;
+  margin: 0;
+}
+
+.b-widget.b-codeeditor .comment,
+.b-widget.b-codeeditor .comment .keyword,
+.b-widget.b-codeeditor .comment .string {
+  color: #90a4ae;
+}
+
+.b-widget.b-codeeditor .keyword {
+  color: #ffb74d;
+}
+
+.b-widget.b-codeeditor .curly {
+  color: #ffe0b2;
+}
+
+.b-widget.b-codeeditor .string,
+.b-widget.b-codeeditor .string .keyword {
+  color: #66bb6a;
+}
+
+.b-widget.b-codeeditor .tag {
+  color: #a5d6a7;
+}
+
+.b-widget.b-codeeditor.b-resizing * {
+  user-select: none;
+}
+
+.b-widget.b-codeeditor.b-over-resize-handle {
+  cursor: ew-resize;
+}
+
+.b-widget.b-codeeditor .b-toolbar {
+  flex-flow: nowrap;
+}
+
+.b-widget.b-codeeditor .b-header-title {
+  white-space: nowrap;
+}
+
+.b-widget.b-codeeditor .b-header-title i {
+  margin-right: .5em;
+}
+
+.b-widget.b-codeeditor.b-hidden {
+  display: flex !important;
+  border-left-width: 0;
+}
+
+.b-widget.b-codeeditor .b-bottom-toolbar {
+  background-color: #ffb74d;
+  transition: color .2s, background-color .2s;
+}
+
+.readonly .b-widget.b-codeeditor .b-bottom-toolbar {
+  background-color: #ff8d46;
+}
+
+.b-widget.b-codeeditor.invalid .b-codeeditor-header i {
+  color: #b71c1c;
+}
+
+.b-widget.b-codeeditor.invalid .b-bottom-toolbar {
+  color: #fff;
+  background: #b71c1c;
+}
+
+.feedback-savedmsg h3 {
+  margin-top: 0.6em;
+}
+
+.feedback-savedmsg i {
+  margin-right: 0.2em;
+}
+
+.version-update-toast {
+  max-width: 250px;
+  line-height: 1.4em;
+}
+
+.version-update-toast h4 {
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+.version-update-toast h4 i.b-fa-times {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.version-update-toast a {
+  text-decoration: underline;
+}
+
+.b-toolbar .b-button.b-text i,
+.demo-header .b-button.b-text i {
+  width: 1.25em;
+}
+
+.b-demo-unavailable .b-panel-header i.b-fa {
+  margin-right: 0.5em;
+}
+
+.b-scheduler .name {
+  display: flex;
+}
+
+.b-scheduler .name img {
+  width: 38px;
+  border-radius: 100%;
+  margin: 0 15px 0 5px;
+}
+
+.b-scheduler .name dl {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.b-scheduler .name dt {
+  font-weight: bold;
+  color: #444;
+}
+
+.b-scheduler .name dd {
+  font-size: 0.8em;
+  color: #999;
+  margin: 4px 0;
+}
+
+.dark .name dt {
+  color: #eee;
+}
+
+@media (max-width: 450px) {
+  .b-gantttoolbar {
+    display: none;
+  }
+}

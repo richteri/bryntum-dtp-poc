@@ -1,0 +1,32 @@
+.b-task-rollup-wrap {
+    display    : block;
+    flex       : 0.3;
+    align-self : stretch;
+    position   : relative;
+    min-height : 3px;
+    margin-top : .15em;
+}
+
+.b-task-rollup {
+    background-color : $gantt-rollup-color;
+    position         : absolute;
+    height           : 100%;
+    opacity          : .4;
+}
+
+.b-task-rollup.b-milestone {
+    top              : 50%;
+    width            : $gantt-rollup-milestone-size;
+    height           : $gantt-rollup-milestone-size;
+    transform        : translateY(-50%) translateX(-50%) rotate(45deg);
+    transform-origin : 50% 50%;
+    z-index          : 2;
+    background-color : $gantt-rollup-milestone-background-color;
+    opacity          : .9;
+}
+
+.b-gantt-task-tooltip {
+    .b-gantt-task-title.b-follow-on {
+        margin-top: 1em;
+    }
+}

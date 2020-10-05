@@ -1,0 +1,272 @@
+{
+    "success" : true,
+
+    "project" : {
+        "calendar" : "general"
+    },
+
+    "calendars" : {
+        "rows" : [
+            {
+                "id"        : "general",
+                "name"      : "General",
+                "intervals" : [
+                    {
+                        "recurrentStartDate" : "on Sat at 0:00",
+                        "recurrentEndDate"   : "on Mon at 0:00",
+                        "isWorking"          : false
+                    }
+                ],
+                "expanded" : true,
+                "children" : [
+                    {
+                        "id"           : "business",
+                        "name"         : "Business",
+                        "hoursPerDay"  : 8,
+                        "daysPerWeek"  : 5,
+                        "daysPerMonth" : 20,
+                        "intervals"    : [
+                            {
+                                "recurrentStartDate" : "every weekday at 12:00",
+                                "recurrentEndDate"   : "every weekday at 13:00",
+                                "isWorking"          : false
+                            },
+                            {
+                                "recurrentStartDate" : "every weekday at 17:00",
+                                "recurrentEndDate"   : "every weekday at 08:00",
+                                "isWorking"          : false
+                            }
+                        ]
+                    },
+                    {
+                        "id"           : "night",
+                        "name"         : "Night shift",
+                        "hoursPerDay"  : 8,
+                        "daysPerWeek"  : 5,
+                        "daysPerMonth" : 20,
+                        "intervals"    : [
+                            {
+                                "recurrentStartDate" : "every weekday at 6:00",
+                                "recurrentEndDate"   : "every weekday at 22:00",
+                                "isWorking"          : false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+
+    "tasks" : {
+        "rows" : [
+            {
+                "id"          : 1000,
+                "startDate"   : "2017-01-16",
+                "name"        : "Project A",
+                "percentDone" : 43,
+                "expanded"    : true,
+                "children"    : [
+                    {
+                        "id"          : 1,
+                        "name"        : "Planning",
+                        "percentDone" : 60,
+                        "startDate"   : "2017-01-16",
+                        "duration"    : 10,
+                        "expanded"    : true,
+                        "rollup"      : true,
+                        "children"    : [
+                            {
+                                "id"          : 11,
+                                "name"        : "Investigate",
+                                "percentDone" : 70,
+                                "startDate"   : "2017-01-16",
+                                "duration"    : 10
+                            },
+                            {
+                                "id"          : 12,
+                                "name"        : "Assign resources",
+                                "percentDone" : 60,
+                                "startDate"   : "2017-01-16",
+                                "duration"    : 8
+                            },
+                            {
+                                "id"          : 13,
+                                "name"        : "Gather documents",
+                                "percentDone" : 50,
+                                "startDate"   : "2017-01-16",
+                                "duration"    : 8
+                            },
+                            {
+                                "id"          : 14,
+                                "name"        : "Report to management",
+                                "percentDone" : 0,
+                                "startDate"   : "2017-01-28",
+                                "duration"    : 0
+                            }
+                        ]
+                    },
+                    {
+                        "id"          : 2,
+                        "name"        : "Implementation Phase",
+                        "percentDone" : 20,
+                        "startDate"   : "2017-01-30",
+                        "duration"    : 10,
+                        "expanded"    : true,
+                        "rollup"      : true,
+                        "children"    : [
+                            {
+                                "id"          : 21,
+                                "name"        : "Preparation work",
+                                "percentDone" : 40,
+                                "startDate"   : "2017-01-30",
+                                "duration"    : 5
+                            },
+                            {
+                                "id"          : 22,
+                                "name"        : "Choose technology suite",
+                                "percentDone" : 30,
+                                "startDate"   : "2017-01-30",
+                                "duration"    : 4,
+                                "rollup"      : true
+                            },
+                            {
+                                "id"          : 23,
+                                "name"        : "Build prototype",
+                                "percentDone" : 9,
+                                "startDate"   : "2017-02-06",
+                                "duration"    : 5,
+                                "expanded"    : true,
+                                "children"    : [
+                                    {
+                                        "id"          : 231,
+                                        "name"        : "Step 1",
+                                        "percentDone" : 20,
+                                        "startDate"   : "2017-02-06",
+                                        "duration"    : 4
+                                    },
+                                    {
+                                        "id"          : 232,
+                                        "name"        : "Step 2",
+                                        "percentDone" : 10,
+                                        "startDate"   : "2017-02-06",
+                                        "duration"    : 4
+                                    },
+                                    {
+                                        "id"          : 233,
+                                        "name"        : "Step 3",
+                                        "percentDone" : 0,
+                                        "startDate"   : "2017-02-06",
+                                        "duration"    : 4
+                                    },
+                                    {
+                                        "id"          : 234,
+                                        "name"        : "Follow up with customer",
+                                        "percentDone" : 0,
+                                        "startDate"   : "2017-02-10",
+                                        "duration"    : 1,
+                                        "rollup"      : true
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id"          : 3,
+                        "name"        : "Customer approval",
+                        "percentDone" : 0,
+                        "startDate"   : "2017-02-13",
+                        "duration"    : 0,
+                        "rollup"      : true
+                    }
+                ]
+            }
+        ]
+    },
+
+    "dependencies" : {
+        "rows" : [
+            {
+                "id"        : 1,
+                "fromEvent" : 11,
+                "toEvent"   : 14
+            },
+            {
+                "id"        : 2,
+                "fromEvent" : 12,
+                "toEvent"   : 14
+            },
+            {
+                "id"        : 3,
+                "fromEvent" : 13,
+                "toEvent"   : 14
+            },
+            {
+                "id"        : 4,
+                "fromEvent" : 14,
+                "toEvent"   : 21
+            },
+            {
+                "id"        : 5,
+                "fromEvent" : 14,
+                "toEvent"   : 22
+            },
+            {
+                "id"        : 6,
+                "fromEvent" : 22,
+                "toEvent"   : 231
+            },
+            {
+                "id"        : 7,
+                "fromEvent" : 22,
+                "toEvent"   : 232
+            },
+            {
+                "id"        : 8,
+                "fromEvent" : 22,
+                "toEvent"   : 233
+            },
+            {
+                "id"        : 9,
+                "fromEvent" : 233,
+                "toEvent"   : 234
+            },
+            {
+                "id"        : 10,
+                "fromEvent" : 234,
+                "toEvent"   : 3
+            }
+        ]
+    },
+
+    "resources" : {
+        "rows" : [
+            { "id" : 1, "name" : "Celia", "city" : "Barcelona" },
+            { "id" : 2, "name" : "Lee", "city" : "London" },
+            { "id" : 3, "name" : "Macy", "city" : "New York" },
+            { "id" : 4, "name" : "Madison", "city" : "Barcelona" },
+            { "id" : 5, "name" : "Rob", "city" : "Rome" },
+            { "id" : 6, "name" : "Dave", "city" : "Barcelona" },
+            { "id" : 7, "name" : "Dan", "city" : "London" },
+            { "id" : 8, "name" : "George", "city" : "New York" },
+            { "id" : 9, "name" : "Gloria", "city" : "Rome" },
+            { "id" : 10, "name" : "Henrik", "city" : "London", "calendar" : "business" }
+        ]
+    },
+
+    "assignments" : {
+        "rows" : [
+            { "event" : 11,  "resource" : 1 },
+            { "event" : 12,  "resource" : 1 },
+            { "event" : 12,  "resource" : 9 },
+            { "event" : 13,  "resource" : 2 },
+            { "event" : 13,  "resource" : 3 },
+            { "event" : 13,  "resource" : 6 },
+            { "event" : 13,  "resource" : 7 },
+            { "event" : 13,  "resource" : 8 },
+            { "event" : 21,  "resource" : 5 },
+            { "event" : 21,  "resource" : 9 },
+            { "event" : 22,  "resource" : 8 },
+            { "event" : 234,  "resource" : 3 }
+        ]
+    }
+}

@@ -1,0 +1,44 @@
+@import 'colors.scss';
+
+@import 'common/core.scss';
+
+@import 'common/helper/draghelper.scss';
+@import 'common/helper/util/demobot.scss';
+
+// widget.scss should be imported first of the widgets, to allow easier overriding
+@import 'common/widget/widget.scss';
+@import 'common/widget/badge.scss';
+@import 'common/widget/button.scss';
+@import 'common/widget/buttongroup.scss';
+@import 'common/widget/calendarpanel.scss';
+@import 'common/widget/checkbox.scss';
+@import 'common/widget/combo.scss';
+@import 'common/widget/container.scss';
+@import 'common/widget/datepicker.scss';
+@import 'common/widget/editor.scss';
+@import 'common/widget/field.scss';
+@import 'common/widget/filepicker.scss';
+@import 'common/widget/displayfield.scss';
+@import 'common/widget/pickerfield.scss';
+@import 'common/widget/datefield.scss';
+@import 'common/widget/list.scss';
+@import 'common/widget/chipview.scss';
+@import 'common/widget/mask.scss';
+@import 'common/widget/messagedialog.scss';
+@import 'common/widget/pagingtoolbar.scss';
+@import 'common/widget/panel.scss';
+@import 'common/widget/popup.scss';
+@import 'common/widget/menu.scss';
+@import 'common/widget/ripple.scss';
+@import 'common/widget/slider.scss';
+@import 'common/widget/splitter.scss';
+@import 'common/widget/tabpanel.scss';
+@import 'common/widget/timefield.scss';
+@import 'common/widget/timepicker.scss';
+@import 'common/widget/toast.scss';
+@import 'common/widget/tooltip.scss';
+@import 'common/widget/textareafield.scss';
+@import 'common/widget/toolbar.scss';
+
+@import 'common/widget/layout/card.scss';
+@import 'common/widget/layout/fit.scss';

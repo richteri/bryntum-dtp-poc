@@ -1,0 +1,16 @@
+/**
+ *- Main application sass file that contains all the application styling
+ */
+
+.small-text {
+  font-size : .7em;
+}
+
+.yes-button,
+.no-button {
+  flex    : 1;
+  border  : none;
+  outline : none;
+}
+
+// eof

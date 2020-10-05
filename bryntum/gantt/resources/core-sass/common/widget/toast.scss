@@ -1,0 +1,93 @@
+@import '../../variables.scss';
+
+@keyframes progress {
+    0% {
+        width : 0;
+    }
+    100% {
+        width : 100%;
+    }
+}
+
+.b-float-root > .b-floating.b-toast {
+    display          : inline-block;
+    overflow         : hidden;
+
+    top              : auto;
+    right            : 2em;
+    left             : auto;
+    max-width        : 60%;
+
+    // By default, the toast starts just below the bottom of the float container
+    transform        : translateY(100%);
+    bottom           : 0;
+
+    // When its transform:translate and bottom are set, it will animate into place
+    transition       : bottom .25s ease-in, transform .25s ease-in;
+
+    padding          : 1em;
+    background-color : $toast-background-color;
+    color            : $toast-color;
+    border-radius    : $widget-border-radius;
+
+    cursor           : pointer;
+
+    &.b-toast-hide {
+        // using important to override values set in style
+        bottom    : 0 !important;
+        transform : translateY(100%) !important;
+    }
+
+    &.b-icon:before {
+        margin-right : .5em;
+    }
+}
+
+.b-toast-progress {
+    position                  : absolute;
+    top                       : 0;
+    left                      : 0;
+    height                    : 3px;
+    background                : $toast-progress-color;
+    animation-name            : progress;
+    animation-timing-function : linear;
+}
+
+//region Toast color, depending on theme
+
+@mixin toast-color($colorName, $color) {
+
+    @if $colorName == "default" {
+        $colorName : null;
+    } @else {
+        $colorName : ".b-#{$colorName}"
+    }
+
+    .b-float-root > .b-floating.b-toast#{$colorName} {
+        background-color : $color;
+        color            : #fff;
+
+        .b-toast-progress {
+            background : scale-color($color, $lightness : 40%);
+        }
+    }
+}
+
+@include toast-color("white", $white);
+@include toast-color("blue", $blue);
+@include toast-color("deep-orange", $deep-orange);
+@include toast-color("orange", $orange);
+@include toast-color("amber", $amber);
+@include toast-color("indigo", $indigo);
+@include toast-color("lime", $lime);
+@include toast-color("teal", $teal);
+@include toast-color("green", $green);
+@include toast-color("light-green", $light-green);
+@include toast-color("purple", $purple);
+@include toast-color("yellow", $yellow);
+@include toast-color("red", $red);
+@include toast-color("dark-gray", $dark-gray);
+@include toast-color("gray", $gray);
+@include toast-color("light-gray", $light-gray);
+
+//endregion

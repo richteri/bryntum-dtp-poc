@@ -1,0 +1,31 @@
+@import '../../variables.scss';
+
+.b-grid-header {
+
+    &.b-drag-proxy {
+        line-height      : normal;
+        font-weight      : $grid-header-font-weight;
+        font-size        : 14px;
+        background-color : $grid-header-background-color;
+        border           : 1px solid $grid-header-border-color; // to match invalid border
+        transition       : background-color 0.3s;
+
+        .b-grid-header-text {
+            //padding-left : 5px;
+            padding : 5px;
+            //position     : absolute;
+            //top          : 50%;
+            //transform    : translateY(-50%);
+        }
+    }
+
+    &.b-drop-placeholder {
+        //font-weight: bold;
+        opacity: .3;
+    }
+
+    &.b-drag-invalid {
+        color: $grid-header-invalid-drag-color;
+        border: 1px solid $grid-header-invalid-drag-color;
+    }
+}

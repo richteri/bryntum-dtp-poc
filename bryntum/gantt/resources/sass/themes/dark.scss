@@ -1,0 +1,11 @@
+@import '../../schedulerpro-sass/themes/dark.scss';
+
+$gantt-timeline-border-color: lighten($gray, 10);
+$gantt-timeline-label-color: lighten($gray, 20);
+$gantt-timeline-label-font-weight: 400;
+$percentcircle-background-color : #38383D;
+
+$indicator-dates-color : $grid-cell-border-color;
+$indicator-dates-hover-color : darken($grid-cell-border-color, 20);
+
+@import 'shared';

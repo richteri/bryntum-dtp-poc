@@ -1,0 +1,6 @@
+{
+    "#title": {
+        "title": "Custom element",
+        "content": "The gantt below is created using a custom element called &lt;bryntum-gantt&gt;. See source for details"
+    }
+}

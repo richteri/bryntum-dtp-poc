@@ -1,0 +1,34 @@
+@import '../../variables.scss';
+
+// Try to occupy all available space in a flexbox if outermost widget.
+.b-container.b-outer {
+    align-self : stretch;
+    flex       : 1 1 auto;
+}
+
+// If we adopt body as a container, behave as a viewport:
+// No margins, no scrolling, full size.
+body.b-container.b-outer {
+    margin   : 0;
+    height   : 100%;
+    width    : 100%;
+    overflow : hidden;
+}
+
+.b-container:focus {
+    outline : none;
+}
+
+.b-content-element {
+    position  : relative;
+    display   : flex;
+    flex-flow : row wrap;
+}
+
+// If implementer is using our widgets to contain just custom markup/text, we apply a display rule to make document flow as expected
+.b-text-content.b-content-element,
+.b-text-content > .b-content-element {
+    flex-flow : column nowrap;
+    justify-content: normal;
+    overflow  : auto;
+}

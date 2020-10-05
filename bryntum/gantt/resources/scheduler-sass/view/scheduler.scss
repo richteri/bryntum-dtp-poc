@@ -1,0 +1,88 @@
+@import '../variables.scss';
+@import 'eventrendering.scss';
+
+.b-sch-canvas,
+.b-sch-foreground-canvas,
+.b-sch-background-canvas {
+    position       : absolute;
+    top            : 0;
+    left           : 0;
+    pointer-events : none;
+    height         : 100%;
+    overflow       : hidden;
+}
+
+.b-sch-background-canvas {
+    z-index           : $background-canvas-zindex;
+    background-repeat : repeat; // to fix background which relies on repeating when Vuetify styles are used
+}
+
+.b-sch-foreground-canvas {
+    z-index : $foreground-canvas-zindex;
+
+    // When we're dragging rows, pointer must see right through events and dependency lines
+    // and whatever else is drawn to the canvas to fall through to underlying row.
+    .b-row-reordering & {
+        * {
+            pointer-events: none !important;
+        }
+    }
+}
+
+.b-animating .b-timeline-subgrid {
+    pointer-events: none !important;
+}
+
+@include eventrendering(
+    $widget-name                                : 'scheduler',
+    $entity-name                                : 'event',
+    $entity-zindex                              : $event-zindex,
+    $entity-font-weight                         : $event-font-weight,
+    $entity-font-size                           : $event-font-size,
+    $entity-default-transition                  : $event-default-transition,
+    $interacting-entity-zindex                  : $interacting-event-zindex,
+
+    $entity-bar-background-color                : $event-bar-background-color,
+    $entity-bar-color                           : $event-bar-color,
+    $entity-bar-padding-left                    : 0.75em,
+
+    $entity-bar-hover-background-color          : $event-bar-hover-background-color,
+    $entity-bar-hover-color                     : $event-bar-hover-color,
+
+    $entity-selected-zindex                     : $selected-event-zindex,
+    $entity-bar-selected-background-color       : $event-bar-selected-background-color,
+    $entity-bar-selected-color                  : $event-bar-selected-color,
+    $entity-selected-font-weight                : $event-selected-font-weight,
+
+    $entity-bar-selected-hover-background-color : $event-bar-selected-hover-background-color,
+    $entity-bar-selected-hover-color            : $event-bar-selected-hover-color,
+
+    $entity-milestone-color                     : $event-milestone-color,
+    $entity-milestone-hover-color               : null,
+    $entity-milestone-selected-color            : null,
+    $entity-milestone-selected-hover-color      : null,
+    $entity-milestone-zindex                    : $milestone-zindex,
+
+    $entity-labels-color                        : $event-labels-color,
+    $selected-entity-labels-color               : $selected-event-labels-color,
+
+    $entity-parent-color                        : $parent-event-bar-background-color
+);
+
+.b-sch-vertical {
+    .b-sch-event-wrap {
+        contain : strict;
+    }
+
+    .b-sch-event {
+        align-items   : flex-start;
+        padding-top   : .75em;
+        padding-right : .75em;
+        contain       : strict;
+        white-space   : normal;
+    }
+}
+
+.b-sch-vertical.b-eventlayout-mixed .b-sch-event {
+    opacity : .8;
+}

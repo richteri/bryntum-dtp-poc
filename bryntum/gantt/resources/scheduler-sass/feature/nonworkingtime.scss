@@ -1,0 +1,8 @@
+@import '../variables.scss';
+
+.b-grid-headers .b-sch-nonworkingtime {
+    background-color : $weekend-background-color;
+    // non-working time is less relevant than individual ranges
+    z-index : $range-zindex - 1;
+    pointer-events: none;
+}

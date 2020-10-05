@@ -1,0 +1,12 @@
+@import '../variables.scss';
+
+.b-dragselect-rect {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin:0 0;
+  pointer-events: none;
+  z-index  : 100;
+
+  border   : $eventdragselect-border;
+}

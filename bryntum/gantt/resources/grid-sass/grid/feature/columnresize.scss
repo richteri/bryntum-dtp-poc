@@ -1,0 +1,57 @@
+@import '../../variables.scss';
+
+.b-gridbase.b-columnresize {
+    .b-grid-header.b-resize-handle {
+        cursor : ew-resize !important;
+    }
+
+    .b-grid-header.b-resizing {
+        background : $grid-header-resizing-background-color;
+    }
+
+    &.b-sort {
+
+        .b-grid-header.b-resizing:not(.b-filter) .b-filter-icon,
+        .b-grid-header.b-over-resize-handle:not(.b-filter) .b-filter-icon,
+        .b-grid-header.b-resizing:not(.b-sort):after,
+        .b-grid-header.b-over-resize-handle:hover:not(.b-sort):after {
+            display : none;
+        }
+
+        // Do not display sort icon while resizing
+        /*.b-grid-header.b-resizing:hover:not(.b-sort):after {
+                display: none;
+            }*/
+    }
+
+    &.b-touch.b-column-resizing {
+        // resizing grid header using touch
+        .b-grid-header.b-resizing {
+            overflow : visible;
+            z-index  : 100;
+
+            &::before {
+                @extend .b-content-icon;
+                @extend .b-icon-resize-horizontal:before;
+                font-size        : 1.5em;
+                color            : $grid-text-brightest-color;
+                position         : absolute;
+                top              : 50%;
+                transform        : translateX(50%) translateY(-50%);
+                right            : 0;
+                z-index          : 101;
+                border-radius    : 100%;
+                background-color : $grid-header-border-color;
+                // This prevents this before-element to steal hover of the column header,
+                // thereby making sure the correct target is detected in the impending click event (so we can ignore it)
+                pointer-events   : none;
+                padding          : 0.5em;
+            }
+        }
+
+        .b-grid-header:not(.b-resizing) {
+            //opacity : 0.5;
+            z-index : 1;
+        }
+    }
+}

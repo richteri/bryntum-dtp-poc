@@ -1,0 +1,33 @@
+// added to any element that's dragged (cloned proxy + inline)
+.b-dragging {
+    position       : absolute !important;
+    z-index        : 10000;
+    pointer-events : none;
+    opacity        : 0.8;
+    box-sizing     : border-box;
+}
+
+/*
+ Used when Drag code is creating a separate proxy element representing the dragged element,
+   as opposed to the 'inline' drag of the actual element
+*/
+.b-drag-proxy {
+    top            : 0;
+    left           : 0;
+    pointer-events : none !important;
+
+    // Neded for when a proxy is inserted outside of our widgets into the browser body which may still
+    // be using content-box sizing.
+    box-sizing: border-box;
+    * {
+        box-sizing: border-box;
+    }
+}
+
+.b-aborting {
+    transition: transform 0.2s;
+}
+
+.b-drag-original.b-hidden {
+    display:none !important;
+}

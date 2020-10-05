@@ -1,0 +1,8 @@
+@import '../../../Scheduler/examples/_shared/shared.scss';
+
+// Here are the gantt specific rules below
+@media (max-width: 450px) {
+  .b-gantttoolbar {
+    display:none;
+  }
+}

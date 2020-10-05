@@ -1,0 +1,17 @@
+.b-check-cell .b-checkbox label.b-checkbox-label:before {
+  margin-right : 0;
+}
+
+.b-check-header-with-checkbox {
+  .b-grid-header-text {
+    display:none;
+  }
+
+  .b-field-inner {
+    justify-content: center;
+  }
+
+  .b-checkbox-label:before {
+    margin:0 !important;
+  }
+}

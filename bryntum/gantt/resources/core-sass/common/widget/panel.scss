@@ -1,0 +1,208 @@
+@import '../../variables.scss';
+
+.b-panel {
+    display   : flex;
+    flex-flow : column nowrap;
+    padding   : 0;
+    color     : $panel-color;
+
+    &:not(.b-outer) {
+        border-radius : $widget-border-radius;
+
+        .b-panel-content {
+            border-radius : $widget-border-radius;
+        }
+    }
+
+    // Where the body joins the header, border radius has to be disabled
+    &.b-header-dock-top {
+        flex-flow : column nowrap;
+
+        .b-panel-content {
+            border-top-right-radius : 0;
+            border-top-left-radius  : 0;
+        }
+    }
+
+    &.b-header-dock-right {
+        flex-flow : row nowrap;
+
+        .b-panel-content {
+            border-top-right-radius    : 0;
+            border-bottom-right-radius : 0;
+        }
+    }
+
+    &.b-header-dock-bottom {
+        flex-flow : column nowrap;
+
+        .b-panel-content {
+            border-bottom-left-radius  : 0;
+            border-bottom-right-radius : 0;
+        }
+    }
+
+    &.b-header-dock-left {
+        flex-flow : row nowrap;
+
+        .b-panel-content {
+            border-top-left-radius    : 0;
+            border-bottom-left-radius : 0;
+        }
+    }
+
+    &.b-panel-has-header {
+        display     : flex;
+        align-items : stretch;
+    }
+
+    &.b-panel-has-bottom-toolbar {
+        .b-panel-content {
+            border-bottom-left-radius  : 0;
+            border-bottom-right-radius : 0;
+        }
+    }
+
+    .b-dock-bottom {
+        position                   : static; // Inherits relative, which gives a subpixel spacing between docked and content
+        border-bottom-left-radius  : $widget-border-radius;
+        border-bottom-right-radius : $widget-border-radius;
+    }
+}
+
+.b-panel-content {
+    background      : $panel-background-color;
+    justify-content : space-between;
+    flex            : 1 1 auto;
+    padding         : $panel-content-padding;
+
+    // No padding on body when using fit layout, let widget fill it fully
+    &.b-fit-container {
+        padding : 0;
+    }
+}
+
+// When displayed in a tabpanel, match its color
+.b-tabpanel .b-panel-content {
+    background-color : $tabpanel-background-color;
+}
+
+
+.b-panel-header {
+    display          : flex;
+    background-color : $panel-header-background-color;
+    color            : $panel-header-color;
+    padding          : $panel-header-padding;
+    flex             : 0 0 auto; // Must participate in flex using flex-basis: auto
+    align-items      : center;
+
+    // Where the header joins the boundary, border radius has to match
+    &.b-dock-top {
+        border-top-right-radius : $widget-border-radius;
+        border-top-left-radius  : $widget-border-radius;
+        border-bottom           : $panel-header-border-bottom;
+    }
+
+    &.b-dock-right {
+        flex-flow                  : column nowrap;
+        border-top-right-radius    : $widget-border-radius;
+        border-bottom-right-radius : $widget-border-radius;
+    }
+
+    &.b-dock-bottom {
+        border-bottom-right-radius : $widget-border-radius;
+        border-bottom-left-radius  : $widget-border-radius;
+    }
+
+    &.b-dock-left {
+        border-top-left-radius    : $widget-border-radius;
+        border-bottom-left-radius : $widget-border-radius;
+        flex-flow                 : column-reverse nowrap;
+
+        .b-header-title {
+            transform : rotate(180deg);
+        }
+    }
+
+    .b-header-title {
+        // If there are tools inside the header, add some air
+        &:not(:last-child) {
+            padding-right   : 1em;
+        }
+
+        flex            : 1 1 0%;
+        text-align      : center;
+        display         : flex;
+        justify-content : center;
+        font-size       : $panel-header-font-size;
+        font-weight     : $panel-header-font-weight;
+        white-space     : nowrap;
+
+        &.b-align-start {
+            text-align      : start;
+            justify-content : flex-start;
+        }
+
+        &.b-align-center {
+            text-align      : center;
+            justify-content : center;
+        }
+
+        &.b-align-end {
+            text-align      : end;
+            justify-content : flex-end;
+
+            // Some air before tool icons if aligned end
+            &:not(:last-child) {
+                margin-right : 1em;
+            }
+        }
+    }
+
+    &.b-dock-right, &.b-dock-left {
+        .b-header-title {
+            -webkit-writing-mode : vertical-lr;
+            writing-mode         : vertical-lr;
+            -ms-writing-mode     : tb-lr;
+        }
+    }
+
+    &.b-dock-right, &.b-dock-bottom {
+        order : 100;
+    }
+}
+
+.b-tool {
+    cursor  : pointer;
+    color   : $panel-tool-color;
+
+    // Constrain what gets repainted.
+    contain : paint;
+
+    &:not(:last-child) {
+        margin : 0 0.2em;
+    }
+
+    &.b-icon:before {
+        width      : 1em;
+        text-align : center;
+    }
+
+    &:hover {
+        opacity : 0.8;
+    }
+
+    a {
+        color : $panel-tool-color;
+    }
+}
+
+.b-dock-right, .b-dock-left {
+    .b-header-title:not(:last-child) {
+        padding : 0.2em 0;
+    }
+
+    .b-tool:not(:last-child) {
+        margin : 0.2em 0;
+    }
+}

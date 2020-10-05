@@ -1,0 +1,61 @@
+{
+  "name": "advanced",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "builder": "node ../../../_shared/scripts/build.js",
+    "guide": "npm run builder guide gantt vue",
+    "start": "cross-env NODE_ENV=development vue-cli-service serve",
+    "serve": "cross-env NODE_ENV=development vue-cli-service serve",
+    "build": "cross-env NODE_ENV=development vue-cli-service build || npm run guide",
+    "lint": "vue-cli-service lint",
+    "postinstall": "postinstall || npm run guide"
+  },
+  "postinstall": {
+    "node_modules/bryntum-resources/images/favicon.png": "copy public/favicon.png",
+    "node_modules/bryntum-resources/images/users": "copy public/users",
+    "../../../_datasets/launch-saas.json": "copy public/datasets/launch-saas.json"
+  },
+  "dependencies": {
+    "bryntum-gantt": "file:../../../../build",
+    "bryntum-resources": "file:../../../_shared",
+    "bryntum-vue-shared": "file:../_shared",
+    "vue": "~2.6.10"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.1.0",
+    "@vue/cli-plugin-eslint": "~4.1.0",
+    "@vue/cli-service": "~4.1.0",
+    "@vue/eslint-config-standard": "~5.0.1",
+    "babel-eslint": "~10.0.3",
+    "cross-env": "~6.0.3",
+    "eslint": "~5.16.0",
+    "eslint-plugin-vue": "~5.0.0",
+    "node-sass": "~4.12.0",
+    "postinstall": "~0.7.0",
+    "sass-loader": "~8.0.0",
+    "vue-template-compiler": "~2.6.10"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}

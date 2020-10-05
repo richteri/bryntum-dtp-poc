@@ -1,0 +1,34 @@
+.demo-export-header {
+  text-align   : left;
+  padding      : 8px 0 0 10px;
+  height       : 40px;
+  color        : #fff;
+  background   : #0066a6;
+  position     : relative;
+
+  img {
+    height : 80%;
+  }
+
+  dl {
+    top         : 50%;
+    right       : 1em;
+    transform   : translateY(-50%);
+    margin      : 0;
+    font-size   : 10px;
+    position    : absolute;
+  }
+
+  dd {
+    margin: 0;
+  }
+}
+
+.b-export-footer {
+  color        : #fff;
+  background   : #0066a6;
+}
+
+.demo-export-footer {
+  text-align   : center;
+}

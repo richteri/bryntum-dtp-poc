@@ -1,0 +1,72 @@
+.b-card-container {
+    display     : flex;
+    flex-flow   : row nowrap;
+    align-items : stretch;
+    overflow    : hidden;
+    padding     : $card-margin;
+    position    : relative;
+
+    > .b-card-item {
+        display      : none;
+        flex         : 1 0 100%;
+        align-items  : stretch;
+        margin-left  : 0;
+        max-width    : 100%;
+        margin-right : $card-margin;
+
+        &.b-active {
+            display : flex;
+        }
+    }
+}
+
+@keyframes b-card-slide-in-left {
+    0% {
+        transform   : translateX(-100%);
+        margin-left : -$card-margin;
+    }
+    100% {
+        transform   : translateX(0);
+        margin-left : 0;
+    }
+}
+@keyframes b-card-slide-out-right {
+    0% {
+        transform : translateX(-100%);
+    }
+    100% {
+        transform : translateX(0);
+    }
+}
+
+@keyframes b-card-slide-in-right {
+    0% {
+        transform : translateX(0);
+    }
+    100% {
+        transform : translateX(-100%);
+    }
+}
+@keyframes b-card-slide-out-left {
+    0% {
+        transform : translateX(0);
+        margin-left : 0;
+    }
+    100% {
+        transform   : translateX(-100%);
+        margin-left : -$card-margin;
+    }
+}
+
+.b-slide-in-left {
+    animation : b-card-slide-in-left 0.3s ease 0s 1;
+}
+.b-slide-out-right {
+    animation : b-card-slide-out-right 0.3s ease 0s 1;
+}
+.b-slide-in-right {
+    animation : b-card-slide-in-right 0.3s ease 0s 1;
+}
+.b-slide-out-left {
+    animation : b-card-slide-out-left 0.3s ease 0s 1;
+}

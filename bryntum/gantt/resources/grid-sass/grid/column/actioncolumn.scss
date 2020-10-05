@@ -1,0 +1,26 @@
+@import '../../variables.scss';
+
+.b-action-cell {
+    text-align : end;
+}
+
+.b-actions-ct {
+    width : 100%;
+}
+
+.b-action-item {
+    width      : 1.3em;
+    margin     : 0 0.15em;
+    text-align : center;
+    font-size  : 1.2em;
+    cursor     : pointer;
+}
+
+.b-action-cell.b-grid-cell .b-action-item {
+    transition : all 0.15s ease-in-out; // override stockholm '*' rule
+}
+
+.b-action-item:hover {
+    // used scale3d to fix shifting/jumping bug on scaling animation
+    transform : scale3d(1.20, 1.20, 1);
+}

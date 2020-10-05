@@ -1,0 +1,51 @@
+{
+  "name": "taskeditor",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "./",
+  "scripts": {
+    "builder": "node ../../../_shared/scripts/build.js",
+    "guide": "npm run builder guide gantt react",
+    "start": "npx --node-arg=--max-old-space-size=8192 react-scripts start",
+    "build": "npx --node-arg=--max-old-space-size=8192 react-scripts build || npm run guide",
+    "test": "npx --node-arg=--max-old-space-size=8192 react-scripts test",
+    "eject": "npx --node-arg=--max-old-space-size=8192 react-scripts eject",
+    "preinstall": "npm run builder",
+    "postinstall": "postinstall || npm run guide"
+  },
+  "postinstall": {
+    "node_modules/bryntum-resources/images/favicon.png": "copy public/favicon.png",
+    "node_modules/bryntum-resources/images/users": "copy public/users",
+    "../../../_datasets/launch-saas.json": "copy public/data/launch-saas.json"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "~4.2.4",
+    "@testing-library/react": "~9.3.2",
+    "@testing-library/user-event": "~7.1.2",
+    "bryntum-gantt": "file:../../../../build",
+    "bryntum-react-shared": "file:../../_shared/build",
+    "bryntum-resources": "file:../../../_shared",
+    "react": "~16.12.0",
+    "react-dom": "~16.12.0",
+    "react-scripts": "3.4.0"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "node-sass": "~4.13.0",
+    "postinstall": "~0.7.0"
+  }
+}

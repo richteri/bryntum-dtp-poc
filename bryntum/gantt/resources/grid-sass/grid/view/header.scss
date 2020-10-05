@@ -1,0 +1,210 @@
+@import '../../variables.scss';
+
+.b-grid-header-container {
+    background-color : $grid-header-background-color;
+    z-index          : $grid-header-zindex;
+    box-shadow       : $grid-header-box-shadow;
+
+    &.b-hidden {
+        display : none;
+    }
+}
+
+.b-grid-headers {
+    display     : inline-flex;
+    flex-flow   : row nowrap;
+    align-items : stretch;
+    // this messes header height up when rendering a new grid from scratch for some reason
+    //    height      : 100%;
+    //    flex        : 1;
+    // In case page uses its own line-height, it would break our rendering potentially
+    line-height : initial;
+    // If position is specified absolutely positioned elements inside the header in Firefox pick wrong parent as offsetParent
+    position    : relative;
+
+    .b-overflowing > & {
+        flex : 1;
+    }
+
+    :not(.b-overflowing) > & {
+        min-width : 100%;
+    }
+}
+
+.b-grid-header-align-right > .b-grid-header-text > .b-grid-header-text-content {
+    text-align : right;
+}
+
+.b-grid-header-align-center > .b-grid-header-text > .b-grid-header-text-content {
+    text-align : center;
+}
+
+// highlight header on hover/focus, but only if not dragging another header
+.b-gridbase:not(.b-column-resizing) .b-grid-header-container:not(.b-dragging-header) {
+    .b-depth-0 {
+        &:hover, &:focus {
+            background-color : $grid-header-hover-background-color;
+        }
+    }
+}
+
+// Resize handle only displayed if the grid has the column resizer
+// and the column itself is resizable.
+.b-gridbase.b-columnresize .b-grid-header-resizable {
+    // Allow resize handle to overlap the boundary unless we're the last leaf.
+    // Last leaf must  not have any overflow because that would cause extra scrollWidth.
+    &:not(.b-last-leaf) {
+        overflow : visible;
+    }
+
+    .b-grid-header-resize-handle {
+        position         : absolute;
+        top              : 0;
+        right            : -($grid-header-resizer-handle-width / 2);
+        bottom           : 0;
+        width            : $grid-header-resizer-handle-width;
+        background-color : transparent;
+        z-index          : 3;
+        cursor           : col-resize;
+        display          : block;
+    }
+}
+
+// Make handle a bit fatter if touch supported
+.b-touch-events {
+    .b-gridbase.b-columnresize .b-grid-header-resizable .b-grid-header-resize-handle {
+        right : -($grid-header-touch-resizer-handle-width / 2);
+        width : $grid-header-touch-resizer-handle-width;
+    }
+}
+
+// Make a border between the headers and the scrollbar.
+.b-visible-scrollbar .b-grid-header-container.b-grid-vertical-overflow {
+    border-right : 1px solid $grid-header-border-color;
+}
+
+.b-fill-last-column {
+    .b-grid-headers {
+        .b-last-parent,
+        .b-last-leaf {
+            border-right-color : transparent;
+
+            > .b-grid-header-text {
+                border-right-color : transparent;
+            }
+        }
+    }
+}
+
+// IE11 specific stuff goes here
+.b-ie {
+    .b-grid-header.b-depth-1 {
+        .b-grid-header-text {
+            //min-height : 0;
+            flex-basis : 1em;
+        }
+    }
+}
+
+/* Need some rules to be global to be used in drag proxies*/
+.b-grid-header-text {
+    @include user-select-none();
+    padding     : top($grid-header-padding) 0 bottom($grid-header-padding) 0;
+    white-space : nowrap;
+    position    : relative;
+    font-weight : $grid-header-font-weight;
+    display     : flex;
+    align-items : center;
+    overflow    : hidden;
+
+    > .b-grid-header-text-content {
+        overflow      : hidden;
+        text-overflow : ellipsis;
+        flex          : 1 1 0; // Changed flex-basis 100% -> 0 for Edge
+        width         : 0; // Needed for Safari to shrink column correctly
+        font-size     : $grid-header-font-size;
+
+        .b-ie & {
+            flex : 1 1 0%; // IE does not handle flex-basis 0 well in this case, need 0% (which breaks Edge...)
+        }
+
+        // Column icon done like this!
+        > i {
+            margin-right : .5em;
+        }
+    }
+}
+
+// When potentially containing some other widget, for exmple
+// a filter field, no top border, and arrange them in a column
+.b-grid-header-children {
+    display        : flex;
+    flex-direction : column;
+
+    // Allow the column flexbox to width the children
+    > * {
+        width : inherit;
+    }
+}
+
+// When not a leaf, there's a top border
+// and the child columns are arranged in a row.
+.b-grid-header-parent {
+    > .b-grid-header-children {
+        border-top : 1px solid $grid-header-border-color;
+        flex-flow  : row nowrap;
+    }
+}
+
+.b-grid-header {
+    @include user-select-none();
+    display         : flex;
+    flex-direction  : column;
+    align-items     : stretch;
+    justify-content : center;
+    flex-shrink     : 0;
+    position        : relative;
+    overflow        : hidden;
+    background      : $grid-header-background-color;
+    color           : $grid-header-text-color;
+    outline         : none;
+    border-right    : 1px solid $grid-header-border-color;
+    text-transform  : $grid-header-text-transform;
+
+    &:not(.b-depth-0) {
+        // Allow resize handle of the last child to overlap the boundary
+        overflow : visible;
+    }
+
+    &.b-depth-0 {
+        padding : 0 right($grid-header-padding) 0 left($grid-header-padding);
+        width   : 0; // flex trick to get small widths correct
+
+        cursor : pointer;
+
+        .b-grid-header-text {
+            border-bottom  : none;
+            transition     : background-color 0.2s;
+            flex-direction : row;
+        }
+    }
+
+    &.b-grid-header-parent {
+        border-right  : none;
+        flex-basis    : auto;
+        padding-left  : 0;
+        padding-right : 0;
+
+        > .b-grid-header-text {
+            padding-left  : left($grid-header-padding);
+            padding-right : left($grid-header-padding);
+            border-right  : 1px solid $grid-header-border-color;
+        }
+    }
+
+    // By default, handle is display:none
+    // Has no layout, zero perf implications.
+    .b-grid-header-resize-handle {
+        display : none;
+    }
+}

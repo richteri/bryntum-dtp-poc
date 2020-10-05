@@ -1,0 +1,119 @@
+{
+    "success"   : true,
+    "resources" : {
+        "rows": [
+            {"id": "a", "name": "Arcady", "role": "Core developer"},
+            {"id": "b", "name": "Dave", "role": "Tech Sales"},
+            {"id": "c", "name": "Henrik", "role": "Sales"},
+            {"id": "d", "name": "Linda", "role": "Core developer"},
+            {"id": "e", "name": "Maxim", "role": "Developer & UX"},
+            {"id": "f", "name": "Mike", "role": "Sales"},
+            {"id": "g", "name": "Lee", "role": "CEO"},
+            {"id": "h", "name": "Madison", "role": "CTO"}
+        ]
+    },
+    "events"    : {
+        "rows": [
+            {
+                "resourceId"   : "a",
+                "name"         : "Team scrum",
+                "startDate"    : "2017-02-07 11:00",
+                "duration"     : 2,
+                "durationUnit" : "h",
+                "location"     : "Some office",
+                "eventType"    : "Meeting",
+                "eventColor"   : "orange",
+                "iconCls"      : "fa fa-users"
+            },
+            {
+                "resourceId"   : "b",
+                "name"         : "Prepare campaign",
+                "startDate"    : "2017-02-07 12:00",
+                "duration"     : 3,
+                "durationUnit" : "h",
+                "location"     : "Home office",
+                "eventType"    : "Internal",
+                "eventColor"   : "indigo",
+                "iconCls"      : "fa fa-image"
+            },
+            {
+                "resourceId"   : "c",
+                "name"         : "Marketing meeting",
+                "startDate"    : "2017-02-07 13:00",
+                "duration"     : 3,
+                "durationUnit" : "h",
+                "location"     : "Customer office",
+                "eventType"    : "Meeting",
+                "eventColor"   : "orange",
+                "iconCls"      : "fa fa-calendar"
+            },
+            {
+                "resourceId"   : "d",
+                "name"         : "Coding session",
+                "startDate"    : "2017-02-07 09:00",
+                "duration"     : 2,
+                "durationUnit" : "h",
+                "location"     : "Some office",
+                "eventType"    : "Internal",
+                "eventColor"   : "indigo",
+                "iconCls"      : "fa fa-code"
+            },
+            {
+                "resourceId"   : "e",
+                "name"         : "UX improvements",
+                "startDate"    : "2017-02-07 10:00",
+                "duration"     : 3,
+                "durationUnit" : "h",
+                "location"     : "Home office",
+                "type"         : "Dental",
+                "eventType"    : "Internal",
+                "eventColor"   : "indigo",
+                "iconCls"      : "fa fa-code"
+            },
+            {
+                "resourceId"   : "f",
+                "name"         : "Customer meeting",
+                "startDate"    : "2017-02-07 11:00",
+                "duration"     : 3,
+                "durationUnit" : "h",
+                "location"     : "Customer office",
+                "type"         : "Medical",
+                "eventType"    : "Appointment",
+                "eventColor"   : "orange",
+                "iconCls"      : "fa fa-calendar"
+            },
+            {
+                "resourceId"   : "g",
+                "name"         : "Golf",
+                "startDate"    : "2017-02-07 14:00",
+                "duration"     : 3,
+                "durationUnit" : "h",
+                "location"     : "Home office",
+                "type"         : "Medical",
+                "eventType"    : "Appointment",
+                "eventColor"   : "green",
+                "iconCls"      : "fa fa-golf-club"
+            },
+            {
+                "resourceId"   : "h",
+                "name"         : "Golf",
+                "startDate"    : "2017-02-07 14:00",
+                "duration"     : 3,
+                "durationUnit" : "h",
+                "location"     : "Customer office",
+                "type"         : "Dental",
+                "eventType"    : "Appointment",
+                "eventColor"   : "green",
+                "iconCls"      : "fa fa-golf-club"
+            }
+        ]
+    },
+    "timeRanges": {
+        "rows": [
+            {
+                "startDate": "2017-02-07 11:00",
+                "endDate"  : "2017-02-07 12:00"
+            }
+        ]
+    }
+}

@@ -1,0 +1,18 @@
+@import '../variables.scss';
+
+.b-popup.b-sch-event-tooltip {
+    max-width : 30em;
+
+    .b-sch-clockwrap {
+        margin-top: .5em;
+    }
+
+    .b-sch-clockwrap:first-child {
+        margin-top: 0;
+    }
+
+    .b-sch-event-title {
+        font-weight: $event-tooltip-title-weight;
+    }
+}
+

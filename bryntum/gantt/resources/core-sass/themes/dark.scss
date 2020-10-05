@@ -1,0 +1,95 @@
+// TODO: Clean up, declare vars before importing variables.scss
+
+// Embed theme details in content.
+// See DomHelper#themeInfo
+.b-theme-info:before {
+    content : '{"name":"Dark"}';
+}
+
+$gray : #444;
+$blue : #1565c0;
+$orange : #e64a19;
+$red : #d32f2f;
+$checkbox-color : #111;
+$light-gray: #c0c1c2;
+
+@import '../variables.scss';
+
+$lighter-gray : lighten($light-gray, 5);
+$darker-gray : darken($dark-gray, 15);
+
+//region Widgets
+$panel-background-color: #222;
+
+$button-disabled-background-color : $dark-gray;
+$button-disabled-color : darken($dark-gray, 10);
+
+$container-color : $light-gray;
+
+$checkbox-box-border-color : $darker-gray;
+//$checkbox-box-background-color : lighten($grid-header-border-color, 15%);
+$checkbox-checked-box-background-color : $checkbox-box-border-color;
+$checkbox-checked-box-border-color : $checkbox-box-border-color;
+
+$time-picker-color : $lighter-gray;
+
+$field-color : $lighter-gray;
+$field-background-color : darken($dark-gray, 15);
+$field-placeholder-color : darken($lighter-gray, 30%);
+$field-disabled-trigger-color : darken($field-trigger-color, 15%);
+
+$list-color : $light-gray;
+$list-background-color : lighten($darker-gray, 2);
+$list-item-border-color : darken($darker-gray, 10);
+$list-item-separator-color : $darker-gray;
+$list-highlight-color : $orange;
+
+$mask-background-color : $blue;
+
+$menu-background-color : $darker-gray;
+$menu-color : $light-gray;
+$menu-highlight-color : $orange;
+$menu-item-separator-color : darken($darker-gray, 10);
+$menu-item-border-color : $menu-item-separator-color;
+
+$percent-bar-fill : $blue;
+$percent-bar-low-fill : $red;
+$percent-bar-background : lighten($dark-gray, 3);
+
+$popup-background-color : $menu-background-color;
+$popup-color : $light-gray;
+
+$panel-toolbar-background-color : $popup-background-color;
+
+$rating-empty-color : $dark-gray;
+$rating-filled-color : #f9a825;
+
+$slider-track-color : gray;
+$slider-thumb-color : $blue;
+$slider-contrast : 0;
+
+$splitter-background-color : #222;
+
+$tabpanel-background-color : #222;
+$tabpanel-border-width : 0;
+
+$tabpanel-tab-border-width : 0;
+$tabpanel-tab-active-background-color : #222;
+$tabpanel-tab-hover-background-color : #222;
+$tabpanel-tab-hover-color : #ccc;
+
+$toast-background-color : $menu-background-color;
+$toast-progress-color : $orange;
+
+$tooltip-background-color : $menu-background-color;
+
+$widget-text-bright-color : $darkest;
+$widget-highlight-color : $orange;
+
+//endregion
+
+@import 'shared';
+
+header.demo-header {
+    background-color : #0d47a1;
+}

@@ -1,0 +1,1401 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ConstrainedLateEvent | scheduling-engine</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">scheduling-engine</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="constrainedlateevent.html">ConstrainedLateEvent</a>
+				</li>
+			</ul>
+			<h1>Interface ConstrainedLateEvent</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="tsd-signature-type">ConstrainedLateEvent</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span>
+						<span class="tsd-signature-symbol"> &amp; </span>
+						<a href="constrainedevent.html" class="tsd-signature-type">ConstrainedEvent</a>
+						<span class="tsd-signature-symbol"> &amp; </span>
+						<a href="haschildren.html" class="tsd-signature-type">HasChildren</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">ConstrainedLateEvent</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-inherited">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#childevents" class="tsd-kind-icon">child<wbr>Events</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#critical" class="tsd-kind-icon">critical</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#earlyenddate" class="tsd-kind-icon">early<wbr>End<wbr>Date</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#earlyenddateconstraintintervals" class="tsd-kind-icon">early<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#earlyenddateraw" class="tsd-kind-icon">early<wbr>End<wbr>Date<wbr>Raw</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#earlystartdate" class="tsd-kind-icon">early<wbr>Start<wbr>Date</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#earlystartdateconstraintintervals" class="tsd-kind-icon">early<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#earlystartdateraw" class="tsd-kind-icon">early<wbr>Start<wbr>Date<wbr>Raw</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#enddateconstraintintervals" class="tsd-kind-icon">end<wbr>Date<wbr>Constraint<wbr>Intervals</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#lateenddate" class="tsd-kind-icon">late<wbr>End<wbr>Date</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#lateenddateconstraintintervals" class="tsd-kind-icon">late<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#lateenddateraw" class="tsd-kind-icon">late<wbr>End<wbr>Date<wbr>Raw</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#latestartdate" class="tsd-kind-icon">late<wbr>Start<wbr>Date</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#latestartdateconstraintintervals" class="tsd-kind-icon">late<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#latestartdateraw" class="tsd-kind-icon">late<wbr>Start<wbr>Date<wbr>Raw</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#manuallyscheduled" class="tsd-kind-icon">manually<wbr>Scheduled</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#parentevent" class="tsd-kind-icon">parent<wbr>Event</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#slackunit" class="tsd-kind-icon">slack<wbr>Unit</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#startdateconstraintintervals" class="tsd-kind-icon">start<wbr>Date<wbr>Constraint<wbr>Intervals</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#totalslack" class="tsd-kind-icon">total<wbr>Slack</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-inherited">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-accessor tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#parent" class="tsd-kind-icon">parent</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter"><a href="constrainedlateevent.html#constrainedevent" class="tsd-kind-icon">Constrained<wbr>Event</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter"><a href="constrainedlateevent.html#eventmixin" class="tsd-kind-icon">Event<wbr>Mixin</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter"><a href="constrainedlateevent.html#haschildren" class="tsd-kind-icon">Has<wbr>Children</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#calculatecritical" class="tsd-kind-icon">calculate<wbr>Critical</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#calculatedurationproposed" class="tsd-kind-icon">calculate<wbr>Duration<wbr>Proposed</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#calculateearlyenddate" class="tsd-kind-icon">calculate<wbr>Early<wbr>End<wbr>Date</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited"><a href="constrainedlateevent.html#calculateearlyenddateconstraintintervals" class="tsd-kind-icon">calculate<wbr>Early<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited"><a href="constrainedlateevent.html#calculateearlyenddateraw" class="tsd-kind-icon">calculate<wbr>Early<wbr>End<wbr>Date<wbr>Raw</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#calculateearlystartdate" class="tsd-kind-icon">calculate<wbr>Early<wbr>Start<wbr>Date</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited"><a href="constrainedlateevent.html#calculateearlystartdateconstraintintervals" class="tsd-kind-icon">calculate<wbr>Early<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited"><a href="constrainedlateevent.html#calculateearlystartdateraw" class="tsd-kind-icon">calculate<wbr>Early<wbr>Start<wbr>Date<wbr>Raw</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#calculateeffectiveconstraintinterval" class="tsd-kind-icon">calculate<wbr>Effective<wbr>Constraint<wbr>Interval</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited"><a href="constrainedlateevent.html#calculateenddateconstraintintervals" class="tsd-kind-icon">calculate<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited"><a href="constrainedlateevent.html#calculateenddateproposed" class="tsd-kind-icon">calculate<wbr>End<wbr>Date<wbr>Proposed</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited"><a href="constrainedlateevent.html#calculateenddatepure" class="tsd-kind-icon">calculate<wbr>End<wbr>Date<wbr>Pure</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#calculatelateenddate" class="tsd-kind-icon">calculate<wbr>Late<wbr>End<wbr>Date</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#calculatelateenddateconstraintintervals" class="tsd-kind-icon">calculate<wbr>Late<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#calculatelateenddateraw" class="tsd-kind-icon">calculate<wbr>Late<wbr>End<wbr>Date<wbr>Raw</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#calculatelatestartdate" class="tsd-kind-icon">calculate<wbr>Late<wbr>Start<wbr>Date</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#calculatelatestartdateconstraintintervals" class="tsd-kind-icon">calculate<wbr>Late<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#calculatelatestartdateraw" class="tsd-kind-icon">calculate<wbr>Late<wbr>Start<wbr>Date<wbr>Raw</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#calculatemaxchildrenenddate" class="tsd-kind-icon">calculate<wbr>Max<wbr>Children<wbr>End<wbr>Date</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#calculateminchildrenstartdate" class="tsd-kind-icon">calculate<wbr>Min<wbr>Children<wbr>Start<wbr>Date</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited"><a href="constrainedlateevent.html#calculatestartdateconstraintintervals" class="tsd-kind-icon">calculate<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited"><a href="constrainedlateevent.html#calculatestartdateproposed" class="tsd-kind-icon">calculate<wbr>Start<wbr>Date<wbr>Proposed</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited"><a href="constrainedlateevent.html#calculatestartdatepure" class="tsd-kind-icon">calculate<wbr>Start<wbr>Date<wbr>Pure</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#calculatetotalslack" class="tsd-kind-icon">calculate<wbr>Total<wbr>Slack</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#hassubevents" class="tsd-kind-icon">has<wbr>Sub<wbr>Events</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#isconstrainedearly" class="tsd-kind-icon">is<wbr>Constrained<wbr>Early</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#isconstrainedlate" class="tsd-kind-icon">is<wbr>Constrained<wbr>Late</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited"><a href="constrainedlateevent.html#maybeskipnonworkingtime" class="tsd-kind-icon">maybe<wbr>Skip<wbr>Non<wbr>Working<wbr>Time</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#setmanuallyscheduled" class="tsd-kind-icon">set<wbr>Manually<wbr>Scheduled</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="constrainedlateevent.html#subeventsiterable" class="tsd-kind-icon">sub<wbr>Events<wbr>Iterable</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="childevents" class="tsd-anchor"></a>
+					<h3>child<wbr>Events</h3>
+					<div class="tsd-signature tsd-kind-icon">child<wbr>Events<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">HasChildren</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from HasChildren.childEvents</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L26">lib/Engine/data/model/event/HasChildren.ts:26</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="critical" class="tsd-anchor"></a>
+					<h3>critical</h3>
+					<div class="tsd-signature tsd-kind-icon">critical<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from ConstrainedLateEvent.critical</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedLateEvent.ts#L84">lib/Engine/data/model/event/ConstrainedLateEvent.ts:84</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="earlyenddate" class="tsd-anchor"></a>
+					<h3>early<wbr>End<wbr>Date</h3>
+					<div class="tsd-signature tsd-kind-icon">early<wbr>End<wbr>Date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from ConstrainedEvent.earlyEndDate</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedEvent.ts#L155">lib/Engine/data/model/event/ConstrainedEvent.ts:155</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="earlyenddateconstraintintervals" class="tsd-anchor"></a>
+					<h3>early<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals</h3>
+					<div class="tsd-signature tsd-kind-icon">early<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals<span class="tsd-signature-symbol">:</span> <a href="../classes/dateinterval.html" class="tsd-signature-type">DateInterval</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from ConstrainedEvent.earlyEndDateConstraintIntervals</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedEvent.ts#L257">lib/Engine/data/model/event/ConstrainedEvent.ts:257</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="earlyenddateraw" class="tsd-anchor"></a>
+					<h3>early<wbr>End<wbr>Date<wbr>Raw</h3>
+					<div class="tsd-signature tsd-kind-icon">early<wbr>End<wbr>Date<wbr>Raw<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from ConstrainedEvent.earlyEndDateRaw</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedEvent.ts#L149">lib/Engine/data/model/event/ConstrainedEvent.ts:149</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="earlystartdate" class="tsd-anchor"></a>
+					<h3>early<wbr>Start<wbr>Date</h3>
+					<div class="tsd-signature tsd-kind-icon">early<wbr>Start<wbr>Date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from ConstrainedEvent.earlyStartDate</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedEvent.ts#L146">lib/Engine/data/model/event/ConstrainedEvent.ts:146</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="earlystartdateconstraintintervals" class="tsd-anchor"></a>
+					<h3>early<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals</h3>
+					<div class="tsd-signature tsd-kind-icon">early<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals<span class="tsd-signature-symbol">:</span> <a href="../classes/dateinterval.html" class="tsd-signature-type">DateInterval</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from ConstrainedEvent.earlyStartDateConstraintIntervals</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedEvent.ts#L229">lib/Engine/data/model/event/ConstrainedEvent.ts:229</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="earlystartdateraw" class="tsd-anchor"></a>
+					<h3>early<wbr>Start<wbr>Date<wbr>Raw</h3>
+					<div class="tsd-signature tsd-kind-icon">early<wbr>Start<wbr>Date<wbr>Raw<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from ConstrainedEvent.earlyStartDateRaw</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedEvent.ts#L140">lib/Engine/data/model/event/ConstrainedEvent.ts:140</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="enddateconstraintintervals" class="tsd-anchor"></a>
+					<h3>end<wbr>Date<wbr>Constraint<wbr>Intervals</h3>
+					<div class="tsd-signature tsd-kind-icon">end<wbr>Date<wbr>Constraint<wbr>Intervals<span class="tsd-signature-symbol">:</span> <a href="../classes/dateinterval.html" class="tsd-signature-type">DateInterval</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from ConstrainedEvent.endDateConstraintIntervals</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedEvent.ts#L250">lib/Engine/data/model/event/ConstrainedEvent.ts:250</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="lateenddate" class="tsd-anchor"></a>
+					<h3>late<wbr>End<wbr>Date</h3>
+					<div class="tsd-signature tsd-kind-icon">late<wbr>End<wbr>Date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from ConstrainedLateEvent.lateEndDate</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedLateEvent.ts#L36">lib/Engine/data/model/event/ConstrainedLateEvent.ts:36</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="lateenddateconstraintintervals" class="tsd-anchor"></a>
+					<h3>late<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals</h3>
+					<div class="tsd-signature tsd-kind-icon">late<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals<span class="tsd-signature-symbol">:</span> <a href="../classes/dateinterval.html" class="tsd-signature-type">DateInterval</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from ConstrainedLateEvent.lateEndDateConstraintIntervals</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedLateEvent.ts#L52">lib/Engine/data/model/event/ConstrainedLateEvent.ts:52</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="lateenddateraw" class="tsd-anchor"></a>
+					<h3>late<wbr>End<wbr>Date<wbr>Raw</h3>
+					<div class="tsd-signature tsd-kind-icon">late<wbr>End<wbr>Date<wbr>Raw<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from ConstrainedLateEvent.lateEndDateRaw</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedLateEvent.ts#L30">lib/Engine/data/model/event/ConstrainedLateEvent.ts:30</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="latestartdate" class="tsd-anchor"></a>
+					<h3>late<wbr>Start<wbr>Date</h3>
+					<div class="tsd-signature tsd-kind-icon">late<wbr>Start<wbr>Date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from ConstrainedLateEvent.lateStartDate</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedLateEvent.ts#L25">lib/Engine/data/model/event/ConstrainedLateEvent.ts:25</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="latestartdateconstraintintervals" class="tsd-anchor"></a>
+					<h3>late<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals</h3>
+					<div class="tsd-signature tsd-kind-icon">late<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals<span class="tsd-signature-symbol">:</span> <a href="../classes/dateinterval.html" class="tsd-signature-type">DateInterval</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from ConstrainedLateEvent.lateStartDateConstraintIntervals</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedLateEvent.ts#L45">lib/Engine/data/model/event/ConstrainedLateEvent.ts:45</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="latestartdateraw" class="tsd-anchor"></a>
+					<h3>late<wbr>Start<wbr>Date<wbr>Raw</h3>
+					<div class="tsd-signature tsd-kind-icon">late<wbr>Start<wbr>Date<wbr>Raw<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from ConstrainedLateEvent.lateStartDateRaw</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedLateEvent.ts#L19">lib/Engine/data/model/event/ConstrainedLateEvent.ts:19</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="manuallyscheduled" class="tsd-anchor"></a>
+					<h3>manually<wbr>Scheduled</h3>
+					<div class="tsd-signature tsd-kind-icon">manually<wbr>Scheduled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from ConstrainedEvent.manuallyScheduled</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedEvent.ts#L213">lib/Engine/data/model/event/ConstrainedEvent.ts:213</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="parentevent" class="tsd-anchor"></a>
+					<h3>parent<wbr>Event</h3>
+					<div class="tsd-signature tsd-kind-icon">parent<wbr>Event<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">HasChildren</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from HasChildren.parentEvent</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L20">lib/Engine/data/model/event/HasChildren.ts:20</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="slackunit" class="tsd-anchor"></a>
+					<h3>slack<wbr>Unit</h3>
+					<div class="tsd-signature tsd-kind-icon">slack<wbr>Unit<span class="tsd-signature-symbol">:</span> <a href="../enums/timeunit.html" class="tsd-signature-type">TimeUnit</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from ConstrainedLateEvent.slackUnit</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedLateEvent.ts#L73">lib/Engine/data/model/event/ConstrainedLateEvent.ts:73</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="startdateconstraintintervals" class="tsd-anchor"></a>
+					<h3>start<wbr>Date<wbr>Constraint<wbr>Intervals</h3>
+					<div class="tsd-signature tsd-kind-icon">start<wbr>Date<wbr>Constraint<wbr>Intervals<span class="tsd-signature-symbol">:</span> <a href="../classes/dateinterval.html" class="tsd-signature-type">DateInterval</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from ConstrainedEvent.startDateConstraintIntervals</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedEvent.ts#L222">lib/Engine/data/model/event/ConstrainedEvent.ts:222</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="totalslack" class="tsd-anchor"></a>
+					<h3>total<wbr>Slack</h3>
+					<div class="tsd-signature tsd-kind-icon">total<wbr>Slack<span class="tsd-signature-symbol">:</span> <a href="../globals.html#duration" class="tsd-signature-type">Duration</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from ConstrainedLateEvent.totalSlack</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedLateEvent.ts#L64">lib/Engine/data/model/event/ConstrainedLateEvent.ts:64</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-interface tsd-is-inherited">
+					<a name="parent" class="tsd-anchor"></a>
+					<h3>parent</h3>
+					<div class="tsd-signature tsd-kind-icon">parent<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<p>Inherited from HasChildren.parent</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L475">lib/Engine/data/model/event/HasChildren.ts:475</a></li>
+							<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L480">lib/Engine/data/model/event/HasChildren.ts:480</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter">
+					<a name="constrainedevent" class="tsd-anchor"></a>
+					<h3>Constrained<wbr>Event</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">Constrained<wbr>Event&lt;T&gt;<span class="tsd-signature-symbol">(</span>base<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ConstrainedEvent</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">T</span></li>
+						<li class="tsd-signature tsd-kind-icon">Constrained<wbr>Event&lt;T&gt;<span class="tsd-signature-symbol">(</span>base<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ConstrainedEvent</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">T</span></li>
+						<li class="tsd-signature tsd-kind-icon">Constrained<wbr>Event&lt;T&gt;<span class="tsd-signature-symbol">(</span>base<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ConstrainedEvent</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">T</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedEvent.ts#L135">lib/Engine/data/model/event/ConstrainedEvent.ts:135</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="../globals.html#anyconstructor" class="tsd-signature-type">AnyConstructor</a><span class="tsd-signature-symbol">&lt;</span><a href="eventmixin.html" class="tsd-signature-type">EventMixin</a><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>base: <span class="tsd-signature-type">T</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ConstrainedEvent</span>
+								<span class="tsd-signature-symbol"> &amp; </span>
+								<span class="tsd-signature-type">T</span>
+							</h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedEvent.ts#L135">lib/Engine/data/model/event/ConstrainedEvent.ts:135</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="../globals.html#anyconstructor" class="tsd-signature-type">AnyConstructor</a><span class="tsd-signature-symbol">&lt;</span><a href="eventmixin.html" class="tsd-signature-type">EventMixin</a><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>base: <span class="tsd-signature-type">T</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ConstrainedEvent</span>
+								<span class="tsd-signature-symbol"> &amp; </span>
+								<span class="tsd-signature-type">T</span>
+							</h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedEvent.ts#L135">lib/Engine/data/model/event/ConstrainedEvent.ts:135</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="../globals.html#anyconstructor" class="tsd-signature-type">AnyConstructor</a><span class="tsd-signature-symbol">&lt;</span><a href="eventmixin.html" class="tsd-signature-type">EventMixin</a><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>base: <span class="tsd-signature-type">T</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ConstrainedEvent</span>
+								<span class="tsd-signature-symbol"> &amp; </span>
+								<span class="tsd-signature-type">T</span>
+							</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter">
+					<a name="eventmixin" class="tsd-anchor"></a>
+					<h3>Event<wbr>Mixin</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">Event<wbr>Mixin&lt;T&gt;<span class="tsd-signature-symbol">(</span>base<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EventMixin</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">T</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/EventMixin.ts#L25">lib/Engine/data/model/event/EventMixin.ts:25</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="../globals.html#anyconstructor" class="tsd-signature-type">AnyConstructor</a><span class="tsd-signature-symbol">&lt;</span><a href="hascalendarmixin.html" class="tsd-signature-type">HasCalendarMixin</a><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>base: <span class="tsd-signature-type">T</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">EventMixin</span>
+								<span class="tsd-signature-symbol"> &amp; </span>
+								<span class="tsd-signature-type">T</span>
+							</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter">
+					<a name="haschildren" class="tsd-anchor"></a>
+					<h3>Has<wbr>Children</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">Has<wbr>Children&lt;T&gt;<span class="tsd-signature-symbol">(</span>base<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HasChildren</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">T</span></li>
+						<li class="tsd-signature tsd-kind-icon">Has<wbr>Children&lt;T&gt;<span class="tsd-signature-symbol">(</span>base<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HasChildren</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">T</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L12">lib/Engine/data/model/event/HasChildren.ts:12</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="../globals.html#anyconstructor" class="tsd-signature-type">AnyConstructor</a><span class="tsd-signature-symbol">&lt;</span><a href="constrainedevent.html" class="tsd-signature-type">ConstrainedEvent</a><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>base: <span class="tsd-signature-type">T</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">HasChildren</span>
+								<span class="tsd-signature-symbol"> &amp; </span>
+								<span class="tsd-signature-type">T</span>
+							</h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L12">lib/Engine/data/model/event/HasChildren.ts:12</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="../globals.html#anyconstructor" class="tsd-signature-type">AnyConstructor</a><span class="tsd-signature-symbol">&lt;</span><a href="constrainedevent.html" class="tsd-signature-type">ConstrainedEvent</a><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>base: <span class="tsd-signature-type">T</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">HasChildren</span>
+								<span class="tsd-signature-symbol"> &amp; </span>
+								<span class="tsd-signature-type">T</span>
+							</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<a name="calculatecritical" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Critical</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Critical<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from ConstrainedLateEvent.calculateCritical</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedLateEvent.ts#L261">lib/Engine/data/model/event/ConstrainedLateEvent.ts:261</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<a name="calculatedurationproposed" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Duration<wbr>Proposed</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Duration<wbr>Proposed<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#duration" class="tsd-signature-type">Duration</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasChildren.calculateDurationProposed</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L94">lib/Engine/data/model/event/HasChildren.ts:94</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#duration" class="tsd-signature-type">Duration</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<a name="calculateearlyenddate" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Early<wbr>End<wbr>Date</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Early<wbr>End<wbr>Date<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from ConstrainedEvent.calculateEarlyEndDate</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedEvent.ts#L454">lib/Engine/data/model/event/ConstrainedEvent.ts:454</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+					<a name="calculateearlyenddateconstraintintervals" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Early<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Early<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">this[&quot;earlyEndDateConstraintIntervals&quot;]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from ConstrainedEvent.calculateEarlyEndDateConstraintIntervals</p>
+								<p>Overrides HasChildren.calculateEarlyEndDateConstraintIntervals</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedEvent.ts#L354">lib/Engine/data/model/event/ConstrainedEvent.ts:354</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">this[&quot;earlyEndDateConstraintIntervals&quot;]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+					<a name="calculateearlyenddateraw" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Early<wbr>End<wbr>Date<wbr>Raw</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Early<wbr>End<wbr>Date<wbr>Raw<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from ConstrainedEvent.calculateEarlyEndDateRaw</p>
+								<p>Overrides HasChildren.calculateEarlyEndDateRaw</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedEvent.ts#L411">lib/Engine/data/model/event/ConstrainedEvent.ts:411</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<a name="calculateearlystartdate" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Early<wbr>Start<wbr>Date</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Early<wbr>Start<wbr>Date<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from ConstrainedEvent.calculateEarlyStartDate</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedEvent.ts#L403">lib/Engine/data/model/event/ConstrainedEvent.ts:403</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+					<a name="calculateearlystartdateconstraintintervals" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Early<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Early<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">this[&quot;earlyStartDateConstraintIntervals&quot;]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from ConstrainedEvent.calculateEarlyStartDateConstraintIntervals</p>
+								<p>Overrides HasChildren.calculateEarlyStartDateConstraintIntervals</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedEvent.ts#L344">lib/Engine/data/model/event/ConstrainedEvent.ts:344</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">this[&quot;earlyStartDateConstraintIntervals&quot;]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+					<a name="calculateearlystartdateraw" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Early<wbr>Start<wbr>Date<wbr>Raw</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Early<wbr>Start<wbr>Date<wbr>Raw<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from ConstrainedEvent.calculateEarlyStartDateRaw</p>
+								<p>Overrides HasChildren.calculateEarlyStartDateRaw</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedEvent.ts#L360">lib/Engine/data/model/event/ConstrainedEvent.ts:360</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<a name="calculateeffectiveconstraintinterval" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Effective<wbr>Constraint<wbr>Interval</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Effective<wbr>Constraint<wbr>Interval<span class="tsd-signature-symbol">(</span>isStartDate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, startDateConstraintIntervals<span class="tsd-signature-symbol">: </span><a href="../classes/dateinterval.html" class="tsd-signature-type">DateInterval</a><span class="tsd-signature-symbol">[]</span>, endDateConstraintIntervals<span class="tsd-signature-symbol">: </span><a href="../classes/dateinterval.html" class="tsd-signature-type">DateInterval</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><a href="../classes/dateinterval.html" class="tsd-signature-type">DateInterval</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from ConstrainedEvent.calculateEffectiveConstraintInterval</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedEvent.ts#L287">lib/Engine/data/model/event/ConstrainedEvent.ts:287</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>isStartDate: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li>
+									<h5>startDateConstraintIntervals: <a href="../classes/dateinterval.html" class="tsd-signature-type">DateInterval</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>endDateConstraintIntervals: <a href="../classes/dateinterval.html" class="tsd-signature-type">DateInterval</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><a href="../classes/dateinterval.html" class="tsd-signature-type">DateInterval</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+					<a name="calculateenddateconstraintintervals" class="tsd-anchor"></a>
+					<h3>calculate<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">this[&quot;endDateConstraintIntervals&quot;]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from ConstrainedEvent.calculateEndDateConstraintIntervals</p>
+								<p>Overrides HasChildren.calculateEndDateConstraintIntervals</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedEvent.ts#L334">lib/Engine/data/model/event/ConstrainedEvent.ts:334</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">this[&quot;endDateConstraintIntervals&quot;]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+					<a name="calculateenddateproposed" class="tsd-anchor"></a>
+					<h3>calculate<wbr>End<wbr>Date<wbr>Proposed</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>End<wbr>Date<wbr>Proposed<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from ConstrainedLateEvent.calculateEndDateProposed</p>
+								<p>Overrides ConstrainedEvent.calculateEndDateProposed</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedLateEvent.ts#L332">lib/Engine/data/model/event/ConstrainedLateEvent.ts:332</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+					<a name="calculateenddatepure" class="tsd-anchor"></a>
+					<h3>calculate<wbr>End<wbr>Date<wbr>Pure</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>End<wbr>Date<wbr>Pure<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from ConstrainedLateEvent.calculateEndDatePure</p>
+								<p>Overrides ConstrainedEvent.calculateEndDatePure</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedLateEvent.ts#L314">lib/Engine/data/model/event/ConstrainedLateEvent.ts:314</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<a name="calculatelateenddate" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Late<wbr>End<wbr>Date</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Late<wbr>End<wbr>Date<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from ConstrainedLateEvent.calculateLateEndDate</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedLateEvent.ts#L222">lib/Engine/data/model/event/ConstrainedLateEvent.ts:222</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<a name="calculatelateenddateconstraintintervals" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Late<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Late<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">this[&quot;lateEndDateConstraintIntervals&quot;]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from ConstrainedLateEvent.calculateLateEndDateConstraintIntervals</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedLateEvent.ts#L113">lib/Engine/data/model/event/ConstrainedLateEvent.ts:113</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">this[&quot;lateEndDateConstraintIntervals&quot;]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<a name="calculatelateenddateraw" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Late<wbr>End<wbr>Date<wbr>Raw</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Late<wbr>End<wbr>Date<wbr>Raw<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from ConstrainedLateEvent.calculateLateEndDateRaw</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedLateEvent.ts#L180">lib/Engine/data/model/event/ConstrainedLateEvent.ts:180</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<a name="calculatelatestartdate" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Late<wbr>Start<wbr>Date</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Late<wbr>Start<wbr>Date<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from ConstrainedLateEvent.calculateLateStartDate</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedLateEvent.ts#L172">lib/Engine/data/model/event/ConstrainedLateEvent.ts:172</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<a name="calculatelatestartdateconstraintintervals" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Late<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Late<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">this[&quot;lateStartDateConstraintIntervals&quot;]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from ConstrainedLateEvent.calculateLateStartDateConstraintIntervals</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedLateEvent.ts#L92">lib/Engine/data/model/event/ConstrainedLateEvent.ts:92</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">this[&quot;lateStartDateConstraintIntervals&quot;]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<a name="calculatelatestartdateraw" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Late<wbr>Start<wbr>Date<wbr>Raw</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Late<wbr>Start<wbr>Date<wbr>Raw<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from ConstrainedLateEvent.calculateLateStartDateRaw</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedLateEvent.ts#L130">lib/Engine/data/model/event/ConstrainedLateEvent.ts:130</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<a name="calculatemaxchildrenenddate" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Max<wbr>Children<wbr>End<wbr>Date</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Max<wbr>Children<wbr>End<wbr>Date<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasChildren.calculateMaxChildrenEndDate</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L125">lib/Engine/data/model/event/HasChildren.ts:125</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<a name="calculateminchildrenstartdate" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Min<wbr>Children<wbr>Start<wbr>Date</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Min<wbr>Children<wbr>Start<wbr>Date<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasChildren.calculateMinChildrenStartDate</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L105">lib/Engine/data/model/event/HasChildren.ts:105</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+					<a name="calculatestartdateconstraintintervals" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">this[&quot;startDateConstraintIntervals&quot;]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from ConstrainedEvent.calculateStartDateConstraintIntervals</p>
+								<p>Overrides HasChildren.calculateStartDateConstraintIntervals</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedEvent.ts#L324">lib/Engine/data/model/event/ConstrainedEvent.ts:324</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">this[&quot;startDateConstraintIntervals&quot;]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+					<a name="calculatestartdateproposed" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Start<wbr>Date<wbr>Proposed</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Start<wbr>Date<wbr>Proposed<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from ConstrainedLateEvent.calculateStartDateProposed</p>
+								<p>Overrides ConstrainedEvent.calculateStartDateProposed</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedLateEvent.ts#L295">lib/Engine/data/model/event/ConstrainedLateEvent.ts:295</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+					<a name="calculatestartdatepure" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Start<wbr>Date<wbr>Pure</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Start<wbr>Date<wbr>Pure<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from ConstrainedLateEvent.calculateStartDatePure</p>
+								<p>Overrides ConstrainedEvent.calculateStartDatePure</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedLateEvent.ts#L277">lib/Engine/data/model/event/ConstrainedLateEvent.ts:277</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<a name="calculatetotalslack" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Total<wbr>Slack</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Total<wbr>Slack<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#duration" class="tsd-signature-type">Duration</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from ConstrainedLateEvent.calculateTotalSlack</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedLateEvent.ts#L230">lib/Engine/data/model/event/ConstrainedLateEvent.ts:230</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#duration" class="tsd-signature-type">Duration</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<a name="hassubevents" class="tsd-anchor"></a>
+					<h3>has<wbr>Sub<wbr>Events</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">has<wbr>Sub<wbr>Events<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasChildren.hasSubEvents</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L35">lib/Engine/data/model/event/HasChildren.ts:35</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<a name="isconstrainedearly" class="tsd-anchor"></a>
+					<h3>is<wbr>Constrained<wbr>Early</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Constrained<wbr>Early<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from ConstrainedEvent.isConstrainedEarly</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedEvent.ts#L461">lib/Engine/data/model/event/ConstrainedEvent.ts:461</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<a name="isconstrainedlate" class="tsd-anchor"></a>
+					<h3>is<wbr>Constrained<wbr>Late</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Constrained<wbr>Late<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from ConstrainedLateEvent.isConstrainedLate</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedLateEvent.ts#L267">lib/Engine/data/model/event/ConstrainedLateEvent.ts:267</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+					<a name="maybeskipnonworkingtime" class="tsd-anchor"></a>
+					<h3>maybe<wbr>Skip<wbr>Non<wbr>Working<wbr>Time</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">maybe<wbr>Skip<wbr>Non<wbr>Working<wbr>Time<span class="tsd-signature-symbol">(</span>date<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span>, isForward<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from ConstrainedEvent.maybeSkipNonWorkingTime</p>
+								<p>Overrides HasChildren.maybeSkipNonWorkingTime</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedEvent.ts#L280">lib/Engine/data/model/event/ConstrainedEvent.ts:280</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>date: <span class="tsd-signature-type">Date</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> isForward: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<a name="setmanuallyscheduled" class="tsd-anchor"></a>
+					<h3>set<wbr>Manually<wbr>Scheduled</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Manually<wbr>Scheduled<span class="tsd-signature-symbol">(</span>mode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/propagationresult.html" class="tsd-signature-type">PropagationResult</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from ConstrainedEvent.setManuallyScheduled</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/ConstrainedEvent.ts#L274">lib/Engine/data/model/event/ConstrainedEvent.ts:274</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>mode: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/propagationresult.html" class="tsd-signature-type">PropagationResult</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<a name="subeventsiterable" class="tsd-anchor"></a>
+					<h3>sub<wbr>Events<wbr>Iterable</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">sub<wbr>Events<wbr>Iterable<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><a href="eventmixin.html" class="tsd-signature-type">EventMixin</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from HasChildren.subEventsIterable</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bryntum/bryntum-suite/blob/a6b06fab5/SchedulingEngine/lib/Engine/data/model/event/HasChildren.ts#L45">lib/Engine/data/model/event/HasChildren.ts:45</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#chronoiterator" class="tsd-signature-type">ChronoIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><a href="eventmixin.html" class="tsd-signature-type">EventMixin</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface">
+						<a href="constrainedlateevent.html" class="tsd-kind-icon">Constrained<wbr>Late<wbr>Event</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#childevents" class="tsd-kind-icon">child<wbr>Events</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#critical" class="tsd-kind-icon">critical</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#earlyenddate" class="tsd-kind-icon">early<wbr>End<wbr>Date</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#earlyenddateconstraintintervals" class="tsd-kind-icon">early<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#earlyenddateraw" class="tsd-kind-icon">early<wbr>End<wbr>Date<wbr>Raw</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#earlystartdate" class="tsd-kind-icon">early<wbr>Start<wbr>Date</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#earlystartdateconstraintintervals" class="tsd-kind-icon">early<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#earlystartdateraw" class="tsd-kind-icon">early<wbr>Start<wbr>Date<wbr>Raw</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#enddateconstraintintervals" class="tsd-kind-icon">end<wbr>Date<wbr>Constraint<wbr>Intervals</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#lateenddate" class="tsd-kind-icon">late<wbr>End<wbr>Date</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#lateenddateconstraintintervals" class="tsd-kind-icon">late<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#lateenddateraw" class="tsd-kind-icon">late<wbr>End<wbr>Date<wbr>Raw</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#latestartdate" class="tsd-kind-icon">late<wbr>Start<wbr>Date</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#latestartdateconstraintintervals" class="tsd-kind-icon">late<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#latestartdateraw" class="tsd-kind-icon">late<wbr>Start<wbr>Date<wbr>Raw</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#manuallyscheduled" class="tsd-kind-icon">manually<wbr>Scheduled</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#parentevent" class="tsd-kind-icon">parent<wbr>Event</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#slackunit" class="tsd-kind-icon">slack<wbr>Unit</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#startdateconstraintintervals" class="tsd-kind-icon">start<wbr>Date<wbr>Constraint<wbr>Intervals</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#totalslack" class="tsd-kind-icon">total<wbr>Slack</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#parent" class="tsd-kind-icon">parent</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter">
+								<a href="constrainedlateevent.html#constrainedevent" class="tsd-kind-icon">Constrained<wbr>Event</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter">
+								<a href="constrainedlateevent.html#eventmixin" class="tsd-kind-icon">Event<wbr>Mixin</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter">
+								<a href="constrainedlateevent.html#haschildren" class="tsd-kind-icon">Has<wbr>Children</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#calculatecritical" class="tsd-kind-icon">calculate<wbr>Critical</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#calculatedurationproposed" class="tsd-kind-icon">calculate<wbr>Duration<wbr>Proposed</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#calculateearlyenddate" class="tsd-kind-icon">calculate<wbr>Early<wbr>End<wbr>Date</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+								<a href="constrainedlateevent.html#calculateearlyenddateconstraintintervals" class="tsd-kind-icon">calculate<wbr>Early<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+								<a href="constrainedlateevent.html#calculateearlyenddateraw" class="tsd-kind-icon">calculate<wbr>Early<wbr>End<wbr>Date<wbr>Raw</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#calculateearlystartdate" class="tsd-kind-icon">calculate<wbr>Early<wbr>Start<wbr>Date</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+								<a href="constrainedlateevent.html#calculateearlystartdateconstraintintervals" class="tsd-kind-icon">calculate<wbr>Early<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+								<a href="constrainedlateevent.html#calculateearlystartdateraw" class="tsd-kind-icon">calculate<wbr>Early<wbr>Start<wbr>Date<wbr>Raw</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#calculateeffectiveconstraintinterval" class="tsd-kind-icon">calculate<wbr>Effective<wbr>Constraint<wbr>Interval</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+								<a href="constrainedlateevent.html#calculateenddateconstraintintervals" class="tsd-kind-icon">calculate<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+								<a href="constrainedlateevent.html#calculateenddateproposed" class="tsd-kind-icon">calculate<wbr>End<wbr>Date<wbr>Proposed</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+								<a href="constrainedlateevent.html#calculateenddatepure" class="tsd-kind-icon">calculate<wbr>End<wbr>Date<wbr>Pure</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#calculatelateenddate" class="tsd-kind-icon">calculate<wbr>Late<wbr>End<wbr>Date</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#calculatelateenddateconstraintintervals" class="tsd-kind-icon">calculate<wbr>Late<wbr>End<wbr>Date<wbr>Constraint<wbr>Intervals</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#calculatelateenddateraw" class="tsd-kind-icon">calculate<wbr>Late<wbr>End<wbr>Date<wbr>Raw</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#calculatelatestartdate" class="tsd-kind-icon">calculate<wbr>Late<wbr>Start<wbr>Date</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#calculatelatestartdateconstraintintervals" class="tsd-kind-icon">calculate<wbr>Late<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#calculatelatestartdateraw" class="tsd-kind-icon">calculate<wbr>Late<wbr>Start<wbr>Date<wbr>Raw</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#calculatemaxchildrenenddate" class="tsd-kind-icon">calculate<wbr>Max<wbr>Children<wbr>End<wbr>Date</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#calculateminchildrenstartdate" class="tsd-kind-icon">calculate<wbr>Min<wbr>Children<wbr>Start<wbr>Date</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+								<a href="constrainedlateevent.html#calculatestartdateconstraintintervals" class="tsd-kind-icon">calculate<wbr>Start<wbr>Date<wbr>Constraint<wbr>Intervals</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+								<a href="constrainedlateevent.html#calculatestartdateproposed" class="tsd-kind-icon">calculate<wbr>Start<wbr>Date<wbr>Proposed</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+								<a href="constrainedlateevent.html#calculatestartdatepure" class="tsd-kind-icon">calculate<wbr>Start<wbr>Date<wbr>Pure</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#calculatetotalslack" class="tsd-kind-icon">calculate<wbr>Total<wbr>Slack</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#hassubevents" class="tsd-kind-icon">has<wbr>Sub<wbr>Events</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#isconstrainedearly" class="tsd-kind-icon">is<wbr>Constrained<wbr>Early</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#isconstrainedlate" class="tsd-kind-icon">is<wbr>Constrained<wbr>Late</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+								<a href="constrainedlateevent.html#maybeskipnonworkingtime" class="tsd-kind-icon">maybe<wbr>Skip<wbr>Non<wbr>Working<wbr>Time</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#setmanuallyscheduled" class="tsd-kind-icon">set<wbr>Manually<wbr>Scheduled</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="constrainedlateevent.html#subeventsiterable" class="tsd-kind-icon">sub<wbr>Events<wbr>Iterable</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

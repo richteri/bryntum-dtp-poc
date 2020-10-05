@@ -1,0 +1,22 @@
+.b-textareafield {
+    textarea {
+        // IE11 can't reset to "initial". Use default user-agent value of 2px for now.
+        // TODO: reset using "initial" when we drop IE11
+        padding    : 2px;
+        align-self : stretch;
+    }
+}
+
+.b-textareafield-picker {
+    display : flex;
+
+    textarea {
+        flex       : 1;
+        min-height : 10em;
+
+        &:focus {
+            outline : none;
+            border-color : $widget-highlight-color;
+        }
+    }
+}

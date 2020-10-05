@@ -1,0 +1,61 @@
+@import '../variables.scss';
+
+.b-popup.b-scheduler-taskeditor {
+    @extend .b-taskeditor;
+
+    .b-tabpanel-tab-title.b-invalid {
+        white-space: nowrap;
+
+        .b-icon {
+            color: $red;
+            display: inline-block;
+            margin-right: .5em;
+        }
+    }
+
+    .b-bottom-toolbar {
+        justify-content : flex-end;
+
+        > button {
+            flex         : none;
+            width        : 10em;
+            margin-right : .5em;
+            min-height   : 2.5em;
+
+            &:last-child {
+                margin-right : 0;
+            }
+        }
+    }
+
+    .b-divider {
+        position        : relative;
+        justify-content : center;
+        margin          : 1em 0 1.5em 0;
+
+        &::before {
+            content       : '';
+            width         : 100%;
+            border-bottom : 1px solid $field-border-color;
+            position      : absolute;
+            top           : 50%;
+        }
+
+        &::after {
+            display        : flex;
+            content        : attr(data-text);
+            color          : $field-container-label-color;
+            @if $tabpanel-background-color != transparent {
+                background     : $tabpanel-background-color;
+            }
+            @else {
+                background     : $popup-background-color;
+            }
+            padding        : 0 1em;
+            z-index        : 1;
+            text-transform : $field-label-text-transform;
+            font-size      : $field-label-font-size - .1em;
+            font-weight    : $field-label-font-weight;
+        }
+    }
+}

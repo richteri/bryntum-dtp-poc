@@ -1,0 +1,31 @@
+@import '../../variables.scss';
+
+.b-stripe {
+
+    .b-grid-row.b-odd {
+        background-color : transparentize($grid-row-odd-color, .2);
+    }
+
+    .b-grid-row.b-even {
+        background-color : transparentize($grid-row-even-color, .2);
+    }
+
+    .b-grid-row {
+        border-bottom : none;
+    }
+
+    .b-grid-row.b-selected {
+
+        background-color : $grid-row-selected-background-color;
+
+        .b-grid-cell.b-selected {
+            background-color : $grid-row-selected-background-color;
+        }
+    }
+}
+
+.b-stripe:focus {
+    .b-grid-row.b-selected {
+        background-color : $grid-focus-row-selected-background-color;
+    }
+}

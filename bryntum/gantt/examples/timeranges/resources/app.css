@@ -1,0 +1,32 @@
+#main {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  flex: 1;
+}
+
+#main #timerangesContainer .b-panel-content {
+  padding: 0;
+}
+
+#main #timerangesContainer .b-grid .b-grid-row:before {
+  display: none;
+}
+
+#main #timerangesContainer .b-grid .b-grid-cell {
+  cursor: pointer;
+}
+
+#main #timerangesContainer .b-grid i {
+  margin-right: 10px;
+  color: #4887e5;
+}
+
+.b-grid-header {
+  height: 57px;
+}
+
+.b-sch-foreground-canvas .b-sch-range.audit {
+  background: #98c1ff;
+  opacity: 0.3;
+}

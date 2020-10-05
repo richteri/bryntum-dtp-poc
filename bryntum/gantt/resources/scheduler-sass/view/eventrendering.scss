@@ -1,0 +1,609 @@
+@mixin eventrendering(
+    $widget-name                                : 'scheduler',
+    $entity-name                                : 'event',
+    $prefix                                     : if($widget-name == 'scheduler', 'sch', 'gantt'),
+    $entity-zindex                              : $event-zindex,
+    $entity-font-weight                         : $event-font-weight,
+    $entity-font-size                           : $event-font-size,
+    $entity-default-transition                  : $event-default-transition,
+    $interacting-entity-zindex                  : $interacting-event-zindex,
+
+    $entity-bar-background-color                : $event-bar-background-color,
+    $entity-bar-color                           : $event-bar-color,
+    $entity-bar-padding-left                    : 0,
+
+    $entity-bar-hover-background-color          : $event-bar-hover-background-color,
+    $entity-bar-hover-color                     : $event-bar-hover-color,
+
+    $entity-selected-zindex                     : $selected-event-zindex,
+    $entity-bar-selected-background-color       : $event-bar-selected-background-color,
+    $entity-bar-selected-color                  : $event-bar-selected-color,
+    $entity-selected-font-weight                : $event-selected-font-weight,
+
+    $entity-bar-selected-hover-background-color : $event-bar-selected-hover-background-color,
+    $entity-bar-selected-hover-color            : $event-bar-selected-hover-color,
+
+    $entity-milestone-color                     : $event-milestone-color,
+    $entity-milestone-hover-color               : null,
+    $entity-milestone-selected-color            : null,
+    $entity-milestone-selected-hover-color      : null,
+    $entity-milestone-zindex                    : $milestone-zindex,
+
+    $entity-labels-color                        : $event-labels-color,
+    $selected-entity-labels-color               : $selected-event-labels-color,
+
+    $entity-parent-color                        : $parent-event-bar-background-color
+) {
+    $ignore-drag-resize : 'b-#{$widget-name}:not(.b-#{$widget-name}-resizing-#{$entity-name}-percent):not(.b-resizing-event):not(.b-dragging-event)' !default;
+
+    .b-#{$widget-name} {
+        > .b-editor {
+            z-index : 5;
+        }
+    }
+
+    // The canvas gets an inline font-size for the purpose of sizing
+    // milestone icons to occupy the configured rowHeight.
+    // So non milestone icon elements need to have the font-size applied
+    .b-#{$prefix}-#{$entity-name}.b-milestone label,
+    .b-#{$prefix}-#{$entity-name}-wrap:not(.b-milestone-wrap) .b-#{$prefix}-#{$entity-name} {
+        font-weight : $entity-font-weight;
+        font-size   : $entity-font-size;
+
+        // If it's a milestone, any text will overflow the
+        // diamond, so will need to be the label color
+        .b-milestone & {
+            color : $entity-labels-color;
+        }
+    }
+
+    // The wrap contains the entity bar.
+    // Positioning and focusing is done on the wrap, visual style on .b-#{$prefix}-#{$entity}
+    .b-#{$prefix}-#{$entity-name}-wrap {
+        position        : absolute;
+        will-change     : contents, width, height, transform;
+        transform-style : flat;
+        z-index         : $entity-zindex;
+        display         : flex;
+        flex-direction  : column;
+        justify-content : center;
+        align-items     : center;
+        pointer-events  : all; // Because the foreground canvas is pointer-events:none
+        transition      : $entity-default-transition; // always use transition, for hover effects etc
+
+        // Blink-only right now. Layouts triggered inside the event won't cause document layout.
+        // Cannot use strict because labels must appear outside of the wrap
+        contain         : layout;
+
+        .b-animating & {
+            transition : $entity-default-transition, transform .2s, width .2s, height .2s, font-size .2s;
+        }
+
+        // No transitions at all when toggling in a tree
+        .b-toggling-node & {
+            transition : none;
+        }
+
+        // The BaseHorizontalMapper always uses this class. It's shared between
+        // Scheduler and Gantt.
+        &.b-sch-released {
+            display    : none;
+            transition : none;
+        }
+
+        &.b-active {
+            // Need important to override milestone z-index below.
+            // Active element of whatever type is always on top.
+            z-index : $entity-zindex + 10 !important;
+        }
+
+        &:focus {
+            outline : none;
+            z-index : $interacting-entity-zindex;
+        }
+
+        // No animations must run during scrolling
+        .b-scrolling & {
+            transition : none !important;
+
+            .b-#{$prefix}-#{$entity-name} {
+                transition : none !important;
+            }
+        }
+
+        // No mouse interactions during *vertical* scrolling.
+        // During horizontal scrolling we still need events to be present for the mouse
+        // so that hovering still applies when scrolling left/right and the EventTooltip stays visible.
+        .b-grid-body-container.b-scrolling & {
+            pointer-events : none;
+        }
+    }
+
+    .b-#{$prefix}-#{$entity-name}-wrap.b-milestone-wrap {
+        // Must be clickable, so cannot be zero width
+        min-width   : 1em;
+
+        // Must be centered on the time point
+        margin-left : -0.5em;
+
+        z-index     : $entity-milestone-zindex;
+
+        // Milestone event bar must overlay the milestone diamond.
+        // It is 1em*1em to allow it to recieve mouse events.
+        .b-#{$prefix}-#{$entity-name} {
+            overflow         : visible;
+            box-shadow       : none;
+            border-color     : $entity-milestone-color;
+            background-color : transparent;
+
+            &:not(.b-#{$prefix}-#{$entity-name}-withicon) {
+                background-color : transparent;
+                width            : 1em;
+                font-size        : inherit;
+                min-width        : 0;
+
+                &::before {
+                    background-color : $entity-milestone-color;
+                }
+
+                &:hover::before {
+                    background-color : $entity-milestone-hover-color;
+                }
+            }
+
+            &.b-#{$prefix}-#{$entity-name}-withicon {
+                justify-content : center;
+
+                .b-fa, .b-icon {
+                    margin-right : 0;
+                }
+            }
+
+            label {
+                position  : absolute;
+                left      : 110%;
+                top       : 50%;
+                transform : translateY(-50%);
+                font-size : $entity-font-size;
+            }
+        }
+
+        &.b-#{$prefix}-style-plain > .b-#{$prefix}-#{$entity-name} {
+            background-color : transparent;
+        }
+
+        .b-fa, .b-icon {
+            margin-right : 1em;
+            color        : $entity-milestone-color;
+            font-size    : inherit;
+        }
+
+        // Show a diamond by default unless implementer has provided an icon
+        .b-#{$prefix}-#{$entity-name}:not(.b-#{$prefix}-#{$entity-name}-withicon),
+        .b-task-baseline {
+            // Make milestone diamond smaller but still centred if there are top or bottom labels
+            .b-labels-topbottom & {
+                font-size : 40%;
+            }
+
+            &:before {
+                position         : absolute;
+                top              : 50%;
+                left             : 50%;
+                content          : ' ';
+
+                // The magic number here is the ratio of the hypotenuse of a
+                // squared triangle to the equal length of the other two sides.
+                // eg, a 1 by 1 square has a ratio of Math.sqrt(2)/2 which is 0.707107
+                // So to get a diamond of height 40px, we create a square of
+                // height and width 0.707107em with font-size:40px
+                height           : 0.707107em;
+                width            : 0.707107em;
+                transform-origin : 50% 50%;
+                transform        : translate(-50%, -50%) rotate(45deg);
+                background-image : inherit;
+                border-style     : inherit;
+                border-color     : inherit;
+            }
+        }
+
+        .b-task-baseline {
+            &:before {
+                background-color : inherit;
+            }
+        }
+
+        // Icon milestones, focus is on the event element
+        &.b-active .b-#{$prefix}-#{$entity-name}.b-#{$prefix}-#{$entity-name}-withicon {
+            outline        : $grid-cell-focused-outline-width $grid-cell-focused-outline-style $grid-cell-focused-outline-color;
+            outline-offset : 3px;
+        }
+
+        // Non-icon milestones, focus is on the diamond
+        &.b-active .b-#{$prefix}-#{$entity-name}:not(.b-#{$prefix}-#{$entity-name}-withicon):before {
+            outline        : $grid-cell-focused-outline-width $grid-cell-focused-outline-style $grid-cell-focused-outline-color;
+            outline-offset : 3px;
+        }
+
+        // When milestone is selected.
+        .b-#{$prefix}-#{$entity-name}-selected:not(.b-#{$prefix}-#{$entity-name}-withicon) .b-#{$prefix}-#{$entity-name}:before {
+            background-color : $entity-milestone-selected-color;
+        }
+
+        // When milestone is hovered.
+        .b-#{$prefix}-#{$entity-name}:not(.b-#{$prefix}-#{$entity-name}-withicon):hover .b-#{$prefix}-#{$entity-name}:before {
+            background-color : $entity-milestone-hover-color;
+        }
+
+        // When milestone is selected and hovered.
+        .b-#{$prefix}-#{$entity-name}-selected:not(.b-#{$prefix}-#{$entity-name}-withicon):hover .b-#{$prefix}-#{$entity-name}:before {
+            background-color : $entity-milestone-selected-hover-color;
+        }
+
+        // The measuring element for milestones
+        &.b-measure {
+            height     : 1em;
+            position   : fixed;
+            top        : -10000px;
+            left       : -10000px;
+            visibility : hidden;
+
+            label {
+                // Needed to correct for fallback font.
+                font-weight : 400;
+            }
+
+            .b-ie & {
+                display : block;
+            }
+        }
+
+        // When the Scheduler/Gantt is using layed out milestones
+        .b-#{$widget-name}.b-#{$prefix}-layout-milestones & {
+            margin         : 0;
+            min-width      : 0;
+            flex-direction : row;
+
+            // Focus ring goes on the outermost element
+            &.b-active {
+                outline        : $grid-cell-focused-outline-width $grid-cell-focused-outline-style $grid-cell-focused-outline-color;
+                outline-offset : 3px;
+
+                // Not the first diamond or event element
+                .b-#{$prefix}-#{$entity-name}.b-milestone,
+                .b-#{$prefix}-#{$entity-name}.b-milestone:before {
+                    outline : none;
+                }
+            }
+
+            // Needs the tag name for higher specificity over eventstyles.css rules
+            div.b-#{$prefix}-#{$entity-name}.b-milestone {
+                // Needs to inherit the rowHeight font size
+                font-size       : inherit;
+
+                width           : inherit;
+                min-width       : 0;
+                padding         : 0;
+                margin          : 0 0.5em;
+                align-self      : stretch;
+                display         : flex;
+                align-items     : center;
+                justify-content : center;
+                z-index         : 1;
+
+                // Breaks in IE11, seems not needed
+                //// The :before diamond comes from regular milestone style
+                //&:before {
+                //    // Needs to inherit the background colour
+                //    background : inherit;
+                //}
+
+                label {
+                    position  : static;
+                    padding   : 0;
+                    color     : $entity-bar-color;
+                    transform : none;
+
+                    // Must overlay the :before and :after diamonds
+                    z-index   : 1;
+                }
+
+                // Reposition milestone diamond
+                &:before {
+                    top              : 50%;
+                    left             : 0;
+                    transform-origin : 50% 50%;
+                    transform        : translate(-50%, -50%) rotate(45deg);
+                }
+
+                // Need another diamond on right side which rotates anticlockwise
+                // from its 100%, 0 point which is at right:0. This makes it
+                // extend rightwards
+                &:after {
+                    // Needs to inherit the background colour
+                    background       : inherit;
+
+                    position         : absolute;
+                    top              : 0;
+                    right            : 0;
+                    content          : ' ';
+                    height           : 0.707107em;
+                    width            : 0.707107em;
+                    transform        : rotate(-45deg);
+                    transform-origin : 100% 0;
+                    border           : inherit;
+                    z-index          : 0;
+                }
+
+                &:hover {
+                    background-image : linear-gradient($entity-bar-hover-background-color, $entity-bar-hover-background-color);
+                }
+
+                &.b-#{$prefix}-#{$entity-name}-selected {
+                    background-image : linear-gradient($entity-bar-selected-background-color, $entity-bar-selected-background-color);
+
+                    &:hover {
+                        background-image : linear-gradient($entity-bar-selected-hover-background-color, $entity-bar-selected-hover-background-color);
+                    }
+                }
+            }
+
+            // The measuring element when we're using layout-milestones
+            &.b-measure {
+                // Doesn't need diamonds.
+                .b-#{$prefix}-#{$entity-name}.b-milestone {
+                    &:before, &:after {
+                        display : none;
+                    }
+                }
+            }
+        }
+
+        &.b-#{$prefix}-#{$entity-name}-wrap {
+            label.b-#{$prefix}-label-left {
+                margin    : 0 0 0 0.5em;
+                transform : translateX(calc(-100% - 1em)) translateY(0);
+
+                .b-labels-topbottom & {
+                    transform : translateX(-100%) translateY(0);
+                }
+            }
+
+            label.b-#{$prefix}-label-right {
+                margin    : 0 0 0 -0.5em;
+                transform : translateX(calc(100% + 1em)) translateY(0);
+
+                .b-labels-topbottom & {
+                    transform : translateX(100%) translateY(0);
+                }
+            }
+        }
+    }
+
+    .b-#{$prefix}-#{$entity-name} {
+        display          : flex;
+        align-items      : center;
+        justify-content  : flex-start;
+        cursor           : pointer;
+        @include user-select-none();
+        overflow         : hidden;
+        white-space      : nowrap;
+        flex             : 1;
+        width            : 100%;
+        text-align       : left;
+        padding-left     : $entity-bar-padding-left;
+        min-width        : 1px;
+        color            : $entity-bar-color;
+        background-color : $entity-bar-background-color;
+        transition       : $entity-default-transition; // always use transition, for hover effects etc
+
+        // No transitions at all when toggling in a tree
+        .b-toggling-node & {
+            transition : none;
+        }
+
+        // This is needed even though there is no border, to propagate to dependency terminals
+        border-color     : $entity-bar-background-color;
+
+        // To be able to position terminals absolutely
+        position         : relative;
+
+        // Padding prevents events from shrinking to small sizes, even though they are border-box... weird
+        &.b-#{$prefix}-#{$entity-name}-narrow {
+            padding-left : 0;
+        }
+
+        label {
+            color : $entity-labels-color;
+        }
+
+        &:not(.b-milestone) .b-fa,
+        &:not(.b-milestone) .b-icon {
+            margin-right : .4em;
+            line-height  : inherit;
+        }
+
+        &:before {
+            font-family : $icon-font;
+            font-weight : $icon-font-weight;
+        }
+
+        &.b-#{$prefix}-event-resizing,
+        &:hover {
+            z-index : $entity-selected-zindex;
+        }
+
+        &.b-#{$prefix}-#{$entity-name}-selected,
+        &.b-#{$prefix}-#{$entity-name}-selected * {
+            font-weight : $entity-selected-font-weight;
+            z-index     : $entity-selected-zindex;
+        }
+
+        &:not(.b-milestone).b-#{$prefix}-#{$entity-name}-selected,
+        &:not(.b-milestone).b-#{$prefix}-#{$entity-name}-selected * {
+            color : $entity-bar-selected-color;
+        }
+
+        // another instance of this event was selected, when using multi assign
+        &.b-#{$prefix}-#{$entity-name}-assign-selected {
+            animation-name            : instance-selected;
+            animation-duration        : .2s;
+            animation-iteration-count : 3;
+            animation-timing-function : ease-in-out;
+        }
+
+        &.b-milestone {
+            transition : background 0s;
+        }
+    }
+
+    // Non-milestone, the active outline goes on the entity bar
+    .b-#{$prefix}-#{$entity-name}-wrap:not(.b-milestone-wrap) {
+        &.b-active {
+            .b-#{$prefix}-#{$entity-name} {
+                outline        : $grid-cell-focused-outline-width $grid-cell-focused-outline-style $grid-cell-focused-outline-color;
+                outline-offset : 3px;
+            }
+        }
+
+        .b-#{$prefix}-#{$entity-name} {
+            // Non-milestone event background renditions
+            &.b-#{$prefix}-#{$entity-name}-selected {
+                background-image : linear-gradient($entity-bar-selected-background-color, $entity-bar-selected-background-color);
+            }
+
+            &:hover {
+                background-image : linear-gradient($entity-bar-hover-background-color, $entity-bar-hover-background-color);
+            }
+
+            &.b-#{$prefix}-#{$entity-name}-selected:hover {
+                background-image : linear-gradient($entity-bar-selected-hover-background-color, $entity-bar-selected-hover-background-color);
+            }
+        }
+
+        .b-#{$prefix}-event-resizing &,
+        .b-dragproxy & {
+            .b-#{$prefix}-#{$entity-name} {
+                background-color : lighten($entity-bar-background-color, 20);
+            }
+        }
+    }
+
+    .b-#{$prefix}-#{$entity-name}-selected {
+        label {
+            color : $selected-entity-labels-color;
+        }
+    }
+
+    @keyframes instance-selected {
+        0% {
+            top : -2px;
+        }
+
+        50% {
+            top : 2px;
+        }
+
+        100% {
+            top : 0;
+        }
+    }
+
+    //region Initial animation
+    .b-initial-fade-in .b-first-render {
+        opacity             : 0;
+        animation-name      : initial-fade-in;
+        animation-duration  : 2s;
+        animation-fill-mode : forwards;
+    }
+
+    @keyframes initial-fade-in {
+        0% {
+            opacity : 0;
+        }
+        100% {
+            opacity : 1;
+        }
+    }
+
+    .b-initial-zoom-in .b-first-render .b-#{$prefix}-#{$entity-name} {
+        animation-name            : initial-zoom-in;
+        animation-duration        : .5s;
+        animation-timing-function : ease-in;
+    }
+
+    @keyframes initial-zoom-in {
+        0% {
+            transform : scale(0.01);
+        }
+        100% {
+            transform : scale(1);
+        }
+    }
+
+    .b-initial-slide-from-left .b-first-render {
+        left                : -100%;
+        animation-name      : initial-slide-from-left;
+        animation-duration  : .7s;
+        animation-fill-mode : forwards;
+    }
+
+    @keyframes initial-slide-from-left {
+        0% {
+            left : -100%;
+        }
+        100% {
+            left : 0;
+        }
+    }
+
+    .b-initial-slide-from-top .b-first-render {
+        top                 : -100%;
+        animation-name      : initial-slide-from-top;
+        animation-duration  : .7s;
+        animation-fill-mode : forwards;
+    }
+
+    @keyframes initial-slide-from-top {
+        0% {
+            top : -100%;
+        }
+        100% {
+            top : 0;
+        }
+    }
+    //endregion
+
+    // Parent tasks/events when a tree.
+    // Needs the higher specificity rule with :not(.b-milestone)
+    // to override the default entity bar background-colour rules.
+    .b-#{$widget-name}-#{$entity-name}-parent:not(.b-milestone-wrap) {
+        .b-#{$widget-name}-#{$entity-name} {
+            // To show the start/end arrows
+            overflow         : visible;
+
+            background-color : $entity-parent-color;
+            border-color     : $entity-parent-color;
+
+            flex             : 1 1 0%;
+            min-height       : 9px; // Parent tasks look bad when smaller than this due to hardcoded triangle size
+
+            clip-path : polygon(
+                    -20px 0,
+                    calc(100% + 20px) 0,
+                    calc(100% + 20px) 100%,
+                    100% 100%,
+                    calc(100% - 8px) calc(100% - 8px),
+                    8px calc(100% - 8px),
+                    0 100%,
+                    -20px 100%
+            );
+        }
+
+        .#{$ignore-drag-resize} &:hover {
+            .b-#{$widget-name}-#{$entity-name} {
+                background-color : lighten($entity-parent-color, 20);
+            }
+        }
+    }
+}

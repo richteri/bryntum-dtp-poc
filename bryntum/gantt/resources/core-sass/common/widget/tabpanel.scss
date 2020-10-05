@@ -1,0 +1,98 @@
+@import '../../variables.scss';
+
+.b-tabpanel {
+    display     : flex;
+    flex-flow   : column nowrap;
+    align-items : stretch;
+
+    &-tabs {
+        display        : flex;
+        flex           : 0 0 auto;
+        flex-direction : row;
+
+        // The bottom of the tab strip sits under the container's top border.
+        // The active tab gets a z-index to rise above to "connect" to the content.
+        margin-bottom  : -$tabpanel-border-width;
+
+        border-bottom  : $tabpanel-tabs-border-bottom;
+
+        // Edge needs one more
+        &.b-edge {
+            margin-bottom : -#{$tabpanel-border-width + 1}px;
+        }
+    }
+
+    &-tab {
+        display                 : flex;
+        padding                 : $tabpanel-tab-padding;
+        height                  : $tabpanel-tab-height;
+        min-width               : $tabpanel-tab-min-width;
+        cursor                  : pointer;
+        transition              : background-color 0.2s, color 0.2s;
+        align-items             : center;
+        justify-content         : center;
+        font-size               : $tabpanel-tab-font-size;
+        font-weight             : $tabpanel-tab-font-weight;
+        text-transform          : $tabpanel-tab-text-transform;
+
+        color                   : $tabpanel-tab-color;
+        background-color        : $tabpanel-tab-background-color;
+
+        border-width            : $tabpanel-tab-border-width;
+        border-style            : $tabpanel-tab-border-style;
+        border-color            : $tabpanel-tab-border-color;
+
+        border-top-left-radius  : $widget-border-radius;
+        border-top-right-radius : $widget-border-radius;
+
+        &.b-active {
+            background-color : $tabpanel-tab-active-background-color;
+            border-color     : $tabpanel-tab-active-border-color;
+            color            : $tabpanel-tab-active-color;
+            font-weight      : $tabpanel-tab-active-font-weight;
+
+            // Occludes the top border of the b-tabpanel-body element.
+            z-index          : 1;
+        }
+
+        &.b-hidden {
+            display : none !important; // ugly but needed since subclasses can override normal display with more specificity
+        }
+
+
+        &:focus {
+            outline : none;
+        }
+
+        &:hover:not(.b-active),
+        &:focus:not(.b-active) {
+            background-color : $tabpanel-tab-hover-background-color;
+            color            : $tabpanel-tab-hover-color;
+        }
+
+        &-title {
+            overflow      : hidden;
+            white-space   : nowrap;
+            text-overflow : ellipsis;
+        }
+
+    }
+
+    &-body.b-card-container {
+        background-color : $tabpanel-background-color;
+        border-radius    : $widget-border-radius;
+        border           : $tabpanel-border-width solid $tabpanel-border-color;
+        flex             : 1 0 auto;
+        padding          : $tabpanel-body-padding;
+    }
+
+    &[data-active-index="0"] {
+        .b-tabpanel-body {
+            border-top-left-radius : 0;
+        }
+    }
+
+    .b-html {
+        color : $container-color;
+    }
+}

@@ -1,0 +1,45 @@
+@import '../../variables.scss';
+
+.b-cell-editor {
+    position         : absolute;
+    background-color : $celledit-background-color;
+    border-width     : $celledit-border-width;
+    border-color     : $celledit-border-color;
+    border-style     : solid;
+    box-shadow       : none!important;
+
+    // Must stay on top when rows are cleared and rerendered
+    // and are after it in the subgrid's DOM.
+    z-index          : 1;
+    /*transition: left 0.1s, top 0.1s;*/
+
+    > .b-widget {
+        width : 100%;
+        height : 100%;
+    }
+
+    .b-numberfield,
+    .b-textfield {
+        // Cell editor controls the padding on the input below to exactly position
+        // input text over cell text, so there must no extra padding on inner.
+        .b-field-inner {
+            padding-left : 0;
+        }
+
+        // Fill height
+        align-items : stretch;
+
+        input {
+            padding : 0.8em calc(0.5em - #{right($field-border-width)});
+        }
+    }
+}
+
+.b-cell-editor-hidden {
+    display : none;
+}
+
+// hide focus outline while editing
+.b-grid-row .b-grid-cell.b-focused.b-editing:after {
+    display : none;
+}

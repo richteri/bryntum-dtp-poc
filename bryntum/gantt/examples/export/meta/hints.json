@@ -1,0 +1,6 @@
+{
+  "[data-ref=exportButton]": {
+    "title": "Click to export",
+    "content": "Opens a dialog to customize export"
+  }
+}

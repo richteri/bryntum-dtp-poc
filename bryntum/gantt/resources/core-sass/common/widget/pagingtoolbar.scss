@@ -1,0 +1,21 @@
+.b-pagingtoolbar {
+    justify-content : center;
+
+    .b-toolbar-text,
+    .b-button {
+        margin : 0 0.5em;
+    }
+
+    .b-numberfield {
+        width : unset;
+
+        input {
+            width : 4em;
+            text-align : center;
+        }
+    }
+
+    .b-disabled.b-html {
+        color : $field-disabled-label-color;
+    }
+}

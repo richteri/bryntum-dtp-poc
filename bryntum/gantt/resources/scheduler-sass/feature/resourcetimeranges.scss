@@ -1,0 +1,48 @@
+@import '../variables.scss';
+
+.b-sch-resourcetimerange {
+    display          : flex;
+    position         : absolute;
+    background-color : transparentize($resourcetimerange-default-background-color, 1 - $resourcetimerange-opacity);
+    color            : scale_color($resourcetimerange-default-background-color, $lightness: $resourcetimerange-label-lightness, $saturation: $resourcetimerange-label-saturation);
+    z-index          : $resourcetimerange-zindex;
+    transition       : $event-default-transition; // always use transition, for hover effects etc
+    font-size        : $resourcetimerange-font-size; // em would be fraction of rowHeight, not usable here
+    justify-content  : $resourcetimerange-label-horizontal-align;
+    align-items      : $resourcetimerange-label-vertical-align;
+    padding          : $resourcetimerange-padding;
+
+    .b-animating & {
+        transition : $event-default-transition, transform .2s, width .2s, height .2s, font-size .2s;
+    }
+
+    &.b-sch-released {
+        display    : none;
+        transition : none;
+    }
+}
+
+.b-sch-vertical .b-sch-resourcetimerange {
+    justify-content : center;
+    align-items     : flex-start;
+}
+
+@mixin resourcetimerange-plain($cls, $color) {
+    .b-sch-color-#{$cls}.b-sch-resourcetimerange {
+        background-color : transparentize($color, 1 - $resourcetimerange-opacity);
+        color            : scale_color($color, $lightness: $resourcetimerange-label-lightness, $saturation: $resourcetimerange-label-saturation);
+    }
+}
+
+@include resourcetimerange-plain("red", $event-color-red);
+@include resourcetimerange-plain("pink", $event-color-pink);
+@include resourcetimerange-plain("purple", $event-color-purple);
+@include resourcetimerange-plain("violet", $event-color-violet);
+@include resourcetimerange-plain("indigo", $event-color-indigo);
+@include resourcetimerange-plain("blue", $event-color-blue);
+@include resourcetimerange-plain("cyan", $event-color-cyan);
+@include resourcetimerange-plain("teal", $event-color-teal);
+@include resourcetimerange-plain("green", $event-color-green);
+@include resourcetimerange-plain("lime", $event-color-lime);
+@include resourcetimerange-plain("yellow", $event-color-yellow);
+@include resourcetimerange-plain("orange", $event-color-orange);

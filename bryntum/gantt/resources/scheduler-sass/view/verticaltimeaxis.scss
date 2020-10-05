@@ -1,0 +1,59 @@
+@import '../variables.scss';
+
+.b-verticaltimeaxiscolumn {
+    padding          : 0;
+    border-right     : none;
+    // Using !important to override rules for hover, selected, focused cell etc. in a single line
+    background-color : lighten($grid-header-background-color, 3%) !important;
+
+    &.b-grid-cell.b-focused:after {
+        display : none;
+    }
+}
+
+.b-verticaltimeaxis {
+    flex    : 1;
+    contain : strict;
+
+    .b-sch-header-row {
+        flex-direction : column;
+    }
+
+    .b-sch-header-timeaxis-cell {
+        width          : 100%;
+        text-transform : $grid-header-text-transform;
+        align-items    : flex-start;
+        padding-top    : .5em;
+    }
+
+    // Rotate text in all but the lowest level header
+    .b-sch-header-row:not(.b-lowest) {
+        flex  : unset;
+        width : 2em;
+
+        .b-sch-header-text {
+            writing-mode     : vertical-lr;
+            -ms-writing-mode : tb-lr;
+            transform        : rotate(180deg);
+        }
+    }
+
+    .b-lowest {
+        flex : 1;
+
+        .b-sch-header-timeaxis-cell {
+            border-right  : none;
+            border-bottom : none;
+            padding       : .5em .5em 0 .5em;
+        }
+    }
+
+    .b-last {
+        border-bottom : none;
+    }
+
+    // Hover effects only on individual TimeAxis cells.
+    .b-sch-header-timeaxis-cell:hover {
+        background-color : $grid-header-background-color;
+    }
+}

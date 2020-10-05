@@ -1,0 +1,14 @@
+@import '../../core-sass/themes/light.scss';
+
+$grid-row-odd-color : #FAFAFA;
+$grid-cell-border-color : lighten($gray, 5%);
+$grid-region-resize-splitter-color : $gray;
+$grid-header-text-color : #565656;
+//$tree-parent-color : #565656;
+
+$quickfind-font-weight : 300;
+
+
+
+@import "shared";
+

@@ -1,0 +1,101 @@
+@import '../../variables.scss';
+
+@keyframes maskOpacity {
+    0% {
+        opacity : 0;
+    }
+    100% {
+        opacity : 1;
+    }
+}
+
+.b-masked {
+    // required to make sure masked Element can contain the Mask (which is absolute positioned)
+    position : relative;
+}
+
+.b-mask {
+    position         : absolute;
+    top              : 0;
+    left             : 0;
+    bottom           : 0;
+    right            : 0;
+    z-index          : $mask-z-index;
+    background-color : transparent;
+
+    &:not(.b-prevent-transitions) {
+        transition : opacity 1s;
+    }
+
+    &.b-visible {
+        &:not(.b-prevent-transitions) {
+            animation : maskOpacity .3s ease 0s 1;
+        }
+
+        pointer-events : all;
+        opacity        : 1;
+    }
+
+    &.b-hidden {
+        &:not(.b-prevent-transitions) {
+            animation : maskOpacity .2s ease 0s 1 reverse;
+        }
+
+        pointer-events : none;
+        opacity        : 0;
+    }
+
+    &.b-mask-bright {
+        background-color : rgba(255, 255, 255, 0.7);
+    }
+
+    &.b-mask-bright-blur {
+        background-color : rgba(255, 255, 255, 0.7);
+    }
+
+    &.b-mask-dark {
+        background-color : rgba(0, 0, 0, 0.3);
+    }
+
+    &.b-mask-dark-blur {
+        background-color : rgba(0, 0, 0, 0.3);
+    }
+}
+
+.b-mask-content {
+    position         : absolute;
+    top              : 50%;
+    left             : 50%;
+    transform        : translate(-50%, -50%);
+
+    display          : flex;
+    flex-direction   : column;
+    color            : $mask-color;
+    background-color : $mask-background-color;
+    border-radius    : $widget-border-radius;
+
+ //   contain          : strict;
+}
+
+.b-mask-text {
+    padding     : 1em;
+    display     : flex;
+    align-items : center;
+}
+
+.b-mask-progress-bar {
+    height : 3px;
+    background-color : $mask-progress-color;
+    //transition: width .1s;
+}
+
+.b-mask-icon {
+    margin-right : .5em;
+}
+
+.b-masked-dark-blur,
+.b-masked-bright-blur {
+    filter     : blur(3px);
+    transform  : scale(1.01);
+    transition : all .5s;
+}

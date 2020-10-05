@@ -1,0 +1,116 @@
+@import '../variables.scss';
+@import '../../core-sass/mixins.scss';
+
+.b-sch-column.b-grid-header {
+    padding : 0;
+}
+
+.b-grid-header-container .b-sch-timeaxiscolumn {
+    @include user-select-none();
+
+    padding          : 0;
+
+    // Override the b-fill-last-column stretching
+    flex-grow        : unset !important;
+    background-color : $grid-header-background-color;
+    border-right     : 0 none;
+
+    // Only individual TimeAxis cells get a hover effect.
+    // Override hover effects on .b-depth-0 cells because
+    // The SchedulerColumns header cell is a single .b-depth-0 cell.
+    &.b-depth-0:hover {
+        background-color : $grid-header-background-color !important;
+    }
+
+    // Hover effects only on individual TimeAxis cells.
+    .b-sch-header-timeaxis-cell:hover {
+        background-color : $grid-header-hover-background-color;
+    }
+}
+
+.b-horizontaltimeaxis {
+    flex-direction : column;
+    flex           : 1;
+
+    .b-sch-header-row {
+        flex : 1;
+    }
+
+    .b-sch-header-timeaxis-cell {
+        height : 100%;
+    }
+}
+
+// With the sync approach header cells are now absolutely positioned and need to get their height from somewhere
+.b-sch-timeaxiscolumn-levels-1 {
+    min-height     : 1.5em;
+}
+
+.b-sch-timeaxiscolumn-levels-2 {
+    min-height     : 3em;
+}
+
+.b-sch-timeaxiscolumn-levels-3 {
+    min-height     : 4.5em;
+}
+
+.b-sch-header-row {
+    position : relative;
+    contain  : strict;
+
+    &:last-child .b-sch-header-timeaxis-cell {
+        border-bottom : none;
+    }
+}
+
+.b-sch-header-timeaxis-cell {
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    position        : absolute;
+
+    color           : $grid-header-text-color;
+    border-bottom   : 1px solid $grid-header-border-color;
+    border-right    : 1px solid $grid-header-border-color;
+    overflow        : hidden;
+    transition      : background-color 0.2s;
+    font-size       : $grid-header-font-size;
+    font-weight     : $grid-header-font-weight;
+    padding         : top($timeaxis-cell-header-padding) 0 bottom($timeaxis-cell-header-padding) 0;
+    white-space     : nowrap;
+    contain         : strict;
+
+    @include user-select-none();
+
+    &:hover {
+        cursor           : pointer;
+        background-color : $grid-header-hover-background-color;
+    }
+
+    &.b-align-start,
+    &.b-align-end {
+        padding-left  : 0.3em;
+        padding-right : 0.3em;
+    }
+
+    &.b-align-start {
+        justify-content : flex-start;
+    }
+
+    &.b-align-end {
+        justify-content : flex-end;
+    }
+}
+
+.b-scheduler.b-fill-last-column {
+    .b-sch-timeaxiscolumn:last-child {
+        border-right-color : $grid-header-border-color;
+    }
+}
+
+// IE11 specific stuff goes here
+@media all and (-ms-high-contrast : none), (-ms-high-contrast : active) {
+    .b-sch-timeaxiscolumn {
+        height : 100%;
+    }
+}

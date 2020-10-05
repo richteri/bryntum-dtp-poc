@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Redirect to index page if WebComponents not supported -->
+	<script type="text/javascript">
+		if (navigator.userAgent.match('Edge') || navigator.userAgent.match('Trident')) {
+			window.location = 'notsupported.html';
+		}
+	</script>
+	<meta charset="UTF-8">
+	<title>Web Components demo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<!-- These two stylesheets are not needed for the actual webcomponent to work, it includes its own style -->
+	<link rel="stylesheet" href="../../build/gantt.stockholm.css" id="bryntum-theme">
+	<link rel="stylesheet" href="../_shared/shared.css">
+	<link rel="stylesheet" href="resources/app.css">
+</head>
+
+<body>
+	<div id="container">
+		<bryntum-gantt data-theme="stockholm" data-view-preset="weekAndDayLetter" data-start-date="2019-01-13" data-end-date="2019-03-17">
+			<column data-type="name" data-width="250">Name</column>
+			<column data-type="startdate">Start</column>
+			<column data-type="duration">Duration</column>
+			<column data-type="addnew"></column>
+			<project data-load-url="../_datasets/launch-saas.json"></project>
+			<feature data-name="nonWorkingTime"></feature>
+			<feature data-name="timeRanges" data-show-current-timeline="true"></feature>
+			<feature data-name="labels" data-left="name"></feature>
+		</bryntum-gantt>
+	</div>
+	<script type="module" src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+@import '../grid-sass/variables.scss';
+
+$event-color-red : #ff8787 !default;
+$event-color-pink : #f783ac !default;
+$event-color-purple : #ea80dc !default;
+$event-color-violet : #9775fa !default;
+$event-color-indigo : #748ffc !default;
+$event-color-blue : #4dadf7 !default;
+$event-color-cyan : #3bc9db !default;
+$event-color-teal : #38d9a9 !default;
+$event-color-green : #69db7c !default;
+$event-color-lime : #a9e34b !default;
+$event-color-yellow : #fdd835 !default;
+$event-color-orange : #ffa94d !default;
+$event-color-gray : #a0a0a0 !default;
+
+$event-bar-background-color : $event-color-green !default;
+$event-bar-color : #fff !default;
+
+$event-milestone-color : #777 !default;
+$event-font-size : 14px !default;
+$event-font-weight : 300 !default;
+$event-selected-font-weight : 500 !default;
+
+$parent-event-bar-background-color : #8bc34a;
+
+$event-bar-selected-background-color : rgba(0,0,0,0.25) !default;
+$event-bar-selected-color : #fff !default;
+
+$event-bar-hover-background-color : rgba(0,0,0,0.15) !default;
+$event-bar-hover-color : $event-bar-color !default;
+
+$event-bar-selected-hover-background-color : rgba(0,0,0,0.35) !default;
+$event-bar-selected-hover-color : $event-bar-selected-color !default;
+
+$event-tooltip-title-weight : 600 !default;
+
+$eventedit-label-width : 5em !default;
+$eventedit-label-filler-width : null !default;
+
+$dependencyedit-label-width : 4em !default;
+$dependencyedit-label-filler-width : null !default;
+
+$recurrenceeditor-label-width : 10em !default;
+$recurrenceeditor-label-filler-width : null !default;
+
+$columnlines-tick-color : scale_color($grid-cell-border-color, $lightness: 50%) !default;
+$columnlines-major-color : scale_color($grid-cell-border-color, $lightness: -10%) !default;
+
+$event-labels-color : #888 !default;
+$selected-event-labels-color : null !default;
+
+$event-label-spacing : 1.5em !default;
+
+$resourceinfo-role-color : $dark-gray !default;
+
+$range-background-color : transparentize(#f0f0f0, .5) !default;
+$range-color : #aaa !default;
+$range-header-color : #fff !default;
+$range-header-background-color : scale_color($event-color-blue, $lightness : 50%) !default;
+
+$resourcetimerange-default-background-color : $event-color-yellow !default;
+$resourcetimerange-opacity : .2 !default;
+$resourcetimerange-label-horizontal-align : center !default;
+$resourcetimerange-label-vertical-align : flex-end !default;
+$resourcetimerange-font-size : 12px !default;
+$resourcetimerange-label-lightness : -15% !default;
+$resourcetimerange-label-saturation : 5% !default;
+$resourcetimerange-padding : 3px !default;
+
+$line-color : #fab005 !default;
+$current-time-color : #fa5252 !default;
+$line-start-background-color : #fff !default;
+$line-style : dotted !default;
+$line-width : 2px !default;
+$background-canvas-zindex : 1 !default;
+$foreground-canvas-zindex : 2 !default;
+$range-zindex : 2 !default;
+$resourcetimerange-zindex : 2 !default;
+$dependency-zindex : 3 !default;
+$nonworkingtime-zindex : 0 !default;
+$event-zindex : 5 !default;
+$milestone-zindex : 4 !default; // make sure the label of the milestone is below regular events
+$selected-event-zindex : 6 !default;
+$interacting-event-zindex : 7 !default;
+$weekend-background-color : transparentize(#f0d5d5, .7) !default;
+$event-default-transition : background-color .2s, opacity .2s, font-weight .2s, font-size .2s, border .2s !default;
+$timeaxis-cell-header-padding : 0.5em !default;
+$timeaxis-cell-footer-border-color : $grid-footer-border-color !default;
+
+$arrow-size : 7px !default;
+$arrow-half : 4px !default;
+$dependency-color : #bbb !default;
+$dependency-hover-color : #888 !default;
+
+// Must use even size because border-radius is 50% to create circle.
+// Add size causes 1px to be cropped from top and left.
+$terminal-size : 12px !default;
+
+$dependency-terminal-color : #fff !default;
+$dependency-terminal-hover-color : darken($dependency-terminal-color, 10) !default;
+$dependency-terminal-valid-color : lighten($green, 30) !default;
+$dependency-terminal-invalid-color : lighten($red, 30) !default;
+$dependency-tooltip-terminal-color : $dependency-terminal-color !default;
+
+$list-dependency-color : $dependency-color !default;
+$list-dependency-terminal-color : $dependency-terminal-color !default;
+$list-dependency-background-color : $green !default;
+
+$clock-background-color : #fff !default;
+
+$eventdragselect-border : 1px dashed $dark-gray !default;

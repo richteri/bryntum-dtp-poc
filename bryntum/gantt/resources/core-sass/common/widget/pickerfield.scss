@@ -1,0 +1,13 @@
+.b-pickerfield {
+    &.b-open {
+        .b-field-inner {
+            border-color : $main-color;
+        }
+    }
+
+    &:not(.b-readonly):not(.b-disabled) {
+        input[readonly] {
+            cursor:pointer;
+        }
+    }
+}

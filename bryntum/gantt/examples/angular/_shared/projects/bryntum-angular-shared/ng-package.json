@@ -1,0 +1,10 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/bryntum-angular-shared",
+  "lib": {
+    "entryFile": "src/public-api.ts",
+    "umdModuleIds": {
+      "bryntum-gantt/gantt.umd.js": "bryntum-gantt"
+    }
+  }
+}
