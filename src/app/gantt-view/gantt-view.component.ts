@@ -57,7 +57,7 @@ export class GanttViewComponent implements OnInit, OnDestroy {
       id: 'root-project',
       name: 'Root project',
       calendar: 'office-hours',
-      startDate: new Date(),
+      startDate: DateHelper.startOf(DateHelper.add(new Date(), 1, 'day'), 'day'),
       taskModelClass: MyTaskModel,
       eventsData: [
         {
@@ -90,13 +90,8 @@ export class GanttViewComponent implements OnInit, OnDestroy {
           unspecifiedTimeIsWorking: false,
           intervals: [
             {
-              recurrentStartDate: 'every weekday at 6:00 am',
-              recurrentEndDate: 'every weekday at 10:00 am',
-              isWorking: true,
-            },
-            {
-              recurrentStartDate: 'every weekday at 11:00 am',
-              recurrentEndDate: 'every weekday at 3:00 pm',
+              recurrentStartDate: 'every weekday at 9:00 am',
+              recurrentEndDate: 'every weekday at 5:00 pm',
               isWorking: true,
             },
           ],
