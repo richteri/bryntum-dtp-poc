@@ -271,7 +271,7 @@ const getDefaultConfig = gantt => {
           },
           {
             text: 'Task labels',
-            checked: !features.labels.disabled,
+            checked: !features.labels?.disabled,
             onToggle: () => features.labels.disabled = !features.labels.disabled
           },
           {

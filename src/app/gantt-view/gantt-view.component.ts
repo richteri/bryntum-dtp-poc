@@ -1,7 +1,5 @@
 import { Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
-// @ts-ignore
-import { BryntumWidgetAdapterRegister, Combo, DateField, Gantt, Panel, ProjectModel, Store, TaskModel } from 'bryntum-gantt';
-import flatpickr from 'flatpickr';
+import { BryntumWidgetAdapterRegister, Combo, DateField, DateHelper, Gantt, Panel, ProjectModel, Store, TaskModel } from 'bryntum-gantt';
 
 import ganttToolbar from './gantt.toolbar';
 
@@ -13,37 +11,26 @@ class MyTaskModel extends TaskModel {
   }
 }
 
-class DateTimePickerColumn extends DateField {
-  // Hook up a click listener during construction
-  construct(config): void {
-    // Need to pass config to super (Widget) to have things set up properly
-    super.construct(config);
-  }
+class DateTimeField extends DateField {
+  transformTimeValue(value): Date {
+    const me = this as any;
+    value = DateHelper.clone(value);
 
-  // Always valid, this getter is required by CellEdit feature
-  get isValid(): boolean {
-    return true;
-  }
+    const timeValue = DateHelper.parse(value, 'HH:mm');
 
-  // Set current value, updating style
-  set value(value) {
-    // @ts-ignore
-    const { element } = this;
-    // const target = `${this.name}-datepicker`;
+    if (DateHelper.isValidDate(timeValue)) {
+      DateHelper.copyTimeValues(value, timeValue);
+    } // otherwise try to copy from the current value
+    else if (DateHelper.isValidDate(me.value)) {
+      DateHelper.copyTimeValues(value, me.value);
+    } // else don't change time
 
-    if (element) {
-      // element.innerHTML = `<div id="${target}"></div>`;
-      flatpickr(element, {
-        enableTime: true,
-        dateFormat: 'Y-m-d H:i',
-        defaultDate: value,
-      });
-    }
+    return value;
   }
 }
 
 // Register the custom widget to make it available
-BryntumWidgetAdapterRegister.register('dtpicker', DateTimePickerColumn);
+BryntumWidgetAdapterRegister.register('datetime', DateTimeField);
 
 @Component({
   selector: 'app-gantt-view',
@@ -125,7 +112,7 @@ export class GanttViewComponent implements OnInit, OnDestroy {
       cls: 'b-fa b-fa-diamond'
     });
 
-    this.timeRangeTimer = setInterval(() => timeRangeNow.setStartDate(new Date()), 1000);
+//    this.timeRangeTimer = setInterval(() => timeRangeNow.setStartDate(new Date()), 1000);
 
     const optionStore = new Store({
       data: [],
@@ -148,7 +135,8 @@ export class GanttViewComponent implements OnInit, OnDestroy {
               displayField: 'name',
             }),
           },
-          { text: 'Custom editor', field: 'startDate', editor: 'dtpicker' }
+          { text: 'Start', field: 'startDate', type: 'date', format: 'YYYY-MM-DD HH:mm', editor: 'datetime' },
+          { text: 'End', field: 'endDate', type: 'date', format: 'YYYY-MM-DD HH:mm', editor: 'datetime' },
         ],
       },
       features: {
